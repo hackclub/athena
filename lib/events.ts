@@ -6,6 +6,7 @@ import { cache } from "react";
 import { AirtableEventsManager} from './airtable';
 import { AirtableEventRecord, EventWithColors, Event } from '@/types'
 import { hackClubLogo, defaultAthenaPhoto } from '@/constants'
+import { formatDate } from '@/lib/utils'
 
 const data = await new AirtableEventsManager().getAllEvents();
 
@@ -33,8 +34,8 @@ const events = data.map((record) => {
     status: eventRecord.fields.Status,
     description: eventRecord.fields.Description,
     location: eventRecord.fields.Location,
-    startDate: eventRecord.fields['Start Date'],
-    endDate: eventRecord.fields['End Date'],
+    startDate: formatDate(eventRecord.fields['Start Date']),
+    endDate: formatDate(eventRecord.fields['End Date']),
     logo: eventRecord.fields.Logo,
     photos: photos,
     photocreds: eventRecord.fields['Photo Creds'],

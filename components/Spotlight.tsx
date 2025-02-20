@@ -2,7 +2,7 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
 import Card from "./Card";
 import { useState } from "react";
-import { SpotlightPost } from "@/utils/spotlight";
+import { SpotlightPost } from "@/lib/spotlight";
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
 

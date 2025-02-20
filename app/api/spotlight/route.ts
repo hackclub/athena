@@ -1,4 +1,4 @@
-import { AirtableSpotlightManager } from "@/utils/airtable";
+import { AirtableSpotlightManager } from "@/lib/airtable";
 
 export const revalidate = 3600;
 

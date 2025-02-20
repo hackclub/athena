@@ -70,7 +70,6 @@ export default function PastEvent({ accentColor, bgColor, tintColor, name, date,
                 </div>
                 <div className="mt-4">
                   {description}
-                  {JSON.stringify(photos)}
                 </div>
                 <div className="mt-4 mb-10 md:mb-0">
                   <Link className="underline" href={github_link}>View details on planning</Link>

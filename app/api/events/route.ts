@@ -1,4 +1,4 @@
-import { AirtableEventsManager } from "@/utils/airtable";
+import { AirtableEventsManager } from "@/lib/airtable";
 import { NextResponse } from 'next/server';
 
 export const revalidate = 3600;
