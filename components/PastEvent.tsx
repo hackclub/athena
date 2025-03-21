@@ -2,11 +2,9 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import Marquee from 'react-marquee-slider';
-
 import { FaCalendarDay, FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
-import { hackClubLogo } from '@/constants'
 
 type EventInfo = {
   accentColor: string;

@@ -5,7 +5,28 @@ import Background from "@/components/Background";
 
 export const metadata: Metadata = {
   title: "Athena - Hack Club",
-  icons: "https://assets.hackclub.com/icon-rounded.svg"
+  description: "Athena is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.",
+  icons: "https://assets.hackclub.com/icon-rounded.svg",
+  openGraph: {
+    title: "Athena - Hack Club",
+    description: "Athena is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.",
+    images: [
+      {
+        url: "/thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "Athena - Hack Club"
+      }
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Athena - Hack Club",
+    description: "Athena is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.",
+    images: ["/thumbnail.png"],
+    creator: "@hackclub"
+  }
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@ import axios from 'axios';
 import sharp from 'sharp';
 import { FinalColor } from "extract-colors/lib/types/Color";
 import { cache } from "react";
-import { AirtableEventsManager} from './airtable';
+import { AirtableEventsManager } from './airtable';
 import { AirtableEventRecord, EventWithColors, Event } from '@/types'
 import { hackClubLogo, defaultAthenaPhoto } from '@/constants'
 import { formatDate } from '@/lib/utils'
@@ -13,8 +13,7 @@ const data = await new AirtableEventsManager().getAllEvents();
 const events = data.map((record) => {
 
   const eventRecord = record as unknown as AirtableEventRecord;
-
-   let photos: string[] = [defaultAthenaPhoto];
+  let photos: string[] = [defaultAthenaPhoto];
   
    if (eventRecord.fields.Photos && eventRecord.fields.Photos.trim() !== "") {
      try {
