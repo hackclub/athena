@@ -1,17 +1,19 @@
 import Background from "@/components/Background";
 import Card from "@/components/Card";
 import UpcomingEvent from "@/components/UpcomingEvent";
-import { getUpcomingEvents, getRecentEvents } from "@/lib/events";
+import { getEvents, getUpcomingEvents, getRecentEvents } from "@/lib/events";
 import Events from "@/components/Events";
 // import useImagePreloader from "../hooks/useImagePreloader";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from "next/link";
 import { Fragment } from "react";
  
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function EventPage() {
-  const upcomingEvents = getUpcomingEvents();
+  const events = await getEvents();
+  const upcomingEvents = await getUpcomingEvents();
   const recentEvents = await getRecentEvents();
   
   return (

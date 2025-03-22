@@ -8,39 +8,39 @@ import { AirtableEventRecord, EventWithColors, Event } from '@/types'
 import { hackClubLogo, defaultAthenaPhoto } from '@/constants'
 import { formatDate } from '@/lib/utils'
 
-const data = await new AirtableEventsManager().getAllEvents();
-
-const events = data.map((record) => {
-
-  const eventRecord = record as unknown as AirtableEventRecord;
-  let photos: string[] = [defaultAthenaPhoto];
+export async function fetchEvents() {
+  const data = await new AirtableEventsManager().getAllEvents();
   
-   if (eventRecord.fields.Photos && eventRecord.fields.Photos.trim() !== "") {
-     try {
-       const parsedPhotos = JSON.parse(eventRecord.fields.Photos);
-       if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
-         photos = parsedPhotos;
-         console.log(photos)
-       }
-     } catch (error) {
-       console.error('Error parsing Photos field:', error);
-     }
-   }
+  return data.map((record) => {
+    const eventRecord = record as unknown as AirtableEventRecord;
+    let photos: string[] = [defaultAthenaPhoto];
+    
+    if (eventRecord.fields.Photos && eventRecord.fields.Photos.trim() !== "") {
+      try {
+        const parsedPhotos = JSON.parse(eventRecord.fields.Photos);
+        if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
+          photos = parsedPhotos;
+        }
+      } catch (error) {
+        console.error('Error parsing Photos field:', error);
+      }
+    }
 
-  return {
-    id: eventRecord.id,
-    name: eventRecord.fields.Name,
-    status: eventRecord.fields.Status,
-    description: eventRecord.fields.Description,
-    location: eventRecord.fields.Location,
-    startDate: formatDate(eventRecord.fields['Start Date']),
-    endDate: formatDate(eventRecord.fields['End Date']),
-    logo: eventRecord.fields.Logo,
-    photos: photos,
-    photocreds: eventRecord.fields['Photo Creds'],
-    website: eventRecord.fields.Website
-  };
-});
+    return {
+      id: eventRecord.id,
+      name: eventRecord.fields.Name,
+      status: eventRecord.fields.Status,
+      description: eventRecord.fields.Description,
+      location: eventRecord.fields.Location,
+      startDate: formatDate(eventRecord.fields['Start Date']),
+      endDate: formatDate(eventRecord.fields['End Date']),
+      logo: eventRecord.fields.Logo,
+      photos: photos,
+      photocreds: eventRecord.fields['Photo Creds'],
+      website: eventRecord.fields.Website
+    };
+  });
+}
 
 function hslToHex({ hue, saturation, lightness }: { hue: number, saturation: number, lightness: number }) {
   hue *= 360;
@@ -96,7 +96,7 @@ function makePastel(color: FinalColor) {
 }
 
 export const getEvents: () => Promise<EventWithColors[]> = cache(async () => {
-  
+  const events = await fetchEvents();
   const recoloredEvents = [];
 
   for (const event of events.filter(e => e.status !== "Upcoming") as EventWithColors[]) {
@@ -134,15 +134,15 @@ export const getEvents: () => Promise<EventWithColors[]> = cache(async () => {
   return eventsWithColors;
 })
 
-export function getUpcomingEvents(): Event[] {
+export async function getUpcomingEvents(): Promise<Event[]> {
+  const events = await fetchEvents();
   return events.filter(event => event.status === "Upcoming" || event.status === "Active");
 }
 
 export async function getRecentEvents(): Promise<EventWithColors[]> {
-  const allEvents: EventWithColors[] = await getEvents()
+  const allEvents: EventWithColors[] = await getEvents();
   return allEvents.filter(event => event.status === "Complete");
 }
-
 
 /**
  * This is a function to hardcode old events that have white backgrounds OR hardcode other colors with flat backgrounds that weren't detected by the algorithm; please don't edit this unless the event looks wonky on deployment and you want to set a specific background color on the card!

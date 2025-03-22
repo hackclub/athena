@@ -4,7 +4,7 @@ import Projects from "@/components/Projects";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from "next/link";
  
-export const revalidate = 60;
+export const revalidate = 30;
 
 export default async function EventPage() { 
     return (
