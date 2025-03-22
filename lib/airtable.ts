@@ -1,6 +1,4 @@
 import Airtable from 'airtable';
-import { Event, AirtableEventRecord } from '@/types';
-
 export class AirtableManager {
   public base: Airtable.Base;
   public tableName: string;

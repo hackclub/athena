@@ -41,7 +41,7 @@ export default function Projects() {
                             />
                         </div>
                         <div className="mt-2 text-center">
-                            <p className="text-black font-semibold text-lg">"{item.title || "Project Name"}" by {item.author || "Name"}</p>
+                            <p className="text-black font-semibold text-lg">&quot;{item.title || "Project Name"}&quot; by {item.author || "Name"}</p>
                             <p className="text-black italic">{item.date || "Month, Date"}</p>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ export default function Projects() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="flex flex-col space-y-4">
                                     <div>
-                                        <span className="text-xl font-bold text-red">"{item.title || "Project Name"}"</span>
+                                        <span className="text-xl font-bold text-red">&quot;{item.title || "Project Name"}&quot;</span>
                                         <span className="font-medium">by {item.author || "Name"}</span>
                                         <span className="italic block mt-1">{item.date || "Month, Date"}</span>
                                         

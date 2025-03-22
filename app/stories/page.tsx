@@ -3,7 +3,6 @@ import Card from "@/components/Card";
 import Projects from "@/components/Projects";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from "next/link";
-import { Fragment } from "react";
  
 export const revalidate = 60;
 

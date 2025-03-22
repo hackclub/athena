@@ -11,7 +11,6 @@ import { Fragment } from "react";
 export const revalidate = 60;
 
 export default async function EventPage() {
-  const events = await getEvents();
   const upcomingEvents = getUpcomingEvents();
   const recentEvents = await getRecentEvents();
   

@@ -24,7 +24,7 @@ type EventInfo = {
   status?: string;
 };
 
-export default function PastEvent({ accentColor, bgColor, tintColor, name, date, status, location, github_link, logo, cardLogo, photos, photocreds, description, className, mostRecent = false }: EventInfo) {
+export default function PastEvent({ accentColor, bgColor, tintColor, name, date, location, github_link, logo, cardLogo, photos, photocreds, description, className, mostRecent = false }: EventInfo) {
   const [modalOpen, setModalOpen] = useState(false);
   const pastEventImage = photos[0]
   
