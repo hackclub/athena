@@ -95,7 +95,7 @@ function makePastel(color: FinalColor) {
   };
 }
 
-export const getEvents: () => Promise<EventWithColors[]> = cache(async () => {
+export async function getEvents(): Promise<EventWithColors[]> {
   const events = await fetchEvents();
   const recoloredEvents = [];
 
@@ -132,7 +132,7 @@ export const getEvents: () => Promise<EventWithColors[]> = cache(async () => {
   } as EventWithColors));
   
   return eventsWithColors;
-})
+}
 
 export async function getUpcomingEvents(): Promise<Event[]> {
   const events = await fetchEvents();

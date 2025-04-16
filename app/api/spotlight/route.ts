@@ -1,9 +1,9 @@
 import { AirtableSpotlightManager } from "@/lib/airtable";
+import { NextResponse } from 'next/server';
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export async function GET() {
   const post = await new AirtableSpotlightManager().getLatestRecord();
-  console.log(post.fields);
-  return new Response(JSON.stringify(post.fields));
+  return NextResponse.json(post.fields);
 }
