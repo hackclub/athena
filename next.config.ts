@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/awards",
+        destination: "https://awards.athena.a.hackclub.dev",
+        permanent: false
+      }
+    ]
+  },
 };
 
 export default nextConfig;

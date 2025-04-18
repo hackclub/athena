@@ -22,7 +22,28 @@ export default async function Home() {
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>
         
         <div className='w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 my-8'>
-          <Link href='/stories' className='hidden w-full h-full col-span-full md:col-span-2'>
+         
+          <div className="col-span-full md:col-span-full w-full h-[70vh] relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#692229] via-[#8C2E37] to-[#993E47] overflow-hidden transition">
+            <div className="relative z-0 h-full">
+              <div className="text-lg md:text-xl font-bold text-white mb-3">Presenting the Athena Awards:</div>
+              <Image alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdc8c09039207e203df13effe406e2d289e24a13_image.png" className="md:max-h-[40vh] object-cover w-auto" width={1121} height={390} />
+              <div className="text-white text-xl md:w-3/5 line-clamp-4 py-4">Earn a <b>funded trip to a hackathon in New York City</b> as well as other <b>awesome prizes</b> by spending time coding during the <b>Athena Awards</b>, an event for gender minorities in STEM.</div>
+              <Link href="/awards" className="absolute bottom-0 border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white inline-block text-lg hover:-rotate-[4deg] hover:p-5 font-bold decoration-transparent transition-all hover:decoration-white">Sign up for free stickers</Link>
+            </div>
+            <Image alt="" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/a7004ed60a6669e4fda5afab93d6894b4dc03e21_demo_logo.svg" className="h-[100%] w-auto absolute -top-[4vh] -right-[10vh] opacity-25 md:opacity-100" height={800} width={800}></Image>
+          </div>
+
+          <div className="col-span-full md:col-span-full w-full h-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
+            <div className="relative z-0">
+              <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
+              <Image alt="Ascend Event" src="https://cloud-rnls34zc7-hack-club-bot.vercel.app/0reduced-whitespace-ascend-logo.png" className="max-h-[15vh] w-auto" width={1121} height={390} />
+              <div className="text-white md:w-3/5 line-clamp-2">Ascend was Hack Club&apos;s first-ever Days of Service Summit! Held in Los Angeles, this event brought together 50 girls and non-binary Hack Club members from across the U.S. and internationally for a hackathon hosted at SpaceX, along with a weekend filled with fun and growth. This summit became the largest teenage girl hackathon in the U.S. this year, in partnership with Girls Who Code and Kode with Klossy.</div>
+              <Link href="https://ascend.hackclub.com" className="text-white italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-white">Learn more about Ascend</Link>
+            </div>
+            <Image alt="" src="https://ascend.hackclub.com/moon.png" className="h-[150%] w-auto absolute -top-[10vh] -right-[10vh] opacity-50 md:opacity-100" height={800} width={800}></Image>
+          </div>
+        </div>
+        <Link href='/stories' className='hidden w-full h-full col-span-full md:col-span-2'>
             <div className="w-full h-full relative flex flex-col gap-3 bg-white shadow-md rounded-lg transition hover:scale-110 cursor-pointer">
               <Image alt="Ascend Event" src="https://cloud-l9vmg3n5i-hack-club-bot.vercel.app/0img_5774.jpg" className="h-[120px] w-full object-cover rounded-t-lg" width={300} height={163} />
               <div className="relative z-0 pb-4 px-4">
@@ -35,17 +56,6 @@ export default async function Home() {
               </div>
             </div> 
           </Link>
-          <div className="col-span-full md:col-span-full w-full h-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
-            <div className="relative z-0">
-              <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
-              <Image alt="Ascend Event" src="https://cloud-rnls34zc7-hack-club-bot.vercel.app/0reduced-whitespace-ascend-logo.png" className="max-h-[15vh] w-auto" width={1121} height={390} />
-              <div className="text-white md:w-3/5 line-clamp-2">Ascend was Hack Club&apos;s first-ever Days of Service Summit! Held in Los Angeles, this event brought together 50 girls and non-binary Hack Club members from across the U.S. and internationally for a hackathon hosted at SpaceX, along with a weekend filled with fun and growth. This summit became the largest teenage girl hackathon in the U.S. this year, in partnership with Girls Who Code and Kode with Klossy.</div>
-              <Link href="https://ascend.hackclub.com" className="text-white italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-white">Learn more about Ascend</Link>
-            </div>
-            <Image alt="" src="https://ascend.hackclub.com/moon.png" className="h-[150%] w-auto absolute -top-[10vh] -right-[10vh] opacity-50 md:opacity-100" height={800} width={800}></Image>
-          </div>
-        </div>
-        
         {/* TODO: set grid-rows on large back to 2 */}
         <div id="bento" className="w-full grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 my-8">
           <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/1events-card-min.jpg" tintColor="#69346D" href="/events" title="Events" description="One-day coding events that help girls and gender minorities write their first lines of code" className="md:col-span-1 lg:col-span-2 self-stretch" />
