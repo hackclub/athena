@@ -2,6 +2,7 @@ import Card from "@/components/Card";
 import Spotlight from "@/components/Spotlight";
 import { AirtableSpotlightManager } from "@/lib/airtable";
 import { SpotlightPost } from "@/lib/spotlight";
+import AthenaAwardsCard from "@/components/AthenaAwardsCard";
 import Image from "next/image";
 import Link from "next/link";
  
@@ -12,27 +13,21 @@ export default async function Home() {
   const data = await new AirtableSpotlightManager().getLatestRecord();
   const post: SpotlightPost = data.fields as unknown as SpotlightPost;
   return (
-    <>
-      <Link href="https://hackclub.com" className="relative top-0 left-[5vw]">
+    <div className = "relative">
+      <Link href="https://hackclub.com" className="hidden lg:block lg:absolute z-40 top-0 left-[5vw]">
         <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
       </Link>
+    <AthenaAwardsCard/>
+
       <div className="w-full text-left px-6 lg:px-32 mb-16">
+      <hr className = "py-10"/>
+
+      <div className="text-2xl md:text-4xl font-bold">Curious what else we do?</div>
         <div className="text-6xl md:text-9xl font-bold">Athena</div>
         <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>
         
         <div className='w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 my-8'>
-         
-          <div className="col-span-full md:col-span-full w-full h-[70vh] relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#692229] via-[#8C2E37] to-[#993E47] overflow-hidden transition">
-            <div className="relative z-0 h-full">
-              <div className="text-lg md:text-xl font-bold text-white mb-3">Presenting the Athena Awards:</div>
-              <Image alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdc8c09039207e203df13effe406e2d289e24a13_image.png" className="md:max-h-[40vh] object-cover w-auto" width={1121} height={390} />
-              <div className="text-white text-xl md:w-3/5 line-clamp-4 py-4">Earn a <b>funded trip to a hackathon in New York City</b> as well as other <b>awesome prizes</b> by spending time coding during the <b>Athena Awards</b>, an event for gender minorities in STEM.</div>
-              <Link href="/awards" className="absolute bottom-0 border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white inline-block text-lg hover:-rotate-[4deg] hover:p-5 font-bold decoration-transparent transition-all hover:decoration-white">Sign up for free stickers</Link>
-            </div>
-            <Image alt="" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/a7004ed60a6669e4fda5afab93d6894b4dc03e21_demo_logo.svg" className="h-[100%] w-auto absolute -top-[4vh] -right-[10vh] opacity-25 md:opacity-100" height={800} width={800}></Image>
-          </div>
-
           <div className="col-span-full md:col-span-full w-full h-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
             <div className="relative z-0">
               <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
@@ -69,6 +64,6 @@ export default async function Home() {
           
         </div>
       </div>
-    </>
+    </div>
   );
 }
