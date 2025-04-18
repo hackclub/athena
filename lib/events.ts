@@ -2,7 +2,6 @@ import { extractColors } from 'extract-colors';
 import axios from 'axios';
 import sharp from 'sharp';
 import { FinalColor } from "extract-colors/lib/types/Color";
-import { cache } from "react";
 import { AirtableEventsManager } from './airtable';
 import { AirtableEventRecord, EventWithColors, Event } from '@/types'
 import { hackClubLogo, defaultAthenaPhoto } from '@/constants'
