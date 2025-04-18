@@ -27,9 +27,9 @@ export default function AthenaAwardsCard(){
 
             <div className="p-12 lg:px-32 lg:pb-32 flex flex-col gap-4">
             <h1 className = "py-3 text-2xl md:text-4xl font-bold">You&apos;re invited to the best ever hackathon.</h1>
-            <p className = "text-lg md:text-2xl">All you need to do to accept your invite is code <b className = "text-red">three technical projects in 30 hours</b>.</p>
             <p className = "text-lg md:text-2xl">Be one of  <b className = "text-red">100 female and nonbinary hackers</b> who attend our end of year <b className = "text-red">high school hackathon</b> in <b className = "text-red">New York City</b> by completing the Athena Awards.</p>
-            <p className = "text-lg md:text-2xl">One of the <b className = "text-red">top 70 coders</b> who complete the program? We&apos;ll grant you a <b className = "text-red">travel stipend</b> to cover your travel to NYC.</p>
+            <p className = "text-lg md:text-2xl">All you need to do to accept your invite is code <b className = "text-red">three technical projects in 30 hours</b>.</p>
+            <p className = "text-lg md:text-2xl">One of the <b className = "text-red">top 70 coders</b> who complete the program? We&apos;ll also grant you a <b className = "text-red">travel stipend</b> to cover your travel to NYC.</p>
             <h1 className = "py-3 text-2xl md:text-4xl font-bold">Can&apos;t join us in New York City?</h1>
             <p className = "text-lg md:text-2xl">No problem — every hour you code during the Athena Awards will earn you our currency, <b className = "text-red">artifacts</b>. Redeem your artifacts for incredible prizes.</p>
             </div>
