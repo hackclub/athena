@@ -40,9 +40,9 @@ export default function Projects() {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <div className="mt-2 text-center">
-                            <p className="text-black font-semibold text-lg">&quot;{item.title || "Project Name"}&quot; by {item.author || "Name"}</p>
-                            <p className="text-black italic">{item.date || "Month, Date"}</p>
+                        <div className="mt-2 text-center flex flex-col ">
+                            <span className="text-red font-semibold text-lg">{item.title || "Project Name"}</span>
+                            <span>{item.author || "Name"} {item.date || "Month, Date"}</span>
                         </div>
                     </div>
                 </div>
@@ -55,12 +55,12 @@ export default function Projects() {
                     <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
                     
                     <div className="fixed inset-0 flex items-center justify-center p-4">
-                        <DialogPanel className="w-full max-w-4xl rounded-lg bg-white p-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <DialogPanel className="w-[600px] max-w-4xl rounded-lg bg-white p-6">
+                            <div className="flex flex-col gap-6">
                                 <div className="flex flex-col space-y-4">
                                     <div>
                                         <span className="text-xl font-bold text-red">&quot;{item.title || "Project Name"}&quot;</span>
-                                        <span className="font-medium">by {item.author || "Name"}</span>
+                                        <br/><span className="font-medium">by {item.author || "Name"}</span>
                                         <span className="italic block mt-1">{item.date || "Month, Date"}</span>
                                         
                                     </div>
