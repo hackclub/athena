@@ -47,7 +47,7 @@ export default async function Home() {
           </div>
 
           {/* Ascend */}
-          <div className="hidden col-span-full w-full h-[325px] relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
+          <div className=" col-span-full w-full h-[325px] relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
             <div className="relative z-0">
               <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
               <Image alt="Ascend Event" src="https://cloud-rnls34zc7-hack-club-bot.vercel.app/0reduced-whitespace-ascend-logo.png" className="max-h-[15vh] w-auto" width={1121} height={390} />
