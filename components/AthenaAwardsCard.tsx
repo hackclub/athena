@@ -1,32 +1,46 @@
+import { Sign } from "crypto"
 import Image from "next/image"
 import Link from "next/link"
+
+const SignUp = ({className}: {className?: string}) => {
+  return (
+    <div className = {`flex flex-row gap-4 py-10 ${className}`}>
+    <Link href="/awards" className="w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Get started</Link>
+    <Link href="https://forms.hackclub.com/athena-awards-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers</Link>
+  </div>
+  )
+}
 export default function AthenaAwardsCard(){
     return (
     <>
-        <div className="col-span-full md:col-span-full w-full h-max md:h-[110vh] relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#692229] from-20% via-[#8C2E37] via-70% to-[#993E47]/0 overflow-hidden transition">
+        <div className="col-span-full md:col-span-full w-full h-max lg:h-[105vh] relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#8C2E37] from-0%  via-[#8C2E37]/80 via-65% to-[#993E47]/0 overflow-hidden transition">
+            
             <div className="relative z-20 h-full">
-              <div className="text-3xl md:text-6xl font-bold text-white mb-3 z-20">Now presenting</div>
+              <div className="text-2xl md:text-5xl font-bold text-white mb-3 z-20">Now presenting</div>
               <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Awards</div>
 
-              <Image alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdc8c09039207e203df13effe406e2d289e24a13_image.png" className="md:max-h-[40vh] object-cover w-auto" width={1121} height={390} />
+              <Image alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdc8c09039207e203df13effe406e2d289e24a13_image.png" className="md:max-h-[13vh] object-cover w-auto" width={1121} height={390} />
               <div className="text-white text-xl md:w-3/5 py-4">
-              <span>Code <b>3 projects in 30 hours</b> to earn the <b>Athena Award</b>.</span>
-              <ul>
-                <li>Win a flight to a <b>hackathon in New York City</b> and other awesome prizes.</li>
-              </ul>
+              
+                <span>Code <b>3 projects in 30 hours</b> to earn the <b>Athena Award</b>.</span>
+                <ul className = "list-inside list-disc">
+                  <li>Meet other awesome <b className = "px-1 bg-[#F34B5C]">girls and gender diverse programmers</b> at Hack Club's end-of-year <b className = "px-1 bg-[#F34B5C]">New York City</b> hackathon. Travel stipends available!</li>
+                  <li>Earn <b className = "px-1 bg-[#F34B5C]">Framework 12 laptops, iPads and other awesome tech</b> along the way to help you keep on creating.</li>
+                  <li>We'll mail you a <b className = "px-1 bg-[#F34B5C]">physical certificate</b> to certify your technical skills.</li>
+                </ul>
               </div>
 
-              <div className = "flex flex-row gap-4">
-                <Link href="/awards" className="w-max border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Get started</Link>
-                <Link href="https://forms.hackclub.com/athena-awards-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers</Link>
-              </div>
+              <SignUp/>
+
+              <h1 className = "relative text-2xl md:text-4xl font-bold text-[#F34B5C]">You&apos;re invited to the best ever hackathon.</h1>
+
             </div>
-            <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/a7004ed60a6669e4fda5afab93d6894b4dc03e21_demo_logo.svg" className="h-[70%] w-auto absolute z-0 -top-[4vh] -right-[10vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
+            <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/559ad7ea83bf62dac0eccb386a99861819ff9725_demo_logo.svg" className="h-[70%] w-auto absolute z-0 -top-[4vh] -right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
             </div>
+
           <div>
 
-            <div className="p-12 lg:px-32 lg:pb-32 flex flex-col gap-4">
-            <h1 className = "py-3 text-2xl md:text-4xl font-bold">You&apos;re invited to the best ever hackathon.</h1>
+            <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
             <p className = "text-lg md:text-2xl">Be one of  <b className = "text-red">100 female and nonbinary hackers</b> who attend our end of year <b className = "text-red">high school hackathon</b> in <b className = "text-red">New York City</b> by completing the Athena Awards.</p>
             <p className = "text-lg md:text-2xl">All you need to do to accept your invite is code <b className = "text-red">three technical projects in 30 hours</b>.</p>
             <p className = "text-lg md:text-2xl">One of the <b className = "text-red">top 70 coders</b> who complete the program? We&apos;ll also grant you a <b className = "text-red">travel stipend</b> to cover your travel to NYC.</p>
@@ -88,6 +102,7 @@ export default function AthenaAwardsCard(){
                 <div className = "text-center p-2 bg-[#ebb33d] text-black tracking-wide">placeholder</div>
               </div> 
             </div>
+            <SignUp className = "items-center justify-center" />
           </div>
         </div>
     </>
