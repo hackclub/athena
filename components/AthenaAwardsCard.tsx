@@ -1,38 +1,75 @@
+'use client'
 import { Sign } from "crypto"
 import Image from "next/image"
 import Link from "next/link"
+import { Tooltip } from 'react-tooltip'
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import { FormEvent } from "react"
 
-const SignUp = ({className}: {className?: string}) => {
+async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any){
+  event.preventDefault()
+  const formData = new FormData(event.currentTarget)
+  const email = String(formData.get("email"))
+  router.push(`https://athena.hackclub.com/awards?email=${email}`) // update this url to actual link
+  
+  }
+
+
+const SignUp = ({className, buttonClicked, setButtonClicked, router}: {className?: string, buttonClicked: boolean, setButtonClicked: (value: any) => void, router: any}) => {
   return (
-    <div className = {`flex flex-row gap-4 py-10 ${className}`}>
-    <Link href="/awards" className="w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Get started</Link>
+    <div className = {`flex flex-row gap-4 pt-10 ${className}`}>
+      { buttonClicked 
+        ? <form onSubmit={(e) => handleEmailSubmit(e, router)} className = "w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent ">
+          <input placeholder="orpheus@mail.com" required type="text" name="email" id="email"/>
+          <input type = "submit" value = "Submit" className = "text-[#8C2E37] uppercase font-bold"/>
+        </form>
+        : 
+        <button className = "w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white" onClick={() => setButtonClicked(true)}>start</button>
+      }
+    
     <Link href="https://forms.hackclub.com/athena-awards-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers</Link>
-  </div>
+    </div>
+
   )
 }
 export default function AthenaAwardsCard(){
+  const [ buttonClicked, setButtonClicked ] = useState(false);
+  const router = useRouter()
     return (
     <>
-        <div className="col-span-full md:col-span-full w-full h-max lg:h-[105vh] relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#8C2E37] from-0%  via-[#8C2E37]/80 via-65% to-[#993E47]/0 overflow-hidden transition">
+        <div className="col-span-full md:col-span-full w-full h-max lg:h-[110vh] relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#8C2E37] from-0%  via-[#8C2E37]/80 via-60% to-[#993E47]/0 overflow-hidden transition">
             
             <div className="relative z-20 h-full">
-              <div className="text-2xl md:text-5xl font-bold text-white mb-3 z-20">Now presenting</div>
-              <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Awards</div>
+              <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div>
 
+              <div className = "flex flex-row gap-4">
               <Image alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdc8c09039207e203df13effe406e2d289e24a13_image.png" className="md:max-h-[13vh] object-cover w-auto" width={1121} height={390} />
-              <div className="text-white text-xl md:w-3/5 py-4">
+              <Image alt="MIT Logo" src="https://brand.mit.edu/sites/default/files/styles/image_text_2x/public/2023-08/MIT-logo-red-textandimage.png?itok=RNoAwZvy" className="md:max-h-[13vh] object-cover w-auto" width={1121} height={390} />
+              <Image alt="GitHub Logo" src="https://pngimg.com/d/github_PNG23.png" className="md:max-h-[13vh] object-cover w-auto" width={1121} height={390} />
+
+              </div>
+              <div className="text-white text-2xl md:w-2/3 py-4">
               
-                <span>Code <b>3 projects in 30 hours</b> to earn the <b>Athena Award</b>.</span>
-                <ul className = "list-inside list-disc">
-                  <li>Meet other awesome <b className = "px-1 bg-[#F34B5C]">girls and gender diverse programmers</b> at Hack Club's end-of-year <b className = "px-1 bg-[#F34B5C]">New York City</b> hackathon. Travel stipends available!</li>
-                  <li>Earn <b className = "px-1 bg-[#F34B5C]">Framework 12 laptops, iPads and other awesome tech</b> along the way to help you keep on creating.</li>
-                  <li>We'll mail you a <b className = "px-1 bg-[#F34B5C]">physical certificate</b> to certify your technical skills.</li>
+              <Tooltip id="info" className = "max-w-96"/>
+                <ul className = "list-inside list-decimal">
+                  <li>Girl? Code projects, earn prizes - including Framework 12 laptops and iPads.</li>
+                  <li>Earn the{' '}
+                    <b data-tooltip-id="info" data-tooltip-content="The Athena Award is a certification of technical excellence from Hack Club, MIT, and GitHub. We believe that Athena Award recipients will be in the top 5% of technical young women ages 13-18 worldwide.">Athena Award </b> 
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 inline">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                     </svg>
+                  from Hack Club, MIT, and GitHub when you hit 30 hours.
+                  </li>
+                 <li>Every recipient is invited to the 2025 end of year hackathon in <b>New York City.</b> Top 70 get travel stipends!</li>
                 </ul>
               </div>
 
-              <SignUp/>
+              <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router}/>
+              <span className = "text-2xl text-white my-4">For girls and nonbinary students ages 18 and under. Closes December 31st 2025.</span>
 
-              <h1 className = "relative text-2xl md:text-4xl font-bold text-[#F34B5C]">You&apos;re invited to the best ever hackathon.</h1>
+
+              <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#F34B5C]">You&apos;re invited to the best ever hackathon.</h1>
 
             </div>
             <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/559ad7ea83bf62dac0eccb386a99861819ff9725_demo_logo.svg" className="h-[70%] w-auto absolute z-0 -top-[4vh] -right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
@@ -102,7 +139,7 @@ export default function AthenaAwardsCard(){
                 <div className = "text-center p-2 bg-[#ebb33d] text-black tracking-wide">placeholder</div>
               </div> 
             </div>
-            <SignUp className = "items-center justify-center" />
+            <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className = "items-center justify-center *:border-black"/>
           </div>
         </div>
     </>
