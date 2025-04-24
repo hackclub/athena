@@ -25,25 +25,8 @@ export default async function Home() {
           
           <div className="h-fit flex flex-col col-span-full lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-center">
             {/* Athena Awards */}
-            <div className="h-full lg:h-[340px] col-span-full lg:col-span-2 flex flex-col lg:flex-row justify-between h-full w-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#692229] via-[#8C2E37] to-[#993E47] overflow-hidden transition">
-              <div className="relative z-0 h-full w-full lg:w-1/2">
-                <div className="text-lg md:text-xl font-bold text-white mb-3">Presenting the Athena Awards:</div>
-                <div className="text-white text-lg xl:text-xl md:w-full py-4">
-                  Earn a <b>funded trip to a hackathon in New York City</b> as well as other <b>awesome prizes</b> by spending time coding during the <b>Athena Awards</b>, an event for gender minorities in STEM.
-                </div>
-                <Link href="/awards" className="block lg:hidden xl:block w-fit border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white inline-block text-lg hover:-rotate-[4deg] hover:p-5 font-bold decoration-transparent transition-all hover:decoration-white whitespace-nowrap">
-                  Sign up for free stickers
-                </Link>
-              </div>
-              <div className="z-9999 h-full w-full lg:w-1/2 flex flex-col gap-5 items-start lg:mt-2 lg:items-center justify-center">
-                <img alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdc8c09039207e203df13effe406e2d289e24a13_image.png" className="md:max-h-[250px] w-auto" />
-                <Link href="/awards" className="hidden lg:block xl:hidden border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white inline-block text-normal xl:text-lg hover:-rotate-[4deg] hover:p-5 font-bold decoration-transparent transition-all hover:decoration-white whitespace-nowrap">
-                  Sign up for free stickers
-                </Link>
-              </div>
-            </div>
             {/* Stories */}
-            <Card cardType="tinted" image="http://localhost:3002/_next/image?url=https%3A%2F%2Fcloud-2i9tgp21k-hack-club-bot.vercel.app%2F0p1050166.jpg&w=1920&q=75" tintColor="#69346D" href="/stories" title="Stories" description="Check out the awesome projects and stories from Athena members!" className="lg:col-span-1 h-[120px] h-[340px] lg:max-h-[500px] self-stretch" />
+            <Card cardType="tinted" image="http://localhost:3002/_next/image?url=https%3A%2F%2Fcloud-2i9tgp21k-hack-club-bot.vercel.app%2F0p1050166.jpg&w=1920&q=75" tintColor="#69346D" href="/stories" title="Stories" description="Check out the awesome projects and stories from Athena members!" className="lg:col-span-full h-[120px] h-[340px] lg:max-h-[500px] self-stretch" />
           </div>
 
           {/* Ascend */}
