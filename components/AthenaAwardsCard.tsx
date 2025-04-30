@@ -1,5 +1,4 @@
 'use client'
-import { Sign } from "crypto"
 import Image from "next/image"
 import Link from "next/link"
 import { Tooltip } from 'react-tooltip'
@@ -11,7 +10,7 @@ async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any)
   event.preventDefault()
   const formData = new FormData(event.currentTarget)
   const email = String(formData.get("email")).replace("+", "%2b")
-  router.push(`https://athena.hackclub.com/awards?email=${email}`) // update this url to actual link
+  router.push(`https://athena.hackclub.com/awards?email=${email}&utm_source=athena_landing`) // update this url to actual link
   
   }
 
