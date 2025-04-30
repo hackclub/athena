@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/awards",
+        source: "/award",
         destination: "https://awards.athena.a.hackclub.dev",
         permanent: false
       }
