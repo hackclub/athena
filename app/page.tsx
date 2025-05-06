@@ -1,7 +1,7 @@
 import Card from "@/components/Card";
-import Spotlight from "@/components/Spotlight";
-import { AirtableSpotlightManager } from "@/lib/airtable";
-import { SpotlightPost } from "@/lib/spotlight";
+//import Spotlight from "@/components/Spotlight";
+//import { AirtableSpotlightManager } from "@/lib/airtable";
+//import { SpotlightPost } from "@/lib/spotlight";
 import Image from "next/image";
 import Link from "next/link";
  
@@ -9,8 +9,8 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  const data = await new AirtableSpotlightManager().getLatestRecord();
-  const post: SpotlightPost = data.fields as unknown as SpotlightPost;
+  //const data = await new AirtableSpotlightManager().getLatestRecord();
+  //const post: SpotlightPost = data.fields as unknown as SpotlightPost;
   return (
     <>
       <Link href="https://hackclub.com" className="relative top-0 left-[5vw]">
