@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         source: "/award",
         destination: "https://awards.athena.a.hackclub.dev",
         permanent: false
+      },
+      {
+        source: "/awards",
+        destination: "https://awards.athena.a.hackclub.dev",
+        permanent: false
       }
     ]
   },
