@@ -14,8 +14,8 @@ export default async function Home() {
   const post: SpotlightPost = data.fields as unknown as SpotlightPost;
   return (
     <div className = "relative">
-      <Link href="https://hackclub.com" className="hidden lg:block lg:absolute z-40 top-0 left-[5vw]">
-        <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
+      <Link href="https://hackclub.com" className="block absolute z-40 top-0 left-[5vw]">
+        <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[10vh] sm:h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
       </Link>
     <AthenaAwardsCard/>
 

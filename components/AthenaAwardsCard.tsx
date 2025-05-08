@@ -62,7 +62,7 @@ export default function AthenaAwardsCard(){
               <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className="mb-10"/>
               <span className = "text-2xl text-[#D35648] my-4">For girls and nonbinary students ages 18 and under. Closes December 31st 2025.</span>
             </div>
-            <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bee04c282d692e6134762edd5a860546454d0629_demo_logo.svg" className="w-auto absolute z-0 -top-[4vh] right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
+            <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bee04c282d692e6134762edd5a860546454d0629_demo_logo.svg" className="w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
             </div>
 
           <div>
