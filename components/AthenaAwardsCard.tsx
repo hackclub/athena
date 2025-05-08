@@ -41,13 +41,8 @@ export default function AthenaAwardsCard(){
             
             <div className="relative z-20 h-full">
               <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div>
+              <div className="text-2xl md:text-4xl font-bold text-white mb-3 z-20">By Hack Club</div>
 
-              <div className = "flex flex-row flex-wrap gap-4 sm:justify-between md:w-3/5 *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
-                <Image alt="Girls Who Code" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/ec501a6f238ca63928f34ba2232b7f8863386597_gwc_final-logo_white.png" width={2021} height={390} />
-                <Image alt="MIT Logo" src="https://brand.mit.edu/sites/default/files/styles/image_text_2x/public/2023-08/MIT-logo-red-textandimage.png?itok=RNoAwZvy" width={1121} height={390} />
-                <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/dae512a38880f626ef470a28755548217f136b2e_github_logo_white.png" width={1121} height={390} />
-
-              </div>
               <div className="text-white text-2xl md:w-2/3 py-4">
               
               <Tooltip id="info" className = "max-w-96"/>
@@ -58,7 +53,7 @@ export default function AthenaAwardsCard(){
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 inline">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                      </svg>
-                  from Hack Club, MIT, and GitHub when you hit 30 hours.
+                  from Hack Club, recognized by MIT and GitHub, when you hit 30 hours.
                   </li>
                  <li>Every recipient is invited to the 2025 end of year hackathon in <b>New York City.</b> Top 70 get travel stipends!</li>
                 </ul>
@@ -71,10 +66,19 @@ export default function AthenaAwardsCard(){
             </div>
 
           <div>
+          <div className = "py-6">
 
             <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
+              <h2 className = "relative text-2xl md:text-4xl font-bold text-[#D35648]">In collaboration with:</h2>
+                <div className = "flex flex-row flex-wrap gap-10 *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
+                  <Image alt="Girls Who Code" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b665896a3d2052c8e9a56755f9aab6bf49a576d3_gwc_final-logo_black.png" width={2021} height={390} />
+                  <Image alt="MIT Logo" src="https://brand.mit.edu/sites/default/files/styles/image_text_2x/public/2023-08/MIT-logo-red-textandimage.png?itok=RNoAwZvy" width={1121} height={390} />
+                  <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
+                </div>
             <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">You&apos;re invited to the best ever hackathon.</h1>
-            <p className = "text-lg md:text-2xl">Be one of  <b className = "text-[#D35648]">100 female and nonbinary hackers</b> who attend our end of year <b className = "text-[#D35648]">high school hackathon</b> in <b className = "text-[#D35648]">New York City</b> by completing the Athena Awards.</p>
+            
+
+            <p className = "text-lg md:text-2xl">Be one of  <b className = "text-[#D35648]">100 female and nonbinary hackers</b> who attend Hack Club's end of year <b className = "text-[#D35648]">high school hackathon</b> in <b className = "text-[#D35648]">New York City</b> by completing the Athena Awards.</p>
             <p className = "text-lg md:text-2xl">All you need to do to accept your invite is code <b className = "text-[#D35648]">three technical projects in 30 hours</b>.</p>
             <p className = "text-lg md:text-2xl">One of the <b className = "text-[#D35648]">top 70 coders</b> who complete the program? We&apos;ll also grant you a <b className = "text-[#D35648]">travel stipend</b> to cover your travel to NYC.</p>
             <h1 className = "py-3 text-2xl md:text-4xl font-bold">Can&apos;t join us in New York City?</h1>
@@ -135,8 +139,20 @@ export default function AthenaAwardsCard(){
                 <div className = "text-center p-2 bg-[#ebb33d] text-black tracking-wide">iPad (11 inch)</div>
               </div> 
             </div>
+            <div className="lg:pt-4 pt-0 flex flex-col gap-4">
+            <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">All Collaborators:</h1>
+              <div className = "flex flex-row flex-wrap gap-4 sm:justify-between *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
+                  <Image alt="Girls Who Code" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b665896a3d2052c8e9a56755f9aab6bf49a576d3_gwc_final-logo_black.png" width={2021} height={390} />
+                  <Image alt="MIT Logo" src="https://brand.mit.edu/sites/default/files/styles/image_text_2x/public/2023-08/MIT-logo-red-textandimage.png?itok=RNoAwZvy" width={1121} height={390} />
+                  <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
+                  <Image alt="First Robotics Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c62d8ebaffc63403ab0d8a3d64954e3fcf2b4483_first_vertical_rgb.png" width={1121} height={390} />
+                  <Image alt="Congressional App Challenge" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0e51a14a2e4e9bbb74952d7765983c47e5873c3e_image.png" width={1121} height={390} />
+
+              </div>
+            </div>
             <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className = "items-center justify-center *:border-black"/>
           </div>
+        </div>
         </div>
     </>
     )
