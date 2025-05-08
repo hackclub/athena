@@ -78,7 +78,7 @@ export default function AthenaAwardsCard(){
             <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">You&apos;re invited to the best ever hackathon.</h1>
             
 
-            <p className = "text-lg md:text-2xl">Be one of  <b className = "text-[#D35648]">100 female and nonbinary hackers</b> who attend Hack Club's end of year <b className = "text-[#D35648]">high school hackathon</b> in <b className = "text-[#D35648]">New York City</b> by completing the Athena Awards.</p>
+            <p className = "text-lg md:text-2xl">Be one of  <b className = "text-[#D35648]">100 female and nonbinary hackers</b> who attend Hack Club&apos;s end of year <b className = "text-[#D35648]">high school hackathon</b> in <b className = "text-[#D35648]">New York City</b> by completing the Athena Awards.</p>
             <p className = "text-lg md:text-2xl">All you need to do to accept your invite is code <b className = "text-[#D35648]">three technical projects in 30 hours</b>.</p>
             <p className = "text-lg md:text-2xl">One of the <b className = "text-[#D35648]">top 70 coders</b> who complete the program? We&apos;ll also grant you a <b className = "text-[#D35648]">travel stipend</b> to cover your travel to NYC.</p>
             <h1 className = "py-3 text-2xl md:text-4xl font-bold">Can&apos;t join us in New York City?</h1>
