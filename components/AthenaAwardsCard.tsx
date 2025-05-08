@@ -147,7 +147,7 @@ export default function AthenaAwardsCard(){
                   <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
                   <Image alt="First Robotics Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c62d8ebaffc63403ab0d8a3d64954e3fcf2b4483_first_vertical_rgb.png" width={1121} height={390} />
                   <Image alt="Congressional App Challenge" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0e51a14a2e4e9bbb74952d7765983c47e5873c3e_image.png" width={1121} height={390} />
-
+                  <Image alt="Google Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" width={1121} height={390} />
               </div>
             </div>
             <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className = "items-center justify-center *:border-black"/>
