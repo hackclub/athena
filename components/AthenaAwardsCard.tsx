@@ -38,11 +38,9 @@ export default function AthenaAwardsCard(){
     return (
     <>
         <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D35648] from-0%  via-[#D35648]/80 via-60% to-[#993E47]/0 overflow-hidden transition">
-            
             <div className="relative z-20 h-full">
-              <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div>
-              <div className="text-2xl md:text-4xl font-bold text-white mb-3 z-20">By Hack Club</div>
-
+              {/* <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div> */}
+              <img className="w-3/5" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3ce57999f27e7e3b0d255150872b6e9fde7afea5_19-cropped.svg"/>
               <div className="text-white text-2xl md:w-2/3 py-4">
               
               <Tooltip id="info" className = "max-w-96"/>
