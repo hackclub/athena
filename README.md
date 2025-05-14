@@ -1,6 +1,4 @@
 # Athena
-# Days of Service
-
 Hack Clubbers sharing their love and passion for coding with gender minorities from underprivileged backgrounds who lack access to CS education. Funded by [Hack Club](https://hackclub.com) and fully open sourced. 
 
 ## 🫶🏼 We've already organized 🫶🏼 
