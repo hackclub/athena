@@ -19,7 +19,7 @@ export default async function EventPage() {
     <Background>
       <div className="px-6 lg:px-32 py-16">
         <Link href="/" className="text-2xl font-bold flex gap-2 transition-all items-center hover:gap-4 cursor-pointer"><FaArrowLeftLong /> Athena</Link>
-        <div className="text-5xl font-bold">Events</div>
+        <div className="text-5xl font-bold mt-4">Events</div>
         <div className="mt-4">
           <Card cardType="bordered" className="!border-red">
             <span className="block text-2xl font-bold">Events bring people together.</span>
