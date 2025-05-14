@@ -57,3 +57,11 @@ export interface EventWithColors extends Event {
   tagColor: string;
   logoPreviewBackgroundColor: string;
 }
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+}
+
