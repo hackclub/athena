@@ -20,7 +20,8 @@ export default function Events({ data }: { data: EventWithColors[] } ) {
         location={data[data.length - 1].location || ''}
         date={data[data.length - 1].startDate || ''}
         logo={data[data.length - 1].logo || hackClubLogo}
-        github_link={data[data.length - 1].githubLink || hackClubGitHub}
+        githubLink={data[data.length - 1].githubLink || hackClubGitHub}    
+        website={data[data.length - 1].website || hackClubGitHub}
         description={data[data.length - 1].description || ''}
         photos={data[data.length - 1].photos || [defaultAthenaPhoto]}
         photocreds={data[data.length - 1].photocreds || ''}
@@ -39,7 +40,8 @@ export default function Events({ data }: { data: EventWithColors[] } ) {
               location={event.location || ''}
               date={event.startDate || ''}
               logo={event.logo || hackClubLogo}
-              github_link={event.githubLink || hackClubGitHub}
+              githubLink={event.githubLink || hackClubGitHub}
+              website={event.website || hackClubGitHub}
               description={event.description || ''}
               photos={event.photos || [defaultAthenaPhoto]}
               photocreds={event.photocreds || ''}
@@ -69,7 +71,8 @@ export default function Events({ data }: { data: EventWithColors[] } ) {
                 location={event.location || ''}
                 date={event.startDate || ''}
                 logo={event.logo || hackClubLogo}
-                github_link={event.githubLink || hackClubGitHub}
+                githubLink={event.githubLink || hackClubGitHub}
+                website={event.website || hackClubGitHub}
                 description={event.description || ''}
                 photos={event.photos || [defaultAthenaPhoto]}
                 photocreds={event.photocreds || ''}

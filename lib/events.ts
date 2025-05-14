@@ -36,7 +36,8 @@ export async function fetchEvents() {
       logo: eventRecord.fields.Logo,
       photos: photos,
       photocreds: eventRecord.fields['Photo Creds'],
-      website: eventRecord.fields.Website
+      website: eventRecord.fields.Website,
+      githubLink: eventRecord.fields['GitHub Link']
     };
   });
 }
