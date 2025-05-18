@@ -5,6 +5,11 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 
 export default function Projects() {
     const [isOpen, setIsOpen] = useState<number | null>(null);
+    const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
+
+    const handleImageLoad = (index: number) => {
+        setLoadedImages(prev => ({ ...prev, [index]: true }));
+    };
 
     return (
         <div className='grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 my-8'>
@@ -12,7 +17,7 @@ export default function Projects() {
             <Fragment key={index}>
                 <div 
                     onClick={() => setIsOpen(index)}
-                    className="sm:w-auto flex flex-col items-center relative p-2"
+                    className="sm:w-auto w-[400px] flex flex-col items-center relative p-2"
                     style={{
                         //transform: `rotate(${(index % 3 === 0) ? -3 : (index % 3 === 1) ? 0 : 3}deg)`,
                         transition: 'transform 0.3s ease',
@@ -33,14 +38,16 @@ export default function Projects() {
                             e.currentTarget.style.zIndex = '1';
                         }}
                     >
-                        <div className="relative h-48 overflow-hidden w-full">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden">
+                            <div className={`absolute inset-0 bg-gray-200 animate-pulse ${loadedImages[index] ? 'hidden' : 'block'}`} />
                             <img 
                                 src={item.imageUrl || "/api/placeholder/300/200"} 
                                 alt={item.title || "Project photo"} 
-                                className="w-full h-full object-cover"
+                                className={`w-full h-full object-cover transition-opacity duration-300 ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
+                                onLoad={() => handleImageLoad(index)}
                             />
                         </div>
-                        <div className="mt-2 text-center flex flex-col ">
+                        <div className="mt-2 text-center flex flex-col">
                             <span className="text-red font-semibold text-lg">{item.title || "Project Name"}</span>
                             <span>{item.author || "Name"} {item.date || "Month, Date"}</span>
                         </div>
@@ -70,7 +77,7 @@ export default function Projects() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="h-full w-full rounded-md overflow-hidden">
+                                <div className="relative aspect-[4/3] w-full rounded-md overflow-hidden">
                                     <img 
                                         src={item.imageUrl || "/api/placeholder/600/400"} 
                                         alt={item.title || "Project photo"} 
