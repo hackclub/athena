@@ -21,9 +21,24 @@ export default async function Home() {
         <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>
         
-        <div className='w-full h-fit grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 my-8'>
-          
-         
+        <div className='w-full h-fit grid grid-cols-5 gap-8 my-8'>
+         <div className="lg:h-[340px] col-span-full lg:col-span-full flex max-lg:flex-col-reverse lg:flex-row justify-between h-full w-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#692229] via-[#8C2E37] to-[#993E47] overflow-hidden transition">
+              <div className="relative z-0 h-full w-full lg:w-1/2 flex flex-col gap-4">
+                <div className="text-lg md:text-3xl font-bold text-white">Presenting the Athena Award:</div>
+                <div className="text-white text-lg xl:text-xl md:w-full">
+                  Earn an <b>an invite to a 3-day hackathon in New York City</b> as well as <b>Framework laptops, iPads</b> and other prizes, by spending time coding during the <b>Athena Award</b>!
+                </div>
+                <div className="text-white text-lg xl:text-xl md:w-full">
+                  The Athena Award is for female and gender diverse teenagers.
+                </div>
+                <Link href="https://forms.hackclub.com/athenaprogram" className="mt-auto block lg:hidden xl:block w-fit border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white text-lg hover:-rotate-[2deg] hover:scale-105 font-bold decoration-transparent transition-all hover:decoration-white whitespace-nowrap">
+                  RSVP to be notified on launch
+                </Link>
+              </div>
+              <div className="z-9999 h-full w-full lg:w-1/2 flex flex-col gap-5 items-start lg:mt-2 lg:items-center justify-center">
+                <img alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg" className="md:max-h-[250px] w-auto" />
+              </div>
+            </div>
 
           {/* Ascend */}
           <div className=" col-span-full w-full h-[325px] relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">

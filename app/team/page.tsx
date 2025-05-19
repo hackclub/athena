@@ -23,7 +23,7 @@ export default function TeamPage() {
   },
   {
     name: "Annabel",
-    role: "Gap Year @ hq",
+    role: "Gap Year Engineer @ HQ",
     slack: "@phthallo",
     pronouns: "they/them",
     image: "https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512",
@@ -37,7 +37,7 @@ export default function TeamPage() {
   },
   {
     name: "Phaedra Sanon",
-    role: "Athena Team (Specify)",
+    role: "Athena Team Engineer",
     slack: "@phaedra",
     pronouns: "she/her",
     image: "https://ca.slack-edge.com/T0266FRGM-U05468GUS7J-53ffbb76641b-512",
