@@ -31,7 +31,7 @@ export default async function Home() {
                 <div className="text-white text-lg xl:text-xl md:w-full">
                   The Athena Award is for female and gender diverse teenagers.
                 </div>
-                <Link href="https://forms.hackclub.com/athenaprogram" className="mt-auto block lg:hidden xl:block w-fit border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white text-lg hover:-rotate-[2deg] hover:scale-105 font-bold decoration-transparent transition-all hover:decoration-white whitespace-nowrap">
+                <Link href="https://forms.hackclub.com/athena-award-stickers" className="mt-auto block lg:hidden xl:block w-fit border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white text-lg hover:-rotate-[2deg] hover:scale-105 font-bold decoration-transparent transition-all hover:decoration-white whitespace-nowrap">
                   RSVP to be notified on launch
                 </Link>
               </div>
