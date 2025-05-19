@@ -58,7 +58,7 @@ export default function AthenaAwardsCard(){
               </div>
 
               <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className="mb-10"/>
-              <span className = "text-2xl text-[#D35648] my-4">For girls and nonbinary students ages 18 and under. Closes December 31st 2025.</span>
+              <span className = "text-2xl text-[#D35648] my-4">For girls and nonbinary students ages 18 and under. Closes November 2025.</span>
             </div>
             <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bee04c282d692e6134762edd5a860546454d0629_demo_logo.svg" className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
             </div>
@@ -145,7 +145,10 @@ export default function AthenaAwardsCard(){
                   <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
                   <Image alt="First Robotics Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c62d8ebaffc63403ab0d8a3d64954e3fcf2b4483_first_vertical_rgb.png" width={1121} height={390} />
                   <Image alt="Congressional App Challenge" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0e51a14a2e4e9bbb74952d7765983c47e5873c3e_image.png" width={1121} height={390} />
-                  <Image alt="Google Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" width={1121} height={390} />
+                  <Image alt = "Girl Scouts of Greater New York" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc00ddd41af16e89cb908cd35d4933b5d8770242_girlscoutsnyc-green.png"/>
+                  <Image alt = "The Knowledge House" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b873c50405c464861cd44f8677fa1fc5a2fa4421_tkh_horizontal_purple_logo.png"/>
+                  <Image alt = "Black Girls Code" width={1121} height={390}  src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3856089f0606f05c0606b9918322fc5b736098e6_bgc_orange_logo.png"/>
+
               </div>
             </div>
             <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className = "items-center justify-center *:border-black"/>
