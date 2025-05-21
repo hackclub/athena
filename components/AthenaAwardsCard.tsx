@@ -45,14 +45,14 @@ export default function AthenaAwardsCard(){
               
               <Tooltip id="info" className = "max-w-96"/>
                 <ul className = "list-inside list-decimal text-lg md:text-2xl">
-                  <li>Earn Hack Club's Athena Award, an industry recognized technical certificate.</li>
-                  <li>Travel to New York City for 2025's largest high school hackathon for girls!</li>
+                  <li>Earn Hack Club&apos;s Athena Award, an industry recognized technical certificate.</li>
+                  <li>Travel to New York City for 2025&apos;s largest high school hackathon for girls!</li>
                   <li>Win prizes as you code, including laptops, iPads, Flipper Zeros, headphones and hoodies.</li>
                 </ul>
               </div>
 
               <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className="mb-10"/>
-              <span className = "text-2xl text-[#D35648] my-4">Happening now. You're invited to join a community of creators, built by girls, for girls. In collaboration with:</span>
+              <span className = "text-2xl text-[#D35648] my-4">Happening now. You&apos;re invited to join a community of creators, built by girls, for girls. In collaboration with:</span>
 
             </div>
             <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bee04c282d692e6134762edd5a860546454d0629_demo_logo.svg" className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
@@ -74,14 +74,14 @@ export default function AthenaAwardsCard(){
               </div>
 
             <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">How it works - Code three technical projects by Oct 31st</h1>
-            <p className = "text-lg md:text-2xl">Build three of your own projects, or follow one of Hack Club's tutorials to get started.</p>
+            <p className = "text-lg md:text-2xl">Build three of your own projects, or follow one of Hack Club&apos;s tutorials to get started.</p>
             <p className = "text-lg md:text-2xl">Code for thirty hours and open source your finished projects.</p>
 
             <p className = "text-lg md:text-2xl">Meet other girls in the online community. Ask questions. Get technical support in online meetups and chats. Hack Clubbers will help you finish and deploy your projects.</p>
 
             <p className = "text-lg md:text-2xl text-[#D35648] font-bold">Earn the Athena Award to share on your LinkedIn, college applications, or elsewhere.</p>           
                         <div>
-              <h1 className = "py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">Here's what you can expect:</h1>
+              <h1 className = "py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">Here&apos;s what you can expect:</h1>
               <div className = "grid grid-cols-1 gap-6">
                 {/* <div className = "flex flex-row gap-4 border items-center rounded-lg">
                   <div className = "basis-1/4 p-4">
@@ -115,11 +115,11 @@ export default function AthenaAwardsCard(){
 
               <p>It certifies you have achieved an impressive technical milestone.</p>
 
-              <p>You will also instantly qualify to join Hack Club's NYC hackathon - the nation's largest all-girl hackathon - running from November 14th-November 16th. 250 girls can attend this 36 hour event, and we'll issue nearly 100 travel stipends.</p>
+              <p>You will also instantly qualify to join Hack Club&apos;s NYC hackathon - the nation&apos;s largest all-girl hackathon - running from November 14th-November 16th. 250 girls can attend this 36 hour event, and we&apos;ll issue nearly 100 travel stipends.</p>
               
               <p>Win prizes, enjoy free food, play games and meet cool female tech CEOs!</p>
               
-              <p>Deploying 3 technical projects is not easy. So along your journey, you'll earn "artifacts" to redeem for prizes. Hack Club is ready to give away $100k in prizes for the Athena Award - check out a few below. Get started - the Athena Award is competitive and hard, but also fun and packed with friends. There is no limit to the # of winners. We are here to support you.</p>
+              <p>Deploying 3 technical projects is not easy. So along your journey, you&apos;ll earn &quot;artifacts&quot; to redeem for prizes. Hack Club is ready to give away $100k in prizes for the Athena Award - check out a few below. Get started - the Athena Award is competitive and hard, but also fun and packed with friends. There is no limit to the # of winners. We are here to support you.</p>
               
               <p className = "font-bold">- Christina Asquith, Hack Club Cofounder</p>
             </div>   
