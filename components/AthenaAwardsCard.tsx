@@ -149,7 +149,7 @@ export default function AthenaAwardsCard(){
               <div className = "text-center flex flex-col">
                 <span>
                   <h1 className = "text-5xl text-[#D35648] font-bold">Prizes</h1>
-                  <p className = "text-2xl">Build awesome shit. Win awesome prizes.</p>
+                  <p className = "text-2xl">Build awesome projects. Win awesome prizes.</p>
                 </span>
                 <svg className = "self-end" viewBox="0 0 672 774" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="10" y="10" width="70%" height="70%" fill="white"/>
