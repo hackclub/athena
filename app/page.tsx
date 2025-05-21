@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import AthenaAwardsCard from "@/components/AthenaAwardsCard";
 //import Spotlight from "@/components/Spotlight";
 //import { AirtableSpotlightManager } from "@/lib/airtable";
 //import { SpotlightPost } from "@/lib/spotlight";
@@ -12,36 +13,22 @@ export default async function Home() {
   //const data = await new AirtableSpotlightManager().getLatestRecord();
   //const post: SpotlightPost = data.fields as unknown as SpotlightPost;
   return (
-    <>
-      <Link href="https://hackclub.com" className="relative top-0 left-[5vw]">
-        <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
+    <div className = "relative">
+      <Link href="https://hackclub.com" className="block absolute z-40 top-0 left-[5vw]">
+        <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[10vh] lg:h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
       </Link>
+    <AthenaAwardsCard/>
+
       <div className="w-full text-left px-6 lg:px-32 mb-16">
+      <hr className = "py-10"/>
+
+      <div className="text-2xl md:text-4xl font-bold">Curious what else we do?</div>
         <div className="text-6xl md:text-9xl font-bold">Athena</div>
         <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>
         
-        <div className='w-full h-fit grid grid-cols-5 gap-8 my-8'>
-         <div className="lg:h-[340px] col-span-full lg:col-span-full flex max-lg:flex-col-reverse lg:flex-row justify-between h-full w-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#692229] via-[#8C2E37] to-[#993E47] overflow-hidden transition">
-              <div className="relative z-0 h-full w-full lg:w-1/2 flex flex-col gap-4">
-                <div className="text-lg md:text-3xl font-bold text-white">Presenting the Athena Award:</div>
-                <div className="text-white text-lg xl:text-xl md:w-full">
-                  Earn an <b>an invite to a 3-day hackathon in New York City</b> as well as <b>Framework laptops, iPads</b> and other prizes, by spending time coding during the <b>Athena Award</b>!
-                </div>
-                <div className="text-white text-lg xl:text-xl md:w-full">
-                  The Athena Award is for female and gender diverse teenagers.
-                </div>
-                <Link href="https://forms.hackclub.com/athena-award-stickers" className="mt-auto block lg:hidden xl:block w-fit border border-white/30 bg-[#F34B5C]/60 rounded-lg p-4 uppercase text-white text-lg hover:-rotate-[2deg] hover:scale-105 font-bold decoration-transparent transition-all hover:decoration-white whitespace-nowrap">
-                  RSVP to be notified on launch
-                </Link>
-              </div>
-              <div className="z-9999 h-full w-full lg:w-1/2 flex flex-col gap-5 items-start lg:mt-2 lg:items-center justify-center">
-                <img alt="Athena Awards Event" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg" className="md:max-h-[250px] w-auto" />
-              </div>
-            </div>
-
-          {/* Ascend */}
-          <div className=" col-span-full w-full h-[325px] relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
+        <div className='w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 my-8'>
+          <div className="col-span-full md:col-span-full w-full h-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
             <div className="relative z-0">
               <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
               <Image alt="Ascend Event" src="https://cloud-rnls34zc7-hack-club-bot.vercel.app/0reduced-whitespace-ascend-logo.png" className="max-h-[15vh] w-auto" width={1121} height={390} />
@@ -63,6 +50,6 @@ export default async function Home() {
           
         </div>
       </div>
-    </>
+    </div>
   );
 }
