@@ -20,7 +20,7 @@ const SignUp = ({className, buttonClicked, setButtonClicked, router}: {className
     <div className = {`flex flex-row flex-wrap gap-4 mt-10 ${className && className}`}>
       { buttonClicked 
         ? <form onSubmit={(e) => handleEmailSubmit(e, router)} className = "w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent ">
-          <input className="outline-none" placeholder="orpheus@mail.com" required type="text" name="email" id="email"/>
+          <input className="outline-none" placeholder="orpheus@mail.com" required type="email" name="email" id="email"/>
           <input type = "submit" value = "Submit" className = "text-[#8C2E37] uppercase font-bold"/>
         </form>
         : 
@@ -45,42 +45,85 @@ export default function AthenaAwardsCard(){
               
               <Tooltip id="info" className = "max-w-96"/>
                 <ul className = "list-inside list-decimal text-lg md:text-2xl">
-                  <li>Girl? Code projects, earn prizes - including Framework 12 laptops and iPads.</li>
-                  <li>Earn the{' '}
-                    <b data-tooltip-id="info" data-tooltip-content="The Athena Award is a certification of technical excellence from Hack Club, MIT, and GitHub. We believe that Athena Award recipients will be in the top 5% of technical young women ages 13-18 worldwide.">Athena Award </b> 
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 inline">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                     </svg>
-                  from Hack Club, recognized by MIT and GitHub, when you hit 30 hours.
-                  </li>
-                 <li>Every recipient is invited to the 2025 end of year hackathon in <b>New York City.</b> Top 70 get travel stipends!</li>
+                  <li>Earn Hack Club's Athena Award, an industry recognized technical certificate.</li>
+                  <li>Travel to New York City for 2025's largest high school hackathon for girls!</li>
+                  <li>Win prizes as you code, including laptops, iPads, Flipper Zeros, headphones and hoodies.</li>
                 </ul>
               </div>
 
               <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className="mb-10"/>
-              <span className = "text-2xl text-[#D35648] my-4">For girls and nonbinary students ages 18 and under. Closes November 2025.</span>
+              <span className = "text-2xl text-[#D35648] my-4">Happening now. You're invited to join a community of creators, built by girls, for girls. In collaboration with:</span>
+
             </div>
             <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bee04c282d692e6134762edd5a860546454d0629_demo_logo.svg" className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
             </div>
-
           <div>
           <div className = "py-6">
-
             <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
-              <h2 className = "relative text-2xl md:text-4xl font-bold text-[#D35648]">In collaboration with:</h2>
-                <div className = "flex flex-row flex-wrap gap-10 *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
-                  <Image alt="Girls Who Code" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b665896a3d2052c8e9a56755f9aab6bf49a576d3_gwc_final-logo_black.png" width={2021} height={390} />
-                  <Image alt="MIT Logo" src="https://brand.mit.edu/sites/default/files/styles/image_text_2x/public/2023-08/MIT-logo-red-textandimage.png?itok=RNoAwZvy" width={1121} height={390} />
-                  <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
-                </div>
-            <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">You&apos;re invited to the best ever hackathon.</h1>
-            
+              <div className = "flex flex-row flex-wrap gap-4 sm:justify-between *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
+                <Image alt="Girls Who Code" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b665896a3d2052c8e9a56755f9aab6bf49a576d3_gwc_final-logo_black.png" width={2021} height={390} />
+                <Image alt="MIT School of Engineering Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/fcb35244b5ecccc9dd17efc2fab64994788efa55_mit_soe.png" width={1121} height={390} />
+                <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
+                <Image alt="First Robotics Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c62d8ebaffc63403ab0d8a3d64954e3fcf2b4483_first_vertical_rgb.png" width={1121} height={390} />
+                <Image alt="Congressional App Challenge" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0e51a14a2e4e9bbb74952d7765983c47e5873c3e_image.png" width={1121} height={390} />
+                <Image alt = "Girl Scouts of Greater New York" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc00ddd41af16e89cb908cd35d4933b5d8770242_girlscoutsnyc-green.png"/>
+                <Image alt = "The Knowledge House" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b873c50405c464861cd44f8677fa1fc5a2fa4421_tkh_horizontal_purple_logo.png"/>
+                <Image alt = "Black Girls Code" width={1121} height={390}  src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3856089f0606f05c0606b9918322fc5b736098e6_bgc_orange_logo.png"/>
+                <Image alt = "Code.org" width={1121} height={390} src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3167e98697dc80a930ae15e6079993b883110882_cs4all_fin_cs_codelogo_black_whiteletters.png"/>
+              </div>
 
-            <p className = "text-lg md:text-2xl">Be one of  <b className = "text-[#D35648]">100 female and nonbinary hackers</b> who attend Hack Club&apos;s end of year <b className = "text-[#D35648]">high school hackathon</b> in <b className = "text-[#D35648]">New York City</b> by completing the Athena Awards.</p>
-            <p className = "text-lg md:text-2xl">All you need to do to accept your invite is code <b className = "text-[#D35648]">three technical projects in 30 hours</b>.</p>
-            <p className = "text-lg md:text-2xl">One of the <b className = "text-[#D35648]">top 70 coders</b> who complete the program? We&apos;ll also grant you a <b className = "text-[#D35648]">travel stipend</b> to cover your travel to NYC.</p>
-            <h1 className = "py-3 text-2xl md:text-4xl font-bold">Can&apos;t join us in New York City?</h1>
-            <p className = "text-lg md:text-2xl">No problem — every hour you code during the Athena Awards will earn you our currency, <b className = "text-[#D35648]">artifacts</b>. Redeem your artifacts for incredible prizes.</p>
+            <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">How it works - Code three technical projects by Oct 31st</h1>
+            <p className = "text-lg md:text-2xl">Build three of your own projects, or follow one of Hack Club's tutorials to get started.</p>
+            <p className = "text-lg md:text-2xl">Code for thirty hours and open source your finished projects.</p>
+
+            <p className = "text-lg md:text-2xl">Meet other girls in the online community. Ask questions. Get technical support in online meetups and chats. Hack Clubbers will help you finish and deploy your projects.</p>
+
+            <p className = "text-lg md:text-2xl text-[#D35648] font-bold">Earn the Athena Award to share on your LinkedIn, college applications, or elsewhere.</p>           
+                        <div>
+              <h1 className = "py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">[Placeholder]</h1>
+              <div className = "grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className = "flex flex-row gap-4 border items-center rounded-lg">
+                  <div className = "basis-1/4 p-4">
+                    <img className = "h-36" src = "https://placehold.co/400"/>
+                    <p>First Name</p>
+                    <p>Age, location</p>
+                    <p>GitHub username</p>
+
+                  </div>
+                  <div className = "basis-1/4 grow text-xl">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>
+                </div>
+                <iframe className = "w-full" height="315" src="https://www.youtube.com/embed/S5dKIlBN_1s?si=Fi-7gM_c8GXmVQB7" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              </div>
+            </div>
+
+            <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">You&apos;re invited to the best ever hackathon.</h1>
+            <style>{`
+                @import url(https://fonts.googleapis.com/css2?family=Gaegu&display=swap);
+                .handwritten { 
+                    font-family: "Gaegu", sans-serif;
+                }`}
+              </style>
+            <div className = "*:text-lg *:md:text-2xl handwritten p-8 border border-black -rotate-1 my-4 *:py-2">
+
+              <p>Hack Club wants you to make things. Cool engineering things. Things you love to make.</p>
+              
+              <p>If you code and deploy three technical projects and spend 30 hours of coding by Oct 31st, Hack Club will issue you the <b className = "text-[#D35648]">Athena Award certification.</b></p>
+              
+              <p>This is an exclusive badge for your website/LinkedIn/GitHub that is recognized by colleges like MIT and employers like SpaceX.</p>
+
+              <p>It certifies you have achieved an impressive technical milestone.</p>
+
+              <p>You will also instantly qualify to join Hack Club's NYC hackathon - the nation's largest all-girl hackathon - running from November 14th-November 16th. 250 girls can attend this 36 hour event, and we'll issue nearly 100 travel stipends.</p>
+              
+              <p>Win prizes, enjoy free food, play games and meet cool female tech CEOs!</p>
+              
+              <p>Deploying 3 technical projects is not easy. So along your journey, you'll earn "artifacts" to redeem for prizes. Hack Club is ready to give away $100k in prizes for the Athena Award - check out a few below. Get started - the Athena Award is competitive and hard, but also fun and packed with friends. There is no limit to the # of winners. We are here to support you.</p>
+              
+              <p className = "font-bold">- Christina Asquith, Hack Club Cofounder</p>
+            </div>   
+            
+            <h1 className = "py-3 text-2xl md:text-4xl font-bold">Earn incredible prizes for each project you ship!</h1>
             </div>
 
 
@@ -136,20 +179,6 @@ export default function AthenaAwardsCard(){
                 </svg>
                 <div className = "text-center p-2 bg-[#ebb33d] text-black tracking-wide">iPad (11 inch)</div>
               </div> 
-            </div>
-            <div className="lg:pt-4 pt-0 flex flex-col gap-4">
-            <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">All Collaborators:</h1>
-              <div className = "flex flex-row flex-wrap gap-4 sm:justify-between *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
-                  <Image alt="Girls Who Code" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b665896a3d2052c8e9a56755f9aab6bf49a576d3_gwc_final-logo_black.png" width={2021} height={390} />
-                  <Image alt="MIT Logo" src="https://brand.mit.edu/sites/default/files/styles/image_text_2x/public/2023-08/MIT-logo-red-textandimage.png?itok=RNoAwZvy" width={1121} height={390} />
-                  <Image alt="GitHub Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c6f29f2226f6bb46c0085cf7c9c40eac35099bb_github_logo.png" width={1121} height={390} />
-                  <Image alt="First Robotics Logo" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c62d8ebaffc63403ab0d8a3d64954e3fcf2b4483_first_vertical_rgb.png" width={1121} height={390} />
-                  <Image alt="Congressional App Challenge" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0e51a14a2e4e9bbb74952d7765983c47e5873c3e_image.png" width={1121} height={390} />
-                  <Image alt = "Girl Scouts of Greater New York" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc00ddd41af16e89cb908cd35d4933b5d8770242_girlscoutsnyc-green.png"/>
-                  <Image alt = "The Knowledge House" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b873c50405c464861cd44f8677fa1fc5a2fa4421_tkh_horizontal_purple_logo.png"/>
-                  <Image alt = "Black Girls Code" width={1121} height={390}  src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3856089f0606f05c0606b9918322fc5b736098e6_bgc_orange_logo.png"/>
-
-              </div>
             </div>
             <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className = "items-center justify-center *:border-black"/>
           </div>
