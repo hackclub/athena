@@ -43,8 +43,7 @@ export default function RootLayout({
           {children}
           {/* <div className="w-screen p-6 bg-red"></div> */}
         </Background>
-        <script defer data-domain="athena.hackclub.com" src="https://plausible.io/js/script.outbound-links.js"></script>
-        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+       <script defer data-domain="athena.hackclub.com" src="https://plausible.io/js/script.js"></script>
       </body>
     </html>
   );
