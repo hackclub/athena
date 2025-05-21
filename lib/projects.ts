@@ -1,83 +1,72 @@
 export const projects = [
   {
-    title: "Digital Dreamscape",
-    author: "Olympia",
-    date: "March 1, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
+    title: "CourtConnect",
+    author: "Celeste R.",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/19a19adc4258c91890e0cd382d2bec001b633286_image.png",
+    featured: true,
+    award: true,
+    description: "Winning app of the 2024 Congressional App Challenge in Georgia's Fifth District! CourtConnect is an app designed to bridge communication gaps between judges and jurors, making jury duty more efficient, accessible, and less frustrating. Inspired by her mother, a Superior Court Judge, Celeste built this to help improve the court experience while ensuring time and resources aren't wasted.",
+    demoLink: "https://www.congressionalappchallenge.us/24-ga05/"
+  },
+  {
+    title: "NigiriPad",
+    author: "Jeslyn C.",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/48c4b4cd4f7a6ba52429f5baa2b2dbc01ffa87e0_image.png",
     featured: true,
     award: false,
-    description: "A virtual reality experience that explores the intersection of dreams and technology. This immersive journey takes users through a series of interconnected dreamscapes, each representing different emotional states and memories. The project uses cutting-edge haptic feedback technology to create a truly multisensory experience."
+    description: "A beautifully designed 3-key macropad inspired by sushi! Jeslyn's NigiriPad combines hardware, design, and functional aesthetics to create a custom macropad with hand-painted details.",
+    demoLink: "https://github.com/se1yu/NigiriPad"
   },
   {
-    title: "Eco Symphony",
-    author: "Artemis",
-    date: "April 15, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
-    featured: false,
-    award: true,
-    description: "An interactive sound installation that transforms environmental data into musical compositions. Sensors placed in natural settings collect data on temperature, humidity, wind patterns, and wildlife activity, which is then algorithmically converted into a constantly evolving symphony. The project aims to create deeper connections between humans and their natural environment."
-  },
-  {
-    title: "Heritage Reimagined",
-    author: "Hestia",
-    date: "February 3, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
+    title: "Skygazer",
+    author: "Phaedra S. & Zoya H.",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9885407fc2b748c0aad309b0fbf5b50552647ecd_image.png",
     featured: true,
     award: true,
-    description: "A digital archive project that preserves and reimagines cultural artifacts from endangered historical sites. Using photogrammetry and 3D modeling, the project creates detailed virtual replicas of artifacts and architectural elements, while adding interactive elements that tell the stories behind these treasures. A fusion of preservation and innovation."
+    description: "Skygazer is a tool that helps you find the best stargazing spots near you! Just type in an address, and Skygazer finds an optimal location for clear skies, avoiding light pollution hotspots. This awesome project was built at Ascend, our space-themed hackathon for gender minorities in tech!",
+    demoLink: "https://github.com/ph4iry/skygazer"
   },
   {
-    title: "Quantum Canvas",
-    author: "Apollo",
-    date: "January 20, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
+    title: "F1 Car Aero Design",
+    author: "Meghana M.",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0797e2c84353bdc291c900f88591855ef1465acc_image.png",
     featured: true,
     award: false,
-    description: "An AI-driven painting system that creates artwork based on principles of quantum mechanics. The software interprets quantum fluctuations as creative decisions, resulting in compositions that exist in multiple states simultaneously until viewed. Each generated piece is unique and unreproducible, challenging conventional notions of artistic creation and observation."
+    description: "Meghana designed the aerodynamic structure of an F1 car and is getting it resin printed soon! This unique project shows us a beautiful blend of cutting-edge design and hands-on engineering.",
+    demoLink: "https://github.com/MeghanaM4/MAD16"
   },
   {
-    title: "Urban Pulse",
-    author: "Hermes",
-    date: "May 7, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
+    title: "Tic-Tac-Toe AI",
+    author: "Paperclip",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/98e3d75246b9c313bc7561df5f4f67729c8335a1_image.png",
     featured: false,
     award: false,
-    description: "A city-wide network of interactive light installations that respond to the rhythm and flow of urban life. Sensors throughout the city measure foot traffic, noise levels, and social media activity, which influence the behavior of light sculptures placed at key intersections. The project transforms the urban landscape into a living, breathing artwork that reflects its inhabitants."
+    description: "A fun and interactive classic remake, and also their very first project in JS and TS! The Tic-Tac-Toe AI uses the Minimax algorithm to make the game way more exciting by creating an intelligent opponent that plays optimally. This project is a great first step in exploring the world of AI and trying new coding techniques!",
+    demoLink: "https://github.com/magical-paperclip/tic-tac-toe-ai"
   },
   {
-    title: "Memory Threads",
-    author: "Athena",
-    date: "March 30, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
-    featured: false,
-    award: true,
-    description: "A wearable technology project that captures and visualizes personal memories. Using a combination of biometric sensors and AI, the garments record emotional responses throughout the day and translate them into evolving textile patterns. Over time, the fabrics become a visual diary of the wearer's emotional journey, blending fashion with deeply personal storytelling."
-  },
-  {
-    title: "Sonic Archaeology",
-    author: "Dionysus",
-    date: "April 3, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
+    title: "POKER? I HARDLY KNOW HER!",
+    author: "Sahiti",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a6ba76bddfbcaaff00d87e26ad20a5ff57c8b228_image.png",
     featured: true,
     award: true,
-    description: "An audio restoration project that recovers and enhances sound recordings from ancient artifacts. Using advanced acoustic modeling and machine learning, the project extracts sound vibrations preserved in pottery, fossils, and other historical objects. The result is a haunting audio time capsule that lets us hear echoes from thousands of years ago."
+    description: "What started as a random airport encounter turned into a hilarious Scrapyard project using Ray-Ban Meta AI glasses. Sahiti, Arnav, and Tejas created a system that lets you play poker and do homework at the same time – but the better you do at one, the worse you perform at the other. These scrappy glasses analyze your poker hand, the table, and the players' emotions to predict your chances, then help with your homework, but with a twist. Using OpenCV, OpenAI, and Python, they made it happen!",
+    demoLink: "https://youtu.be/JVtFxCJw5ng"
   },
   {
-    title: "Bioluminescent Garden",
-    author: "Demeter",
-    date: "February 28, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
+    title: "Trash Talking Trash Can",
+    author: "Meghana",
+    date: "2024",
+    imageUrl: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8040331ac3036f8623cf3ec287b3ac81fda25dc4_image.png",
     featured: true,
     award: false,
-    description: "A living art installation that combines genetic engineering with traditional gardening. The project features plants that have been safely modified to produce various colors of bioluminescence, creating gardens that glow at night. The installation explores the ethical dimensions of biotechnology while creating breathtaking natural light displays."
-  },
-  {
-    title: "Linguistic Landscapes",
-    author: "Heracles",
-    date: "January 15, 2026",
-    imageUrl: "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fscrapbook-into-the-redwoods.s3.us-east-1.amazonaws.com%2Fd749009c-dc46-4e04-befa-a1518ee76f67-image.png&w=828&q=75",
-    featured: false,
-    award: true,
-    description: "A mixed-reality experience that visualizes language in three-dimensional space. As participants speak, their words manifest as physical structures in augmented reality, with grammar forming architecture and vocabulary creating texture and color. The project reveals the hidden structures of different languages, allowing people to literally walk through each other's speech."
+    description: "Have you ever wondered what your trash can would say if it could talk back to you? Probably not, but that's what makes this next project ridiculously amazing. Say hello to the TTTC! The most scrappy, rude, and downright hilarious trash can ever created. Meghana, Ducc, and Selena worked nonstop through the weekend to bring this trash talker to life. The result? A trash can that doesn't just collect garbage but also throws it right back at ya verbally.",
+    demoLink: "https://youtu.be/JxGyt0A78mU?si=T_X8lFCxaqJ8Zki7"
   }
 ]

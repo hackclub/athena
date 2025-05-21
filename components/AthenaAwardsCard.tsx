@@ -70,6 +70,7 @@ export default function AthenaAwardsCard(){
                 <Image alt = "The Knowledge House" width={1121} height={390} src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b873c50405c464861cd44f8677fa1fc5a2fa4421_tkh_horizontal_purple_logo.png"/>
                 <Image alt = "Black Girls Code" width={1121} height={390}  src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3856089f0606f05c0606b9918322fc5b736098e6_bgc_orange_logo.png"/>
                 <Image alt = "Code.org" width={1121} height={390} src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3167e98697dc80a930ae15e6079993b883110882_cs4all_fin_cs_codelogo_black_whiteletters.png"/>
+                <Image alt = "Être" width={1121} height={390} src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1c899c2d35b31a161552c8526b8bb00154b0aefa_etre_new_gradient_logo__1___1_.jpg"/>
               </div>
 
             <h1 className = "pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">How it works - Code three technical projects by Oct 31st</h1>

@@ -1,8 +1,8 @@
 import Card from "@/components/Card";
-import Spotlight from "@/components/Spotlight";
-import { AirtableSpotlightManager } from "@/lib/airtable";
-import { SpotlightPost } from "@/lib/spotlight";
 import AthenaAwardsCard from "@/components/AthenaAwardsCard";
+//import Spotlight from "@/components/Spotlight";
+//import { AirtableSpotlightManager } from "@/lib/airtable";
+//import { SpotlightPost } from "@/lib/spotlight";
 import Image from "next/image";
 import Link from "next/link";
  
@@ -10,8 +10,8 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  const data = await new AirtableSpotlightManager().getLatestRecord();
-  const post: SpotlightPost = data.fields as unknown as SpotlightPost;
+  //const data = await new AirtableSpotlightManager().getLatestRecord();
+  //const post: SpotlightPost = data.fields as unknown as SpotlightPost;
   return (
     <div className = "relative">
       <Link href="https://hackclub.com" className="block absolute z-40 top-0 left-[5vw]">
@@ -38,29 +38,15 @@ export default async function Home() {
             <Image alt="" src="https://ascend.hackclub.com/moon.png" className="h-[150%] w-auto absolute -top-[10vh] -right-[10vh] opacity-50 md:opacity-100" height={800} width={800}></Image>
           </div>
         </div>
-        <Link href='/stories' className='hidden w-full h-full col-span-full md:col-span-2'>
-            <div className="w-full h-full relative flex flex-col gap-3 bg-white shadow-md rounded-lg transition hover:scale-110 cursor-pointer">
-              <Image alt="Ascend Event" src="https://cloud-l9vmg3n5i-hack-club-bot.vercel.app/0img_5774.jpg" className="h-[120px] w-full object-cover rounded-t-lg" width={300} height={163} />
-              <div className="relative z-0 pb-4 px-4">
-                <h3 className="text-lg md:text-2xl font-bold text-red">Stories Showcase 🎉</h3>
-                <div className="text-sm md:text-base">from #athena-team</div>
-                <br/>
-                <div className="text-black md:w-full">
-                Check out the awesome projects and stories from Athena members! Dive in to see how creativity and teamwork shine in our community.  
-                </div>
-              </div>
-            </div> 
-          </Link>
+
         {/* TODO: set grid-rows on large back to 2 */}
         <div id="bento" className="w-full grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 my-8">
           <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/1events-card-min.jpg" tintColor="#69346D" href="/events" title="Events" description="One-day coding events that help girls and gender minorities write their first lines of code" className="md:col-span-1 lg:col-span-2 self-stretch" />
-          <div className="w-full md:col-span-2 lg:col-span-3 hover:scale-105 transition cursor-pointer">
-            <Spotlight post={post} />
-          </div>
+          <Card cardType="tinted" image="https://hc-cdn.hel1.your-objectstorage.com/s/v3/daf0706d7cfa4c152ba8229ca61971f0b098df98_dsc00047.jpg" tintColor="#69346D" href="/stories" title="Stories" description="Check out the awesome projects and stories from Athena members!" className="md:col-span-2 lg:col-span-3 self-stretch" />
           
-          <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/3newsletter-card-min.jpg" tintColor="#2E0E0C" href="/community" title="Community" description="Meet like-minded superleaders around the world" className="md:col-span-2 lg:col-span-3 self-stretch" />
-          <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/2horizon-coding-min.png" tintColor="#223B26" href="#" title="Start Hacking" description="Teenager? Stay tuned!" className="md:col-span-1 lg:col-span-2 self-stretch" /> 
-          <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/2horizon-coding-min.png" tintColor="#223B26" href="https://daysofservice.hackclub.com" title="Days of Service" description="Looking for the old site? Click here." className="md:col-span-1 lg:col-span-2 self-stretch" />
+          <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/3newsletter-card-min.jpg" tintColor="#2E0E0C" href="/team" title="Team" description="Meet the team behind Athena" className="md:col-span-2 lg:col-span-3 self-stretch" />
+          {/*<Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/2horizon-coding-min.png" tintColor="#223B26" href="#" title="Start Hacking" description="Teenager? Stay tuned!" className="md:col-span-1 lg:col-span-2 self-stretch" /> */}
+          <Card cardType="tinted" image="https://cloud-lz7wipd7a-hack-club-bot.vercel.app/2horizon-coding-min.png" tintColor="#223B26" href="https://daysofservice.hackclub.com" title="Days of Service" description="Looking for the old site? Click here." className="md:col-span-1 lg:col-span-2 self-stretch" /> 
           
         </div>
       </div>

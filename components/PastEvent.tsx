@@ -13,7 +13,8 @@ type EventInfo = {
   name: string;
   date: string;
   location: string;
-  github_link: string;
+  githubLink: string;
+  website: string;
   logo: string;
   cardLogo?: string;
   photos: string[] | string;
@@ -24,7 +25,7 @@ type EventInfo = {
   status?: string;
 };
 
-export default function PastEvent({ accentColor, bgColor, tintColor, name, date, location, github_link, logo, cardLogo, photos, photocreds, description, className, mostRecent = false }: EventInfo) {
+export default function PastEvent({ accentColor, bgColor, tintColor, name, date, location, githubLink, website, logo, cardLogo, photos, photocreds, description, className, mostRecent = false }: EventInfo) {
   const [modalOpen, setModalOpen] = useState(false);
   const pastEventImage = photos[0]
   
@@ -45,7 +46,8 @@ export default function PastEvent({ accentColor, bgColor, tintColor, name, date,
         date={date}
         logo={logo}
         cardLogo={cardLogo}
-        github_link={github_link}
+        githubLink={githubLink}
+        website={website}
         photos={photos}
         photocreds={photocreds}
         mostRecent={mostRecent}
@@ -70,7 +72,7 @@ export default function PastEvent({ accentColor, bgColor, tintColor, name, date,
                   {description}
                 </div>
                 <div className="mt-4 mb-10 md:mb-0">
-                  <Link className="underline" href={github_link}>View details on planning</Link>
+                  <Link className="underline" href={githubLink}>View details on planning</Link>
                 </div>
               </div>
               <div className="md:w-1/2 lg:w-3/5 p-4 flex items-center">
