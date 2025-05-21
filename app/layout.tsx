@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Background from "@/components/Background";
-
+import PlausibleProvider from "next-plausible";
 
 export const metadata: Metadata = {
   title: "Athena - Hack Club",
@@ -39,11 +39,12 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <Background>
-          {children}
-          {/* <div className="w-screen p-6 bg-red"></div> */}
-        </Background>
-       <script defer data-domain="athena.hackclub.com" src="https://plausible.io/js/script.js"></script>
+        <PlausibleProvider domain="athena.hackclub.com">
+          <Background>
+            {children}
+            {/* <div className="w-screen p-6 bg-red"></div> */}
+          </Background>
+        </PlausibleProvider>
       </body>
     </html>
   );
