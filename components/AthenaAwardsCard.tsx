@@ -18,16 +18,16 @@ async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any)
 const SignUp = ({className, buttonClicked, setButtonClicked, router}: {className?: string, buttonClicked: boolean, setButtonClicked: (value: any) => void, router: any}) => {
   return (
     <div className = {`flex flex-row flex-wrap gap-4 mt-10 ${className && className}`}>
-      { buttonClicked 
+      { /* { buttonClicked 
         ? <form onSubmit={(e) => handleEmailSubmit(e, router)} className = "w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent ">
           <input className="outline-none" placeholder="orpheus@mail.com" required type="email" name="email" id="email"/>
           <input type = "submit" value = "Submit" className = "text-[#8C2E37] uppercase font-bold"/>
         </form>
         : 
         <button className = "w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white" onClick={() => setButtonClicked(true)}>start</button>
-      }
+      } */ }
     
-    <Link href="https://forms.hackclub.com/athena-awards-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers</Link>
+    <Link href="https://forms.hackclub.com/athena-award-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers + RSVP</Link>
     </div>
 
   )
@@ -80,9 +80,9 @@ export default function AthenaAwardsCard(){
 
             <p className = "text-lg md:text-2xl text-[#D35648] font-bold">Earn the Athena Award to share on your LinkedIn, college applications, or elsewhere.</p>           
                         <div>
-              <h1 className = "py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">[Placeholder]</h1>
-              <div className = "grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className = "flex flex-row gap-4 border items-center rounded-lg">
+              <h1 className = "py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">Here's what you can expect:</h1>
+              <div className = "grid grid-cols-1 gap-6">
+                {/* <div className = "flex flex-row gap-4 border items-center rounded-lg">
                   <div className = "basis-1/4 p-4">
                     <img className = "h-36" src = "https://placehold.co/400"/>
                     <p>First Name</p>
@@ -92,8 +92,8 @@ export default function AthenaAwardsCard(){
                   </div>
                   <div className = "basis-1/4 grow text-xl">
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>
-                </div>
-                <iframe className = "w-full" height="315" src="https://www.youtube.com/embed/S5dKIlBN_1s?si=Fi-7gM_c8GXmVQB7" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div> */ }
+                <iframe className = "w-full" height="615" src="https://www.youtube.com/embed/S5dKIlBN_1s?si=Fi-7gM_c8GXmVQB7" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
             </div>
 
