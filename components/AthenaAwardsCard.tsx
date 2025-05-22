@@ -12,7 +12,6 @@ async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any,
   const formData = new FormData(event.currentTarget)
   const email = String(formData.get("email")).replace("+", "%2b")
   router.push(`https://athena.hackclub.com/awards?email=${email}&utm_source=${utm_source}`) // update this url to actual link
-  
   }
 
 
@@ -59,7 +58,7 @@ export default function AthenaAwardsCard(){
               <span className = "text-2xl text-[#D35648] my-4">Happening now. You&apos;re invited to join a community of creators, built by girls, for girls. In collaboration with:</span>
 
             </div>
-            <Image alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bee04c282d692e6134762edd5a860546454d0629_demo_logo.svg" className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80" height={800} width={800}></Image>
+            <img alt="Athena Awards Assets" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5e4d000a4939d469bda712d270ea187f43eccdb8_demo_logo.png" className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80 h-[500px]"/>
             </div>
           <div>
           <div className = "py-6">
