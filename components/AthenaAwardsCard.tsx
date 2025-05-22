@@ -101,7 +101,7 @@ export default function AthenaAwardsCard(){
                     <br/>
                     <p>Since then, I&apos;ve been helping organize various <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://ysws.hackclub.com">You-Ship-We-Ship</a> and <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "/events">Days-of-Service</a> programs as an artist and developer, + found some of my favorite people through awesome hackathons in LA, Shanghai, and even online. So excited to see you all in an even cooler hackathon in NYC :3</p></div>
                 </div> 
-                <iframe className = "w-full" height="415" src="https://www.youtube.com/embed/NsK5vUG9_Tw?si=GZj3D-8ke0lpkol5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe className="w-full" height="415" src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA" title="This is the Athena Award " frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
             </div>
 
