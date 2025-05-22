@@ -162,7 +162,7 @@ export default function AthenaAwardsCard(){
                 </span>
                 <svg className = "self-end" viewBox="0 0 672 774" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="10" y="10" width="70%" height="70%" fill="white"/>
-                    <image className="bg-cover" x="40" y="20" width="90%" height="87%" xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5435315191718994f75eb7fbe1e10a8df0b6f720_image.png"></image>
+                    <image className="bg-cover" x="40" y="20" width="90%" height="87%" xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/51b807da8c65ee224c8340bafef462d6998a15f2_5435315191718994f75eb7fbe1e10a8df0b6f720_image__2_.jpg"></image>
                     <path fillRule="evenodd" clipRule="evenodd" d="M54 724.543L18.2477 773.687L0.0244268 744L18.2476 691.367L30.5 373L43.2075 93.0696L27.8028 31.2608L68.1375 0.0296471L102.375 19.9577L319.05 21.8007L406.183 21.8008L608 19.9576L639.907 9.48962L670.407 31.2608L670.407 51.9296L658 424.501L650 679.5L671.5 708.74L658 752L624.5 767L595 735.001L414 735.001L343.5 735.001L54 724.543ZM66.6112 418.542L70.3935 687.5L276.378 691.367L597.129 687.5L620.5 52.8447L301.058 47.2869L88.3237 42.1003L70.3935 59.7818L66.6112 418.542Z" fill="url(#paint0_radial_480_189)"/>
                     <defs>
                     <radialGradient id="paint0_radial_480_189" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(343 339.5) rotate(94.2423) scale(533.963 635.385)">
