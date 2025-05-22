@@ -125,10 +125,13 @@ export default function AthenaAwardsCard() {
             built by girls, for girls. In collaboration with:
           </span>
         </div>
-        <img
+        <Image
           alt="Athena Awards Assets"
           src="/images/demo_logo.png"
+          width={500}
+          height={500}
           className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80 h-[500px]"
+          priority
         />
       </div>
       <div>
@@ -383,7 +386,7 @@ export default function AthenaAwardsCard() {
                     y="10"
                     width="85%"
                     height="85%"
-                    xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3380a2b1bfe0bc53f4f0e325e157022595387fca_image.png"
+                    xlinkHref="/images/tablet.png"
                   ></image>
                   <path
                     fillRule="evenodd"
@@ -408,7 +411,7 @@ export default function AthenaAwardsCard() {
                     y="10"
                     width="85%"
                     height="85%"
-                    xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/111b2401af60e04060a8ffd51c61f4be5de41f86_image.png"
+                    xlinkHref="/images/nothing.png"
                   ></image>
                   <path
                     fillRule="evenodd"
@@ -442,7 +445,7 @@ export default function AthenaAwardsCard() {
                     y="20"
                     width="90%"
                     height="87%"
-                    xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/51b807da8c65ee224c8340bafef462d6998a15f2_5435315191718994f75eb7fbe1e10a8df0b6f720_image__2_.jpg"
+                    xlinkHref="/images/framework.png"
                   ></image>
                   <path
                     fillRule="evenodd"
@@ -482,7 +485,7 @@ export default function AthenaAwardsCard() {
                     y="10"
                     width="85%"
                     height="85%"
-                    xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4e71a5b29d9709d05d28458ce4fb1576ec4132f0_b8f350870db2b2488bc656a06ee7d27e2c4daf94_merch__1_.png"
+                    xlinkHref="/images/swag.png"
                   ></image>
                   <path
                     fillRule="evenodd"
@@ -507,7 +510,7 @@ export default function AthenaAwardsCard() {
                     y="10"
                     width="85%"
                     height="85%"
-                    xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/a0b17ff3c19af8ca34c8df29522b409f4c1b87d5_image.png"
+                    xlinkHref="/images/ipad.png"
                   ></image>
                   <path
                     fillRule="evenodd"

@@ -63,7 +63,7 @@ export default function SpotlightCard({ post }: { post: SpotlightPost }) {
                 onClick={() => setOpen(false)}
               >
                 <Image
-                  src="https://icons.hackclub.com/api/icons/white/glyph:view-close.svg"
+                  src="/svg/glyph_view-close"
                   height={56}
                   width={56}
                   className="size-14 cursor-pointer"

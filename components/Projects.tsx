@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Fragment, useState } from "react";
 import { projects } from "@/lib/projects";
 import { Dialog, DialogPanel } from "@headlessui/react";
@@ -46,13 +47,16 @@ export default function Projects() {
                     loadedImages[index] ? "hidden" : "block"
                   }`}
                 />
-                <img
+                <Image
                   src={item.imageUrl || "/api/placeholder/300/200"}
                   alt={item.title || "Project photo"}
+                  fill
                   className={`w-full h-full object-cover transition-opacity duration-300 ${
                     loadedImages[index] ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => handleImageLoad(index)}
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  priority={index === 0}
                 />
               </div>
               <div className="mt-2 text-center flex flex-col">
@@ -97,10 +101,13 @@ export default function Projects() {
                     </div>
                   </div>
                   <div className="relative aspect-[4/3] w-full rounded-md overflow-hidden">
-                    <img
+                    <Image
                       src={item.imageUrl || "/api/placeholder/600/400"}
                       alt={item.title || "Project photo"}
+                      fill
                       className="w-full h-full object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                      priority={index === 0}
                     />
                   </div>
                 </div>
