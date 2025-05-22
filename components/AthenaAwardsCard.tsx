@@ -40,7 +40,7 @@ export default function AthenaAwardsCard(){
         <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D35648] from-0%  via-[#D35648]/80 via-60% to-[#993E47]/0 overflow-hidden transition">
             <div className="relative z-20 h-full">
               {/* <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div> */}
-              <img className="w-full md:w-3/5" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9b4863034f8b13e0c0a5066d408c69f1a536cd7b_19w_flag-cropped.svg"/>
+              <img className="w-full md:w-3/5" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6338dbbd7a0200f2b9f2f5b7b59834511c45cc58_athena_award_1000x1000-cropped.svg"/>
               <div className="text-white text-2xl md:w-2/3 py-4">
               
               <Tooltip id="info" className = "max-w-96"/>
@@ -82,19 +82,21 @@ export default function AthenaAwardsCard(){
             <p className = "text-lg md:text-2xl text-[#D35648] font-bold">Earn the Athena Award to share on your LinkedIn, college applications, or elsewhere.</p>           
                         <div>
               <h1 className = "py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">Here&apos;s what you can expect:</h1>
-              <div className = "grid grid-cols-1 gap-6">
-                {/* <div className = "flex flex-row gap-4 border items-center rounded-lg">
-                  <div className = "basis-1/4 p-4">
-                    <img className = "h-36" src = "https://placehold.co/400"/>
-                    <p>First Name</p>
-                    <p>Age, location</p>
-                    <p>GitHub username</p>
+              <div className = "grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className = "flex p-6 flex-col md:flex-row gap-4 border items-center rounded-lg">
+                  <div className = "basis-1/4">
+                    <img className = "h-36 object-cover" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/098d21987b059784caa0a9019d4e88590d9eb771_image.png"/>
+                    <p>Sarah N</p>
+                    <p>16, California</p>
+                    <p><a className = "text-[#D35648] underline hover:decoration-wavy" href = "https://github.com/idksarah">@idksarah</a></p>
 
                   </div>
                   <div className = "basis-1/4 grow text-xl">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>
-                </div> */ }
-                <iframe className = "w-full" height="615" src="https://www.youtube.com/embed/S5dKIlBN_1s?si=Fi-7gM_c8GXmVQB7" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <p>Hihi!! I'm Sarah and a I'm a 16 year old based in California. I first found Hack Club through <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://hackclub.com/arcade">Arcade</a>, a coding summer event which I participated in partially because of the allure of free stickers.</p>
+                    <br/>
+                    <p>Since then, I've been helping organize various <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://ysws.hackclub.com">You-Ship-We-Ship</a> and <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "/events">Days-of-Service</a> programs as an artist and developer, + found some of my favorite people through awesome hackathons in LA, Shanghai, and even online. So excited to see you all in an even cooler hackathon in NYC :3</p></div>
+                </div> 
+                <iframe className = "w-full" height="415" src="https://www.youtube.com/embed/NsK5vUG9_Tw?si=GZj3D-8ke0lpkol5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
             </div>
 
