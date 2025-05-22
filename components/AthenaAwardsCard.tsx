@@ -27,7 +27,7 @@ const SignUp = ({className, buttonClicked, setButtonClicked, router, utm_source}
         <button className = "w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white" onClick={() => setButtonClicked(true)}>start</button>
       }
     
-    <Link href="https://forms.hackclub.com/athena-award-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers + RSVP</Link>
+    <Link href="https://forms.hackclub.com/athena-award-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Get free stickers</Link>
     </div>
 
   )
