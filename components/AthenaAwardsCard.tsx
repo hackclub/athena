@@ -177,7 +177,7 @@ export default function AthenaAwardsCard(){
               <div className = "hidden lg:inline">
               <svg viewBox="0 0 202 167" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="10" y="10" width="85%" height="85%" fill="white"/>
-                <image className="bg-cover" x="10" y="10" width="85%" height="85%" xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b8f350870db2b2488bc656a06ee7d27e2c4daf94_merch.png"></image>
+                <image className="bg-cover" x="10" y="10" width="85%" height="85%" xlinkHref="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4e71a5b29d9709d05d28458ce4fb1576ec4132f0_b8f350870db2b2488bc656a06ee7d27e2c4daf94_merch__1_.png"></image>
                 <path fillRule="evenodd" clipRule="evenodd" d="M179.544 164.648L196.305 158.93L201.89 135.674L190.944 128.071L190.944 39.5193L195.847 24.7221L189.345 10.5846L173.664 7.05647L156.662 9.10768L39.0272 9.10768L23.9131 0.000131933L5.09624 7.05647L-1.30231e-06 27.0495L8.6244 39.5193L8.6244 128.071L-1.30231e-06 137.207L5.09624 158.93L24.6972 167L42.8363 158.93L165.624 158.93L179.544 164.648ZM16.8446 135.674L29.1683 147.973L165.624 147.973L177.948 135.674L177.948 31.2456L165.624 18.9467L29.1683 18.9467L16.8446 31.2456L16.8446 135.674Z" fill="#F4BF4F"/>
                 </svg>
                 <div className = "text-center p-2 bg-[#ebb33d] text-black tracking-wide">Athena Hoodie</div>
