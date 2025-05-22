@@ -11,7 +11,7 @@ async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any,
   event.preventDefault()
   const formData = new FormData(event.currentTarget)
   const email = String(formData.get("email")).replace("+", "%2b")
-  router.push(`https://athena.hackclub.com/awards?email=${email}&utm_source=${utm_source}`) // update this url to actual link
+  router.push(`https://athena.hackclub.com/awards?email=${email}${utm_source ? "&utm_source=" + utm_source : ""}`) // update this url to actual link
   }
 
 
