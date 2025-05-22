@@ -14,13 +14,13 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/award",
-        destination: "https://awards.athena.a.hackclub.dev",
-        permanent: false
+        destination: "https://award.athena.hackclub.com",
+        permanent: true
       },
       {
         source: "/awards",
-        destination: "https://awards.athena.a.hackclub.dev",
-        permanent: false
+        destination: "https://award.athena.hackclub.com",
+        permanent: true
       }
     ]
   },
