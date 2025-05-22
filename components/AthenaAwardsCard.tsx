@@ -92,9 +92,9 @@ export default function AthenaAwardsCard(){
 
                   </div>
                   <div className = "basis-1/4 grow text-xl">
-                    <p>Hihi!! I'm Sarah and a I'm a 16 year old based in California. I first found Hack Club through <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://hackclub.com/arcade">Arcade</a>, a coding summer event which I participated in partially because of the allure of free stickers.</p>
+                    <p>Hihi!! I&apos;m Sarah and I&apos;m a 16 year old based in California. I first found Hack Club through <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://hackclub.com/arcade">Arcade</a>, a coding summer event which I participated in partially because of the allure of free stickers.</p>
                     <br/>
-                    <p>Since then, I've been helping organize various <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://ysws.hackclub.com">You-Ship-We-Ship</a> and <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "/events">Days-of-Service</a> programs as an artist and developer, + found some of my favorite people through awesome hackathons in LA, Shanghai, and even online. So excited to see you all in an even cooler hackathon in NYC :3</p></div>
+                    <p>Since then, I&apos;ve been helping organize various <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "https://ysws.hackclub.com">You-Ship-We-Ship</a> and <a className = "text-[#D35648] underline hover:decoration-wavy" target = "_blank" href = "/events">Days-of-Service</a> programs as an artist and developer, + found some of my favorite people through awesome hackathons in LA, Shanghai, and even online. So excited to see you all in an even cooler hackathon in NYC :3</p></div>
                 </div> 
                 <iframe className = "w-full" height="415" src="https://www.youtube.com/embed/NsK5vUG9_Tw?si=GZj3D-8ke0lpkol5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
