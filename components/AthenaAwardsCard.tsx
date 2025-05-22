@@ -114,6 +114,8 @@ export default function AthenaAwardsCard(){
               </style>
             <div className = "*:text-lg *:md:text-2xl handwritten p-8 border border-black -rotate-1 my-4 *:py-2">
 
+              <p>Dear friends,</p>
+
               <p>Hack Club wants you to make things. Cool engineering things. Things you love to make.</p>
               
               <p>If you code and deploy three technical projects and spend 30 hours of coding by Oct 31st, Hack Club will issue you the <b className = "text-[#D35648]">Athena Award certification.</b></p>
