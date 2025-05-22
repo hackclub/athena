@@ -5,21 +5,22 @@ import { Tooltip } from 'react-tooltip'
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { FormEvent } from "react"
+import { useSearchParams } from "next/navigation"
 
-async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any){
+async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any, utm_source: string){
   event.preventDefault()
   const formData = new FormData(event.currentTarget)
   const email = String(formData.get("email")).replace("+", "%2b")
-  router.push(`https://athena.hackclub.com/awards?email=${email}&utm_source=athena_landing`) // update this url to actual link
+  router.push(`https://athena.hackclub.com/awards?email=${email}&utm_source=${utm_source}`) // update this url to actual link
   
   }
 
 
-const SignUp = ({className, buttonClicked, setButtonClicked, router}: {className?: string, buttonClicked: boolean, setButtonClicked: (value: any) => void, router: any}) => {
+const SignUp = ({className, buttonClicked, setButtonClicked, router, utm_source}: {className?: string, buttonClicked: boolean, setButtonClicked: (value: any) => void, router: any, utm_source: string}) => {
   return (
     <div className = {`flex flex-row flex-wrap gap-4 mt-10 ${className && className}`}>
-      { /* { buttonClicked 
-        ? <form onSubmit={(e) => handleEmailSubmit(e, router)} className = "w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent ">
+      {/* { buttonClicked 
+        ? <form onSubmit={(e) => handleEmailSubmit(e, router, utm_source)} className = "w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent ">
           <input className="outline-none" placeholder="orpheus@mail.com" required type="email" name="email" id="email"/>
           <input type = "submit" value = "Submit" className = "text-[#8C2E37] uppercase font-bold"/>
         </form>
@@ -33,6 +34,9 @@ const SignUp = ({className, buttonClicked, setButtonClicked, router}: {className
   )
 }
 export default function AthenaAwardsCard(){
+  const searchParams = useSearchParams()
+  const utm_source = searchParams.get('utm_source')
+
   const [ buttonClicked, setButtonClicked ] = useState(false);
   const router = useRouter()
     return (
@@ -51,7 +55,7 @@ export default function AthenaAwardsCard(){
                 </ul>
               </div>
 
-              <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className="mb-10"/>
+              <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} utm_source ={utm_source!} className="mb-10"/>
               <span className = "text-2xl text-[#D35648] my-4">Opens May 22nd. You&apos;re invited to join a community of creators, built by girls, for girls. In collaboration with:</span>
 
             </div>
@@ -185,7 +189,7 @@ export default function AthenaAwardsCard(){
                 <div className = "text-center p-2 bg-[#ebb33d] text-black tracking-wide">iPad (11 inch)</div>
               </div> 
             </div>
-            <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} className = "items-center justify-center *:border-black"/>
+            <SignUp buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} router={router} utm_source={utm_source!} className = "items-center justify-center *:border-black"/>
           </div>
         </div>
         </div>
