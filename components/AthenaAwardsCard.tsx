@@ -19,14 +19,14 @@ async function handleEmailSubmit(event: FormEvent<HTMLFormElement>, router: any,
 const SignUp = ({className, buttonClicked, setButtonClicked, router, utm_source}: {className?: string, buttonClicked: boolean, setButtonClicked: (value: any) => void, router: any, utm_source: string}) => {
   return (
     <div className = {`flex flex-row flex-wrap gap-4 mt-10 ${className && className}`}>
-      {/* { buttonClicked 
+       { buttonClicked 
         ? <form onSubmit={(e) => handleEmailSubmit(e, router, utm_source)} className = "w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent ">
           <input className="outline-none" placeholder="orpheus@mail.com" required type="email" name="email" id="email"/>
           <input type = "submit" value = "Submit" className = "text-[#8C2E37] uppercase font-bold"/>
         </form>
         : 
         <button className = "w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white" onClick={() => setButtonClicked(true)}>start</button>
-      } */ }
+      }
     
     <Link href="https://forms.hackclub.com/athena-award-stickers" className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white">Free stickers + RSVP</Link>
     </div>
