@@ -139,71 +139,49 @@ export default function AthenaAwardsCard() {
       <div>
         <div className="py-6">
           <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
-            <div className="flex flex-row flex-wrap gap-4 sm:justify-between *:max-h-[4vh] *:md:max-h-[8vh] *:object-cover *:w-auto">
-              <Image
+            <div className="flex flex-row flex-wrap gap-6 *:max-h-[4vh] *:md:max-h-[8vh] *:image-cover *:w-max">
+              <img
                 alt="Girls Who Code"
                 src="/images/gwc.png"
-                width={2021}
-                height={390}
               />
-              <Image
+              <img
                 alt="MIT School of Engineering Logo"
                 src="/images/mit.png"
-                width={1121}
-                height={390}
               />
-              <Image
+              <img
                 alt="GitHub Logo"
                 src="/images/github.png"
-                width={1121}
-                height={390}
               />
-              <Image
+              <img
                 alt="First Robotics Logo"
                 src="/images/firstrobotics.png"
-                width={1121}
-                height={390}
               />
-              <Image
+              <img
                 alt="Congressional App Challenge"
                 src="/images/cac.png"
-                width={1121}
-                height={390}
               />
-              <Image
+              <img
                 alt="Girl Scouts of Greater New York"
-                width={1121}
-                height={390}
                 src="/images/gsgny.png"
               />
-              <Image
+              <img
                 alt="The Knowledge House"
-                width={1121}
-                height={390}
                 src="/images/knowledgehouse.png"
               />
-              <Image
+              <img
                 alt="Black Girls Code"
-                width={1121}
-                height={390}
                 src="/images/blackgirlscode.png"
               />
-              <Image
+              <img
                 alt="Code.org"
-                width={1121}
-                height={390}
                 src="/images/codeorg.png"
               />
-              <Image
+              <img
                 alt="Être"
-                width={1121}
-                height={390}
                 src="/images/etre.png"
               />
-              <Image
+              <img
                 alt="Launchpad Philly"
-                width={1121}
-                height={390}
                 src="/images/launchpadphilly.png"
               />
             </div>
