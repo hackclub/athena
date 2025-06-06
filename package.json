@@ -19,7 +19,7 @@
     "lodash": "^4.17.21",
     "markdown-to-jsx": "^7.7.2",
     "motion": "^11.17.0",
-    "next": "15.1.3",
+    "next": "15.2.4",
     "next-plausible": "^3.12.4",
     "node-fetch": "^3.3.2",
     "pixel-getter": "^2.0.1",
