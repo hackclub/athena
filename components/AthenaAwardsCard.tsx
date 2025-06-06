@@ -153,10 +153,6 @@ export default function AthenaAwardsCard() {
                 src="/images/github.png"
               />
               <img
-                alt="First Robotics Logo"
-                src="/images/firstrobotics.png"
-              />
-              <img
                 alt="Congressional App Challenge"
                 src="/images/cac.png"
               />
