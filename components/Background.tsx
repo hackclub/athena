@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect, ReactNode, RefObject } from "react";
 
-export default function Background({ children }: { children: ReactNode }) {
+export default function Background({ children }: { children?: ReactNode }) {
   const spotlightRef = useRef<HTMLDivElement>(null!);
   useEffect(() => {
     const handler = (event: MouseEvent) => {
