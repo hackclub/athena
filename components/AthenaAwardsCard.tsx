@@ -180,6 +180,10 @@ export default function AthenaAwardsCard() {
                 alt="Launchpad Philly"
                 src="/images/launchpadphilly.png"
               />
+              <img
+                alt="Get Cybersmart"
+                src="/images/getcybersmart.png"
+              />
             </div>
 
             <h1 className="pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
