@@ -15,7 +15,6 @@
     "axios": "^1.7.9",
     "colorthief": "^2.6.0",
     "extract-colors": "^4.1.1",
-    "get-pixels": "^3.3.3",
     "lodash": "^4.17.21",
     "markdown-to-jsx": "^7.7.2",
     "motion": "^11.17.0",
