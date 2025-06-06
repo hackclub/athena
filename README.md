@@ -1,6 +1,13 @@
 # Athena
 Hack Clubbers sharing their love and passion for coding with gender minorities from underprivileged backgrounds who lack access to CS education. Funded by [Hack Club](https://hackclub.com) and fully open sourced. 
 
+## Development
+1. Install project dependencies
+    `yarn`
+
+2. Run the development server and visit `localhost:3000`
+    `yarn dev`
+
 ## 🫶🏼 We've already organized 🫶🏼 
 
 | Year | Location |  Event                                          |
