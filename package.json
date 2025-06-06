@@ -21,7 +21,6 @@
     "next": "15.2.4",
     "next-plausible": "^3.12.4",
     "node-fetch": "^3.3.2",
-    "pixel-getter": "^2.0.1",
     "pngjs": "6.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
