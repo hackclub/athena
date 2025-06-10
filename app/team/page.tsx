@@ -6,60 +6,58 @@ import Team from "@/components/Team";
 
 export default function TeamPage() {
 
-    const teamMembers = [
-  {
-    name: "Christina Asquith",
-    role: "Cofounder of Hack Club",
-    slack: "@Christina Asquith",
-    pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-UT2E7L19C-e2d0cd8db595-512",
-  },
-  {
-    name: "Zenab H.",
-    role: "Creative Events Manager",
-    slack: "@Zenab H.",
-    pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U079FFTKM37-35a4de306155-512",
-  },
-  {
-    name: "Annabel",
-    role: "Gap Year Engineer @ HQ",
-    slack: "@phthallo",
-    pronouns: "they/them",
-    image: "https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512",
-  },
-  {
-    name: "Phoebe",
-    role: "Communications & Partnership Lead @ HQ",
-    slack: "@phoebe",
-    pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U08B2HD1JNA-af8fa755df15-512",
-  },
-  {
-    name: "Phaedra Sanon",
-    role: "Athena Team Engineer",
-    slack: "@phaedra",
-    pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U05468GUS7J-53ffbb76641b-512",
-  },
-  {
-    name: "Kyra Ezikeuzor",
-    role: "Athena Intern",
-    slack: "@Kyra",
-    pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U03RG1Y7HNW-5aceecc2bc09-512",
-  },
-  {
-    name: "Nadeen",
-    role: "Athena Intern",
-    slack: "@neptvnisme",
-    pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U07AK3CE2MQ-9fb9ad6f2d73-512",
-  },
-];
-
-
-
+  const teamMembers = [
+    {
+      name: "Christina Asquith",
+      role: "Cofounder of Hack Club",
+      slack: "@Christina Asquith",
+      pronouns: "she/her",
+      image: "https://ca.slack-edge.com/T0266FRGM-UT2E7L19C-e2d0cd8db595-512",
+    },
+    {
+      name: "Zenab H.",
+      role: "Creative Events Manager",
+      slack: "@Zenab H.",
+      pronouns: "she/her",
+      image: "https://ca.slack-edge.com/T0266FRGM-U079FFTKM37-35a4de306155-512",
+    },
+    {
+      name: "Annabel",
+      role: "Gap Year Engineer @ HQ",
+      slack: "@phthallo",
+      pronouns: "they/them",
+      image: "https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512",
+    },
+    {
+      name: "Phoebe",
+      role: "Communications & Partnership Lead @ HQ",
+      slack: "@phoebe",
+      pronouns: "she/her",
+      image: "https://ca.slack-edge.com/T0266FRGM-U08B2HD1JNA-af8fa755df15-512",
+    },
+    {
+      name: "Phaedra Sanon",
+      role: "Athena Team Engineer",
+      slack: "@phaedra",
+      pronouns: "she/her",
+      image: "https://ca.slack-edge.com/T0266FRGM-U05468GUS7J-53ffbb76641b-512",
+    },
+    {
+      name: "Kyra Ezikeuzor",
+      role: "Athena Intern",
+      slack: "@Kyra",
+      pronouns: "she/her",
+      image: "https://ca.slack-edge.com/T0266FRGM-U03RG1Y7HNW-5aceecc2bc09-512",
+    },
+    {
+      name: "Nadeen",
+      role: "Athena Intern",
+      slack: "@neptvnisme",
+      pronouns: "she/her",
+      image: "https://ca.slack-edge.com/T0266FRGM-U07AK3CE2MQ-9fb9ad6f2d73-512",
+    },
+  ];
+  
   return (
     <Background>
         <div className="px-6 lg:px-32 py-16">
