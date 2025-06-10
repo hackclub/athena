@@ -10,7 +10,8 @@ import { useSearchParams } from "next/navigation";
 async function handleEmailSubmit(
   event: FormEvent<HTMLFormElement>,
   router: any,
-  utm_source: string
+  utm_source: string,
+  ref: string
 ) {
   event.preventDefault();
   const formData = new FormData(event.currentTarget);
@@ -18,8 +19,8 @@ async function handleEmailSubmit(
   router.push(
     `https://athena.hackclub.com/awards?email=${email}${
       utm_source ? "&utm_source=" + utm_source : ""
-    }`
-  ); // update this url to actual link
+    }${ref ? "&ref=" + ref : ""}`
+  ); 
 }
 
 const SignUp = ({
@@ -28,12 +29,14 @@ const SignUp = ({
   setButtonClicked,
   router,
   utm_source,
+  ref
 }: {
   className?: string;
   buttonClicked: boolean;
   setButtonClicked: (value: any) => void;
   router: any;
   utm_source: string;
+  ref: string;
 }) => {
   return (
     <div
@@ -43,7 +46,7 @@ const SignUp = ({
     >
       {buttonClicked ? (
         <form
-          onSubmit={(e) => handleEmailSubmit(e, router, utm_source)}
+          onSubmit={(e) => handleEmailSubmit(e, router, utm_source, ref)}
           className="w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent "
         >
           <input
@@ -81,6 +84,8 @@ const SignUp = ({
 export default function AthenaAwardsCard() {
   const searchParams = useSearchParams();
   const utm_source = searchParams.get("utm_source");
+  const ref = searchParams.get("ref");
+
 
   const [buttonClicked, setButtonClicked] = useState(false);
   const router = useRouter();
@@ -120,6 +125,7 @@ export default function AthenaAwardsCard() {
             setButtonClicked={setButtonClicked}
             router={router}
             utm_source={utm_source!}
+            ref={ref!}
             className="mb-10"
           />
           <span className="text-2xl text-[#D35648] my-4">
@@ -509,6 +515,7 @@ export default function AthenaAwardsCard() {
               setButtonClicked={setButtonClicked}
               router={router}
               utm_source={utm_source!}
+              ref={ref!}
               className="items-center justify-center *:border-black"
             />
           </div>
