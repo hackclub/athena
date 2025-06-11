@@ -102,7 +102,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('2025-07-05'),
     name: 'JPEG in Ottawa',
-    description: '',
+    description: 'Ottawa's first all-girls hackathon! July 5–6 at Carleton University.',
     tags: ['athena-event', 'game-dev']
   },
   {
