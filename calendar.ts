@@ -59,6 +59,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('2025-06-09'),
     name: 'Intro to Github',
+    description: 'Learn how to use Git, Github, VScode and Codespaces. To see the slides click [here](https://docs.google.com/presentation/d/1Bvlc6PLaPOWEu_K9H2rqyYPyxSbU_-iYkh6T2AW9Kf4/edit)',
     hostedBy: [
       { username: '@reem', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06U80G86H1-a7cc92358101-512' },
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
