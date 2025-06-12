@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import Background from "@/components/Background";
+import Loading from "../loading";
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState<Date | null>(null);
@@ -15,15 +16,8 @@ export default function Calendar() {
   }, []);
 
   if (!currentDate) {
-    return (
-      <Background>
-        <div className="min-h-screen flex flex-col items-center justify-center">
-          <div className="space-y-2">
-              <h2 className="text-3xl font-bold text-[#D35648]">loading calendar...</h2>
-            </div>
-        </div>
-      </Background>
-    )
+    return <Loading/>
+    
   }
 
   const upcomingEvents = CALENDAR_EVENTS.filter(e => e.date > currentDate);
