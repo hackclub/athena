@@ -51,3 +51,43 @@ export class AirtableEventsManager extends AirtableManager {
 
 
 }
+
+
+export class AirtableProjectsManager extends AirtableManager {
+  constructor() {
+    super('YSWS Project Submissions', process.env.AIRTABLE_PROJECTS_API_KEY!, process.env.AIRTABLE_PROJECTS_BASE_ID!);
+  }
+
+
+  getAllProjects() {
+    return this.getAllRecords('Automation - First Submitted At')
+  }
+
+  async getProjectById(projectId: string) {
+    return await this.base(this.tableName).find(projectId);
+  }
+
+
+}
+
+export class AirtableProfilesManager extends AirtableManager {
+  constructor() {
+    super('YSWS Project Submission', process.env.AIRTABLE_PROJECTS_API_KEY!, process.env.AIRTABLE_PROJECTS_BASE_ID!);
+  }
+
+  async getProfileByGithubUsername(githubUsername: string) {
+    const records = await this.base(this.tableName)
+      .select({
+        filterByFormula: `{GitHub Username} = "${githubUsername}"`,
+        maxRecords: 1,
+        view: 'Grid View'
+      })
+      .all();
+    return records[0] || null;
+  }
+
+  async getProfileByRecordId(recordId: string) {
+    return await this.base(this.tableName).find(recordId);
+  }
+}
+
