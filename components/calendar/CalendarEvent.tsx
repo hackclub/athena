@@ -42,7 +42,7 @@ export default function CalEvent({ name, date, description, hostedBy, tags, arti
         {name}</div>
       <div className="text-sm text-gray-600">{date.toDateString()}</div>
       <div className="text-md mt-2">{insertAnchorTags(description)}</div>
-      {hostedBy && (
+      {hostedBy && !!hostedBy.length && (
         <div className="mt-2">
           <div className="flex space-x-2 mt-1 items-center">
             <div className="text-sm">with</div>
