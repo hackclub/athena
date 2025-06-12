@@ -92,9 +92,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('2025-06-30'),
     name: 'How to deploy websites (Frontend and Backend)',
-    hostedBy: [
-      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' },
-    ],
+    hostedBy: [],
     tags: ['web', 'workshop']
   },
   {
