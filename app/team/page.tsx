@@ -12,14 +12,14 @@ export default function TeamPage() {
     role: "Cofounder of Hack Club",
     slack: "@Christina Asquith",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-UT2E7L19C-e2d0cd8db595-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e7bb8058afd3c34904a386bc34878043fe7c0fbf_christinacdn.png",
   },
   {
     name: "Zenab H.",
     role: "Creative Events Manager",
     slack: "@Zenab H.",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U079FFTKM37-35a4de306155-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/71f45343b40d36068e72453dd6ff41ad77bceb05_zenabcdn.png",
   },
   {
     name: "Annabel",
@@ -33,14 +33,14 @@ export default function TeamPage() {
     role: "Communications & Partnership Lead @ HQ",
     slack: "@phoebe",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U08B2HD1JNA-af8fa755df15-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/450f7a98ac7042e46c732452f98006d9f6afffcc_phobecdn.png",
   },
   {
     name: "Phaedra Sanon",
     role: "Athena Team Engineer",
     slack: "@phaedra",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U05468GUS7J-53ffbb76641b-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/34f8b20ef44088f89469a70da85aceebce1c62f7_phaedracdn.png",
   },
 
   {
@@ -55,21 +55,21 @@ export default function TeamPage() {
     role: "Athena Intern",
     slack: "@Kyra",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U03RG1Y7HNW-5aceecc2bc09-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6860ea1874a2d892a8927e41c7254dacaf6628df_kyracdn.png",
   },
   {
     name: "Celeste R.",
     role: "Athena Intern",
     slack: "@thegrammarpolice",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U06TV3F4HEU-ee45e446ed7e-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a65e8b718b03e743307ad40cf984a6ffab0d7bea_celestecdn.png",
   },
   {
     name: "Meghana M.",
     role: "Athena Intern",
     slack: "@Meghana",
     pronouns: "she/her",
-    image: "https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512",
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/317e94430eabfc9bb8f6e063198d0b98e30176ad_meghanacdn.jpeg",
   },
   {
     name: "Reem K.",
