@@ -4,21 +4,12 @@ import PastCalendarEvent from "./PastCalendarEvent";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-interface PastEventsSectionProps {
+interface PastCalendarSectionProps {
   pastEvents: CalendarEvent[];
 }
 
-export default function PastEventsSection({ pastEvents }: PastEventsSectionProps) {
+export default function PastCalendarSection({ pastEvents }: PastCalendarSectionProps) {
   const [showPastEvents, setShowPastEvents] = useState(false);
-
-  const colorByStatus = (date: Date) => {
-    const eventHappened = date < new Date();
-    if (eventHappened) {
-      return 'bg-black';
-    } else {
-      return 'bg-red';
-    }
-  }
 
   if (pastEvents.length === 0) return null;
 
