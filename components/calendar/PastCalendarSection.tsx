@@ -4,11 +4,11 @@ import PastCalendarEvent from "./PastCalendarEvent";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-interface PastEventsSectionProps {
+interface PastCalendarSectionProps {
   pastEvents: CalendarEvent[];
 }
 
-export default function PastEventsSection({ pastEvents }: PastEventsSectionProps) {
+export default function PastCalendarSection({ pastEvents }: PastCalendarSectionProps) {
   const [showPastEvents, setShowPastEvents] = useState(false);
 
   const colorByStatus = (date: Date) => {
