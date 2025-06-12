@@ -75,6 +75,12 @@ const SignUp = ({
       >
         Get free stickers
       </Link>
+      <Link
+        href="https://athena.hackclub.com/projects"
+        className="w-max border border-white/30 bg-orange rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
+      >
+        View project gallery
+      </Link>
     </div>
   );
 };
