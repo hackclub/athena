@@ -80,10 +80,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     date: new Date('2025-06-23'),
     name: 'Express workshop (Intro to backend)',
     description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
-    hostedBy: [
-      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' },
-      { username: '@phoebe', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U08B2HD1JNA-af8fa755df15-512' },
-    ],
+    hostedBy: [],
     tags: ['web', 'workshop']
   },
   {
