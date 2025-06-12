@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  const nextEvent = CALENDAR_EVENTS.find(event => event.date > new Date())!;
+
 
   return (
     <div className = "relative">
@@ -23,16 +23,7 @@ export default async function Home() {
 
       <div className="w-full text-left px-6 lg:px-32 mb-16">
         {/* ⬇️ calendar link? */}
-        {/* <div className="w-full border flex flex-col md:flex-row rounded">
-          <div className="md:w-1/2 bg-red p-4 flex flex-col justify-center rounded-l">
-            <div className="text-2xl font-bold text-white">Join in on our events for the Athena Award!</div>
-            <a href="/calendar" className="block underline text-white">View the full calendar</a>
-          </div>
-          <div className="md:w-1/2 p-4 flex flex-col justify-center bg-white">
-            <div className="text-black text-lg">Our Next Event:</div>
-            <CalendarEvent {...nextEvent} i={0} />
-          </div>
-        </div> */}
+      
 
         <hr className = "py-10"/>
 
