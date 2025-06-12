@@ -14,6 +14,7 @@ interface CalendarEvent {
   description?: string; // Optional: Markdown description
   hostedBy?: EventHost[]; // Optional: Array of hosts
   artifactsAvailable?: boolean; // Optional: Whether artifacts are available
+  rsvpLinks: string; // Optional: Array of RSVP/registration URLs
   tags: Tag[];          // Required: Array of event tags
 }
 ```
@@ -33,6 +34,7 @@ interface CalendarEvent {
     { username: '@hostHandle', avatarUrl: 'https://host-avatar-url' }
   ],
   artifactsAvailable: true, // Only if artifacts are available
+  rsvpLinks: ['https://forms.hackclub.com/event-rsvp'], // Optional registration links
   tags: ['event-type', 'discipline']
 }
 ```
@@ -66,6 +68,13 @@ For `hostedBy`, use Slack profile information:
 - Include links to relevant resources
 - Keep descriptions concise but informative
 - Use single quotes for strings containing apostrophes
+
+### RSVP Links
+
+For `rsvpLinks`, provide registration/RSVP URLs:
+- Use an array of strings for multiple registration options
+- Include Hack Club forms, Eventbrite links, or other registration platforms
+- Example: `rsvpLinks: ['https://forms.hackclub.com/event-name', 'https://eventbrite.com/event-id']`
 
 ## Adding New Tags
 
@@ -101,6 +110,7 @@ To add new event types or disciplines:
     { username: '@alice', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U123456789-abcd1234-512' }
   ],
   artifactsAvailable: true,
+  rsvpLinks: ['https://forms.hackclub.com/intro-to-react'],
   tags: ['web', 'workshop']
 }
 ```

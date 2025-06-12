@@ -13,6 +13,7 @@ export interface CalendarEvent {
   description?: string;
   hostedBy?: EventHost[];
   artifactsAvailable?: boolean;
+  rsvpLink?: string;
   tags: Tag[];
 }
 
@@ -74,7 +75,8 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
       { username: '@phthallo', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512' },
     ],
     artifactsAvailable: true,
-    tags: ['other', 'workshop']
+    tags: ['other', 'workshop'],
+    rsvpLink:'https://lu.ma/c0eswrg9?tk=0eYxXf'
   },
   {
     date: new Date('2025-06-23'),
