@@ -11,15 +11,6 @@ interface PastCalendarSectionProps {
 export default function PastCalendarSection({ pastEvents }: PastCalendarSectionProps) {
   const [showPastEvents, setShowPastEvents] = useState(false);
 
-  const colorByStatus = (date: Date) => {
-    const eventHappened = date < new Date();
-    if (eventHappened) {
-      return 'bg-black';
-    } else {
-      return 'bg-red';
-    }
-  }
-
   if (pastEvents.length === 0) return null;
 
   return (
