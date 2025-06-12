@@ -3,7 +3,7 @@ import { CalendarEvent as CalendarType, Tag, formatTag } from "@/calendar";
 import CalendarEvent from "./CalendarEvent";
 import { useState } from "react";
 
-export default function UpcomingEventsSection({ upcomingEvents }: { upcomingEvents: CalendarType[] }) {
+export default function UpcomingCalendarSection({ upcomingEvents }: { upcomingEvents: CalendarType[] }) {
   const [tagsToView, setTagsToView] = useState<string[]>([]);
 
   const allTags = Array.from(new Set(upcomingEvents.flatMap(event => event.tags || [])));
@@ -16,7 +16,6 @@ export default function UpcomingEventsSection({ upcomingEvents }: { upcomingEven
     <div>
       <div className="text-4xl font-bold pl-10 mb-3">Upcoming Events</div>
       <div className="mb-4">
-        {/* <div className="text-base uppercase text-black/40 mb-3">Filter:</div> */}
         <div className="flex flex-wrap justify-center gap-2">
           {allTags.map(tag => (
             <button
