@@ -122,10 +122,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('2025-07-21'),
     name: 'Intro to hardware',
-    hostedBy: [
-      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
-      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
-    ],
+    hostedBy: [],
     tags: ['hardware', 'workshop']
   },
   {
