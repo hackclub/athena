@@ -110,10 +110,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('2025-07-14'),
     name: 'Intro to game development using Godot',
-    hostedBy: [
-      { username: '@idksarah', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07CU1WD35J-05a999212b87-512' },
-      { username: '@reem', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06U80G86H1-a7cc92358101-512' },
-    ],
+    hostedBy: [],
     tags: ['game-dev', 'workshop']
   },
   {
