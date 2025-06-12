@@ -1,12 +1,24 @@
+'use client';
 import { CALENDAR_EVENTS } from "@/calendar";
 import PastCalendarSection from "@/components/calendar/PastCalendarSection";
 import UpcomingCalendarSection from "@/components/calendar/UpcomingCalendarSection";
 import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useState, useEffect } from "react";
 
 export default function Calendar() {
-  const upcomingEvents = CALENDAR_EVENTS.filter(e => e.date > new Date());
-  const pastEvents = CALENDAR_EVENTS.filter(e => e.date <= new Date()).reverse();
+  const [currentDate, setCurrentDate] = useState<Date | null>(null);
+  
+  useEffect(() => {
+    setCurrentDate(new Date());
+  }, []);
+
+  if (!currentDate) {
+    return <div>Loading...</div>;
+  }
+
+  const upcomingEvents = CALENDAR_EVENTS.filter(e => e.date > currentDate);
+  const pastEvents = CALENDAR_EVENTS.filter(e => e.date <= currentDate).reverse();
 
   return (
     <div className="px-6 lg:px-32 mb-16 pt-16">
