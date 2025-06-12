@@ -12,6 +12,7 @@ export interface CalendarEvent {
   name: string;
   description?: string;
   hostedBy?: EventHost[];
+  recording?: string;
   artifactsAvailable?: boolean;
   rsvpLink?: string;
   tags: Tag[];
@@ -75,38 +76,99 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
   {
     date: new Date('06-16-2025'),
-    name: 'Tribute workshop',
+    name: 'Tribute Workshop',
     hostedBy: [
       { username: '@phthallo', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512' },
     ],
+    recording: "https://hackclub.zoom.us/rec/play/Dgdz8YSz9hJr6F4ejUYFnP97o0jbIYJHoDE629UoTZZejGjKjqUigL6hWJH1roODhQ92VriOWyVmBmBt.xiyaNoQI5rUD0Foz?eagerLoadZvaPages=&accessLevel=meeting&canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fhackclub.zoom.us%2Frec%2Fshare%2F6WIXmM8MFUJqtNqMiCsdHbjrnICn0DoXPWCvYK_rco_mqU9dTHLe5BzjZYshn99I.r5JUsa45GPNOu_Q8",
     artifactsAvailable: true,
-    tags: ['other', 'workshop'],
-    rsvpLink:'https://lu.ma/c0eswrg9?tk=0eYxXf'
+    rsvpLink: 'https://lu.ma/c0eswrg9?tk=0eYxXf',
+    tags: ['other', 'workshop']
   },
   {
     date: new Date('06-23-2025'),
-    name: 'Intro to backend programming (Express Workshop)',
+    name: 'Express Workshop (Intro to Backend)',
+    description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
     hostedBy: [
-      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+      { username: '@chxsi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' }
+    ],
+    recording: "https://mega.nz/file/TBVVTQDb#L91Z7uVN8jTshs30ulKtHEHAz8D1pdrK6HZgHJpk8e4",
+    artifactsAvailable: true,
+    rsvpLink: 'https://lu.ma/3855gi0x',
+    tags: ['web', 'workshop']
+  },
+  {
+    date: new Date('06-24-2025'),
+    name: 'Hackpad Speedrun with @Meghana',
+    description: 'Meghana will be hosting a hackpad workshop/speedrun, where she\'ll make a hackpad in 2 hours and answer all of your questions. You can follow along, or just sit and vibe to learn',
+    hostedBy: [
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' }
     ],
     artifactsAvailable: true,
-    description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
-    tags: ['web', 'workshop', 'backend']
+    recording: "https://youtu.be/KP1T5V40Sfc",
+    rsvpLink: 'https://lu.ma/hmftz58z',
+    tags: ['hardware', 'workshop']
   },
+
   {
     date: new Date('06-28-2025'),
     name: 'Flourish',
     description: '📍 Philadelphia\'s Athena Event! Learn more at [flourish.hackclub.com](https://flourish.hackclub.com)!',
     tags: ['athena-event']
   },
+
   {
     date: new Date('06-30-2025'),
-    name: 'How to deploy websites (Frontend and Backend)',
+    name: 'Intro to Hardware',
+    description: 'learn how to build a Pathfinder, an eFidget and controller pad',
     hostedBy: [
-      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
     ],
-    artifactsAvailable: true,
-    tags: ['web', 'workshop'],
+    recording: "https://youtu.be/Wy1X5jSPJhA",
+    rsvpLink: 'https://lu.ma/fwjvl4uo',
+    tags: ['hardware', 'workshop']
+  },
+  {
+    date: new Date('06-30-2025'),
+    name: 'Jumpstart (Godot) Game Dev Workshop',
+    description: "Build a Godot platformer for Estella's YSWS Jumpstart!",
+    hostedBy: [
+      { username: '@estella', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06UYA4AH6F-a85235815241-512' },
+    ],
+    recording: "https://hackclub.slack.com/archives/C0931T5SEH4/p1751299015727739",
+    tags: ['game-dev']
+  },
+  {
+    date: new Date('06-30-2025'),
+    name: 'How to Deploy Websites (Frontend and Backend)',
+    description: 'Learn how to deploy your fullstack website!',
+    hostedBy: [
+      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' },
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+    ],
+    rsvpLink: 'https://lu.ma/509y6w45',
+    tags: ['web', 'workshop']
+  },
+  {
+    date: new Date('07-02-2025'),
+    name: 'Spatula Workshop',
+    description: '',
+    hostedBy: [
+      { username: '@Angad', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U075RTSLDQ8-42c3f01d5932-512' },
+    ],
+    rsvpLink: '',
+    tags: ['hardware', 'workshop']
+  },
+  {
+    date: new Date('07-03-2025'),
+    name: 'Pathfinder Workshop',
+    description: "The second Pathfinder workshop, learn how to make a sick PCB",
+    hostedBy: [
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+    ],
+    rsvpLink: 'https://lu.ma/lsc2n1g6',
+    tags: ['hardware', 'workshop']
   },
   {
     date: new Date('07-05-2025'),
@@ -115,41 +177,112 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-event', 'game-dev']
   },
   {
+    date: new Date('07-06-2025'),
+    name: 'Rewind Workshop',
+    description: 'Learn how to build a simple desktop app using Electron for the Rewind YSWS',
+    hostedBy: [
+      { username: '@Lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+    ],
+    rsvpLink: 'https://lu.ma/ylkmwaj4',
+    tags: ['other', 'workshop']
+  },
+  {
     date: new Date('07-07-2025'),
     name: 'Intern & Gap Year at Hack Club AMA',
-    description: 'meet the interns and gap years!',
+    description: 'Meet the interns and gap years!',
     tags: ['ama', 'athena-event'],
   },
   {
-    date: new Date('07-14-2025'),
-    name: 'Intro to hardware',
+    date: new Date('07-10-2025'),
+    name: 'Bakebuild Workshop',
+    description: 'Learn how to make a cookie cutter using OnShape and get cookies!',
     hostedBy: [
-      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
-      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+      { username: '@Kate', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07PXU0657B-19a567a11837-512' },
     ],
-    artifactsAvailable: true,
+    rsvpLink: 'https://lu.ma/cifnfwq5',
     tags: ['hardware', 'workshop']
+  },
+  {
+    date: new Date('07-14-2025'),
+    name: 'How to Deploy Websites (Frontend and Backend)',
+    description: 'Learn how to deploy your fullstack website!',
+    hostedBy: [
+      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' },
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+    ],
+    rsvpLink: 'https://lu.ma/509y6w45',
+    tags: ['web', 'workshop']
   },
   {
     date: new Date('07-18-2025'),
     name: 'Aurora in San Francisco',
-    description: 'see [aurora.hackclub.com](https://aurora.hackclub.com) for more details',
+    description: 'See [aurora.hackclub.com](https://aurora.hackclub.com) for more details',
     tags: ['athena-event']
+  },
+  {
+
+    date: new Date('08-05-2025'),
+    name: 'Plunge Workshop',
+    description: 'Plunge into CAD! Learn how to make custom, stamp-style cookie cutters and get them shipped!',
+    hostedBy: [
+      { username: '@Kate', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07PXU0657B-19a567a11837-512' },
+    ],
+    rsvpLink: 'https://lu.ma/am58in3m',
+    tags: ['hardware', 'workshop']
   },
   {
     date: new Date('07-28-2025'),
     name: 'Intro to Cybersecurity',
+    hostedBy: [
+      {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
+      ],
+    rsvpLink: 'https://lu.ma/qcs24861',
     tags: ['cybersecurity', 'workshop']
   },
+  
   {
-    date: new Date('08-04-2025'),
-    name: 'Intro to AI',
-    tags: ['ai', 'workshop']
+    date: new Date('08-09-2025'),
+    name: 'Full Stack Web Development',
+    description: 'Learn how to build full stack web applications using Django!',
+    hostedBy: [
+      {username: '@celeste', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06TV3F4HEU-ee45e446ed7e-512'}
+    ],
+    rsvpLink: 'https://lu.ma/h60zvf4h',
+    tags: ['web', 'workshop']
   },
+  {
+    date: new Date('08-09-2025'),
+    name: 'Show and Tell',
+    description: 'Show off what you\'ve been working on through the summer!',
+    hostedBy: [
+      {username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512'}
+    ],
+    rsvpLink: 'https://lu.ma/pado52rp',
+    tags: ['other']
+  },
+  {
+    date: new Date('08-18-2025'),
+    name: 'App Development Workshop',
+    description: 'Wanna make cool mobile apps? Hannah will show you exactly how in this workshop!',
+    hostedBy: [
+      { username: '@hannah oss', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U08QKM7KPQD-g772c316ea02-512' },
+    ],
+    rsvpLink: 'https://lu.ma/6bxt91m7',
+    tags: ['mobile', 'workshop']
+  },
+  {
+    date: new Date('08-23-2025'),
+    name: 'Project Showcase',
+    description: 'Show off your amazing projects!',
+    hostedBy: [],
+    rsvpLink: '',
+    tags: ['other', 'athena-event']
+  },
+  
   {
     date: new Date('11-14-2025'),
     name: 'Parthenon',
     description: 'Completed the Athena Award? We\'ll see you in New York City! 🗽',
     tags: ['athena-award', 'athena-event']
-  },
+  }
 ]
