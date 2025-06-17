@@ -3,8 +3,8 @@ interface EventHost {
   avatarUrl: string;
 }
 
-type EventType = 'athena-event' | 'workshop' | 'athena-award'
-type Disciplines = 'web' | 'hardware' | 'game-dev' | 'ai' | 'cybersecurity' | 'other';
+type EventType = 'athena-event' | 'workshop' | 'athena-award' | 'ama';
+type Disciplines = 'web' | 'hardware' | 'game-dev' | 'ai' | 'cybersecurity' | 'other' | 'backend' | 'frontend' | 'fullstack' | 'mobile';
 export type Tag = EventType | Disciplines;
 
 export interface CalendarEvent {
@@ -23,10 +23,15 @@ export const formatTag = (tag: EventType | Disciplines): string => {
     'workshop': 'Workshop',
     'athena-award': 'Athena Award',
     'web': 'Web Development',
+    'backend': 'Backend Development',
+    'frontend': 'Frontend Development',
+    'fullstack': 'Fullstack Development',
+    'mobile': 'Mobile Development',
     'hardware': 'Hardware',
     'game-dev': 'Game Development',
     'ai': 'Artificial Intelligence',
     'cybersecurity': 'Cybersecurity',
+    'ama': 'Ask Me Anything',
     'other': 'Other',
   };
   return tagMapping[tag];
@@ -80,9 +85,13 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
   {
     date: new Date('06-23-2025'),
-    name: 'Express workshop (Intro to backend)',
+    name: 'Intro to backend programming (Express Workshop)',
+    hostedBy: [
+      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+    ],
+    artifactsAvailable: true,
     description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
-    tags: ['web', 'workshop']
+    tags: ['web', 'workshop', 'backend']
   },
   {
     date: new Date('06-28-2025'),
@@ -93,8 +102,11 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('06-30-2025'),
     name: 'How to deploy websites (Frontend and Backend)',
-    hostedBy: [],
-    tags: ['web', 'workshop']
+    hostedBy: [
+      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+    ],
+    artifactsAvailable: true,
+    tags: ['web', 'workshop'],
   },
   {
     date: new Date('07-05-2025'),
@@ -106,25 +118,23 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     date: new Date('07-07-2025'),
     name: 'Intern & Gap Year at Hack Club AMA',
     description: 'meet the interns and gap years!',
-    tags: ['other']
+    tags: ['ama', 'athena-event'],
   },
   {
     date: new Date('07-14-2025'),
-    name: 'Intro to game development using Godot',
-    hostedBy: [],
-    tags: ['game-dev', 'workshop']
+    name: 'Intro to hardware',
+    hostedBy: [
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+    ],
+    artifactsAvailable: true,
+    tags: ['hardware', 'workshop']
   },
   {
     date: new Date('07-18-2025'),
     name: 'Aurora in San Francisco',
     description: 'see [aurora.hackclub.com](https://aurora.hackclub.com) for more details',
     tags: ['athena-event']
-  },
-  {
-    date: new Date('07-21-2025'),
-    name: 'Intro to hardware',
-    hostedBy: [],
-    tags: ['hardware', 'workshop']
   },
   {
     date: new Date('07-28-2025'),
