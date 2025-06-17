@@ -2,7 +2,6 @@ import Card from "@/components/Card";
 import AthenaAwardsCard from "@/components/AthenaAwardsCard";
 import Image from "next/image";
 import Link from "next/link";
-import CalendarEvent from "@/components/calendar/CalendarEvent";
  
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
