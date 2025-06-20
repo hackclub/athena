@@ -74,7 +74,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['web', 'workshop']
   },
   {
-    date: new Date('2025-06-16'),
+    date: new Date('06-16-2025'),
     name: 'Tribute Workshop',
     hostedBy: [
       { username: '@phthallo', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512' },
@@ -84,7 +84,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['other', 'workshop']
   },
   {
-    date: new Date('2025-06-23'),
+    date: new Date('06-23-2025'),
     name: 'Express Workshop (Intro to Backend)',
     description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
     hostedBy: [
@@ -109,7 +109,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
       { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
     ],
-    rsvpLink: 'https://lu.ma/fwjvl4uo'
+    rsvpLink: 'https://lu.ma/fwjvl4uo',
     tags: ['hardware', 'workshop']
   },
   {
@@ -143,7 +143,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-event']
   },
   {
-    date: new Date('2025-07-21'),
+    date: new Date('07-21-2025'),
     name: 'Intro to Game Development using Godot',
     hostedBy: [
       {username: '@reem', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06U80G86H1-a7cc92358101-512'},
@@ -152,7 +152,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['game-dev', 'workshop']
   },
   {
-    date: new Date('2025-07-28'),
+    date: new Date('07-28-2025'),
     name: 'Intro to Cybersecurity',
     hostedBy: [
       {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
@@ -161,7 +161,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['cybersecurity', 'workshop']
   },
   {
-    date: new Date('2025-08-09'),
+    date: new Date('08-09-2025'),
     name: 'Full Stack Web Development',
     description: 'Learn how to build full stack web applications using Django!',
     hostedBy: [
@@ -171,7 +171,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['web', 'workshop']
   },
   {
-    date: new Date('2025-08-09'),
+    date: new Date('08-09-2025'),
     name: 'Show and Tell',
     description: 'Show off what you\'ve been working on through the summer!',
     hostedBy: [
