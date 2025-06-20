@@ -3,8 +3,8 @@ interface EventHost {
   avatarUrl: string;
 }
 
-type EventType = 'athena-event' | 'workshop' | 'athena-award'
-type Disciplines = 'web' | 'hardware' | 'game-dev' | 'ai' | 'cybersecurity' | 'other';
+type EventType = 'athena-event' | 'workshop' | 'athena-award' | 'ama';
+type Disciplines = 'web' | 'hardware' | 'game-dev' | 'ai' | 'cybersecurity' | 'other' | 'backend' | 'frontend' | 'fullstack' | 'mobile';
 export type Tag = EventType | Disciplines;
 
 export interface CalendarEvent {
@@ -23,10 +23,15 @@ export const formatTag = (tag: EventType | Disciplines): string => {
     'workshop': 'Workshop',
     'athena-award': 'Athena Award',
     'web': 'Web Development',
+    'backend': 'Backend Development',
+    'frontend': 'Frontend Development',
+    'fullstack': 'Fullstack Development',
+    'mobile': 'Mobile Development',
     'hardware': 'Hardware',
     'game-dev': 'Game Development',
     'ai': 'Artificial Intelligence',
     'cybersecurity': 'Cybersecurity',
+    'ama': 'Ask Me Anything',
     'other': 'Other',
   };
   return tagMapping[tag];
@@ -34,13 +39,13 @@ export const formatTag = (tag: EventType | Disciplines): string => {
 
 export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
-    date: new Date('2025-05-22'),
+    date: new Date('05-22-2025'),
     name: 'Athena Award Launch',
     description: 'see the [Athena Award](https://award.athena.hackclub.com) for more details',
     tags: ['athena-award']
   },
   {
-    date: new Date('2025-05-30'),
+    date: new Date('05-30-2025'),
     name: 'Kick Off Call',
     hostedBy: [
       { username: '@phaedra', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U05468GUS7J-53ffbb76641b-512' },
@@ -49,7 +54,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-award']
   },
   {
-    date: new Date('2025-05-30'),
+    date: new Date('05-30-2025'),
     name: 'Solder Workshop',
     hostedBy: [
       { username: '@acon', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U04KEK4TS72-7a65eae6cb6d-512' },
@@ -58,7 +63,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['hardware', 'workshop']
   },
   {
-    date: new Date('2025-06-09'),
+    date: new Date('06-09-2025'),
     name: 'Intro to Github',
     description: 'Learn how to use Git, Github, VScode and Codespaces. To see the slides click [here](https://docs.google.com/presentation/d/1Bvlc6PLaPOWEu_K9H2rqyYPyxSbU_-iYkh6T2AW9Kf4/edit)',
     hostedBy: [
@@ -90,13 +95,37 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['web', 'workshop']
   },
   {
-    date: new Date('2025-06-28'),
+    date: new Date('06-28-2025'),
     name: 'Flourish',
     description: '📍 Philadelphia\'s Athena Event! Learn more at [flourish.hackclub.com](https://flourish.hackclub.com)!',
     tags: ['athena-event']
   },
+
   {
-    date: new Date('2025-06-30'),
+    date: new Date('06-30-2025'),
+    name: 'Intro to Hardware',
+    description: 'learn how to build cool hardware!',
+    hostedBy: [
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+    ],
+    rsvpLink: 'https://lu.ma/fwjvl4uo'
+    tags: ['hardware', 'workshop']
+  },
+  {
+    date: new Date('07-05-2025'),
+    name: 'JPEG in Ottawa',
+    description: "Ottawa's first all-girls hackathon! July 5–6 at Carleton University.",
+    tags: ['athena-event', 'game-dev']
+  },
+  {
+    date: new Date('07-07-2025'),
+    name: 'Intern & Gap Year at Hack Club AMA',
+    description: 'meet the interns and gap years!',
+    tags: ['ama', 'athena-event'],
+  },
+  {
+    date: new Date('07-14-2025'),
     name: 'How to Deploy Websites (Frontend and Backend)',
     description: 'Learn how to deploy your fullstack website!',
     hostedBy: [
@@ -106,30 +135,9 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     rsvpLink: 'https://lu.ma/509y6w45',
     tags: ['web', 'workshop']
   },
+  
   {
-    date: new Date('2025-07-05'),
-    name: 'JPEG in Ottawa',
-    description: "Ottawa's first all-girls hackathon! July 5–6 at Carleton University.",
-    tags: ['athena-event', 'game-dev']
-  },
-  {
-    date: new Date('2025-07-07'),
-    name: 'Intern & Gap Year at Hack Club AMA',
-    description: 'meet the interns and gap years!',
-    tags: ['other']
-  },
-  {
-    date: new Date('2025-07-14'),
-    name: 'Intro to Hardware',
-    description: 'learn how to build cool hardware!',
-    hostedBy: [
-      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
-      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
-    ],
-    tags: ['hardware', 'workshop']
-  },
-  {
-    date: new Date('2025-07-18'),
+    date: new Date('07-18-2025'),
     name: 'Aurora in San Francisco',
     description: 'see [aurora.hackclub.com](https://aurora.hackclub.com) for more details',
     tags: ['athena-event']
@@ -146,6 +154,10 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('2025-07-28'),
     name: 'Intro to Cybersecurity',
+    hostedBy: [
+      {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
+      ],
+    rsvpLink: 'https://lu.ma/qcs24861',
     tags: ['cybersecurity', 'workshop']
   },
   {
@@ -159,7 +171,17 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['web', 'workshop']
   },
   {
-    date: new Date('2025-11-14'),
+    date: new Date('2025-08-09'),
+    name: 'Show and Tell',
+    description: 'Show off what you\'ve been working on through the summer!',
+    hostedBy: [
+      {username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512'}
+    ],
+    rsvpLink: 'https://lu.ma/pado52rp',
+    tags: ['other']
+  },
+  {
+    date: new Date('11-14-2025'),
     name: 'Parthenon',
     description: 'Completed the Athena Award? We\'ll see you in New York City! 🗽',
     tags: ['athena-award', 'athena-event']
