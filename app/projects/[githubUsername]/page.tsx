@@ -1,0 +1,54 @@
+import Link from "next/link";
+import Image from "next/image";
+import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
+import { getProjects } from "@/lib/projects";
+import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
+
+export default async function UserProjectsPage({
+  params,
+}: {
+  params: { githubUsername: string };
+}) {
+  const data = await getProjects();
+  const projects = data.filter(
+    (p) => p.githubUsername === params.githubUsername
+  );
+
+  if (projects.length === 0) {
+    return (
+      <div className="p-8 text-center text-xl">
+        No projects found for this user.
+      </div>
+    );
+  }
+
+  return (
+    <div className="container mx-auto py-8 bg-[#8c2e37] min-h-screen">
+      <Link
+        href="/projects"
+        className="text-[#D35648] px-[12vw] underline mb-4 inline-block"
+      >
+        ← Back to Projects
+      </Link>
+      <h1 className="text-4xl text-white font-bold mb-8  px-[12vw] playfair-display">
+        {params.githubUsername}&apos;s Projects
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-[url(/bg.svg)] px-[12vw] py-12 min-h-screen">
+        {projects.map((project) => (
+          <Link
+            key={project.id}
+            href={`/projects/${project.githubUsername}/${project.id}`}
+            className="group"
+          >
+            <AthenaAwardsPainting
+              key={project.id}
+              image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
+              description={project.projectName}
+            />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}

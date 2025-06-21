@@ -43,7 +43,7 @@ export default function SpotlightCard({ post }: { post: SpotlightPost }) {
         <div className="fixed inset-0 bg-black/25 background-blur-sm flex w-screen items-center justify-center p-6 md:p-16 z-50">
           <DialogPanel className="bg-white flex flex-col-reverse md:flex-row rounded-lg min-w-[67vw] justify-end md:items-stretch h-[70vh] overflow-hidden">
             <div className="md:w-1/2 p-4 lg:p-10">
-              <div className="text-3xl font-bold text-red">Spotlight</div>
+              <div className="text-3xl font-bold text-[#D35648]">Spotlight</div>
               {/* change this to the actual channel name we decide */}
               <div className="text-base">from #days-of-service</div>
               <div className="prose">
