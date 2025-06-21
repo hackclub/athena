@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
 import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
+
 export default async function ProjectDetailPage({
   params,
 }: {
@@ -24,7 +25,7 @@ export default async function ProjectDetailPage({
         href={`/projects/${project.githubUsername}`}
         className="text-[#D35648] underline mb-4 inline-block px-[16vw]"
       >
-        ← Back to {project.githubUsername}'s Projects
+        ← Back to {project.githubUsername}&apos;s Projects
       </Link>
       <div className=" flex flex-col lg:flex-row items-center gap-16 bg-[url(/bg.svg)] py-12 px-[12vw]">
         <div className="w-full lg:w-1/2">
