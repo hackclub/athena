@@ -5,11 +5,12 @@ export const revalidate = 60;
 
 export async function GET(
   request: Request,
-  { params }: { params: { githubUsername: string } }
+  { params }: { params: Promise<{ githubUsername: string }> }
 ) {
+  const { githubUsername } = await params;
   const projects = await getProjects();
   const filteredProjects = projects.filter(
-    (project) => project.githubUsername === params.githubUsername
+    (project) => project.githubUsername === githubUsername
   );
   return NextResponse.json(filteredProjects);
 }
