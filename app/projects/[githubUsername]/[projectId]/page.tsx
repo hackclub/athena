@@ -7,12 +7,12 @@ import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
 export default async function ProjectDetailPage({
   params,
 }: {
-  params: { githubUsername: string; projectId: string };
+  params: Promise<{ githubUsername: string; projectId: string }>;
 }) {
+  const { githubUsername, projectId } = await params;
   const projects = await getProjects();
   const project = projects.find(
-    (p) =>
-      p.id === params.projectId && p.githubUsername === params.githubUsername
+    (p) => p.id === projectId && p.githubUsername === githubUsername
   );
 
   if (!project) {

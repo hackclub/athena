@@ -7,11 +7,12 @@ import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
 export default async function UserProjectsPage({
   params,
 }: {
-  params: { githubUsername: string };
+  params: Promise<{ githubUsername: string }>;
 }) {
+  const { githubUsername } = await params;
   const data = await getProjects();
   const projects = data.filter(
-    (p) => p.githubUsername === params.githubUsername
+    (p) => p.githubUsername === githubUsername
   );
 
   if (projects.length === 0) {
@@ -31,7 +32,7 @@ export default async function UserProjectsPage({
         ← Back to Projects
       </Link>
       <h1 className="text-4xl text-white font-bold mb-8  px-[12vw] playfair-display">
-        {params.githubUsername}&apos;s Projects
+        {githubUsername}&apos;s Projects
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-[url(/bg.svg)] px-[12vw] py-12 min-h-screen">
