@@ -1,0 +1,1 @@
+export const baseAthenaAwardProjectImageUrl = 'https://hc-cdn.hel1.your-objectstorage.com/s/v3/d188e67b796c30a7efd3f392c4533b1566db4dcc_image.png'
