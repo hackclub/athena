@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ githubUsername: string }> }
+  { params }: { params: { githubUsername: string } }
 ) {
-  const { githubUsername } = await params;
+  const { githubUsername } = params;
   const record = await new AirtableProfilesManager().getProfileByGithubUsername(
     githubUsername
   );
