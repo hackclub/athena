@@ -76,6 +76,8 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('06-16-2025'),
     name: 'Tribute Workshop',
+    date: new Date('06-16-2025'),
+    name: 'Tribute workshop',
     hostedBy: [
       { username: '@phthallo', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512' },
     ],
@@ -86,6 +88,12 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('06-23-2025'),
     name: 'Express Workshop (Intro to Backend)',
+    date: new Date('06-23-2025'),
+    name: 'Intro to backend programming (Express Workshop)',
+    hostedBy: [
+      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+    ],
+    artifactsAvailable: true,
     description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
     hostedBy: [
       { username: '@chxsi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' }
@@ -93,6 +101,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     artifactsAvailable: true,
     rsvpLink: 'https://lu.ma/3855gi0x',
     tags: ['web', 'workshop']
+    tags: ['web', 'workshop', 'backend']
   },
   {
     date: new Date('06-28-2025'),
@@ -103,14 +112,12 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
 
   {
     date: new Date('06-30-2025'),
-    name: 'Intro to Hardware',
-    description: 'learn how to build cool hardware!',
+    name: 'How to deploy websites (Frontend and Backend)',
     hostedBy: [
-      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
-      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
     ],
-    rsvpLink: 'https://lu.ma/fwjvl4uo',
-    tags: ['hardware', 'workshop']
+    artifactsAvailable: true,
+    tags: ['web', 'workshop'],
   },
   {
     date: new Date('07-05-2025'),
@@ -134,6 +141,14 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     ],
     rsvpLink: 'https://lu.ma/509y6w45',
     tags: ['web', 'workshop']
+    date: new Date('07-14-2025'),
+    name: 'Intro to hardware',
+    hostedBy: [
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+    ],
+    artifactsAvailable: true,
+    tags: ['hardware', 'workshop']
   },
   
   {
@@ -153,6 +168,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
   {
     date: new Date('07-28-2025'),
+    date: new Date('07-28-2025'),
     name: 'Intro to Cybersecurity',
     hostedBy: [
       {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
@@ -169,6 +185,9 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     ],
     rsvpLink: 'https://lu.ma/h60zvf4h',
     tags: ['web', 'workshop']
+    date: new Date('08-04-2025'),
+    name: 'Intro to AI',
+    tags: ['ai', 'workshop']
   },
   {
     date: new Date('08-09-2025'),
@@ -181,6 +200,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['other']
   },
   {
+    date: new Date('11-14-2025'),
     date: new Date('11-14-2025'),
     name: 'Parthenon',
     description: 'Completed the Athena Award? We\'ll see you in New York City! 🗽',

@@ -1,12 +1,7 @@
 import Card from "@/components/Card";
 import AthenaAwardsCard from "@/components/AthenaAwardsCard";
-import { CALENDAR_EVENTS } from "@/calendar";
-//import Spotlight from "@/components/Spotlight";
-//import { AirtableSpotlightManager } from "@/lib/airtable";
-//import { SpotlightPost } from "@/lib/spotlight";
 import Image from "next/image";
 import Link from "next/link";
-import CalendarEvent from "@/components/calendar/CalendarEvent";
  
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -22,9 +17,7 @@ export default async function Home() {
       <AthenaAwardsCard/>
 
       <div className="w-full text-left px-6 lg:px-32 mb-16">
-        {/* ⬇️ calendar link? */}
-      
-
+  
         <hr className = "py-10"/>
 
         <div className="text-2xl md:text-4xl font-bold">Curious what else we do?</div>

@@ -27,7 +27,7 @@ interface CalendarEvent {
 
 ```typescript
 {
-  date: new Date('YYYY-MM-DD'),
+  date: new Date('MM-DD-YYYY'),
   name: 'Your Event Name',
   description: 'Optional markdown description with [links](https://example.com)',
   hostedBy: [
@@ -87,7 +87,7 @@ To add new event types or disciplines:
 ## Code Style
 
 - Use single quotes for strings
-- Format dates as `new Date('YYYY-MM-DD')`
+- Format dates as `new Date('MM-DD-YYYY')` with leading zeros
 - Keep events in chronological order
 - Use consistent indentation (2 spaces)
 - Add trailing commas in arrays and objects
@@ -103,7 +103,7 @@ To add new event types or disciplines:
 
 ```typescript
 {
-  date: new Date('2025-08-15'),
+  date: new Date('08-15-2025'),
   name: 'Intro to React',
   description: 'Learn React fundamentals! See [slides](https://example.com/slides)',
   hostedBy: [
