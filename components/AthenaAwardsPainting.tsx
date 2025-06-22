@@ -28,9 +28,9 @@ export default function Painting({
   size?: "default" | "large" | "project";
 }) {
   const sizeClasses = {
-    default: "h-36 sm:h-80",
-    large: "h-48 sm:h-96",
-    project: "h-64 sm:h-[32rem]",
+    default: "h-80",
+    large: "h-96",
+    project: "h-[32rem]",
   };
 
   // Define dimensions for each size - images positioned within the inner frame area
@@ -69,7 +69,7 @@ export default function Painting({
       <div
         className={`${sizeClasses[size]} z-50 flex flex-col items-center justify-center ${className}`}
       >
-        {size !== "project" && (
+        {size === "default" && (
           <span className="text-black no-underline">
             <span
               data-tooltip-id={index}

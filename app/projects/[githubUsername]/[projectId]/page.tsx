@@ -20,12 +20,12 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <div className="container mx-auto  py-8 bg-[#8c2e37] min-h-screen">
+    <div className=" mx-auto  py-8 bg-[#8c2e37] min-h-screen">
       <Link
         href={`/projects/${project.githubUsername}`}
-        className="text-[#D35648] underline mb-4 inline-block px-[16vw]"
+        className="text-[#D35648 text-2xl font-bold flex text-white mb-4 inline-block px-6 lg:px-32"
       >
-        ← Back to {project.githubUsername}&apos;s Projects
+        ← {project.githubUsername}&apos;s Projects
       </Link>
       <div className=" flex flex-col lg:flex-row items-center gap-16 bg-[url(/bg.svg)] py-12 px-[12vw]">
         <div className="w-full lg:w-1/2">
@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({
             {project.projectName}
           </h1>
           <p className="text-white text-lg my-4">{project.description}</p>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex flex-wrap gap-4 ">
               {project.codeUrl && (
                 <a

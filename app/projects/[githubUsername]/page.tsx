@@ -11,9 +11,7 @@ export default async function UserProjectsPage({
 }) {
   const { githubUsername } = await params;
   const data = await getProjects();
-  const projects = data.filter(
-    (p) => p.githubUsername === githubUsername
-  );
+  const projects = data.filter((p) => p.githubUsername === githubUsername);
 
   if (projects.length === 0) {
     return (
@@ -24,12 +22,12 @@ export default async function UserProjectsPage({
   }
 
   return (
-    <div className="container mx-auto py-8 bg-[#8c2e37] min-h-screen">
+    <div className="mx-auto py-8 bg-[#8c2e37] min-h-screen">
       <Link
         href="/projects"
-        className="text-[#D35648] px-[12vw] underline mb-4 inline-block"
+        className="text-[#D35648 text-2xl font-bold flex text-white px-6 lg:px-32 mb-4 inline-block"
       >
-        ← Back to Projects
+        ← Athena Gallery
       </Link>
       <h1 className="text-4xl text-white font-bold mb-8  px-[12vw] playfair-display">
         {githubUsername}&apos;s Projects
