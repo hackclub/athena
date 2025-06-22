@@ -29,7 +29,7 @@ export default async function UserProjectsPage({
       >
         ← Athena Gallery
       </Link>
-      <h1 className="text-4xl text-white font-bold mb-8  px-[12vw] playfair-display">
+      <h1 className="text-4xl lg:text-5xl text-white font-bold mb-8  px-[12vw] playfair-display">
         {githubUsername}&apos;s Projects
       </h1>
 
@@ -44,6 +44,7 @@ export default async function UserProjectsPage({
               key={project.id}
               image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
               description={project.projectName}
+              showCaptionOnSmall={true}
             />
           </Link>
         ))}

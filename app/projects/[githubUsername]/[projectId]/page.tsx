@@ -27,7 +27,7 @@ export default async function ProjectDetailPage({
       >
         ← {project.githubUsername}&apos;s Projects
       </Link>
-      <div className=" flex flex-col lg:flex-row items-center gap-16 bg-[url(/bg.svg)] py-12 px-[12vw]">
+      <div className=" flex flex-col lg:flex-row items-center gap-2 md:gap-16 bg-[url(/bg.svg)] py-12 px-[12vw]">
         <div className="w-full lg:w-1/2">
           <AthenaAwardsPainting
             image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
@@ -39,7 +39,9 @@ export default async function ProjectDetailPage({
           <h1 className="text-4xl text-white font-bold playfair-display">
             {project.projectName}
           </h1>
-          <p className="text-white text-lg my-4">{project.description}</p>
+          <p className="text-white text-base lg:text-lg my-4 whitespace-pre-wrap">
+            {project.description}
+          </p>
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex flex-wrap gap-4 ">
               {project.codeUrl && (
