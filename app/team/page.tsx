@@ -80,6 +80,14 @@ export default function TeamPage() {
   },
 
   {
+    name: "Elianah S.",
+    role: "Athena Intern",
+    slack: "@elia",
+    pronouns: "she/her",
+    image: "https://ca.slack-edge.com/T0266FRGM-U06HPP9GZ3R-2d0a8fa44d4d-512",
+  },
+  
+  {
     name: "Louisa M.",
     role: "Athena Intern",
     slack: "@lou",
