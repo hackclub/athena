@@ -75,38 +75,54 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
   {
     date: new Date('06-16-2025'),
-    name: 'Tribute workshop',
+    name: 'Tribute Workshop',
     hostedBy: [
       { username: '@phthallo', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512' },
     ],
     artifactsAvailable: true,
-    tags: ['other', 'workshop'],
-    rsvpLink:'https://lu.ma/c0eswrg9?tk=0eYxXf'
+    rsvpLink: 'https://lu.ma/c0eswrg9?tk=0eYxXf',
+    tags: ['other', 'workshop']
   },
   {
     date: new Date('06-23-2025'),
-    name: 'Intro to backend programming (Express Workshop)',
+    name: 'Express Workshop (Intro to Backend)',
+    description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
     hostedBy: [
-      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+      { username: '@chxsi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' }
     ],
     artifactsAvailable: true,
-    description: 'learn more at [express.athena.hackclub.com](https://express.athena.hackclub.com)!',
-    tags: ['web', 'workshop', 'backend']
+    rsvpLink: 'https://lu.ma/3855gi0x',
+    tags: ['web', 'workshop']
   },
+  {
+    date: new Date('06-24-2025'),
+    name: 'Hackpad Speedrun with @Meghana',
+    description: 'Meghana will be hosting a hackpad workshop/speedrun, where she\'ll make a hackpad in 2 hours and answer all of your questions. You can follow along, or just sit and vibe to learn',
+    hostedBy: [
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' }
+    ],
+    artifactsAvailable: true,
+    rsvpLink: 'https://lu.ma/hmftz58z',
+    tags: ['hardware', 'workshop']
+  },
+
   {
     date: new Date('06-28-2025'),
     name: 'Flourish',
     description: '📍 Philadelphia\'s Athena Event! Learn more at [flourish.hackclub.com](https://flourish.hackclub.com)!',
     tags: ['athena-event']
   },
+
   {
     date: new Date('06-30-2025'),
-    name: 'How to deploy websites (Frontend and Backend)',
+    name: 'Intro to Hardware',
+    description: 'learn how to build cool hardware!',
     hostedBy: [
-      { username: '@chxshi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512'},
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
     ],
-    artifactsAvailable: true,
-    tags: ['web', 'workshop'],
+    rsvpLink: 'https://lu.ma/fwjvl4uo',
+    tags: ['hardware', 'workshop']
   },
   {
     date: new Date('07-05-2025'),
@@ -122,14 +138,16 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
   {
     date: new Date('07-14-2025'),
-    name: 'Intro to hardware',
+    name: 'How to Deploy Websites (Frontend and Backend)',
+    description: 'Learn how to deploy your fullstack website!',
     hostedBy: [
-      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
-      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+      { username: '@chxsi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' },
+      { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' },
     ],
-    artifactsAvailable: true,
-    tags: ['hardware', 'workshop']
+    rsvpLink: 'https://lu.ma/509y6w45',
+    tags: ['web', 'workshop']
   },
+  
   {
     date: new Date('07-18-2025'),
     name: 'Aurora in San Francisco',
@@ -137,19 +155,47 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-event']
   },
   {
+    date: new Date('07-21-2025'),
+    name: 'Intro to Game Development using Godot',
+    hostedBy: [
+      {username: '@reem', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06U80G86H1-a7cc92358101-512'},
+      {username: '@sarah', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07CU1WD35J-0cc4d8a11f6c-512'}
+    ],
+    tags: ['game-dev', 'workshop']
+  },
+  {
     date: new Date('07-28-2025'),
     name: 'Intro to Cybersecurity',
+    hostedBy: [
+      {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
+      ],
+    rsvpLink: 'https://lu.ma/qcs24861',
     tags: ['cybersecurity', 'workshop']
   },
   {
-    date: new Date('08-04-2025'),
-    name: 'Intro to AI',
-    tags: ['ai', 'workshop']
+    date: new Date('08-09-2025'),
+    name: 'Full Stack Web Development',
+    description: 'Learn how to build full stack web applications using Django!',
+    hostedBy: [
+      {username: '@celeste', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06TV3F4HEU-ee45e446ed7e-512'}
+    ],
+    rsvpLink: 'https://lu.ma/h60zvf4h',
+    tags: ['web', 'workshop']
+  },
+  {
+    date: new Date('08-09-2025'),
+    name: 'Show and Tell',
+    description: 'Show off what you\'ve been working on through the summer!',
+    hostedBy: [
+      {username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512'}
+    ],
+    rsvpLink: 'https://lu.ma/pado52rp',
+    tags: ['other']
   },
   {
     date: new Date('11-14-2025'),
     name: 'Parthenon',
     description: 'Completed the Athena Award? We\'ll see you in New York City! 🗽',
     tags: ['athena-award', 'athena-event']
-  },
+  }
 ]
