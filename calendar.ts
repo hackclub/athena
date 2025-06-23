@@ -95,6 +95,18 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['web', 'workshop']
   },
   {
+    date: new Date('06-24-2025'),
+    name: 'Hackpad Speedrun with @Meghana',
+    description: 'Meghana will be hosting a hackpad workshop/speedrun, where she\'ll make a hackpad in 2 hours and answer all of your questions. You can follow along, or just sit and vibe to learn',
+    hostedBy: [
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' }
+    ],
+    artifactsAvailable: true,
+    rsvpLink: 'https://lu.ma/hmftz58z',
+    tags: ['hardware', 'workshop']
+  },
+
+  {
     date: new Date('06-28-2025'),
     name: 'Flourish',
     description: '📍 Philadelphia\'s Athena Event! Learn more at [flourish.hackclub.com](https://flourish.hackclub.com)!',
