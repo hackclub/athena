@@ -200,8 +200,7 @@ export default function AthenaAwardsCard() {
               How it works - Code three technical projects by Oct 31st
             </h1>
             <p className="text-lg md:text-2xl">
-              Build three of your own projects, or follow one of Hack
-              Club&apos;s tutorials to get started.
+              Build three of your own projects, submit projects from one of our community partners, or follow one of Hack Club&apos;s tutorials to get started.
             </p>
             <p className="text-lg md:text-2xl">
               Code for thirty hours and open source your finished projects.
