@@ -70,7 +70,7 @@ export default function Painting({
         className={`${sizeClasses[size]} z-50 flex flex-col items-center justify-center ${className}`}
       >
         {size === "default" && (
-          <span className="text-black no-underline">
+          <span className="text-black no-underline flex flex-col justify-center items-center">
             <span
               data-tooltip-id={index}
               data-tooltip-content={tooltip}
@@ -125,19 +125,11 @@ export default function Painting({
           />
         </svg>
         {descriptionBottom && (
-          <a target="_blank" className="text-black no-underline" href={link}>
-            <span
-              className={`${
-                showCaptionOnSmall ? "inline" : "hidden sm:inline"
-              } text-sm sm:text-base mx-auto w-max max-w-full px-5 my-4 py-2 ${shineEffect(
-                "bg-[#F4BF4F] border-[#F4BF4F]/80 rounded-sm text-gray-600"
-              )}`}
-            >
-              <span className="hidden lg:inline -pl-2 pr-2"> • </span>
+          <span className="-mt-2 no-underline">
+            <span className="text-pink-50 handwritten font-bold text-lg">
               {descriptionBottom}
-              <span className="hidden lg:inline pl-2 -pr-2"> • </span>
             </span>
-          </a>
+          </span>
         )}
       </div>
     </div>

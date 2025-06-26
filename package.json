@@ -18,6 +18,7 @@
     "emotion": "^11.0.0",
     "extract-colors": "^4.1.1",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.523.0",
     "markdown-to-jsx": "^7.7.2",
     "motion": "^11.17.0",
     "next": "15.2.4",

@@ -20,6 +20,8 @@ export async function fetchProjectsfromAirtable() {
           imageUrl: projectRecord.fields["screenshot_cdn_url"],
           hoursSpent: projectRecord.fields["Optional - Override Hours Spent"],
           status: projectRecord.fields.status,
+          country: projectRecord.fields.Country,
+          stateOrProvince: projectRecord.fields["State / Province"]
         } as Project;
       }
       return undefined;
@@ -27,6 +29,17 @@ export async function fetchProjectsfromAirtable() {
     .filter((project): project is Project => project !== undefined);
 }
 
-export async function getProjects(): Promise<Project[]> {
-  return await fetchProjectsfromAirtable();
+export async function getProjects(
+  page: number = 1,
+  limit: number = 20
+): Promise<{ projects: Project[]; total: number; totalPages: number }> {
+  const allProjects = await fetchProjectsfromAirtable();
+  const total = allProjects.length;
+  const totalPages = Math.ceil(total / limit);
+
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+  const projects = allProjects.slice(startIndex, endIndex);
+
+  return { projects, total, totalPages };
 }

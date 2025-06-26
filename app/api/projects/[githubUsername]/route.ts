@@ -8,7 +8,7 @@ export async function GET(
   { params }: { params: Promise<{ githubUsername: string }> }
 ) {
   const { githubUsername } = await params;
-  const projects = await getProjects();
+  const { projects } = await getProjects();
   const filteredProjects = projects.filter(
     (project) => project.githubUsername === githubUsername
   );

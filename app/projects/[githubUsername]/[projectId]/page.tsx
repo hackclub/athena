@@ -10,7 +10,7 @@ export default async function ProjectDetailPage({
   params: Promise<{ githubUsername: string; projectId: string }>;
 }) {
   const { githubUsername, projectId } = await params;
-  const projects = await getProjects();
+  const { projects } = await getProjects();
   const project = projects.find(
     (p) => p.id === projectId && p.githubUsername === githubUsername
   );
@@ -20,10 +20,10 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <div className=" mx-auto  py-8 bg-[#8c2e37] min-h-screen">
+    <div className=" mx-auto  bg-[#8c2e37] min-h-screen">
       <Link
         href={`/projects/${project.githubUsername}`}
-        className="text-[#D35648 text-2xl font-bold flex text-white mb-4 inline-block px-6 lg:px-32"
+        className="text-[#D35648 text-2xl font-bold flex text-white inline-block px-6 lg:px-32 py-8 border-b-2 border-white/10 shadow-md w-full "
       >
         ← {project.githubUsername}&apos;s Projects
       </Link>
@@ -35,7 +35,7 @@ export default async function ProjectDetailPage({
             size="project"
           />
         </div>
-        <div className="w-full lg:w-1/2 bg-[#8C2E37] border-2 border-white/20 rounded-lg p-8">
+        <div className="w-full lg:w-1/2 bg-[#8C2E37] border-2 border-white/10 rounded-lg p-8 shadow-md">
           <h1 className="text-4xl text-white font-bold playfair-display">
             {project.projectName}
           </h1>

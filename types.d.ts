@@ -56,6 +56,8 @@ interface Project {
   imageUrl?: string;
   hoursSpent?: number;
   status: string;
+  country: string;
+  stateOrProvince: string;
   // Add more fields as needed
 }
 
