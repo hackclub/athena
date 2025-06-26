@@ -45,6 +45,7 @@ export default async function UserProjectsPage({
           <Link
             className="flex flex-row gap-1 items-center justify-center hover:underline text-[#D35648]"
             href={`https://github.com/${githubUsername}`}
+            target="_blank"
           >
             <Github /> Github Profile
           </Link>
