@@ -7,13 +7,14 @@ import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
 import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
 
 interface ProjectsPageProps {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }
 
 export default async function ProjectsPage({
   searchParams,
 }: ProjectsPageProps) {
-  const currentPage = parseInt(searchParams.page || "1");
+  const { page } = await searchParams;
+  const currentPage = parseInt(page || "1");
   const { projects, total, totalPages } = await getProjects(currentPage, 20);
 
   return (

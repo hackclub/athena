@@ -1,4 +1,4 @@
-import { getProjects } from "@/lib/projects";
+import { getAllProjects } from "@/lib/projects";
 import Link from "next/link";
 import Image from "next/image";
 import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
@@ -10,13 +10,13 @@ export default async function ProjectDetailPage({
   params: Promise<{ githubUsername: string; projectId: string }>;
 }) {
   const { githubUsername, projectId } = await params;
-  const { projects } = await getProjects();
+  const projects = await getAllProjects();
   const project = projects.find(
     (p) => p.id === projectId && p.githubUsername === githubUsername
   );
 
   if (!project) {
-    return <div className="p-8 text-center text-xl">Project not found.</div>;
+    return <div className="p-8 text-center text-xl">Project not found. {projects.length}</div>;
   }
 
   return (

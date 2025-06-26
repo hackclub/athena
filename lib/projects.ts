@@ -21,7 +21,7 @@ export async function fetchProjectsfromAirtable() {
           hoursSpent: projectRecord.fields["Optional - Override Hours Spent"],
           status: projectRecord.fields.status,
           country: projectRecord.fields.Country,
-          stateOrProvince: projectRecord.fields["State / Province"]
+          stateOrProvince: projectRecord.fields["State / Province"],
         } as Project;
       }
       return undefined;
@@ -42,4 +42,8 @@ export async function getProjects(
   const projects = allProjects.slice(startIndex, endIndex);
 
   return { projects, total, totalPages };
+}
+
+export async function getAllProjects(): Promise<Project[]> {
+  return await fetchProjectsfromAirtable();
 }

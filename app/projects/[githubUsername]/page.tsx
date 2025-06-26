@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
-import { getProjects } from "@/lib/projects";
+import { getAllProjects } from "@/lib/projects";
 import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
 import { Globe, Map, Github } from "lucide-react";
 
@@ -11,7 +11,7 @@ export default async function UserProjectsPage({
   params: Promise<{ githubUsername: string }>;
 }) {
   const { githubUsername } = await params;
-  const { projects } = await getProjects();
+  const projects = await getAllProjects();
   const userProjects = projects.filter(
     (p) => p.githubUsername === githubUsername
   );
