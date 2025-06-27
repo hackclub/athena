@@ -47,7 +47,7 @@ const SignUp = ({
       {buttonClicked ? (
         <form
           onSubmit={(e) => handleEmailSubmit(e, router, utm_source, ref)}
-          className="w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent "
+          className="w-max border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent "
         >
           <input
             className="outline-none"
@@ -65,7 +65,7 @@ const SignUp = ({
         </form>
       ) : (
         <button
-          className="w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
+          className="w-max hover:border-b-4 hover:border-r-4 hover:border-b-[#DDA14A] hover:border-r-[#DDA14A] bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
           onClick={() => setButtonClicked(true)}
         >
           start
@@ -74,7 +74,7 @@ const SignUp = ({
 
       <Link
         href="https://forms.hackclub.com/athena-award-stickers"
-        className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
+        className="w-max hover:border-b-4 hover:border-r-4 hover:border-b-[#8C2E37] hover:border-r-[#8C2E37] bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
       >
         Get free stickers
       </Link>
@@ -200,32 +200,40 @@ export default function AthenaAwardsCard() {
               />
             </div>
 
-            <h1 className="pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
+
+            <div className = "-mx-32 px-32 border-[#D45A4C]/80 border-t-4 border-b-4 border-dotted py-16 my-8">
+
+            <h1 className="relative text-2xl md:text-4xl font-bold text-[#D35648]">
               How it works - Code three technical projects by Oct 31st
             </h1>
-            <p className="text-lg md:text-2xl">
-              Build three of your own projects, submit projects from one of our community partners, or follow one of Hack Club&apos;s tutorials to get started.
-            </p>
-            <p className="text-lg md:text-2xl">
-              Code for thirty hours and open source your finished projects.
-            </p>
 
-            <p className="text-lg md:text-2xl">
-              Meet other girls in the online community. Ask questions. Get
-              technical support in online meetups and chats. Hack Clubbers will
-              help you finish and deploy your projects.
-            </p>
+            <div className = "my-6 flex flex-col md:flex-row gap-4 *:basis-1/3  mx-auto text-lg md:text-xl *:rounded-lg *:border-2 *:border-b-4 *:border-r-4 *:border-[#D35648] *:border-b-[#DDA14A] *:border-r-[#DDA14A] *:p-6 *:bg-white hover:*:shadow-lg hover:*:-translate-y-2 hover:*:scale-[101%] *:duration-300">
+              <div>
+                  <span className = "bg-[#D35648] font-bold text-white px-1">Build three of your own projects</span>, submit projects from one of our community partners, or follow one of Hack Club&apos;s tutorials to get started.
+              </div>
+              <div>
+                   <span className = "bg-[#D35648] font-bold text-white px-1">Code for thirty hours</span>, open source and deploy your finished projects.
+              </div>
+              <div>
+                <span className = "bg-[#D35648] font-bold text-white px-1">Meet other girls</span> in the online community. Ask questions. Get
+                technical support in online meetups and chats. Hack Clubbers will
+                help you finish and deploy your projects.
+              </div>
+            </div>
 
             <p className="text-lg md:text-2xl text-[#D35648] font-bold">
               Earn the Athena Award to share on your LinkedIn, college
               applications, or elsewhere.
             </p>
+
+          </div>
+
             <div>
               <h1 className="py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
                 Here&apos;s what you can expect:
               </h1>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="flex p-6 flex-col md:flex-row gap-4 border items-center rounded-lg">
+                <div className="flex p-6 flex-col md:flex-row gap-4 border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg">
                   <div className="basis-1/4">
                     <Image
                       className="h-36 object-cover"
@@ -279,8 +287,8 @@ export default function AthenaAwardsCard() {
                       </a>{" "}
                       programs as an artist and developer, + found some of my
                       favorite people through awesome hackathons in LA,
-                      Shanghai, and even online. So excited to see you all in an
-                      even cooler hackathon in NYC :3
+                      Shanghai, and even online. <span className = "bg-[#D35648] font-bold text-white px-1">So excited to see you all in an
+                      even cooler hackathon in NYC :3</span>
                     </p>
                   </div>
                 </div>
