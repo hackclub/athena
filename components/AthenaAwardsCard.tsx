@@ -194,6 +194,10 @@ export default function AthenaAwardsCard() {
                 alt="Girls Who Hack"
                 src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7c7cd694ba0da09feb79b18fd5f0e404ff2208e0_image.png"
               />
+              <img
+                alt="Girl Up Kenya"
+                src="/images/girlup.png"
+              />
             </div>
 
             <h1 className="pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
