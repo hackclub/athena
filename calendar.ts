@@ -12,6 +12,7 @@ export interface CalendarEvent {
   name: string;
   description?: string;
   hostedBy?: EventHost[];
+  recording?: string;
   artifactsAvailable?: boolean;
   rsvpLink?: string;
   tags: Tag[];
@@ -79,6 +80,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     hostedBy: [
       { username: '@phthallo', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U078J6H1XL3-724a93fb0c6f-512' },
     ],
+    recording: "https://hackclub.zoom.us/rec/play/Dgdz8YSz9hJr6F4ejUYFnP97o0jbIYJHoDE629UoTZZejGjKjqUigL6hWJH1roODhQ92VriOWyVmBmBt.xiyaNoQI5rUD0Foz?eagerLoadZvaPages=&accessLevel=meeting&canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fhackclub.zoom.us%2Frec%2Fshare%2F6WIXmM8MFUJqtNqMiCsdHbjrnICn0DoXPWCvYK_rco_mqU9dTHLe5BzjZYshn99I.r5JUsa45GPNOu_Q8",
     artifactsAvailable: true,
     rsvpLink: 'https://lu.ma/c0eswrg9?tk=0eYxXf',
     tags: ['other', 'workshop']
@@ -90,6 +92,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     hostedBy: [
       { username: '@chxsi', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U077C11T3A8-fbdfa7b256a4-512' }
     ],
+    recording: "https://mega.nz/file/TBVVTQDb#L91Z7uVN8jTshs30ulKtHEHAz8D1pdrK6HZgHJpk8e4",
     artifactsAvailable: true,
     rsvpLink: 'https://lu.ma/3855gi0x',
     tags: ['web', 'workshop']
@@ -102,6 +105,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' }
     ],
     artifactsAvailable: true,
+    recording: "https://gofile.io/d/9Xh1Nm",
     rsvpLink: 'https://lu.ma/hmftz58z',
     tags: ['hardware', 'workshop']
   },
@@ -121,8 +125,19 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
       { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
     ],
+    recording: "https://hackclub.zoom.us/rec/play/l-FUtN094fLOEcMTpmeMPSb_LeXICXv4SQ7jUW4NRhgXJLmT3ZT[…]5b7XTZzBI0Ku1l_2ARvkTDKl52wBahjwMFbmLPFGg84.Qi2VZxqQk4JayMM7",
     rsvpLink: 'https://lu.ma/fwjvl4uo',
     tags: ['hardware', 'workshop']
+  },
+  {
+    date: new Date('06-30-2025'),
+    name: 'Jumpstart (Godot) Game Dev Workshop',
+    description: "Build a Godot platformer for Estella's YSWS Jumpstart!",
+    hostedBy: [
+      { username: '@estella', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06UYA4AH6F-a85235815241-512' },
+    ],
+    recording: "https://hackclub.slack.com/archives/C0931T5SEH4/p1751299015727739",
+    tags: ['game-dev']
   },
   {
     date: new Date('07-03-2025'),
