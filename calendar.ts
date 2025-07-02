@@ -105,7 +105,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' }
     ],
     artifactsAvailable: true,
-    recording: "https://gofile.io/d/9Xh1Nm",
+    recording: "https://youtu.be/KP1T5V40Sfc",
     rsvpLink: 'https://lu.ma/hmftz58z',
     tags: ['hardware', 'workshop']
   },
@@ -125,7 +125,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
       { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
     ],
-    recording: "https://hackclub.zoom.us/rec/play/l-FUtN094fLOEcMTpmeMPSb_LeXICXv4SQ7jUW4NRhgXJLmT3ZT[…]5b7XTZzBI0Ku1l_2ARvkTDKl52wBahjwMFbmLPFGg84.Qi2VZxqQk4JayMM7",
+    recording: "https://youtu.be/Wy1X5jSPJhA",
     rsvpLink: 'https://lu.ma/fwjvl4uo',
     tags: ['hardware', 'workshop']
   },
