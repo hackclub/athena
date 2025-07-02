@@ -116,12 +116,22 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     date: new Date('06-30-2025'),
     name: 'Intro to Hardware',
-    description: 'learn how to build cool hardware!',
+    description: 'learn how to build a Pathfinder, an eFidget and controller pad',
     hostedBy: [
       { username: '@lou', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512' },
       { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
     ],
     rsvpLink: 'https://lu.ma/fwjvl4uo',
+    tags: ['hardware', 'workshop']
+  },
+  {
+    date: new Date('07-03-2025'),
+    name: 'Pathfinder Workshop',
+    description: "The second Pathfinder workshop, learn how to make a sick PCB",
+    hostedBy: [
+      { username: '@Meghana', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512' },
+    ],
+    rsvpLink: 'https://lu.ma/lsc2n1g6',
     tags: ['hardware', 'workshop']
   },
   {
