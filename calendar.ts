@@ -111,13 +111,6 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
 
   {
-    date: new Date('06-28-2025'),
-    name: 'Flourish',
-    description: '📍 Philadelphia\'s Athena Event! Learn more at [flourish.hackclub.com](https://flourish.hackclub.com)!',
-    tags: ['athena-event']
-  },
-
-  {
     date: new Date('06-30-2025'),
     name: 'Intro to Hardware',
     description: 'learn how to build a Pathfinder, an eFidget and controller pad',
