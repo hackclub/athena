@@ -155,7 +155,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     name: 'Spatula Workshop',
     description: '',
     hostedBy: [
-      { username: '@Angad', avatarUrl: '' },
+      { username: '@Angad', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U075RTSLDQ8-42c3f01d5932-512' },
     ],
     rsvpLink: '',
     tags: ['hardware', 'workshop']
