@@ -20,7 +20,7 @@ export default function PastCalendarSection({ pastEvents }: PastCalendarSectionP
           onClick={() => setShowPastEvents(!showPastEvents)}
           className="px-4 py-2 rounded text-black hover:text-red transition-colors w-full bg-white border md:max-w-[calc(55vw_-_2rem)] italic"
         >
-          ({showPastEvents ? 'hide' : 'show'} past events this year)
+          ({showPastEvents ? 'hide' : 'show'} past events & access workshop recordings)
         </button>
       </div>
       <div>
