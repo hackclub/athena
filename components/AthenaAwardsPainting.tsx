@@ -1,5 +1,6 @@
 "use client";
 import { Tooltip } from "react-tooltip";
+import Link from "next/link";
 
 export const shineEffect = (props: string) =>
   `${props} border text-center mx-auto focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] dark:before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]`;
@@ -12,7 +13,8 @@ export default function Painting({
   tooltip,
   description,
   descriptionBottom,
-  link,
+  link1,
+  link2,
   className,
   showCaptionOnSmall = false,
   size = "default",
@@ -21,7 +23,8 @@ export default function Painting({
   index?: string;
   description: string;
   descriptionBottom?: string;
-  link?: string;
+  link1?: string;
+  link2?: string;
   className?: string;
   tooltip?: string;
   showCaptionOnSmall?: boolean;
@@ -69,67 +72,74 @@ export default function Painting({
       <div
         className={`${sizeClasses[size]} z-50 flex flex-col items-center justify-center ${className}`}
       >
-        {size === "default" && (
-          <span className="text-black no-underline flex flex-col justify-center items-center">
-            <span
-              data-tooltip-id={index}
-              data-tooltip-content={tooltip}
-              className={`${
-                showCaptionOnSmall ? "inline" : "hidden sm:inline"
-              } text-sm sm:text-base mx-auto w-max max-w-full px-5 my-4 py-2 ${shineEffect(
-                "bg-[#F4BF4F] border-[#F4BF4F]/80 rounded-sm text-gray-600"
-              )}`}
-            >
-              <span className="hidden lg:inline -pl-2 pr-2"> • </span>
-              {description}
-              <span className="hidden lg:inline pl-2 -pr-2"> • </span>
-            </span>
-          </span>
-        )}
-        <svg
-          width="100%"
-          height="100%"
-          viewBox={currentDimensions.viewBox}
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <Link
+          href={link1 || "/projects"}
+          className="flex flex-col justify-center items-center -gap-6 w-full h-fit"
         >
-          <image
-            x={
-              size === "project"
-                ? currentDimensions.imageX - 30
-                : currentDimensions.imageX - 20
-            }
-            y={
-              size === "project"
-                ? currentDimensions.imageY - 30
-                : currentDimensions.imageY - 20
-            }
-            width={
-              size === "project"
-                ? currentDimensions.imageWidth + 70
-                : currentDimensions.imageWidth + 40
-            }
-            height={
-              size === "project"
-                ? currentDimensions.imageHeight + 70
-                : currentDimensions.imageHeight + 40
-            }
-            preserveAspectRatio="xMidYMid slice"
-            xlinkHref={image}
-          />
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d={currentDimensions.path}
-            fill="#F4BF4F"
-          />
-        </svg>
-        {descriptionBottom && (
-          <span className="-mt-2 no-underline">
-            <span className="text-pink-50 handwritten font-bold text-lg">
-              {descriptionBottom}
+          {size === "default" && (
+            <span className="text-black no-underline flex flex-col justify-center items-center">
+              <span
+                data-tooltip-id={index}
+                data-tooltip-content={tooltip}
+                className={`${
+                  showCaptionOnSmall ? "inline" : "hidden sm:inline"
+                } text-sm sm:text-base mx-auto w-max max-w-full px-5 my-4 py-2 ${shineEffect(
+                  "bg-[#F4BF4F] border-[#F4BF4F]/80 rounded-sm text-gray-600"
+                )}`}
+              >
+                <span className="hidden lg:inline -pl-2 pr-2"> • </span>
+                {description}
+                <span className="hidden lg:inline pl-2 -pr-2"> • </span>
+              </span>
             </span>
-          </span>
+          )}
+          <svg
+            width="100%"
+            height="100%"
+            viewBox={currentDimensions.viewBox}
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <image
+              x={
+                size === "project"
+                  ? currentDimensions.imageX - 30
+                  : currentDimensions.imageX - 20
+              }
+              y={
+                size === "project"
+                  ? currentDimensions.imageY - 30
+                  : currentDimensions.imageY - 20
+              }
+              width={
+                size === "project"
+                  ? currentDimensions.imageWidth + 70
+                  : currentDimensions.imageWidth + 40
+              }
+              height={
+                size === "project"
+                  ? currentDimensions.imageHeight + 70
+                  : currentDimensions.imageHeight + 40
+              }
+              preserveAspectRatio="xMidYMid slice"
+              xlinkHref={image}
+            />
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d={currentDimensions.path}
+              fill="#F4BF4F"
+            />
+          </svg>
+        </Link>
+        {descriptionBottom && (
+          <Link href={link2 || "/projects"}>
+            <span className="-mt-4 no-underline hover:underline underline-offset-2 decoration-transparent hover:decoration-white">
+              <span className="text-pink-50 handwritten font-bold text-lg">
+                {descriptionBottom}
+              </span>
+            </span>
+          </Link>
         )}
       </div>
     </div>

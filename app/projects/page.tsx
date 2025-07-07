@@ -48,19 +48,15 @@ export default async function ProjectsPage({
 
       <div className="px-6 lg:px-32 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 3xl:grid-cols-5 gap-6  bg-[url(/bg.svg)] shadow-lg w-full border-t-2 border-white/10">
         {projects.map((project) => (
-          <Link
+          <AthenaAwardsPainting
             key={project.id}
-            href={`/projects/${project.githubUsername}/${project.id}`}
-            className="flex flex-col justify-center items-center"
-          >
-            <AthenaAwardsPainting
-              key={project.id}
-              image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
-              description={project.projectName}
-              showCaptionOnSmall={true}
-              descriptionBottom={`by @${project.githubUsername}`}
-            />
-          </Link>
+            image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
+            description={project.projectName}
+            showCaptionOnSmall={true}
+            descriptionBottom={`by @${project.githubUsername}`}
+            link1={`/projects/${project.githubUsername}/${project.id}`}
+            link2={`/projects/${project.githubUsername}`}
+          />
         ))}
       </div>
 
