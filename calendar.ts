@@ -187,7 +187,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['other', 'workshop']
   },
   {
-    date: new Date('07-07-2025'),
+    date: new Date('07-10-2025'),
     name: 'Intern & Gap Year at Hack Club AMA',
     description: 'Meet the interns and gap years!',
     tags: ['ama', 'athena-event'],
