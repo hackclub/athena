@@ -190,7 +190,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     date: new Date('07-07-2025'),
     name: 'Intern & Gap Year at Hack Club AMA',
     description: 'Meet the interns and gap years!',
-    tags: ['ama', 'athena-event'],
+    tags: ['ama', 'athena-event', 'other'],
   },
   {
     date: new Date('07-10-2025'),
@@ -226,7 +226,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     hostedBy: [
       { username: '@Kate', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07PXU0657B-19a567a11837-512' },
     ],
-    rsvpLink: 'https://lu.ma/cifnfwq5',
+    rsvpLink: 'https://lu.ma/am58in3m',
     tags: ['hardware', 'workshop']
   },
   {
