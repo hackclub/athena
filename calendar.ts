@@ -220,7 +220,8 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-event']
   },
   {
-    date: new Date('07-21-2025'),
+
+    date: new Date('08-05-2025'),
     name: 'Plunge Workshop',
     description: 'Plunge into CAD! Learn how to make custom, stamp-style cookie cutters and get them shipped!',
     hostedBy: [
