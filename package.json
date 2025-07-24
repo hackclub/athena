@@ -26,6 +26,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-marquee-slider": "^1.1.5",
+    "react-multi-carousel": "^2.8.6",
     "react-tooltip": "^5.28.1",
     "sharp": "^0.33.5",
     "styled-components": "5.3.5",
