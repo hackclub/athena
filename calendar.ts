@@ -33,7 +33,7 @@ export const formatTag = (tag: EventType | Disciplines): string => {
     'ai': 'Artificial Intelligence',
     'cybersecurity': 'Cybersecurity',
     'ama': 'Ask Me Anything',
-    'athenaeum': 'Women in Tech Series',
+    'athenaeum': 'Athenaeum',
     'other': 'Other',
   };
   return tagMapping[tag];
