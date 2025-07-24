@@ -33,6 +33,7 @@ export const formatTag = (tag: EventType | Disciplines): string => {
     'ai': 'Artificial Intelligence',
     'cybersecurity': 'Cybersecurity',
     'ama': 'Ask Me Anything',
+    'athenaeum': 'Athenaeum',
     'other': 'Other',
   };
   return tagMapping[tag];
@@ -220,6 +221,26 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-event']
   },
   {
+    date: new Date('07-25-2025'),
+    name: 'Episode 1: Lara Rubbelke AMA',
+    description: "Join us for Episode 1 of the Athenaeum web series, where we'll be having a Q&A session with [Lara Rubbelke](https://www.linkedin.com/in/lararubbelke/), the CTO of Microsoft Americas!",
+    hostedBy: [
+      { username: '@elia', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U06HPP9GZ3R-c28081aa1f5d-512'},
+      { username: '@Charlotte', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U084T4KCZ8Q-fc1551bf4b82-512'}
+    ],
+    rsvpLinks: ['https://hackclub.slack.com/archives/C0266FRGT/p1753316127392049'],
+    tags: ['ama', 'athenaeum']
+  }
+  {
+    date: new Date('07-28-2025'),
+    name: 'Intro to Cybersecurity',
+    hostedBy: [
+      {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
+      ],
+    rsvpLink: 'https://lu.ma/qcs24861',
+    tags: ['cybersecurity', 'workshop']
+  },
+  {
 
     date: new Date('08-05-2025'),
     name: 'Plunge Workshop',
@@ -230,16 +251,6 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     rsvpLink: 'https://lu.ma/am58in3m',
     tags: ['hardware', 'workshop']
   },
-  {
-    date: new Date('07-28-2025'),
-    name: 'Intro to Cybersecurity',
-    hostedBy: [
-      {username: '@thanishkka', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512'}
-      ],
-    rsvpLink: 'https://lu.ma/qcs24861',
-    tags: ['cybersecurity', 'workshop']
-  },
-  
   {
     date: new Date('08-09-2025'),
     name: 'Full Stack Web Development',
