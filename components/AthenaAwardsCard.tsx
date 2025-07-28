@@ -6,6 +6,51 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+
+const carouselImages = [
+  { 
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
+    caption: "Hackers at Horizon, a Day of Service event in NYC."
+  },
+  { 
+    image: "/images/jpeg.png",
+    caption: "Programmers working hard at Athena's JPEG game jam in Ottawa, Canada."
+  },
+  { 
+    image: "/images/underground.png",
+    caption: "A workshop on GitHub at Underground, in Toronto, Canada"
+  },
+  {
+    image: "/images/jua.png",
+    caption: "Jua, the first overseas Day of Service in Nairobi."
+  },
+  {
+    image: "/images/ascend.png",
+    caption: "Ascend - the 2024 Athena Summit at SpaceX, LA."
+  }
+]
 
 async function handleEmailSubmit(
   event: FormEvent<HTMLFormElement>,
@@ -92,11 +137,12 @@ export default function AthenaAwardsCard() {
   return (
     <>
       <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D35648] from-0%  via-[#D35648]/80 via-60% to-[#993E47]/0 overflow-hidden transition">
-        <div className="relative z-20 h-full">
+        <div className = "grid grid-cols-2 gap-4">
+        <div className="relative z-20 h-full flex flex-col">
           {/* <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div> */}
           <Image
-            className="w-full md:w-3/5"
-            src="/svg/athena_award.svg"
+            className="w-5/6"
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlinedlogoaltcropped.svg"
             alt="Athena Award"
             width={1000}
             height={1000}
@@ -104,20 +150,8 @@ export default function AthenaAwardsCard() {
           />
           <div className="text-white text-2xl md:w-2/3 py-4">
             <Tooltip id="info" className="max-w-96" />
-            <ul className="list-inside list-decimal text-lg md:text-2xl">
-              <li>
-                Earn Hack Club&apos;s Athena Award, an industry recognized
-                technical certificate.
-              </li>
-              <li>
-                Travel to New York City for 2025&apos;s largest high school
-                hackathon for girls!
-              </li>
-              <li>
-                Win prizes as you code, including laptops, iPads, Flipper Zeros,
-                headphones and hoodies.
-              </li>
-            </ul>
+            <h2 className = "text-2xl font-semibold">💻 Build projects. Get prizes.</h2>
+            <h2 className = "text-2xl">🗽 Fly to <span className = "font-semibold">New York City</span> for the largest <span className = "font-semibold">all-girls high school hackathon.</span></h2>
           </div>
 
           <SignUp
@@ -128,19 +162,24 @@ export default function AthenaAwardsCard() {
             ref={ref!}
             className="mb-10"
           />
-          <span className="text-2xl text-[#D35648] my-4">
+          <span className="text-2xl font-semibold text-[#D35648] my-4">
             Happening now. You&apos;re invited to join a community of creators,
             built by girls, for girls. In collaboration with:
           </span>
         </div>
-        <Image
-          alt="Athena Awards Assets"
-          src="/images/demo_logo.png"
-          width={500}
-          height={500}
-          className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80 h-[500px]"
-          priority
-        />
+        
+          <iframe
+            className="w-full rounded-lg border-2 border-white animate-wiggle hover:animate-none"
+            height="415"
+            src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
+            title="This is the Athena Award "
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+      </div>
+
       </div>
       <div>
         <div className="py-6">
@@ -232,11 +271,12 @@ export default function AthenaAwardsCard() {
               <h1 className="py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
                 Here&apos;s what you can expect:
               </h1>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="flex p-6 flex-col md:flex-row gap-4 border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg">
-                  <div className="basis-1/4">
+              <div className = "-mx-12 lg:-mx-32">
+              <Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
+                <div className="flex p-6 flex-row gap-4 *:text-xs *:md:text-lg">
+                  <div className="flex flex-col items-center basis-1/4">
                     <Image
-                      className="h-36 object-cover"
+                      className=" h-36 object-cover"
                       src="/images/sarahn.png"
                       alt="Sarah N"
                       width={144}
@@ -292,18 +332,16 @@ export default function AthenaAwardsCard() {
                     </p>
                   </div>
                 </div>
-                <iframe
-                  className="w-full"
-                  height="415"
-                  src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
-                  title="This is the Athena Award "
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+                { carouselImages.map((item: { image: string, caption: string }, index: number) => (
+                  <div key = {index} className = "flex flex-col gap-4 items-center justify-center">
+                    <img src = {item.image} className = "w-full aspect-square object-cover"/>
+                    <i className = "p-2 text-center">{item.caption}</i>
+                  </div>
+                ))}
+              </Carousel>
             </div>
+            </div>
+
 
             <h1 className="pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
               You&apos;re invited to the best ever hackathon.
