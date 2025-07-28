@@ -5,8 +5,7 @@ import Card from "@/components/Card";
 import Team from "@/components/Team";
 
 export default function TeamPage() {
-
-    const teamMembers = [
+const teamMembers = [
   {
     name: "Christina Asquith",
     role: "Cofounder of Hack Club",
@@ -111,7 +110,6 @@ export default function TeamPage() {
     image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e27855d383340c741fc7d7186eeff0d567aeac0e_screenshot_2025-06-12_at_10.24.54___am.png",
   },
 ];
-
 
   return (
     <Background>
