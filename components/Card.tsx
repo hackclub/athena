@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 interface Card {
-  cardType: "bordered" | "tinted" | "photo" | "spotlight";
+  cardType: "bordered" | "tinted" | "photo";
   className?: string;
   children?: ReactNode;
 }
@@ -19,10 +19,6 @@ interface BorderedCardProps extends Card {
   cardType: "bordered";
   children: ReactNode;
   borderColor?: string;
-  href?: string;
-  title?: string;
-  description?: string;
-  iconImage?: string;
 }
 
 export interface TintedCardProps extends Card {
@@ -34,16 +30,7 @@ export interface TintedCardProps extends Card {
   description: string;
 }
 
-interface SpotlightCardProps extends Card {
-  cardType: "spotlight";
-  image: string;
-  title: string;
-  description: string;
-  channel?: string;
-  href: string;
-}
-
-type CardProps = BorderedCardProps | TintedCardProps | PhotoCardProps | SpotlightCardProps;
+type CardProps = BorderedCardProps | TintedCardProps | PhotoCardProps;
 
 export default function Card(props: CardProps) {
   return (
@@ -60,14 +47,7 @@ export default function Card(props: CardProps) {
         />
       )}
       {props.cardType === "bordered" && (
-        <BorderedCard
-          title={props.title}
-          description={props.description}
-          href={props.href}
-          cardType="bordered"
-          className={props.className}
-          iconImage={props.iconImage}
-        >
+        <BorderedCard cardType="bordered" className={props.className}>
           {props.children}
         </BorderedCard>
       )}
@@ -80,17 +60,6 @@ export default function Card(props: CardProps) {
         >
           {props.children}
         </PhotoCard>
-      )}
-      {props.cardType === "spotlight" && (
-        <SpotlightCard
-          cardType="spotlight"
-          image={props.image}
-          title={props.title}
-          description={props.description}
-          channel={props.channel}
-          href={props.href}
-          className={props.className}
-        />
       )}
     </>
   );
@@ -127,29 +96,12 @@ function TintedCard(props: TintedCardProps) {
 function BorderedCard(props: BorderedCardProps) {
   return (
     <div
-      className={`p-4 text-black shadow-md rounded-lg border-2 ${props.className}`}
+      className={`p-4 bg-white shadow-md rounded-lg border-2 ${props.className}`}
       style={{
-        borderColor: props.borderColor || "red",
+        borderColor: props.borderColor || "black",
       }}
     >
-      <div className="flex justify-between items-start gap-4">
-        <div className="flex-1">
-          <div className="text-2xl font-bold">{props.title}</div>
-          <div className="text-sm md:text-base">{props.description}</div>
-          <div className="">
-            {props.children}
-          </div>
-        </div>
-        {props.iconImage && (
-          <div className="w-16 h-16 flex-shrink-0">
-            <img 
-              src={props.iconImage} 
-              alt="" 
-              className="w-full h-full object-contain"
-            />
-          </div>
-        )}
-      </div>
+      {props.children}
     </div>
   );
 }
@@ -190,32 +142,6 @@ function PhotoCard(props: PhotoCardProps) {
         }}
       ></div>
       <div className="p-4 text-left">{props.children}</div>
-    </div>
-  );
-}
-
-function SpotlightCard(props: SpotlightCardProps) {
-  return (
-    <div className="w-full col-span-2">
-      <Link href={props.href} className="block w-full">
-        <div className="block lg:hidden w-full">
-          <Card cardType="photo" image={props.image} photoLocation="top">
-            <div className="text-2xl text-[#D35648] font-bold">{props.title}</div>
-            <div className="mt-3 line-clamp-3">
-              <div className="prose">{props.description}</div>
-              <button className="text-red">Read more</button>
-            </div>
-          </Card>
-        </div>
-        <div className="hidden lg:block w-full">
-          <Card cardType="photo" image={props.image} photoLocation="right">
-            <div className="text-2xl text-[#D35648] font-bold">{props.title}</div>
-            <div className="mt3 line-clamp-3 prose">
-              <div className="prose">{props.description}</div>
-            </div>
-          </Card>
-        </div>
-      </Link>
     </div>
   );
 }
