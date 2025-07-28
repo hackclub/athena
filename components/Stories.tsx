@@ -11,7 +11,7 @@ export default function Stories() {
 
   return (
     <div className="grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 my-8">
-      {stories.map((item, index) => (
+      {stories.map((item: any, index: any) => (
         <Fragment key={index}>
           <div
             onClick={() => setIsOpen(index)}
