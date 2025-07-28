@@ -29,6 +29,29 @@ const responsive = {
   }
 };
 
+const carouselImages = [
+  { 
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
+    caption: "Hackers at Horizon, a Day of Service event in NYC."
+  },
+  { 
+    image: "/images/jpeg.png",
+    caption: "Programmers working hard at Athena's JPEG game jam in Ottawa, Canada."
+  },
+  { 
+    image: "/images/underground.png",
+    caption: "A workshop on GitHub at Underground, in Toronto, Canada"
+  },
+  {
+    image: "/images/jua.png",
+    caption: "Jua, the first overseas Day of Service in Nairobi."
+  },
+  {
+    image: "/images/ascend.png",
+    caption: "Ascend - the 2024 Athena Summit at SpaceX, LA."
+  }
+]
+
 async function handleEmailSubmit(
   event: FormEvent<HTMLFormElement>,
   router: any,
@@ -248,11 +271,12 @@ export default function AthenaAwardsCard() {
               <h1 className="py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
                 Here&apos;s what you can expect:
               </h1>
-              <Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet", "mobile"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
-                <div className="flex p-6 flex-col md:flex-row gap-4 *:text-sm">
-                  <div className="basis-1/4">
+              <div className = "-mx-12 lg:-mx-32">
+              <Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
+                <div className="flex p-6 flex-row gap-4 *:text-xs *:md:text-lg">
+                  <div className="flex flex-col items-center basis-1/4">
                     <Image
-                      className="h-36 object-cover"
+                      className=" h-36 object-cover"
                       src="/images/sarahn.png"
                       alt="Sarah N"
                       width={144}
@@ -308,15 +332,14 @@ export default function AthenaAwardsCard() {
                     </p>
                   </div>
                 </div>
-
-                <div className = "flex flex-col gap-4 items-center justify-center">
-                  <img src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png"/>
-                  <i>Hackers at Horizon, a Day of Service event in NYC</i>
-                </div>
-                  <img src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png"/>
-                  <img src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png"/>
-
+                { carouselImages.map((item: { image: string, caption: string }, index: number) => (
+                  <div key = {index} className = "flex flex-col gap-4 items-center justify-center">
+                    <img src = {item.image} className = "w-full aspect-square object-cover"/>
+                    <i className = "p-2 text-center">{item.caption}</i>
+                  </div>
+                ))}
               </Carousel>
+            </div>
             </div>
 
 
