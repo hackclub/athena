@@ -271,16 +271,10 @@ export default function AthenaAwardsCard() {
               <h1 className="py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
                 Here&apos;s what you can expect:
               </h1>
-<<<<<<< HEAD
               <div className = "-mx-12 lg:-mx-32">
               <Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
                 <div className="flex p-6 flex-row gap-4 *:text-xs *:md:text-lg">
                   <div className="flex flex-col items-center basis-1/4">
-=======
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="flex p-6 flex-col md:flex-row gap-4 border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg">
-                  <div className="basis-1/4">
->>>>>>> main
                     <Image
                       className=" h-36 object-cover"
                       src="/images/sarahn.png"
