@@ -220,13 +220,14 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     tags: ['athena-event']
   },
   {
-    date: new Date('07-21-2025'),
-    name: 'Bakebuild Workshop',
-    description: 'Learn how to make a cookie cutter using OnShape and get cookies!',
+
+    date: new Date('08-05-2025'),
+    name: 'Plunge Workshop',
+    description: 'Plunge into CAD! Learn how to make custom, stamp-style cookie cutters and get them shipped!',
     hostedBy: [
       { username: '@Kate', avatarUrl: 'https://ca.slack-edge.com/T0266FRGM-U07PXU0657B-19a567a11837-512' },
     ],
-    rsvpLink: 'https://lu.ma/cifnfwq5',
+    rsvpLink: 'https://lu.ma/am58in3m',
     tags: ['hardware', 'workshop']
   },
   {
