@@ -39,8 +39,8 @@ export default function TeamPage() {
         "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c630a53b4da175e0dfc077710a87e11c90a10651_aed248e0-7fef-4005-8c5d-63e988d0a615.jpeg",
     },
     {
-      name: "Abby F.",
-      role: "Days of Service Founder and Philathropy Lead",
+      name: "Abby Fischler",
+      role: "Days of Service Co-Founder and Philathropy Lead",
       slack: "@Abby Fischler",
       pronouns: "she/her",
       image:
