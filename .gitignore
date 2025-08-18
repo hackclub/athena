@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# package manager
+bun.lock
+
 # testing
 /coverage
 
@@ -41,3 +44,6 @@ yarn-error.log*
 next-env.d.ts
 
 v1
+
+# tools 
+AGENT.md

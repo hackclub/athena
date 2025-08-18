@@ -5,8 +5,7 @@ import Card from "@/components/Card";
 import Team from "@/components/Team";
 
 export default function TeamPage() {
-
-    const teamMembers = [
+const teamMembers = [
   {
     name: "Christina Asquith",
     role: "Cofounder of Hack Club",
@@ -80,6 +79,14 @@ export default function TeamPage() {
   },
 
   {
+    name: "Elianah S.",
+    role: "Athena Intern",
+    slack: "@elia",
+    pronouns: "she/her",
+    image: "https://ca.slack-edge.com/T0266FRGM-U06HPP9GZ3R-2d0a8fa44d4d-512",
+  },
+  
+  {
     name: "Louisa M.",
     role: "Athena Intern",
     slack: "@lou",
@@ -103,7 +110,6 @@ export default function TeamPage() {
     image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e27855d383340c741fc7d7186eeff0d567aeac0e_screenshot_2025-06-12_at_10.24.54___am.png",
   },
 ];
-
 
   return (
     <Background>
