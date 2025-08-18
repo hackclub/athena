@@ -68,5 +68,54 @@ export const stories = [
     award: false,
     description: "Have you ever wondered what your trash can would say if it could talk back to you? Probably not, but that's what makes this next project ridiculously amazing. Say hello to the TTTC! The most scrappy, rude, and downright hilarious trash can ever created. Meghana, Ducc, and Selena worked nonstop through the weekend to bring this trash talker to life. The result? A trash can that doesn't just collect garbage but also throws it right back at ya verbally.",
     demoLink: "https://youtu.be/JxGyt0A78mU?si=T_X8lFCxaqJ8Zki7"
+  },
+  {
+    title: "Volume Breakout",
+    author: "Rosewater (@r0s3)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8040331ac3036f8623cf3ec287b3ac81fda25dc4_image.png",
+    featured: true,
+    award: false,
+    description:
+      "It’s Breakout, but with a twist, you control the paddle using the 3DS volume slider. Yep, she built a fully playable clone for the 3DS that turns audio control into game control, and it’s just as chaotic and fun as it sounds. Made with Citro2D, libctru, and devkitARM, this was their first 3DS project. The idea came from the simple fact that no one had done it yet, so they did. P.S. Acon even got it running on their own 3DS!",
+    demoLink:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/10dfa7b1b7788a81510752199f451668201d521c_image.png",
+  },
+  {
+    title: "Subject-13",
+    author: "Jessica Sun (@Jessica Sun)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/44bc46ee0ae6680b79b51c01e3cd6df4b0c37c0c_image.png",
+    featured: true,
+    award: false,
+    description:
+      "Step into a mysterious underground lab in this choose-your-own-adventure game where your choices decide whether you escape or disappear. Jessica built Subject-13 so you can play as either a scientist or a test subject, each with totally different storylines, decisions, and even a secret ending (if you’re sharp enough to find it).",
+    demoLink: "https://jessicasun1022.github.io/Subject-13/",
+  },
+  {
+    title: "Infinity Lost",
+    author: "Violet (@ViviTheQueen)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1946eff457cc5ef55c25005ba44fefcfb8fb6450_image.png",
+    featured: true,
+    award: false,
+    description:
+      "The game where every exit just leads you back to the start: welcome to the infinitely looping space shuttle. As John Loop, you’ll wall-run, dash, and battle through twisting corridors in this high-speed movement FPS. Violet built Infinity Lost by combining the Godot game engine with TrenchBroom-designed levels to deliver fluid combat, tight movement, and non-stop momentum!",
+    demoLink: "https://vivithequeen.itch.io/infinity-lost",
+  },
+  {
+    title: "Kamochi",
+    author: "Ren (@ren)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/bb5f464c1147281d2314f1729ba17c8e8c64d991_image.png",
+    featured: true,
+    award: false,
+    description:
+      "Meet Kamochi, your very own virtual duck! Inspired by Tamagotchi, Ren made this p5.js game where you raise a duck from egg to full-grown, keeping its food, happiness, and sleep stats up by playing adorable minigames. Let any stat hit zero, and it’s game over. All the pixel art (yes, including the cutest duck sprites ever!) was made by Ren in Piskel, and this was also their very first JavaScript project.",
+    demoLink: "https://electricxangel.github.io/kamochi/",
   }
 ]
