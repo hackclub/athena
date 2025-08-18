@@ -1,8 +1,5 @@
 import Card from "@/components/Card";
 import AthenaAwardsCard from "@/components/AthenaAwardsCard";
-//import Spotlight from "@/components/Spotlight";
-//import { AirtableSpotlightManager } from "@/lib/airtable";
-//import { SpotlightPost } from "@/lib/spotlight";
 import Image from "next/image";
 import Link from "next/link";
  
@@ -10,19 +7,20 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  //const data = await new AirtableSpotlightManager().getLatestRecord();
-  //const post: SpotlightPost = data.fields as unknown as SpotlightPost;
+
+
   return (
     <div className = "relative">
       <Link href="https://hackclub.com" className="block absolute z-40 top-0 left-[5vw]">
         <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[10vh] lg:h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
       </Link>
-    <AthenaAwardsCard/>
+      <AthenaAwardsCard/>
 
       <div className="w-full text-left px-6 lg:px-32 mb-16">
-      <hr className = "py-10"/>
+  
+        <hr className = "py-10"/>
 
-      <div className="text-2xl md:text-4xl font-bold">Curious what else we do?</div>
+        <div className="text-2xl md:text-4xl font-bold">Curious what else we do?</div>
         <div className="text-6xl md:text-9xl font-bold">Athena</div>
         <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>

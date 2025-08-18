@@ -1,87 +1,125 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { getProjects } from '@/lib/projects'
+import Link from "next/link";
+import Image from "next/image";
+import { getProjects } from "@/lib/projects";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
+import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
 
-interface Project {
-  id: string
-  title: string
-  description: string
-  screenshot?: string
-  hoursSpent: number
-  githubUsername?: string
-  projectName: string
+interface ProjectsPageProps {
+  searchParams: Promise<{ page?: string }>;
 }
 
-export default async function ProjectsPage() {
-  try {
-    const projects = await getProjects()
+export default async function ProjectsPage({
+  searchParams,
+}: ProjectsPageProps) {
+  const { page } = await searchParams;
+  const currentPage = parseInt(page || "1");
+  const { projects, total, totalPages } = await getProjects(currentPage, 20);
 
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">Athena Award Projects</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects?.map((project) => (
-            <Link 
-              key={project.id}
-              href={`/projects/${project.githubUsername}`}
-              className="group"
-            >
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                <div className="relative h-48 bg-gray-200">
-                  {(project.screenshot || '') ? (
-                    <Image
-                      src={project.screenshot ||  ""}
-                      alt={`Project screenshot for ${project.githubUsername}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      onError={(e) => {
-                        // Hide broken images
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                      No Image Available
-                    </div>
-                  )}
-                </div>
-                <div className="p-4">
-                  {project.githubUsername && (
-                    <h2 className="text-xl font-semibold mb-2">Project by {project.githubUsername}</h2>
-                  )}
-                  <p className="text-gray-600 line-clamp-2">{project.description || 'No description available'}</p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-sm text-gray-500">
-                      {project.hoursSpent ? `${project.hoursSpent} hours` : 'Time not specified'}
-                    </span>
-                    <span className="text-sm text-[#D35648]">View Project →</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+  return (
+    <div className="bg-[#8c2e37] w-full">
+      <header className="flex flex-row justify-between items-center lg:px-16 py-2 mb-8 border-b-2 border-white/10 shadow-md w-full ">
+        <div className="flex flex-col items-center justify-center px-6 lg:px-16">
+          <Link
+            href="/"
+            className="text-2xl font-bold flex text-white gap-2 transition-all items-center hover:gap-4 cursor-pointer"
+          >
+            <FaArrowLeftLong /> Athena
+          </Link>
         </div>
-        
-        {(!projects || projects.length === 0) && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No projects found.</p>
+        <Link href="https://award.athena.hackclub.com" className="">
+          <img
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6338dbbd7a0200f2b9f2f5b7b59834511c45cc58_athena_award_1000x1000-cropped.svg"
+            className="w-[300px] pr-6 lg:pr-0 lg:w-[380px]"
+          />
+        </Link>
+      </header>
+
+      <div className="flex flex-col gap-3 items-center justify-center  px-6 lg:px-32 py-8 relative ">
+        <h1 className="text-5xl xl:text-7xl font-bold text-center text-white playfair-display">
+          Athena Award Gallery
+        </h1>
+        <p className="text-center text-lg md:text-2xl px-6 lg:px-32 mb-12 text-white ">
+          Check out this gallery to see the <b>{total}</b> projects Athena
+          acolytes are creating.
+        </p>
+      </div>
+
+      <div className="px-6 lg:px-32 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 3xl:grid-cols-5 gap-6  bg-[url(/bg.svg)] shadow-lg w-full border-t-2 border-white/10">
+        {projects.map((project) => (
+          <AthenaAwardsPainting
+            key={project.id}
+            image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
+            description={project.projectName}
+            showCaptionOnSmall={true}
+            descriptionBottom={`by @${project.githubUsername}`}
+            link1={`/projects/${project.githubUsername}/${project.id}`}
+            link2={`/projects/${project.githubUsername}`}
+          />
+        ))}
+      </div>
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-4 py-8 px-6 lg:px-32">
+          <div className="text-white text-center ">
+            Showing {(currentPage - 1) * 20 + 1} -{" "}
+            {Math.min(currentPage * 20, total)} of {total} projects
           </div>
-        )}
-      </div>
-    )
-  } catch (error) {
-    console.error('Error loading projects:', error)
-    
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-6xl font-bold my-8 text-center">Athena Award Projects</h1>
-        <div className="text-center py-12">
-          <p className="text-red-500 text-lg">Error loading projects. Please try again later.</p>
+
+          <div className="flex items-center gap-2">
+            {currentPage > 1 && (
+              <Link
+                href={`/projects?page=${currentPage - 1}`}
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors"
+              >
+                <FaChevronLeft className="w-4 h-4" />
+                Previous
+              </Link>
+            )}
+
+            <div className="flex items-center gap-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                let pageNum;
+                if (totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNum = totalPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+
+                return (
+                  <Link
+                    key={pageNum}
+                    href={`/projects?page=${pageNum}`}
+                    className={`px-3 py-2 rounded-lg transition-colors ${
+                      pageNum === currentPage
+                        ? "bg-white text-[#8c2e37] font-semibold"
+                        : "bg-white/10 hover:bg-white/20 text-white"
+                    }`}
+                  >
+                    {pageNum}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {currentPage < totalPages && (
+              <Link
+                href={`/projects?page=${currentPage + 1}`}
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors"
+              >
+                Next
+                <FaChevronRight className="w-4 h-4" />
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
-    )
-  }
+      )}
+    </div>
+  );
 }

@@ -6,11 +6,57 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+
+const carouselImages = [
+  { 
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
+    caption: "Hackers at Horizon, a Day of Service event in NYC."
+  },
+  { 
+    image: "/images/jpeg.png",
+    caption: "Programmers working hard at Athena's JPEG game jam in Ottawa, Canada."
+  },
+  { 
+    image: "/images/underground.png",
+    caption: "A workshop on GitHub at Underground, in Toronto, Canada"
+  },
+  {
+    image: "/images/jua.png",
+    caption: "Jua, the first overseas Day of Service in Nairobi."
+  },
+  {
+    image: "/images/ascend.png",
+    caption: "Ascend - the 2024 Athena Summit at SpaceX, LA."
+  }
+]
 
 async function handleEmailSubmit(
   event: FormEvent<HTMLFormElement>,
   router: any,
-  utm_source: string
+  utm_source: string,
+  ref: string
 ) {
   event.preventDefault();
   const formData = new FormData(event.currentTarget);
@@ -18,8 +64,8 @@ async function handleEmailSubmit(
   router.push(
     `https://athena.hackclub.com/awards?email=${email}${
       utm_source ? "&utm_source=" + utm_source : ""
-    }`
-  ); // update this url to actual link
+    }${ref ? "&ref=" + ref : ""}`
+  ); 
 }
 
 const SignUp = ({
@@ -28,12 +74,14 @@ const SignUp = ({
   setButtonClicked,
   router,
   utm_source,
+  ref
 }: {
   className?: string;
   buttonClicked: boolean;
   setButtonClicked: (value: any) => void;
   router: any;
   utm_source: string;
+  ref: string;
 }) => {
   return (
     <div
@@ -43,8 +91,8 @@ const SignUp = ({
     >
       {buttonClicked ? (
         <form
-          onSubmit={(e) => handleEmailSubmit(e, router, utm_source)}
-          className="w-max border border-white/30 text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent "
+          onSubmit={(e) => handleEmailSubmit(e, router, utm_source, ref)}
+          className="w-max border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] text-black bg-white rounded-lg p-4 uppercase flex gap-4 text-xl md:text-2xl decoration-transparent "
         >
           <input
             className="outline-none"
@@ -62,7 +110,7 @@ const SignUp = ({
         </form>
       ) : (
         <button
-          className="w-max border border-white/30 bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
+          className="w-max hover:border-b-4 hover:border-r-4 hover:border-b-[#DDA14A] hover:border-r-[#DDA14A] bg-[#8C2E37] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
           onClick={() => setButtonClicked(true)}
         >
           start
@@ -71,7 +119,7 @@ const SignUp = ({
 
       <Link
         href="https://forms.hackclub.com/athena-award-stickers"
-        className="w-max border border-white/30 bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
+        className="w-max hover:border-b-4 hover:border-r-4 hover:border-b-[#8C2E37] hover:border-r-[#8C2E37] bg-[#DDA14A] rounded-lg p-4 uppercase text-white block text-xl md:text-2xl hover:-rotate-[4deg] hover:scale-110 font-bold decoration-transparent transition-all hover:decoration-white"
       >
         Get free stickers
       </Link>
@@ -87,17 +135,20 @@ const SignUp = ({
 export default function AthenaAwardsCard() {
   const searchParams = useSearchParams();
   const utm_source = searchParams.get("utm_source");
+  const ref = searchParams.get("ref");
+
 
   const [buttonClicked, setButtonClicked] = useState(false);
   const router = useRouter();
   return (
     <>
       <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D35648] from-0%  via-[#D35648]/80 via-60% to-[#993E47]/0 overflow-hidden transition">
-        <div className="relative z-20 h-full">
+        <div className = "grid grid-cols-2 gap-4">
+        <div className="relative z-20 h-full flex flex-col">
           {/* <div className="text-6xl md:text-8xl font-bold text-white mb-3 z-20">The Athena Award</div> */}
           <Image
-            className="w-full md:w-3/5"
-            src="/svg/athena_award.svg"
+            className="w-5/6"
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlinedlogoaltcropped.svg"
             alt="Athena Award"
             width={1000}
             height={1000}
@@ -105,20 +156,8 @@ export default function AthenaAwardsCard() {
           />
           <div className="text-white text-2xl md:w-2/3 py-4">
             <Tooltip id="info" className="max-w-96" />
-            <ul className="list-inside list-decimal text-lg md:text-2xl">
-              <li>
-                Earn Hack Club&apos;s Athena Award, an industry recognized
-                technical certificate.
-              </li>
-              <li>
-                Travel to New York City for 2025&apos;s largest high school
-                hackathon for girls!
-              </li>
-              <li>
-                Win prizes as you code, including laptops, iPads, Flipper Zeros,
-                headphones and hoodies.
-              </li>
-            </ul>
+            <h2 className = "text-2xl font-semibold">💻 Build projects. Get prizes.</h2>
+            <h2 className = "text-2xl">🗽 Fly to <span className = "font-semibold">New York City</span> for the largest <span className = "font-semibold">all-girls high school hackathon.</span></h2>
           </div>
 
           <SignUp
@@ -126,21 +165,27 @@ export default function AthenaAwardsCard() {
             setButtonClicked={setButtonClicked}
             router={router}
             utm_source={utm_source!}
+            ref={ref!}
             className="mb-10"
           />
-          <span className="text-2xl text-[#D35648] my-4">
+          <span className="text-2xl font-semibold text-[#D35648] my-4">
             Happening now. You&apos;re invited to join a community of creators,
             built by girls, for girls. In collaboration with:
           </span>
         </div>
-        <Image
-          alt="Athena Awards Assets"
-          src="/images/demo_logo.png"
-          width={500}
-          height={500}
-          className="animate-wiggle w-auto absolute z-0 -top-[4vh] right-0 md:right-[4vh] opacity-25 lg:opacity-80 h-[500px]"
-          priority
-        />
+        
+          <iframe
+            className="w-full rounded-lg border-2 border-white animate-wiggle hover:animate-none"
+            height="415"
+            src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
+            title="This is the Athena Award "
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+      </div>
+
       </div>
       <div>
         <div className="py-6">
@@ -190,38 +235,54 @@ export default function AthenaAwardsCard() {
                 alt="Get Cybersmart"
                 src="/images/getcybersmart.png"
               />
+              <img
+                alt="Girls Who Hack"
+                src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7c7cd694ba0da09feb79b18fd5f0e404ff2208e0_image.png"
+              />
+              <img
+                alt="Girl Up Kenya"
+                src="/images/girlup.png"
+              />
             </div>
 
-            <h1 className="pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
+
+            <div className = "-mx-32 px-32 border-[#D45A4C]/80 border-t-4 border-b-4 border-dotted py-16 my-8">
+
+            <h1 className="relative text-2xl md:text-4xl font-bold text-[#D35648]">
               How it works - Code three technical projects by Oct 31st
             </h1>
-            <p className="text-lg md:text-2xl">
-              Build three of your own projects, or follow one of Hack
-              Club&apos;s tutorials to get started.
-            </p>
-            <p className="text-lg md:text-2xl">
-              Code for thirty hours and open source your finished projects.
-            </p>
 
-            <p className="text-lg md:text-2xl">
-              Meet other girls in the online community. Ask questions. Get
-              technical support in online meetups and chats. Hack Clubbers will
-              help you finish and deploy your projects.
-            </p>
+            <div className = "my-6 flex flex-col md:flex-row gap-4 *:basis-1/3  mx-auto text-lg md:text-xl *:rounded-lg *:border-2 *:border-b-4 *:border-r-4 *:border-[#D35648] *:border-b-[#DDA14A] *:border-r-[#DDA14A] *:p-6 *:bg-white hover:*:shadow-lg hover:*:-translate-y-2 hover:*:scale-[101%] *:duration-300">
+              <div>
+                  <span className = "bg-[#D35648] font-bold text-white px-1">Build three of your own projects</span>, submit projects from one of our community partners, or follow one of Hack Club&apos;s tutorials to get started.
+              </div>
+              <div>
+                   <span className = "bg-[#D35648] font-bold text-white px-1">Code for thirty hours</span>, open source and deploy your finished projects.
+              </div>
+              <div>
+                <span className = "bg-[#D35648] font-bold text-white px-1">Meet other girls</span> in the online community. Ask questions. Get
+                technical support in online meetups and chats. Hack Clubbers will
+                help you finish and deploy your projects.
+              </div>
+            </div>
 
             <p className="text-lg md:text-2xl text-[#D35648] font-bold">
               Earn the Athena Award to share on your LinkedIn, college
               applications, or elsewhere.
             </p>
+
+          </div>
+
             <div>
               <h1 className="py-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
                 Here&apos;s what you can expect:
               </h1>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="flex p-6 flex-col md:flex-row gap-4 border items-center rounded-lg">
-                  <div className="basis-1/4">
+              <div className = "-mx-12 lg:-mx-32">
+              <Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
+                <div className="flex p-6 flex-row gap-4 *:text-xs *:md:text-lg">
+                  <div className="flex flex-col items-center basis-1/4">
                     <Image
-                      className="h-36 object-cover"
+                      className=" h-36 object-cover"
                       src="/images/sarahn.png"
                       alt="Sarah N"
                       width={144}
@@ -272,23 +333,21 @@ export default function AthenaAwardsCard() {
                       </a>{" "}
                       programs as an artist and developer, + found some of my
                       favorite people through awesome hackathons in LA,
-                      Shanghai, and even online. So excited to see you all in an
-                      even cooler hackathon in NYC :3
+                      Shanghai, and even online. <span className = "bg-[#D35648] font-bold text-white px-1">So excited to see you all in an
+                      even cooler hackathon in NYC :3</span>
                     </p>
                   </div>
                 </div>
-                <iframe
-                  className="w-full"
-                  height="415"
-                  src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
-                  title="This is the Athena Award "
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+                { carouselImages.map((item: { image: string, caption: string }, index: number) => (
+                  <div key = {index} className = "flex flex-col gap-4 items-center justify-center">
+                    <img src = {item.image} className = "w-full aspect-square object-cover"/>
+                    <i className = "p-2 text-center">{item.caption}</i>
+                  </div>
+                ))}
+              </Carousel>
             </div>
+            </div>
+
 
             <h1 className="pt-10 relative text-2xl md:text-4xl font-bold text-[#D35648]">
               You&apos;re invited to the best ever hackathon.
@@ -515,6 +574,7 @@ export default function AthenaAwardsCard() {
               setButtonClicked={setButtonClicked}
               router={router}
               utm_source={utm_source!}
+              ref={ref!}
               className="items-center justify-center *:border-black"
             />
           </div>
