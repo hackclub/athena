@@ -16,7 +16,11 @@ export default async function ProjectDetailPage({
   );
 
   if (!project) {
-    return <div className="p-8 text-center text-xl">Project not found. {projects.length}</div>;
+    return (
+      <div className="p-8 text-center text-xl">
+        Project not found. {projects.length}
+      </div>
+    );
   }
 
   return (

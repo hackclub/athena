@@ -2,10 +2,22 @@ import { AirtableProjectsManager } from "./airtable";
 import { AirtableProjectRecord, Project } from "@/types";
 import uploadUrlToCdn from "./cdn";
 
-export async function fetchProjectsfromAirtable() {
-  const data = await new AirtableProjectsManager().getAllProjects();
+export async function fetchProjectsfromAirtable(
+  page: number,
+  pageSize: number
+) {
+  const data = await new AirtableProjectsManager().getProjectsByPage(
+    page,
+    pageSize
+  );
 
-  return data
+  // Get total count for pagination
+  const totalCount = await new AirtableProjectsManager().getTotalProjectCount();
+
+  const hasNextPage = data.length === pageSize && page * pageSize < totalCount;
+  const hasPreviousPage = page > 1;
+
+  const projects = data
     .map((record) => {
       const projectRecord = record as unknown as AirtableProjectRecord;
 
@@ -27,26 +39,49 @@ export async function fetchProjectsfromAirtable() {
           stateOrProvince: projectRecord.fields["State / Province"],
         } as Project;
       }
-      return undefined;
     })
     .filter((project): project is Project => project !== undefined);
+
+  return {
+    projects: projects,
+    currentPage: page,
+    pageSize,
+    hasNextPage,
+    hasPreviousPage,
+    totalCount,
+    totalPages: Math.ceil(totalCount / pageSize),
+  };
 }
 
 export async function getProjects(
-  page: number = 1,
-  limit: number = 20
-): Promise<{ projects: Project[]; total: number; totalPages: number }> {
-  const allProjects = await fetchProjectsfromAirtable();
-  const total = allProjects.length;
-  const totalPages = Math.ceil(total / limit);
-
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-  const projects = allProjects.slice(startIndex, endIndex);
-
-  return { projects, total, totalPages };
+  page: number,
+  limit: number
+): Promise<{
+  projects: Project[];
+  currentPage: number;
+  pageSize: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+  totalCount: number;
+  totalPages: number;
+}> {
+  // fetchProjectsfromAirtable now handles pagination internally
+  const result = await fetchProjectsfromAirtable(page, limit);
+  return {
+    projects: result.projects,
+    currentPage: page,
+    pageSize: result.pageSize,
+    hasNextPage: result.hasNextPage,
+    hasPreviousPage: result.hasPreviousPage,
+    totalCount: result.totalCount,
+    totalPages: result.totalPages,
+  };
 }
+
 
 export async function getAllProjects(): Promise<Project[]> {
-  return await fetchProjectsfromAirtable();
+  const totalCount = await new AirtableProjectsManager().getTotalProjectCount();
+  const result = await fetchProjectsfromAirtable(1,totalCount);
+  return result.projects;
 }
+

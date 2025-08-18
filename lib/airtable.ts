@@ -66,6 +66,10 @@ export class AirtableEventsManager extends AirtableManager {
 }
 
 export class AirtableProjectsManager extends AirtableManager {
+  private projectsCache: AirtableProjectRecord[] | null = null;
+  private cacheTimestamp: number = 0;
+  private readonly CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
   constructor() {
     super(
       "YSWS Project Submission",
@@ -80,39 +84,54 @@ export class AirtableProjectsManager extends AirtableManager {
       (record) => record.fields["status"] === "approved"
     );
 
-    await Promise.all(
-      approvedData.map(async (record: any) => {
-        const projectRecord = record as unknown as AirtableProjectRecord;
-
-        // Only process if screenshot_cdn_url is empty and there's a screenshot URL
-        if (
-          !projectRecord.fields["screenshot_cdn_url"] &&
-          projectRecord.fields["Screenshot"]?.[0]?.url
-        ) {
-          try {
-            const imageUrl = await uploadUrlToCdn(
-              projectRecord.fields["Screenshot"][0].url
-            );
-
-            // Update the record with the CDN URL
-            if (imageUrl) {
-              await this.base(this.tableName).update(projectRecord.id, {
-                screenshot_cdn_url: imageUrl,
-              });
-            }
-          } catch (error) {
-            console.error(
-              `Failed to process CDN upload for record ${projectRecord.id}:`,
-              error
-            );
-          }
-        }
-      })
-    );
-
     return approvedData.map(
       (record) => record as unknown as AirtableProjectRecord
     );
+  }
+
+  // Get all approved projects with caching
+  private async getAllApprovedProjects(): Promise<AirtableProjectRecord[]> {
+    // Check if cache is still valid
+    if (
+      this.projectsCache &&
+      Date.now() - this.cacheTimestamp < this.CACHE_TTL
+    ) {
+      return this.projectsCache;
+    }
+
+    // Fetch fresh data
+    const allRecords = await this.base(this.tableName)
+      .select({
+        filterByFormula: `{status} = "approved"`,
+        sort: [{ field: "created_at", direction: "desc" }],
+      })
+      .all();
+
+    this.projectsCache = allRecords.map(
+      (record) => record as unknown as AirtableProjectRecord
+    );
+    this.cacheTimestamp = Date.now();
+
+    return this.projectsCache;
+  }
+
+  // Fixed pagination method using Airtable's cursor-based pagination
+  async getProjectsByPage(
+    page: number,
+    pageSize: number
+  ): Promise<AirtableProjectRecord[]> {
+    const allRecords = await this.getAllApprovedProjects();
+
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    return allRecords.slice(startIndex, endIndex);
+  }
+
+  // Get total count of approved projects
+  async getTotalProjectCount(): Promise<number> {
+    const allRecords = await this.getAllApprovedProjects();
+    return allRecords.length;
   }
 
   async getProjectById(projectId: string) {

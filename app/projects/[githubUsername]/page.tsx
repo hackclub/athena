@@ -54,18 +54,15 @@ export default async function UserProjectsPage({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-[url(/bg.svg)] px-[12vw] py-12 min-h-screen shadow-lg w-full border-t-2 border-white/10">
         {userProjects.map((project) => (
-          <Link
-            key={project.id}
-            href={`/projects/${project.githubUsername}/${project.id}`}
-            className="group"
-          >
+          <div key={project.id} className="group">
             <AthenaAwardsPainting
               key={project.id}
               image={project.imageUrl || `${baseAthenaAwardProjectImageUrl}`}
               description={project.projectName}
               showCaptionOnSmall={true}
+              link1={`/projects/${project.githubUsername}/${project.id}`}
             />
-          </Link>
+          </div>
         ))}
       </div>
     </div>
