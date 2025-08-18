@@ -84,6 +84,7 @@ interface AirtableProjectRecord {
     "Automation - YSWS Record ID"?: string;
     status: "rejected" | "approved" | "unreviewed" | "";
     "Project Name"?: string;
+    project_name_override?: string;
     created_at?: string;
     screenshot_cdn_url?: string;
   };

@@ -13,7 +13,10 @@ export async function fetchProjectsfromAirtable() {
         return {
           id: projectRecord.id,
           githubUsername: projectRecord.fields["GitHub Username"],
-          projectName: projectRecord.fields["Project Name"] || "",
+          projectName:
+            projectRecord.fields["project_name_override"]?.split("–")[0] ||
+            projectRecord.fields["Project Name"] ||
+            "",
           description: projectRecord.fields["Description"],
           codeUrl: projectRecord.fields["Code URL"],
           playableUrl: projectRecord.fields["Playable URL"],
