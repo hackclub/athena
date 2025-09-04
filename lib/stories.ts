@@ -131,4 +131,41 @@ export const stories = [
       "Meet Kamochi, your very own virtual duck! Inspired by Tamagotchi, Ren made this p5.js game where you raise a duck from egg to full-grown, keeping its food, happiness, and sleep stats up by playing adorable minigames. Let any stat hit zero, and it’s game over. All the pixel art (yes, including the cutest duck sprites ever!) was made by Ren in Piskel, and this was also their very first JavaScript project.",
     demoLink: "https://electricxangel.github.io/kamochi/",
   },
+  {
+    title: "Oscilluna",
+    author: "Lyla (@lyla)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/efdbbe1df736c60f23c0cb2fb641eee18f4e86dc_image.png",
+    featured: true,
+    award: false,
+    description: `“Where sound meets the art of starlight” ⋆.˚☾.⭒˚ — Oscilluna transforms simple music notes into dazzling wave art. Built with HTML, CSS, and JavaScript, Iyla created a site where C-major scale notes become oscillating sine waves, with customizable colors that paint gradients across the canvas and even the site’s header. You can even save your creations as transparent-background files, turning music into these beautiful keepsake visuals.
+Fun fact: Iyla even made the pixel-art moon favicon herself on mobile!`,
+    demoLink:
+      "https://winterhyacinth.github.io/oscillart/?utm_source=chatgpt.com",
+  },
+  {
+    title: "Drawmail",
+    author: "Sophia Wang (@sophia)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d72bd149e5702ce905a67c7be1f95b5f3eaae20c_image.png",
+    featured: true,
+    award: false,
+    description: `Send your doodles straight to a friend’s phone! Drawmail is a fun web app where you sketch a picture, type in a phone number + message, and watch it deliver via SMS/MMS. Sophia built it with an image uploader (imgbb) and Vonage’s API, surviving a gauntlet of broken Twilio, Clicksend, and Telynx attempts. And that is how we have this lightweight, colorful prank-ready sketchpad with download support too!
+Inspired by a desire to prank her friends with goofy drawings`,
+    demoLink: "https://drawmail.vercel.app/?utm_source=chatgpt.com",
+  },
+  {
+    title: "out-perform",
+    author: "Julia Do (@julia do)",
+    date: "2025",
+    imageUrl:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9c9ea249c7319c976627a604272f6d613524dd2d_image.png",
+    featured: true,
+    award: false,
+    description: `In out-perform, your “rank” rises as you hit these beats, boosting your virtual résumé instead of facing a manager (awesome concept in my opinion). Julia actually made the entire game in Godot, and illustrated assets in Procreate, and produced original tracks in Ableton! Smooth beats, colorful tracks, and playful satire; it’s all about making the best performance.
+Julia’s first rhythm game, and it bangs!`,
+    demoLink: "https://solacite.itch.io/out-perform?utm_source=chatgpt.com",
+  },
 ].sort((a, b) => parseInt(b.date) - parseInt(a.date));
