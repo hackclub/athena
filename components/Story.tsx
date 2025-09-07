@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import Link from 'next/link';
+import Image from "next/image";
 
 interface StoryProps {
     title: string;
@@ -35,7 +36,13 @@ const Story: React.FC<StoryProps> = ({
                 <p className="font-bold mt-2 mb-4" style={{ color: descriptionColor }}>
                     - {author}
                 </p>
-                <img src={image} alt={title} className="rounded-sm w-full h-full object-cover" />
+                <Image 
+                    src={image} 
+                    alt={title} 
+                    className="rounded-sm w-full h-full object-cover" 
+                    width={300} 
+                    height={300}
+                />
             </div>
             <div className="absolute -top-8 -left-2 w-fit h-fit bg-[#D35648] px-2 text-white text-lg">
                 <p className="text-lg handwritten">

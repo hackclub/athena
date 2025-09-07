@@ -87,10 +87,12 @@ export default async function ProjectDetailPage({
       </div>
       <div className="hidden bg-white shadow-lg rounded-lg flex flex-col h-full mx-[8vw] items-start justify-center gap-4  ">
         <div className="relative h-[330px] w-full bg-red-500 rounded-t-lg">
-          <img
+          <Image
             src={project.imageUrl || "https://placehold.co/600x400"}
             alt={project.projectName}
             className="object-cover rounded-t-xl h-full w-full"
+            width={600}
+            height={400}
           />
         </div>
         <div className="px-6 py-4 h-fit flex flex-col justify-center ">

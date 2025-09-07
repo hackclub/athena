@@ -138,9 +138,12 @@ export default async function ProjectsPage({
           </Link>
         </div>
         <Link href="https://award.athena.hackclub.com" className="">
-          <img
+          <Image
             src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6338dbbd7a0200f2b9f2f5b7b59834511c45cc58_athena_award_1000x1000-cropped.svg"
+            alt="Athena Award"
             className="w-[300px] pr-6 lg:pr-0 lg:w-[380px]"
+            width={380}
+            height={380}
           />
         </Link>
       </header>
