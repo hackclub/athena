@@ -156,10 +156,11 @@ export default function AthenaAwardsCard() {
           />
           <div className="text-white text-2xl md:w-2/3 py-4">
             <Tooltip id="info" className="max-w-96" />
-            <h2 className = "text-2xl font-semibold">💻 Build projects. Get prizes.</h2>
-            <h2 className = "text-2xl">🗽 Fly to <span className = "font-semibold">New York City</span> for the largest <span className = "font-semibold">all-girls high school hackathon.</span></h2>
+            <h2 className="text-2xl font-semibold">💻 Build projects. Get prizes.</h2>
+            <h2 className="text-2xl">
+              🗽 Fly to <span className="font-semibold">New York City</span> for the largest <span className="font-semibold">high school hackathon for girls and nonbinary students.</span>
+            </h2>
           </div>
-
           <SignUp
             buttonClicked={buttonClicked}
             setButtonClicked={setButtonClicked}

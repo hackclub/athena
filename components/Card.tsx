@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface Card {
   cardType: "bordered" | "tinted" | "photo" | "spotlight";
@@ -142,10 +143,12 @@ function BorderedCard(props: BorderedCardProps) {
         </div>
         {props.iconImage && (
           <div className="w-16 h-16 flex-shrink-0">
-            <img 
+            <Image 
               src={props.iconImage} 
               alt="" 
               className="w-full h-full object-contain"
+              width={64} 
+              height={64}
             />
           </div>
         )}
