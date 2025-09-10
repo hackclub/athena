@@ -431,6 +431,75 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   },
 
   {
+    date: new Date("09-06-2025"),
+    name: "Athenathon V2!",
+    description: "Join the Athena Marathon, Have fun, get 2 extra artifacts & join a raffle to win an awesome game.",
+    hostedBy: [
+      {
+        username: "@elia",
+        avatarUrl:
+          "https://ca.slack-edge.com/T0266FRGM-U06HPP9GZ3R-d1c2079bac7e-512",
+      },
+      {
+        username: "@lou",
+        avatarUrl:
+          "https://ca.slack-edge.com/T0266FRGM-U06EMBJH71S-9b9ef0992de0-512",
+      },
+      
+      {
+        username: "@reem",
+        avatarUrl:
+          "https://ca.slack-edge.com/T0266FRGM-U06U80G86H1-fb5971b9802b-512",
+      },
+    ],
+    rsvpLink: "",
+    tags: ["hardware", "workshop"],
+  },
+  {
+    date: new Date("09-13-2025"),
+    name: "Cybersecurity Workshop",
+    description: "Learn the basics of cybersecurity from Thanishkka!",
+    hostedBy: [
+      {
+        username: "@thanishkka",
+        avatarUrl:
+          "https://ca.slack-edge.com/T0266FRGM-U07TE70UG7Q-242d5a37918d-512",
+      },
+    ],
+    rsvpLink: "",
+    tags: ["cybersecurity", "workshop"],
+  },
+  {
+    date: new Date("09-16-2025"),
+    name: "Tech Accessibility Workshop",
+    description: "Learn how to make tech more accessible for everyone!",
+    hostedBy: [
+      {
+        username: "@phaedra",
+        avatarUrl:
+          "https://ca.slack-edge.com/T0266FRGM-U05468GUS7J-53ffbb76641b-512",
+      },
+    ],
+    rsvpLink: "",
+    tags: ["other", "workshop"],
+  },
+
+  {
+    date: new Date("10-11-2025"),
+    name: "CAD Workshop",
+    description: "Learn the basics of CAD and how you can use it to make your own 3d models!",
+    hostedBy: [
+      {
+        username: "@Meghana",
+        avatarUrl:
+          "https://ca.slack-edge.com/T0266FRGM-U06P62WGWAV-f150278a6fda-512",
+      },
+    ],
+    rsvpLink: "",
+    tags: ["hardware", "workshop"],
+  },
+
+  {
     date: new Date("11-14-2025"),
     name: "Parthenon",
     description:
