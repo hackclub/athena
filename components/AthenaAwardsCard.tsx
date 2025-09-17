@@ -191,7 +191,7 @@ export default function AthenaAwardsCard() {
       <div>
         <div className="py-6">
           <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
-            <div className="flex flex-row flex-wrap gap-6 *:max-h-[4vh] *:md:max-h-[8vh] *:image-cover *:w-max">
+            <div className="flex flex-row flex-wrap gap-6 *:max-h-[35px] *:md:max-h-[65px] *:image-cover *:w-max">
               <img
                 alt="Girls Who Code"
                 src="/images/gwc.png"
