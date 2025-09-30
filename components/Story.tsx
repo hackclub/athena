@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import Link from 'next/link';
+import Image from "next/image";
 
 interface StoryProps {
     title: string;
@@ -26,7 +27,7 @@ const Story: React.FC<StoryProps> = ({
     const [showOverlay, setShowOverlay] = useState(false);
 
     return (
-    <div className="relative inline-block transition-transform duration-125 ease-in-out hover:scale-[1.0625] *:text-lg *:md:text-2xl handwritten p-3 m-4 border border-black  my-4">
+    <div className="relative inline-block transition-transform duration-125 ease-in-out hover:scale-[1.0625] *:text-lg *:md:text-2xl handwritten p-3 m-4 cursor-pointer border border-black  my-4">
         <div className="mr-3 relative text-white w-full  max-w-[300px] p-3 md:p-4 lg:p-5 pt-3.5 md:pt-5 lg:pt-6 h-full rounded-lg">
             <div className="text-base md:text-[16px] lg:text-[20px]" style={{ color: descriptionColor }}>
                 <p className="line-clamp-4">
@@ -35,7 +36,13 @@ const Story: React.FC<StoryProps> = ({
                 <p className="font-bold mt-2 mb-4" style={{ color: descriptionColor }}>
                     - {author}
                 </p>
-                <img src={image} alt={title} className="rounded-sm w-full h-full object-cover" />
+                <Image 
+                    src={image} 
+                    alt={title} 
+                    className="rounded-sm w-full h-full object-cover" 
+                    width={300} 
+                    height={300}
+                />
             </div>
             <div className="absolute -top-8 -left-2 w-fit h-fit bg-[#D35648] px-2 text-white text-lg">
                 <p className="text-lg handwritten">

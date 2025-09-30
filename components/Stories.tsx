@@ -8,10 +8,9 @@ import Story from "@/components/Story";
 export default function Stories() {
   const [isOpen, setIsOpen] = useState<number | null>(null);
 
-
   return (
-    <div className="grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 my-8">
-      {stories.map((item: any, index: any) => (
+    <div className="grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-4 mx-auto max-w-7xl">
+      {stories.map((item, index) => (
         <Fragment key={index}>
           <div
             onClick={() => setIsOpen(index)}
@@ -21,12 +20,12 @@ export default function Stories() {
               transition: "transform 0.3s ease",
             }}
           >
-            <Story 
-                title={item.title}
-                description={item.description}
-                image={item.imageUrl}
-                link={item.demoLink}
-                author={item.author}
+            <Story
+              title={item.title}
+              description={item.description}
+              image={item.imageUrl}
+              link={item.demoLink}
+              author={item.author}
             />
           </div>
 
@@ -38,8 +37,8 @@ export default function Stories() {
             <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
             <div className="fixed inset-0 flex items-center justify-center p-4">
-              <DialogPanel className="w-[600px] max-w-4xl rounded-lg bg-white p-6">
-                <div className="flex flex-col gap-6">
+              <DialogPanel className="w-[600px] max-w-4xl max-h-[90vh] rounded-lg bg-white overflow-y-auto">
+                <div className="flex flex-col gap-6 p-6">
                   <div className="flex flex-col space-y-4">
                     <div>
                       <span className="text-xl font-bold text-red">
