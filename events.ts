@@ -26,7 +26,7 @@ export const events: (Event | WIPEvent)[] = [
       "https://cloud-bkn20hfh7-hack-club-bot.vercel.app/5horizonhighlights16.png",
       "https://cloud-bkn20hfh7-hack-club-bot.vercel.app/6horizonhighlights17.png",
     ],
-    "photocreds": "KMM Photography",
+    photocreds: "KMM Photography",
   },
   {
     name: "Alpine",
@@ -209,7 +209,8 @@ export const events: (Event | WIPEvent)[] = [
     date: "Sep 2024",
     logo: "https://cloud-j8wsy9rx1-hack-club-bot.vercel.app/5golden_logo.png",
     githubLink: "https://github.com/hackclub/golden",
-    description: "In partnership with Code Next, Golden welcomed girls and nonbinary high school students from the Bay Area for a day of building, exploring, and sharing.",
+    description:
+      "In partnership with Code Next, Golden welcomed girls and nonbinary high school students from the Bay Area for a day of building, exploring, and sharing.",
     photos: [
       "https://cloud-j8wsy9rx1-hack-club-bot.vercel.app/0golden_1.jpeg",
       "https://cloud-j8wsy9rx1-hack-club-bot.vercel.app/1golden_2.jpeg",
@@ -225,12 +226,13 @@ export const events: (Event | WIPEvent)[] = [
     date: "Oct 2024",
     logo: "https://cloud-8m6g6osqu-hack-club-bot.vercel.app/4luna_logo.png",
     githubLink: "https://github.com/hackclub/luna",
-    description: "Hosted at Civic Hall, Luna was a 12-hour hackathon, held in collaboration with Girls Who Code, where over 40 girls and gender-nonconforming youth from New York and New Jersey coded, learned new skills, and had fun while collaborating on projects.",
+    description:
+      "Hosted at Civic Hall, Luna was a 12-hour hackathon, held in collaboration with Girls Who Code, where over 40 girls and gender-nonconforming youth from New York and New Jersey coded, learned new skills, and had fun while collaborating on projects.",
     photos: [
       "https://cloud-8m6g6osqu-hack-club-bot.vercel.app/0luna_1.jpeg",
       "https://cloud-8m6g6osqu-hack-club-bot.vercel.app/1luna_2.jpeg",
       "https://cloud-8m6g6osqu-hack-club-bot.vercel.app/2luna_3.jpeg",
-      "https://cloud-8m6g6osqu-hack-club-bot.vercel.app/3luna_4.jpeg"
+      "https://cloud-8m6g6osqu-hack-club-bot.vercel.app/3luna_4.jpeg",
     ],
     photocreds: "",
   },
@@ -240,12 +242,13 @@ export const events: (Event | WIPEvent)[] = [
     date: "Oct 2024",
     logo: "https://cloud-mjfhlk917-hack-club-bot.vercel.app/4celestial_logo.png",
     githubLink: "https://github.com/emma-x1/Toronto-DoS-Celestial",
-    description: "Our first-ever international event! Hosted at Shopify, Celestial brought together girls and non-binary youth from across Toronto and the Greater Toronto Area for an inspiring day of hands-on coding. The Celestial team also hosted a STEM Day for the Power to Girls Foundation’s Summer Camp—a non-profit dedicated to empowering Black and marginalized girls in the GTA and Ghana to realize their full potential.",
+    description:
+      "Our first-ever international event! Hosted at Shopify, Celestial brought together girls and non-binary youth from across Toronto and the Greater Toronto Area for an inspiring day of hands-on coding. The Celestial team also hosted a STEM Day for the Power to Girls Foundation’s Summer Camp—a non-profit dedicated to empowering Black and marginalized girls in the GTA and Ghana to realize their full potential.",
     photos: [
       "https://cloud-mjfhlk917-hack-club-bot.vercel.app/0celestial_1.jpeg",
       "https://cloud-mjfhlk917-hack-club-bot.vercel.app/1celestial_2.jpeg",
       "https://cloud-mjfhlk917-hack-club-bot.vercel.app/2celestial_3.jpeg",
-      "https://cloud-mjfhlk917-hack-club-bot.vercel.app/3celestial_4.jpeg"
+      "https://cloud-mjfhlk917-hack-club-bot.vercel.app/3celestial_4.jpeg",
     ],
     photocreds: "",
   },
@@ -255,32 +258,32 @@ export const events: (Event | WIPEvent)[] = [
     date: "Nov 2024",
     logo: "https://cloud-g03ff4aeb-hack-club-bot.vercel.app/0resized-ascend-logo.png",
     githubLink: "https://github.com/hackclub/ascend",
-    description: "Ascend was Hack Club's first-ever Days of Service Summit! Held in Los Angeles, this event brought together 50 girls and non-binary Hack Club members from across the U.S. and internationally for a hackathon hosted at SpaceX, along with a weekend filled with fun and growth. This summit became the largest teenage girl hackathon in the U.S. this year, in partnership with Girls Who Code and Kode with Klossy.",
+    description:
+      "Ascend was Hack Club's first-ever Days of Service Summit! Held in Los Angeles, this event brought together 50 girls and non-binary Hack Club members from across the U.S. and internationally for a hackathon hosted at SpaceX, along with a weekend filled with fun and growth. This summit became the largest teenage girl hackathon in the U.S. this year, in partnership with Girls Who Code and Kode with Klossy.",
     photos: [
       "https://cloud-js1wfeoxw-hack-club-bot.vercel.app/0ascend_1.jpeg",
       "https://cloud-js1wfeoxw-hack-club-bot.vercel.app/1ascend_2.jpeg",
       "https://cloud-js1wfeoxw-hack-club-bot.vercel.app/2ascend_3.jpeg",
-      "https://cloud-js1wfeoxw-hack-club-bot.vercel.app/3ascend_4.jpeg"
+      "https://cloud-js1wfeoxw-hack-club-bot.vercel.app/3ascend_4.jpeg",
     ],
     photocreds: "",
   },
   {
     upcoming: true,
-    location: "Charlotte, NC",
-    date: "Feb 2025"
+    location: "Orlando, FL",
+    date: "Feb 2025",
   },
   {
     upcoming: true,
     location: "Atlanta, GA",
-    date: "Mar 2025"
+    date: "Mar 2025",
   },
   {
     upcoming: true,
     location: "Nairobi, Kenya",
-    date: "Mar 2025"
-  }
+    date: "Mar 2025",
+  },
 ];
-
 
 export interface Event {
   name: string;
@@ -297,7 +300,7 @@ export interface WIPEvent {
   name?: string;
   location: string;
   date: string;
-  upcoming: true
+  upcoming: true;
 }
 
 export interface EventWithColors extends Event {
