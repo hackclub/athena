@@ -6,6 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import AthenaAwardsPainting from "@/components/AthenaAwardsPainting";
 import { baseAthenaAwardProjectImageUrl } from "@/lib/constants";
 import { Suspense } from "react";
+import GalleryFooter from "@/app/projects/GalleryFooter";
 
 interface ProjectsPageProps {
   searchParams: Promise<{ page?: string }>;
@@ -161,6 +162,7 @@ export default async function ProjectsPage({
       <Suspense fallback={<ProjectsLoading />}>
         <ProjectsContent page={currentPage} />
       </Suspense>
+      <GalleryFooter />
     </div>
   );
 }
