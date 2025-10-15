@@ -195,7 +195,7 @@ export default function AthenaAwardsCard() {
       <div>
         <div className="py-6">
           <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
-            <div className="flex flex-row flex-wrap gap-6 *:max-h-[35px] *:md:max-h-[65px] *:image-cover *:w-max">
+            <div className="flex flex-row flex-wrap gap-6 *:h-[35px] *:md:h-[65px] *:image-cover">
               <img alt="Girls Who Code" src="/images/gwc.png" />
               <img alt="MIT School of Engineering Logo" src="/images/mit.png" />
               <img alt="GitHub Logo" src="/images/github.png" />
