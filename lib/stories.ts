@@ -83,6 +83,57 @@ export const stories = [
       "Have you ever wondered what your trash can would say if it could talk back to you? Probably not, but that's what makes this next project ridiculously amazing. Say hello to the TTTC! The most scrappy, rude, and downright hilarious trash can ever created. Meghana, Ducc, and Selena worked nonstop through the weekend to bring this trash talker to life. The result? A trash can that doesn't just collect garbage but also throws it right back at ya verbally.",
     demoLink: "https://youtu.be/JxGyt0A78mU?si=T_X8lFCxaqJ8Zki7",
   },
+
+  {
+  title: "Marwa’s Personal Website",
+  author: "Marwa",
+  date: "2025",
+  imageUrl: "/images/marwa.png",
+  featured: true,
+  award: false,
+  description: `
+Marwa made her own little corner of the internet, and it’s pink. Like, really pink. It’s full of GIFs, silly pixels, and plenty of yap about herself, STEM, and art. She even learned a lot of new tricks along the way (flexbox, pixels behaving, all that fun stuff)!
+  `,
+},
+{
+  title: "Tats’ Personal Website",
+  author: "Tatiana",
+  date: "2025",
+  imageUrl: "/images/tats.png",
+  featured: true,
+  award: false,
+  description: `
+This one’s blue and all about the vibe. Tats tossed out her old portfolio and rebuilt it into something that finally feels like her: a home page, an about me full of hobbies + fun facts, and a projects tab!
+
+She made it the hard way: no AI shortcuts, no tutorial hand-holding, just figuring things out and wrestling with fonts, palettes, and layouts until it clicked.
+  `,
+},
+{
+  title: "Caesar Engine",
+  author: "Dory",
+  date: "2025",
+  imageUrl: "/images/dory.png",
+  featured: true,
+  award: false,
+  description: `
+Caesar Engine is a custom game engine Dory’s building from scratch, inspired by Paradox’s Clausewitz — but with a fantasy twist! It’s still early, but there’s already a working demo with wireframe mode, zoom, and WASD camera controls. She kept it open-source and made it easy to compile on Linux so anyone can mess around with it.
+  `,
+},
+{
+  title: "Stephanie’s Personal Website",
+  author: "Stephanie",
+  date: "2025",
+  imageUrl: "/images/steph.png",
+  featured: true,
+  award: false,
+  description: `
+Stephanie gave her old static site a full glow-up! Version 2.0 runs on React + Next.js and comes loaded with cool stuff: a live resume, hover-on-photo effect, Spotify “Now Playing” widget, Markdown blogs that turn into HTML, LaTeX support, and dark mode (a must).
+
+Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Next.js, and Markdown formatting refused to behave. But Stephanie pushed through it all, and what she built is personal and way beyond the first version.
+  `,
+},
+
+
   {
     title: "Volume Breakout",
     author: "Rosewater (@r0s3)",
@@ -168,4 +219,6 @@ Inspired by a desire to prank her friends with goofy drawings`,
 Julia’s first rhythm game, and it bangs!`,
     demoLink: "https://solacite.itch.io/out-perform?utm_source=chatgpt.com",
   },
+  
+
 ].sort((a, b) => parseInt(b.date) - parseInt(a.date));
