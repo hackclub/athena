@@ -126,7 +126,7 @@ Caesar Engine is a custom game engine Dory’s building from scratch, inspired b
   demoLink: "https://summer.hackclub.com/projects/1730",
 },
 {
-  title: "Stephanie’s Personal Website 2.0",
+  title: "Stephanie’s Personal Website",
   author: "Stephanie",
   date: "2025",
   imageUrl:
