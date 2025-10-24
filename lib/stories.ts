@@ -88,7 +88,8 @@ export const stories = [
   title: "Marwa’s Personal Website",
   author: "Marwa",
   date: "2025",
-  imageUrl: "/images/marwa.png",
+  imageUrl:
+    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e03c0654b308cd7712dc91de77a0e298de26c4b9_marwa.png",
   featured: true,
   award: false,
   description: `
@@ -100,7 +101,8 @@ Marwa made her own little corner of the internet, and it’s pink. Like, really 
   title: "Tats’ Personal Website",
   author: "Tatiana",
   date: "2025",
-  imageUrl: "/images/tats.png",
+  imageUrl:
+    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/20e8b416e6c00211f46609b2915d3afdbd42daee_tats.png",
   featured: true,
   award: false,
   description: `
@@ -114,7 +116,8 @@ She made it the hard way: no AI shortcuts, no tutorial hand-holding, just figuri
   title: "Caesar Engine",
   author: "Dory",
   date: "2025",
-  imageUrl: "/images/dory.png",
+  imageUrl:
+    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c45af755d99741b4450623ddb38f1fc549c4bde1_dory.png",
   featured: true,
   award: false,
   description: `
@@ -126,7 +129,8 @@ Caesar Engine is a custom game engine Dory’s building from scratch, inspired b
   title: "Stephanie’s Personal Website 2.0",
   author: "Stephanie",
   date: "2025",
-  imageUrl: "/images/steph.png",
+  imageUrl:
+    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4122469890378647ba4ed1bc83df249722b1d697_steph.png",
   featured: true,
   award: false,
   description: `
@@ -136,6 +140,7 @@ Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Ne
   `,
   demoLink: "https://stephyao.vercel.app/",
 },
+
 
   {
     title: "Volume Breakout",
