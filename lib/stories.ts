@@ -84,7 +84,7 @@ export const stories = [
     demoLink: "https://youtu.be/JxGyt0A78mU?si=T_X8lFCxaqJ8Zki7",
   },
 
-  {
+{
   title: "Marwa’s Personal Website",
   author: "Marwa",
   date: "2025",
@@ -94,6 +94,7 @@ export const stories = [
   description: `
 Marwa made her own little corner of the internet, and it’s pink. Like, really pink. It’s full of GIFs, silly pixels, and plenty of yap about herself, STEM, and art. She even learned a lot of new tricks along the way (flexbox, pixels behaving, all that fun stuff)!
   `,
+  demoLink: "https://marwadelaware.github.io/personalwebsite/",
 },
 {
   title: "Tats’ Personal Website",
@@ -107,6 +108,7 @@ This one’s blue and all about the vibe. Tats tossed out her old portfolio and 
 
 She made it the hard way: no AI shortcuts, no tutorial hand-holding, just figuring things out and wrestling with fonts, palettes, and layouts until it clicked.
   `,
+  demoLink: "https://itsbeesfan.github.io/personal-website/index.html",
 },
 {
   title: "Caesar Engine",
@@ -118,9 +120,10 @@ She made it the hard way: no AI shortcuts, no tutorial hand-holding, just figuri
   description: `
 Caesar Engine is a custom game engine Dory’s building from scratch, inspired by Paradox’s Clausewitz — but with a fantasy twist! It’s still early, but there’s already a working demo with wireframe mode, zoom, and WASD camera controls. She kept it open-source and made it easy to compile on Linux so anyone can mess around with it.
   `,
+  demoLink: "https://summer.hackclub.com/projects/1730",
 },
 {
-  title: "Stephanie’s Personal Website",
+  title: "Stephanie’s Personal Website 2.0",
   author: "Stephanie",
   date: "2025",
   imageUrl: "/images/steph.png",
@@ -131,8 +134,8 @@ Stephanie gave her old static site a full glow-up! Version 2.0 runs on React + N
 
 Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Next.js, and Markdown formatting refused to behave. But Stephanie pushed through it all, and what she built is personal and way beyond the first version.
   `,
+  demoLink: "https://stephyao.vercel.app/",
 },
-
 
   {
     title: "Volume Breakout",
