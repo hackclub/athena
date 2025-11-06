@@ -195,7 +195,7 @@ export default function AthenaAwardsCard() {
       <div>
         <div className="py-6">
           <div className="p-12 lg:pt-4 lg:p-32 pt-0 flex flex-col gap-4">
-            <div className="flex flex-row flex-wrap gap-6 *:max-h-[35px] *:md:max-h-[65px] *:image-cover *:w-max">
+            <div className="flex flex-row flex-wrap gap-6 *:h-[35px] *:md:h-[65px] *:image-cover">
               <img alt="Girls Who Code" src="/images/gwc.png" />
               <img alt="MIT School of Engineering Logo" src="/images/mit.png" />
               <img alt="GitHub Logo" src="/images/github.png" />
@@ -218,32 +218,14 @@ export default function AthenaAwardsCard() {
               <img alt="NCWIT AIC" src="/images/ncwit.png" />
             </div>
 
-            <Carousel
-              responsive={responsive}
-              infinite={true}
-              autoPlay={true}
-              autoPlaySpeed={5000}
-              keyBoardControl={true}
-              showDots={false}
-              arrows={true}
-              draggable={true}
-              swipeable={true}
-              containerClass="carousel-container"
-              itemClass="carousel-item-padding-40-px"
-            >
-              {carouselImages.map((item, index) => (
-                <div key={index} className="flex flex-col items-center gap-2">
-                  <img
-                    src={item.image}
-                    alt={`carousel-${index}`}
-                    className="rounded-lg shadow-md"
-                  />
-                  <p className="text-center text-sm text-gray-600">
-                    {item.caption}
-                  </p>
-                </div>
-              ))}
-            </Carousel>
+<Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
+                { carouselImages.map((item: { image: string, caption: string }, index: number) => (
+                  <div key = {index} className = "flex flex-col gap-4 items-center justify-center">
+                    <img src = {item.image} className = "w-full aspect-square object-cover"/>
+                    <i className = "p-2 text-center">{item.caption}</i>
+                  </div>
+                ))}
+              </Carousel>
           </div>
         </div>
       </div>
