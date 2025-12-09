@@ -8,7 +8,7 @@ import { hackClubLogo, defaultAthenaPhoto } from '@/constants'
 import { formatDate } from '@/lib/utils'
 
 export async function fetchEvents() {
-  const data = await new AirtableEventsManager().getAllEvents();
+  const data = (await new AirtableEventsManager().getAllEvents()).filter((record: any) => record.fields.Ignore != 1);
   
   return data.map((record) => {
     const eventRecord = record as unknown as AirtableEventRecord;

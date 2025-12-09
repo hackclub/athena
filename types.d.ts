@@ -30,6 +30,7 @@ interface AirtableEventRecord {
     ["Photo Creds"]?: string; // Optional
     ["GitHub Link"]?: string; // Optional
     Website?: string; // Optional
+    Ignored?: boolean; 
   };
   _table?: {
     _base: {

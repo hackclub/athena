@@ -26,7 +26,7 @@ export default async function EventPage() {
                 <br />
                 Want to explore <span className="italic">all</span> the amazing projects submitted for the Athena Award? Check out the full{" "}
                 <Link 
-                    href="https://athena.hackclub.com/projects"
+                    href="/projects"
                     target="_blank"
                     className="text-red-500 underline hover:text-red-600"
                 >
