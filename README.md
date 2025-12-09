@@ -5,8 +5,20 @@ Hack Clubbers sharing their love and passion for coding with gender minorities f
 1. Install project dependencies
     `yarn`
 
-2. Run the development server and visit `localhost:3000`
+2. Set up your environment variables. Right now, the following are required: 
+
+| Variable | Explanation | 
+| -------- | ----------- |
+| `AIRTABLE_EVENTS_API_KEY` | Any Airtable PAT with access to the Athena Events Airtable. | 
+| `AIRTABLE_GENERAL_API_KEY` | Any Airtable PAT with access to the Athena Site Airtable. | 
+| `AIRTABLE_PROJECTS_API_KEY` | Any Airtable PAT with access to the Athena Award Airtable. | 
+| `AIRTABLE_PROJECTS_BASE_ID` | Base ID of the Athena Award Airtable |
+| `AIRTABLE_EVENTS_BASE_ID` | Base ID of the Athena Events Airtable |
+| `AIRTABLE_GENERAL_BASE_ID` | Base ID of the Athena Site Airtable |
+
+3. Run the development server and visit `localhost:3000`
     `yarn dev`
+
 
 ## 🫶🏼 We've already organized 🫶🏼 
 
