@@ -17,7 +17,10 @@ Hack Clubbers sharing their love and passion for coding with gender minorities f
 | `AIRTABLE_GENERAL_BASE_ID` | Base ID of the Athena Site Airtable |
 
 3. Run the development server and visit `localhost:3000`
-    `yarn dev`
+    
+```
+yarn dev
+```
 
 
 ## 🫶🏼 We've already organized 🫶🏼 
