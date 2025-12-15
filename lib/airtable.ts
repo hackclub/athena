@@ -139,8 +139,49 @@ export class AirtableProfilesManager extends AirtableManager {
       .all();
     return records[0] || null;
   }
+}
 
-  async getProfileByRecordId(recordId: string) {
-    return await this.base(this.tableName).find(recordId);
+export class AirtableUsersManager extends AirtableManager {
+  constructor() {
+    super(
+      "Registered Users",
+      process.env.AIRTABLE_PROJECTS_API_KEY!,
+      process.env.AIRTABLE_PROJECTS_BASE_ID!
+    );
+  }
+  async getQualifiedUserById(id: string) {
+    const sanitised_id = id
+      .replace(/"/g, '\\"')
+      .replace(/'/g, "\\'")
+      .replace(/\r/g, '')
+      .replace(/\\/g, '\\\\')
+      .replace(/\n/g, '\\n')
+      .replace(/\t/g, '\\t')
+
+    const records = await this.base(this.tableName)
+      .select({
+        filterByFormula: `{cert_id} = "${sanitised_id}"`,
+        maxRecords: 1,
+        view: "Qualifications",
+        fields: [
+          "total_time_approved_projects",
+          "Code URL",
+          "Playable URL",
+          "Code URL Unified",
+          "Playable URL Unified",
+          "screenshot_cdn_url",
+          "Description",
+          "Project Name",
+          "First Name",
+          "Last Name Initial",
+          "total_time_approved_projects",
+          "total_approved_projects",
+          "created_at",
+          "approved_duration",
+          "screenshot_cdn_url_unified"
+        ]
+      })
+      .all();
+      return records[0]["fields"] || null
   }
 }
