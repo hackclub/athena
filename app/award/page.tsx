@@ -96,8 +96,8 @@ params,
     <div className="px-6 lg:px-32 mb-16 pt-16 h-full relative">
       <Link href="/" className="absolute text-2xl font-bold flex gap-2 transition-all items-center hover:gap-4 cursor-pointer mb-4"><FaArrowLeftLong /> Athena</Link>
     <div className = "flex flex-col items-center gap-4">
-        <img className = "w-1/3" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg"/>
-        <div className = "w-2/3 mx-auto flex flex-col gap-4">
+        <img className = "mt-12 md:mt-0 w-2/3 md:w-1/3" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg"/>
+        <div className = "md:w-2/3 mx-auto flex flex-col gap-4">
                 <div className = "text-justify bg-red/10 border border-red/30 p-4 rounded-sm gap-2 items-center *:max-sm:text-sm">
                     <p>The <a target = "_blank" href = "https://award.athena.hackclub.com" className = "font-bold" >Athena Award</a> was a six month long program ran by Hack Club where girls and nonbinary students (ages 13-18) spent 30 (often more!) hours coding three technical projects.</p>
                     <p>Projects needed to be shipped - defined as deployed and experiencable by others - and open source. All submissions were tested, evaluated and approved by members of the Athena team.</p>
@@ -105,10 +105,10 @@ params,
                     <br/>
                     <p className = "font-bold">Enter the code at the bottom left of a certification to verify its legitimacy.</p>
                 </div>
-                    <form className = "flex flex-row gap-4 items-center *:p-2" action={submitForm}>
+                    <form className = "flex flex-row gap-4 flex-wrap items-center *:p-2" action={submitForm}>
                     Code:
                     <input name="id" required className = "rounded-sm grow border border-red/20" defaultValue={id ?? ""}></input>
-                    <input type="submit" value="Verify" className = "border border-red/20 bg-red/70 text-white rounded-sm"/>
+                    <input type="submit" value="Verify" className = "grow border border-red/20 bg-red/70 text-white rounded-sm"/>
                     </form>
             { id && profile == null && 
                 <div className = "bg-rose-500/30 border border-rose-400/40 rounded-sm p-2 text-rose-800 flex flex-col">
@@ -117,7 +117,7 @@ params,
             }
             { profile &&
             <div className = "flex flex-col gap-4">
-                <hr/>
+                <hr className = "border border-gray-300"/>
                 <div className = "text-center flex flex-col gap-4">
                     <div className = "bg-green-400/30 border border-green-400/40 rounded-sm p-2 text-green-800 flex flex-col">
                         <h1 className = "text-2xl">This Athena Award certification is valid!</h1>
