@@ -67,6 +67,9 @@ params,
   var zipped_unified: any;
 
   try {
+    if (!id){
+        throw "No ID provided"
+    }
     profile = await new AirtableUsersManager().getQualifiedUserById(id)
     var screenshots = profile["screenshot_cdn_url"]
     var project_name = profile["Project Name"]
@@ -87,7 +90,7 @@ params,
     }
     
   } catch (error) {
-        console.log(error)
+        console.log("Error", error)
         profile = null
   }
   
@@ -99,7 +102,8 @@ params,
         <img className = "mt-12 md:mt-0 w-2/3 md:w-1/3" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg"/>
         <div className = "md:w-2/3 mx-auto flex flex-col gap-4">
                 <div className = "text-justify bg-red/10 border border-red/30 p-4 rounded-sm gap-2 items-center *:max-sm:text-sm">
-                    <p>The <a target = "_blank" href = "https://award.athena.hackclub.com" className = "font-bold" >Athena Award</a> was a six month long program ran by Hack Club where girls and nonbinary students (ages 13-18) spent 30 (often more!) hours coding three technical projects.</p>
+                    <p>The <a target = "_blank" href = "https://award.athena.hackclub.com" className = "font-bold" >Athena Award</a> was a six month long program ran by Hack Club where girls and nonbinary students (ages 13-18) spent 30 (often more!) hours coding three technical projects. By earning this certification, students have proven themselves as technicaly adept and familiar with industry-standard software development platforms.</p>
+                    <br/>
                     <p>Projects needed to be shipped - defined as deployed and experiencable by others - and open source. All submissions were tested, evaluated and approved by members of the Athena team.</p>
                     <p>For further questions, contact <b>athena@hackclub.com</b>.</p>
                     <br/>
@@ -108,7 +112,7 @@ params,
                     <form className = "flex flex-row gap-4 flex-wrap items-center *:p-2" action={submitForm}>
                     Code:
                     <input name="id" required className = "rounded-sm grow border border-red/20" defaultValue={id ?? ""}></input>
-                    <input type="submit" value="Verify" className = "grow border border-red/20 bg-red/70 text-white rounded-sm"/>
+                    <input type="submit" value="Verify" className = "grow border border-red/20 bg-red/70 hover:bg-red/90 text-white rounded-sm"/>
                     </form>
             { id && profile == null && 
                 <div className = "bg-rose-500/30 border border-rose-400/40 rounded-sm p-2 text-rose-800 flex flex-col">
