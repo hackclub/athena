@@ -38,6 +38,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className="antialiased"
+        suppressHydrationWarning
       >
         <PlausibleProvider domain="athena.hackclub.com">
           <Background>

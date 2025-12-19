@@ -24,7 +24,7 @@ export default function Background({ children }: { children?: ReactNode }) {
     <div className="w-screen h-screen overflow-y-auto overflow-x-hidden">
       <div
         id="spotlight"
-        className="font-phantom-sans opacity-25 w-full min-h-full bg-[length:40px_40px] bg-repeat fixed top-0 left-0 z-[-1] bg-[url('/svg/glyph_rep.svg')]"
+        className="font-phantom-sans w-full min-h-full fixed top-0 left-0 z-[-1] bg-white"
       >
         <div
           ref={spotlightRef as RefObject<HTMLDivElement>}
