@@ -37,7 +37,7 @@ function FormattedProject({project, index}: {project: any, index: number} ){
     )
 }
 
-export async function submitForm(formData: any) {
+async function submitForm(formData: any) {
   'use server'
   const id = formData.get('id');
   const params = new URLSearchParams({ id }).toString();
