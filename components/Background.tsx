@@ -13,8 +13,8 @@ export default function Background({ children }: { children?: ReactNode }) {
 
       spotlightRef.current!.style.background = `radial-gradient(
                   circle at ${x}px ${y}px,
-                  rgba(223, 162, 173, 0.8) 10px,
-                  rgba(249, 250, 252, 0.8) 125px
+                  rgba(255, 255, 255, 0) 10px,
+                  rgba(255, 255, 255, 0.9) 80px
               )`;
     };
     window.addEventListener("mousemove", handler);
