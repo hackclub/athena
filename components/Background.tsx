@@ -13,7 +13,7 @@ export default function Background({ children }: { children?: ReactNode }) {
 
       spotlightRef.current!.style.background = `radial-gradient(
                   circle at ${x}px ${y}px,
-                  rgba(132, 146, 166, 0) 10px,
+                  rgba(223, 162, 173, 0.8) 10px,
                   rgba(249, 250, 252, 0.8) 125px
               )`;
     };
@@ -24,7 +24,7 @@ export default function Background({ children }: { children?: ReactNode }) {
     <div className="w-screen h-screen overflow-y-auto overflow-x-hidden">
       <div
         id="spotlight"
-        className="font-phantom-sans w-full min-h-full fixed top-0 left-0 z-[-1] bg-white"
+        className="font-phantom-sans opacity-25 w-full min-h-full bg-[length:40px_40px] bg-repeat fixed top-0 left-0 z-[-1] bg-[url('/svg/glyph_rep.svg')]"
       >
         <div
           ref={spotlightRef as RefObject<HTMLDivElement>}

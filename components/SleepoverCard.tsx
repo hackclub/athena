@@ -63,7 +63,7 @@ export default function SleepoverCard() {
             WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 70%)",
           }}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 relative z-10">
           <div className="relative z-20 flex flex-col items-center md:items-start">
             <Image
               className="w-full max-w-[300px] md:max-w-none md:w-5/6"
@@ -79,7 +79,7 @@ export default function SleepoverCard() {
                 Build Projects. Get Prizes.
               </h2>
             <h2 className="text-base md:text-2xl whitespace-normal md:whitespace-nowrap pb-4">
-              🌃 Come to <span className="font-semibold">Chicago</span> for a <span className="font-semibold">girls-only overnight hackathon.</span>
+              🌃 Come to <span className="font-semibold">Chicago</span> for a <span className="font-semibold">girls-only</span><br /><span className="font-semibold">overnight hackathon.</span>
             </h2>
             <Link 
               href="https://sleepover.hackclub.com" 
@@ -95,7 +95,7 @@ export default function SleepoverCard() {
           </div>
 
           <iframe
-            className="w-full rounded-lg border-2 border-white mt-4 md:mt-20 animate-wiggle hover:animate-none h-[200px] md:h-[415px]"
+            className="w-full rounded-lg border-2 border-white mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
             src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
             title="This is the Athena Award"
             frameBorder="0"
