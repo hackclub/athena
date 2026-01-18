@@ -16,7 +16,7 @@ export default async function Home() {
       <div className="w-full text-left px-6 lg:px-32 mb-16">
         <hr className = "py-10"/>
         <div className="text-6xl md:text-9xl font-bold">Athena</div>
-        <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
+        <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls or girl-identifying teenagers to code.</div>
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>
         
         <div className='w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 my-8'>
