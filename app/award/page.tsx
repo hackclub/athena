@@ -73,20 +73,23 @@ params,
     profile = await new AirtableUsersManager().getQualifiedUserById(id)
     var screenshots = profile["screenshot_cdn_url"]
     var project_name = profile["Project Name"]
+    var project_name_unified = profile["Project Name Unified"]
     var playable_url = profile["Playable URL"]
     var code_url = profile["Code URL"]
     var description = profile["Description"]
     var code_url_unified = profile["Code URL Unified"]
     var playable_url_unified = profile["Playable URL Unified"]
     var created_at = profile["created_at"]
+    var created_at_unified = profile["created_at_unified"]
     var approved_duration = profile["approved_duration"]
+    var approved_duration_unified = profile["approved_duration_unified"]
     var screenshots_unified = profile["screenshot_cdn_url_unified"]
     
     if (code_url){
         zipped_normal = zip(project_name, code_url, playable_url, created_at, approved_duration, description, screenshots)
     }
     if (code_url_unified){
-        zipped_unified = zip(project_name, code_url_unified, playable_url_unified, created_at, approved_duration, [], screenshots_unified)
+        zipped_unified = zip(project_name_unified, code_url_unified, playable_url_unified, created_at_unified, approved_duration_unified, [], screenshots_unified)
     }
     
   } catch (error) {

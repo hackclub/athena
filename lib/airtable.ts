@@ -178,7 +178,10 @@ export class AirtableUsersManager extends AirtableManager {
           "total_approved_projects",
           "created_at",
           "approved_duration",
-          "screenshot_cdn_url_unified"
+          "screenshot_cdn_url_unified",
+          "approved_duration_unified",
+          "Project Name Unified",
+          "created_at_unified"
         ]
       })
       .all();
