@@ -141,7 +141,7 @@ export default function AthenaAwardsCard() {
   const router = useRouter();
   return (
     <>
-      <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D35648] from-0%  via-[#D35648]/80 via-60% to-[#993E47]/0 overflow-hidden transition">
+      <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D9DAF8] from-0% via-[#D9DAF8]/80 via-60% to-[#D9DAF8]/0 overflow-hidden transition">
         <div className="grid grid-cols-2 gap-4">
           <div className="relative z-20 h-full flex flex-col">
             <Image
@@ -183,7 +183,7 @@ export default function AthenaAwardsCard() {
           <iframe
             className="w-full rounded-lg border-2 border-white animate-wiggle hover:animate-none"
             height="415"
-            src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
+            src="https://www.youtube.com/embed/FIyDH5dm5eo"
             title="This is the Athena Award "
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
