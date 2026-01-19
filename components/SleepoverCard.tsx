@@ -86,13 +86,13 @@ export default function SleepoverCard() {
               href="https://sleepover.hackclub.com?utm_source=athena_website" 
               className="relative inline-block mt-4 group"
             >
-              <div className="absolute inset-0 bg-white rounded-[20px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.25)]" />
-              <div className="absolute inset-[3px] backdrop-blur-[2px] bg-gradient-to-t from-[#7472a0] to-[#dfa1aa] rounded-[17px] shadow-[2px_2px_10px_4px_#fffbfb]" />
-              <div className="relative m-[6px] px-8 py-4 md:px-12 md:py-5 bg-gradient-to-t from-[#dfa2ad] to-[#ad8fb5] rounded-[14px] shadow-[inset_0px_4px_4px_0px_rgba(0,0,0,0.25)] group-hover:brightness-110 transition-all duration-300">
+              <div className="absolute inset-0 bg-white rounded-[16px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.25)]" />
+              <div className="absolute inset-[2px] backdrop-blur-[2px] bg-gradient-to-t from-[#7472a0] to-[#dfa1aa] rounded-[14px] shadow-[2px_2px_10px_4px_#fffbfb]" />
+              <div className="relative m-[5px] px-6 py-3 md:px-10 md:py-4 bg-gradient-to-t from-[#dfa2ad] to-[#ad8fb5] rounded-[12px] shadow-[inset_0px_4px_4px_0px_rgba(0,0,0,0.25)] group-hover:brightness-110 transition-all duration-300">
                 <GradientText
                   gradient="linear-gradient(180deg, #b8a9d4 0%, #9b8cc4 100%)"
-                  strokeWidth="6px"
-                  className="text-2xl md:text-4xl"
+                  strokeWidth="5px"
+                  className="text-xl md:text-3xl whitespace-nowrap"
                 >
                   GET STARTED NOW!
                 </GradientText>
