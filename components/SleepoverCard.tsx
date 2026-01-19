@@ -6,6 +6,7 @@ import { useState, FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import GradientText from "./GradientText";
 
 const responsive = {
   superLargeDesktop: {
@@ -79,13 +80,23 @@ export default function SleepoverCard() {
                 Build Projects. Get Prizes.
               </h2>
             <h2 className="text-base md:text-2xl whitespace-normal md:whitespace-nowrap pb-4">
-              🌃 Come to <span className="font-semibold">Chicago</span> for a <span className="font-semibold">girls-only</span><br /><span className="font-semibold">overnight hackathon.</span>
+              🌃 Come to <span className="font-semibold">Chicago</span> for a <span className="font-semibold">girls-only</span><br /><span className="font-semibold">overnight hackathon in April, 2026.</span>
             </h2>
             <Link 
-              href="https://sleepover.hackclub.com" 
-              className="inline-block mt-4 w-[240px] md:w-[280px] py-3 md:py-4 text-center bg-gradient-to-r from-[#6988E0] via-[#8B7FD4] to-[#DFA2AD] text-white text-lg md:text-xl font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              href="https://sleepover.hackclub.com?utm_source=athena_website" 
+              className="relative inline-block mt-4 group"
             >
-              GET STARTED NOW
+              <div className="absolute inset-0 bg-white rounded-[20px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.25)]" />
+              <div className="absolute inset-[3px] backdrop-blur-[2px] bg-gradient-to-t from-[#7472a0] to-[#dfa1aa] rounded-[17px] shadow-[2px_2px_10px_4px_#fffbfb]" />
+              <div className="relative m-[6px] px-8 py-4 md:px-12 md:py-5 bg-gradient-to-t from-[#dfa2ad] to-[#ad8fb5] rounded-[14px] shadow-[inset_0px_4px_4px_0px_rgba(0,0,0,0.25)] group-hover:brightness-110 transition-all duration-300">
+                <GradientText
+                  gradient="linear-gradient(180deg, #b8a9d4 0%, #9b8cc4 100%)"
+                  strokeWidth="6px"
+                  className="text-2xl md:text-4xl"
+                >
+                  GET STARTED NOW!
+                </GradientText>
+              </div>
             </Link>
             </div>
             <span className="text-lg md:text-2xl font-semibold text-[#6C6EA0] my-4 text-center md:text-left">
@@ -96,7 +107,7 @@ export default function SleepoverCard() {
 
           <iframe
             className="w-full rounded-lg border-2 border-white mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
-            src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
+            src="https://www.youtube.com/embed/FIyDH5dm5eo"
             title="This is the Athena Award"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

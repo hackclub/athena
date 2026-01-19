@@ -183,7 +183,7 @@ export default function AthenaAwardsCard() {
           <iframe
             className="w-full rounded-lg border-2 border-white animate-wiggle hover:animate-none"
             height="415"
-            src="https://www.youtube.com/embed/WlJ5gsY9xSc?si=IRy0aNG7kTqNLKDA"
+            src="https://www.youtube.com/embed/FIyDH5dm5eo"
             title="This is the Athena Award "
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
