@@ -29,18 +29,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return [
-      {
-        source: "/award",
-        destination: "https://award.athena.hackclub.com",
-        permanent: true,
-      },
-      {
-        source: "/awards",
-        destination: "https://award.athena.hackclub.com",
-        permanent: true,
-      },
-    ];
+    return [];
   },
 };
 

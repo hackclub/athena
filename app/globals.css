@@ -135,4 +135,14 @@
     @apply bg-background text-foreground;
     color: #1f2d3d;
   }
+
+  tr:nth-child(even) {  
+    @apply bg-gray-100
+  } 
+  tr:nth-child(odd) {  
+    @apply bg-gray-200
+  }   
+  th, td {
+    @apply p-2
+  }
 }
