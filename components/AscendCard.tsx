@@ -10,7 +10,7 @@ export default function AscendCard() {
           <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
           <Image 
             alt="Ascend Event" 
-            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/885cf1045da83ea1_image.png" 
+            src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/885cf1045da83ea1_image.png" 
             className="max-h-[15vh] w-auto" 
             width={1121} 
             height={390} 

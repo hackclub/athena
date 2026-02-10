@@ -48,4 +48,4 @@ yarn dev
 
 ## In this repo:
 
-<img src="https://cloud-rbgeyix3i-hack-club-bot.vercel.app/0gh-readme.png" width="600" />
+<img src="https://cdn.hackclub.com/rescue?url=https://cloud-rbgeyix3i-hack-club-bot.vercel.app/0gh-readme.png" width="600" />

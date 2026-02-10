@@ -4,7 +4,7 @@ export const stories = [
     author: "Celeste R.",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/19a19adc4258c91890e0cd382d2bec001b633286_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/19a19adc4258c91890e0cd382d2bec001b633286_image.png",
     featured: true,
     award: true,
     description:
@@ -16,7 +16,7 @@ export const stories = [
     author: "Jeslyn C.",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/48c4b4cd4f7a6ba52429f5baa2b2dbc01ffa87e0_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/48c4b4cd4f7a6ba52429f5baa2b2dbc01ffa87e0_image.png",
     featured: true,
     award: false,
     description:
@@ -28,7 +28,7 @@ export const stories = [
     author: "Phaedra S. & Zoya H.",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9885407fc2b748c0aad309b0fbf5b50552647ecd_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/9885407fc2b748c0aad309b0fbf5b50552647ecd_image.png",
     featured: true,
     award: true,
     description:
@@ -40,7 +40,7 @@ export const stories = [
     author: "Meghana M.",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0797e2c84353bdc291c900f88591855ef1465acc_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/0797e2c84353bdc291c900f88591855ef1465acc_image.png",
     featured: true,
     award: false,
     description:
@@ -52,7 +52,7 @@ export const stories = [
     author: "Paperclip",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/98e3d75246b9c313bc7561df5f4f67729c8335a1_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/98e3d75246b9c313bc7561df5f4f67729c8335a1_image.png",
     featured: false,
     award: false,
     description:
@@ -64,7 +64,7 @@ export const stories = [
     author: "Sahiti",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a6ba76bddfbcaaff00d87e26ad20a5ff57c8b228_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/a6ba76bddfbcaaff00d87e26ad20a5ff57c8b228_image.png",
     featured: true,
     award: true,
     description:
@@ -76,7 +76,7 @@ export const stories = [
     author: "Meghana",
     date: "2024",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8040331ac3036f8623cf3ec287b3ac81fda25dc4_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/8040331ac3036f8623cf3ec287b3ac81fda25dc4_image.png",
     featured: true,
     award: false,
     description:
@@ -89,7 +89,7 @@ export const stories = [
   author: "Marwa",
   date: "2025",
   imageUrl:
-    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e03c0654b308cd7712dc91de77a0e298de26c4b9_marwa.png",
+    "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/e03c0654b308cd7712dc91de77a0e298de26c4b9_marwa.png",
   featured: true,
   award: false,
   description: `
@@ -102,7 +102,7 @@ Marwa made her own little corner of the internet, and it’s pink. Like, really 
   author: "Tatiana",
   date: "2025",
   imageUrl:
-    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/20e8b416e6c00211f46609b2915d3afdbd42daee_tats.png",
+    "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/20e8b416e6c00211f46609b2915d3afdbd42daee_tats.png",
   featured: true,
   award: false,
   description: `
@@ -117,7 +117,7 @@ She made it the hard way: no AI shortcuts, no tutorial hand-holding, just figuri
   author: "Dory",
   date: "2025",
   imageUrl:
-    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c45af755d99741b4450623ddb38f1fc549c4bde1_dory.png",
+    "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c45af755d99741b4450623ddb38f1fc549c4bde1_dory.png",
   featured: true,
   award: false,
   description: `
@@ -130,7 +130,7 @@ Caesar Engine is a custom game engine Dory’s building from scratch, inspired b
   author: "Stephanie",
   date: "2025",
   imageUrl:
-    "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4122469890378647ba4ed1bc83df249722b1d697_steph.png",
+    "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/4122469890378647ba4ed1bc83df249722b1d697_steph.png",
   featured: true,
   award: false,
   description: `
@@ -147,7 +147,7 @@ Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Ne
     author: "Rosewater (@r0s3)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4c28944f229cbf81a4d90d23fc5319868b232a13_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/4c28944f229cbf81a4d90d23fc5319868b232a13_image.png",
     featured: true,
     award: false,
     description:
@@ -159,7 +159,7 @@ Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Ne
     author: "Jessica Sun (@Jessica Sun)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/44bc46ee0ae6680b79b51c01e3cd6df4b0c37c0c_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/44bc46ee0ae6680b79b51c01e3cd6df4b0c37c0c_image.png",
     featured: true,
     award: false,
     description:
@@ -171,7 +171,7 @@ Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Ne
     author: "Violet (@ViviTheQueen)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1946eff457cc5ef55c25005ba44fefcfb8fb6450_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/1946eff457cc5ef55c25005ba44fefcfb8fb6450_image.png",
     featured: true,
     award: false,
     description:
@@ -183,7 +183,7 @@ Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Ne
     author: "Ren (@ren)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/bb5f464c1147281d2314f1729ba17c8e8c64d991_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/bb5f464c1147281d2314f1729ba17c8e8c64d991_image.png",
     featured: true,
     award: false,
     description:
@@ -195,7 +195,7 @@ Of course, it wasn’t all smooth; the Spotify API was a pain, fonts broke in Ne
     author: "Lyla (@lyla)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/efdbbe1df736c60f23c0cb2fb641eee18f4e86dc_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/efdbbe1df736c60f23c0cb2fb641eee18f4e86dc_image.png",
     featured: true,
     award: false,
     description: `“Where sound meets the art of starlight” ⋆.˚☾.⭒˚ — Oscilluna transforms simple music notes into dazzling wave art. Built with HTML, CSS, and JavaScript, Iyla created a site where C-major scale notes become oscillating sine waves, with customizable colors that paint gradients across the canvas and even the site’s header. You can even save your creations as transparent-background files, turning music into these beautiful keepsake visuals.
@@ -208,7 +208,7 @@ Fun fact: Iyla even made the pixel-art moon favicon herself on mobile!`,
     author: "Sophia Wang (@sophia)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d72bd149e5702ce905a67c7be1f95b5f3eaae20c_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/d72bd149e5702ce905a67c7be1f95b5f3eaae20c_image.png",
     featured: true,
     award: false,
     description: `Send your doodles straight to a friend’s phone! Drawmail is a fun web app where you sketch a picture, type in a phone number + message, and watch it deliver via SMS/MMS. Sophia built it with an image uploader (imgbb) and Vonage’s API, surviving a gauntlet of broken Twilio, Clicksend, and Telynx attempts. And that is how we have this lightweight, colorful prank-ready sketchpad with download support too!
@@ -220,7 +220,7 @@ Inspired by a desire to prank her friends with goofy drawings`,
     author: "Julia Do (@julia do)",
     date: "2025",
     imageUrl:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9c9ea249c7319c976627a604272f6d613524dd2d_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/9c9ea249c7319c976627a604272f6d613524dd2d_image.png",
     featured: true,
     award: false,
     description: `In out-perform, your “rank” rises as you hit these beats, boosting your virtual résumé instead of facing a manager (awesome concept in my opinion). Julia actually made the entire game in Godot, and illustrated assets in Procreate, and produced original tracks in Ableton! Smooth beats, colorful tracks, and playful satire; it’s all about making the best performance.

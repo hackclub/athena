@@ -12,7 +12,7 @@ export default function TeamPage() {
       slack: "@Christina Asquith",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e7bb8058afd3c34904a386bc34878043fe7c0fbf_christinacdn.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/e7bb8058afd3c34904a386bc34878043fe7c0fbf_christinacdn.png",
     },
     {
       name: "Annabel",
@@ -20,7 +20,7 @@ export default function TeamPage() {
       slack: "@phthallo",
       pronouns: "they/them",
       image:
-        "https://cloud-6fxxs7j9y-hack-club-bot.vercel.app/11733036812219.jpg",
+        "https://cdn.hackclub.com/rescue?url=https://cloud-6fxxs7j9y-hack-club-bot.vercel.app/11733036812219.jpg",
     },
     {
       name: "Phoebe",
@@ -28,7 +28,7 @@ export default function TeamPage() {
       slack: "@phoebe",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/450f7a98ac7042e46c732452f98006d9f6afffcc_phobecdn.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/450f7a98ac7042e46c732452f98006d9f6afffcc_phobecdn.png",
     },
     {
       name: "Reem K.",
@@ -36,7 +36,7 @@ export default function TeamPage() {
       slack: "@reem",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c630a53b4da175e0dfc077710a87e11c90a10651_aed248e0-7fef-4005-8c5d-63e988d0a615.jpeg",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c630a53b4da175e0dfc077710a87e11c90a10651_aed248e0-7fef-4005-8c5d-63e988d0a615.jpeg",
     },
     {
       name: "Abby Fischler",
@@ -44,7 +44,7 @@ export default function TeamPage() {
       slack: "@Abby Fischler",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/170a80a42983a73b04e8a519daa39aeaad0d6abe_dscf1050_edit__1_.jpg",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/170a80a42983a73b04e8a519daa39aeaad0d6abe_dscf1050_edit__1_.jpg",
     },
     {
       name: "Phaedra Sanon",
@@ -52,7 +52,7 @@ export default function TeamPage() {
       slack: "@phaedra",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/34f8b20ef44088f89469a70da85aceebce1c62f7_phaedracdn.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/34f8b20ef44088f89469a70da85aceebce1c62f7_phaedracdn.png",
     },
 
     {
@@ -61,7 +61,7 @@ export default function TeamPage() {
       slack: "@neptvnisme",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/afb88308e7239a5456c900d581bce746f61b2c45_t0266frgm-u07ak3ce2mq-9fb9ad6f2d73-512.webp",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/afb88308e7239a5456c900d581bce746f61b2c45_t0266frgm-u07ak3ce2mq-9fb9ad6f2d73-512.webp",
     },
     {
       name: "Kyra Ezikeuzor",
@@ -69,7 +69,7 @@ export default function TeamPage() {
       slack: "@Kyra",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6860ea1874a2d892a8927e41c7254dacaf6628df_kyracdn.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6860ea1874a2d892a8927e41c7254dacaf6628df_kyracdn.png",
     },
     {
       name: "Celeste R.",
@@ -77,7 +77,7 @@ export default function TeamPage() {
       slack: "@thegrammarpolice",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a65e8b718b03e743307ad40cf984a6ffab0d7bea_celestecdn.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/a65e8b718b03e743307ad40cf984a6ffab0d7bea_celestecdn.png",
     },
     {
       name: "Meghana M.",
@@ -85,7 +85,7 @@ export default function TeamPage() {
       slack: "@Meghana",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/317e94430eabfc9bb8f6e063198d0b98e30176ad_meghanacdn.jpeg",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/317e94430eabfc9bb8f6e063198d0b98e30176ad_meghanacdn.jpeg",
     },
 
     {
@@ -102,7 +102,7 @@ export default function TeamPage() {
       slack: "@lou",
       pronouns: "they/them",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0c0306bad2c52f721b120474ade9de27f4857cd7_lou.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/0c0306bad2c52f721b120474ade9de27f4857cd7_lou.png",
     },
 
     {
@@ -111,7 +111,7 @@ export default function TeamPage() {
       slack: "@magic frog",
       pronouns: "she/her",
       image:
-        "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e27855d383340c741fc7d7186eeff0d567aeac0e_screenshot_2025-06-12_at_10.24.54___am.png",
+        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/e27855d383340c741fc7d7186eeff0d567aeac0e_screenshot_2025-06-12_at_10.24.54___am.png",
     },
   ];
 

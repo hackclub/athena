@@ -104,7 +104,7 @@ params,
     
     <div className = "flex lg:flex-row flex-col gap-10 *:lg:basis-1/2 transition-all duration-300">
         <div className = "flex flex-col items-start gap-4 overflow-hidden grow">
-            <img className = "mt-12 md:mt-0 w-2/3 lg:w-4/12 mx-auto" src = "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg"/>
+            <img className = "mt-12 md:mt-0 w-2/3 lg:w-4/12 mx-auto" src = "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlined_logo__alt_-cropped.svg"/>
             <div className = "flex flex-col gap-4">
                     <div className = "text-justify bg-red/10 border border-red/30 p-4 rounded-sm gap-2 items-center *:max-sm:text-sm text-base">
                         <p>The <a target = "_blank" href = "https://award.athena.hackclub.com" className = "font-bold" >Athena Award</a> was a six month long program ran by Hack Club where girls and nonbinary students (ages 13-18) spent 30 (often more!) hours coding three technical projects. By earning this certification, students have proven themselves as technicaly adept and familiar with industry-standard software development platforms.</p>

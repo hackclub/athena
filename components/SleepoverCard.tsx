@@ -30,7 +30,7 @@ const responsive = {
 const carouselImages = [
   {
     image:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
     caption: "Hackers at Horizon, a Day of Service event in NYC.",
   },
   {
@@ -68,7 +68,7 @@ export default function SleepoverCard() {
           <div className="relative z-20 flex flex-col items-center md:items-start">
             <Image
               className="w-full max-w-[300px] md:max-w-none md:w-5/6"
-              src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/33acfe853130c7a8_sleepover-logo.PNG"
+              src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/33acfe853130c7a8_sleepover-logo.PNG"
               alt="Sleepover"
               width={1000}
               height={1000}
@@ -136,7 +136,7 @@ export default function SleepoverCard() {
               <img alt="Get Cybersmart" src="/images/getcybersmart.png" />
               <img
                 alt="Girls Who Hack"
-                src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7c7cd694ba0da09feb79b18fd5f0e404ff2208e0_image.png"
+                src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/7c7cd694ba0da09feb79b18fd5f0e404ff2208e0_image.png"
               />
               <img alt="Girl Up Kenya" src="/images/girlup.png" />
               <img alt="NCWIT AIC" src="/images/ncwit.png" />

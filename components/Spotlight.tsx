@@ -55,7 +55,7 @@ export default function SpotlightCard({ post }: { post: SpotlightPost }) {
               className="bg-red-300 min-h-[20vh] md:w-1/2 bg-cover relative"
               style={{
                 backgroundImage:
-                  "url(https://cloud-lz7wipd7a-hack-club-bot.vercel.app/010doc-spotlight-min.jpg)",
+                  "url(https://cdn.hackclub.com/rescue?url=https://cloud-lz7wipd7a-hack-club-bot.vercel.app/010doc-spotlight-min.jpg)",
               }}
             >
               <button

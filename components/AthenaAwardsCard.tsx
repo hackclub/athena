@@ -29,7 +29,7 @@ const responsive = {
 const carouselImages = [
   {
     image:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
+      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
     caption: "Hackers at Horizon, a Day of Service event in NYC.",
   },
   {
@@ -146,7 +146,7 @@ export default function AthenaAwardsCard() {
           <div className="relative z-20 h-full flex flex-col">
             <Image
               className="w-5/6"
-              src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlinedlogoaltcropped.svg"
+              src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlinedlogoaltcropped.svg"
               alt="Athena Award"
               width={1000}
               height={1000}
@@ -212,7 +212,7 @@ export default function AthenaAwardsCard() {
               <img alt="Get Cybersmart" src="/images/getcybersmart.png" />
               <img
                 alt="Girls Who Hack"
-                src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7c7cd694ba0da09feb79b18fd5f0e404ff2208e0_image.png"
+                src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/7c7cd694ba0da09feb79b18fd5f0e404ff2208e0_image.png"
               />
               <img alt="Girl Up Kenya" src="/images/girlup.png" />
               <img alt="NCWIT AIC" src="/images/ncwit.png" />

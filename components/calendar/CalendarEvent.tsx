@@ -34,7 +34,7 @@ export default function CalEvent({ name, date, description, hostedBy, tags, arti
                 <div className="flex gap-2 text-xl font-semibold items-center flex-1">
                     {artifactsAvailable && (
                         <div className="flex gap-2 relative group">
-                            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c7a9be7114dc5efe7284463ce13b8c892db834c0_image.png" alt="Artifacts available" className="mt-2 aspect-auto h-8 inline-block cursor-help" />
+                            <img src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c7a9be7114dc5efe7284463ce13b8c892db834c0_image.png" alt="Artifacts available" className="mt-2 aspect-auto h-8 inline-block cursor-help" />
                             <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black text-white text-base rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
                                 Earn artifacts for the Athena Award by attending!
                             </div>
