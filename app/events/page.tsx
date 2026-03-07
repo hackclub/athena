@@ -16,6 +16,11 @@ export const revalidate = 0;
 export default async function EventPage() {
   const upcomingEvents = await getUpcomingEvents();
   const recentEvents = await getRecentEvents();
+
+console.log("recent count:", recentEvents.length);
+console.log("statuses:", recentEvents.map(e => e.status));
+
+
   
   
   return (

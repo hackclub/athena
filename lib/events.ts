@@ -7,10 +7,32 @@ import { AirtableEventRecord, EventWithColors, Event } from '@/types'
 import { hackClubLogo, defaultAthenaPhoto } from '@/constants'
 import { formatDate } from '@/lib/utils'
 
+function normalizeStatus(status: unknown): string {
+  return typeof status === "string" ? status.trim().toLowerCase() : "";
+}
+
+function isUpcomingStatus(status: unknown): boolean {
+  const s = normalizeStatus(status);
+  return s === "upcoming" || s.startsWith("upcoming ");
+}
+
+function isActiveStatus(status: unknown): boolean {
+  return normalizeStatus(status) === "active";
+}
+
+function isCompleteStatus(status: unknown): boolean {
+  const s = normalizeStatus(status);
+  return s === "complete" || s === "completed";
+}
+
 export async function fetchEvents() {
-  const data = (await new AirtableEventsManager().getAllEvents()).filter((record: any) => record.fields.Ignore != 1);
+  const { records = [] } = await new AirtableEventsManager().getAllEvents();
+  const filteredRecords = records.filter((record: AirtableEventRecord) => {
+    const fields = record.fields as { Ignored?: boolean; Ignore?: number };
+    return !fields.Ignored && fields.Ignore !== 1;
+  });
   
-  return data.map((record) => {
+  return filteredRecords.map((record: AirtableEventRecord) => {
     const eventRecord = record as unknown as AirtableEventRecord;
     let photos: string[] = [defaultAthenaPhoto];
     
@@ -28,7 +50,7 @@ export async function fetchEvents() {
     return {
       id: eventRecord.id,
       name: eventRecord.fields.Name,
-      status: eventRecord.fields.Status,
+      status: eventRecord.fields.Status_Formula,
       description: eventRecord.fields.Description,
       location: eventRecord.fields.Location,
       startDate: formatDate(eventRecord.fields['Start Date']),
@@ -97,9 +119,11 @@ function makePastel(color: FinalColor) {
 
 export async function getEvents(): Promise<EventWithColors[]> {
   const events = await fetchEvents();
-  const recoloredEvents = [];
 
-  for (const event of events.filter(e => e.status !== "Upcoming") as EventWithColors[]) {
+  const nonUpcoming = events.filter((e: Event) => !isUpcomingStatus(e.status));
+  const recoloredEvents: { event: Event; colors: { pastel: { hex: string }[]; intense: { hex: string }[] } }[] = [];
+
+  for (const event of nonUpcoming) {
     try {
       const response = await axios.get(event.logo || hackClubLogo, { responseType: 'arraybuffer' });
       const imageBuffer = Buffer.from(response.data);
@@ -108,7 +132,7 @@ export async function getEvents(): Promise<EventWithColors[]> {
 
       const width = info.width;
       const height = info.height;
-      
+
       const colors = await extractColors({ data: data as unknown as Uint8ClampedArray<ArrayBufferLike>, width, height }, {
         colorValidator: (red, green, blue, alpha = 255) => {
           const greyShade = Math.abs(red - green) < 30 && Math.abs(red - blue) < 30 && Math.abs(green - blue) < 30;
@@ -116,32 +140,48 @@ export async function getEvents(): Promise<EventWithColors[]> {
         },
       });
 
-      const sortedColors = colors.sort((a, b) => b.intensity - a.intensity)
-      const pastel = sortedColors.map(c => makePastel(c));
+      const sortedColors = colors.sort((a, b) => b.intensity - a.intensity);
+      if (sortedColors.length === 0) {
+        recoloredEvents.push({
+          event,
+          colors: { pastel: [{ hex: "#FFFFFF" }], intense: [{ hex: "#000000" }] },
+        });
+        continue;
+      }
 
-      recoloredEvents.push({ colors: { pastel, intense: sortedColors }});
+      const pastel = sortedColors.map(c => makePastel(c));
+      recoloredEvents.push({ event, colors: { pastel, intense: sortedColors } });
     } catch (e) {
+      // If the logo can't be fetched/parsed, still show the event with safe defaults.
       console.error(e);
+      recoloredEvents.push({
+        event,
+        colors: { pastel: [{ hex: "#FFFFFF" }], intense: [{ hex: "#000000" }] },
+      });
     }
   }
 
-  const eventsWithColors = recoloredEvents.map((event, i) => hardcodeEventColors({
-    ...events[i],
-    tagColor: event.colors.intense[0].hex,
-    logoPreviewBackgroundColor: event.colors.pastel[0].hex,
-  } as EventWithColors));
-  
+  const eventsWithColors = recoloredEvents.map(({ event, colors }) =>
+    hardcodeEventColors({
+      ...event,
+      tagColor: colors.intense[0].hex,
+      logoPreviewBackgroundColor: colors.pastel[0].hex,
+    } as EventWithColors)
+  );
+
   return eventsWithColors;
 }
 
 export async function getUpcomingEvents(): Promise<Event[]> {
   const events = await fetchEvents();
-  return events.filter(event => event.status === "Upcoming" || event.status === "Active");
+  return events.filter((event: Event) => isUpcomingStatus(event.status) || isActiveStatus(event.status));
 }
 
 export async function getRecentEvents(): Promise<EventWithColors[]> {
   const allEvents: EventWithColors[] = await getEvents();
-  return allEvents.filter(event => event.status === "Complete");
+  return allEvents.filter(
+    (event: EventWithColors) => isCompleteStatus(event.status) || isActiveStatus(event.status)
+  );
 }
 
 /**

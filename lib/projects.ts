@@ -2,11 +2,18 @@ import { AirtableProjectsManager } from "./airtable";
 import { AirtableProjectRecord, Project } from "@/types";
 import uploadUrlToCdn from "./cdn";
 
-export async function fetchProjectsfromAirtable() {
-  const data = await new AirtableProjectsManager().getAllProjects();
+const offsetCache: Record<number, string> = {};
 
-  return data
-    .map((record) => {
+export async function fetchProjects(page: number) {
+
+  const newOffset = offsetCache[page] ?? "";
+
+  const {records,offset} = await new AirtableProjectsManager().getAllProjects(newOffset, 200, 20);
+
+  if (offset) offsetCache[page + 1] = offset;
+
+  return {projects: records
+    .map((record: AirtableProjectRecord) => {
       const projectRecord = record as unknown as AirtableProjectRecord;
 
       if (projectRecord.fields) {
@@ -26,24 +33,35 @@ export async function fetchProjectsfromAirtable() {
       }
       return undefined;
     })
-    .filter((project): project is Project => project !== undefined);
+    .filter((project): project is Project => project !== undefined), offset: offset};
 }
 
-export async function getProjects(
-  page: number = 1,
-  limit: number = 20
-): Promise<{ projects: Project[]; total: number; totalPages: number }> {
-  const allProjects = await fetchProjectsfromAirtable();
-  const total = allProjects.length;
-  const totalPages = Math.ceil(total / limit);
-
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-  const projects = allProjects.slice(startIndex, endIndex);
-
-  return { projects, total, totalPages };
+export async function fetchProjectsByGithubUsername(githubUsername: string) {
+  const records = await new AirtableProjectsManager().getProjectsByGithubUsername(githubUsername);
+  return records.map((record: AirtableProjectRecord) => {
+    const projectRecord = record as unknown as AirtableProjectRecord;
+    return {
+      id: projectRecord.id,
+      githubUsername: projectRecord.fields["GitHub Username"],
+      projectName: projectRecord.fields["Project Name"],
+      description: projectRecord.fields["Description"],
+      codeUrl: projectRecord.fields["Code URL"],
+      playableUrl: projectRecord.fields["Playable URL"],
+      hoursSpent: projectRecord.fields["Optional - Override Hours Spent"],
+    } as Project;
+  });
 }
 
-export async function getAllProjects(): Promise<Project[]> {
-  return await fetchProjectsfromAirtable();
+export async function fetchProjectById(projectId: string) {
+  const record = await new AirtableProjectsManager().getProjectById(projectId);
+  const projectRecord = record as unknown as AirtableProjectRecord;
+  return {
+    id: projectRecord.id,
+    githubUsername: projectRecord.fields["GitHub Username"],
+    projectName: projectRecord.fields["Project Name"],
+    description: projectRecord.fields["Description"],
+    codeUrl: projectRecord.fields["Code URL"],
+    playableUrl: projectRecord.fields["Playable URL"],
+    hoursSpent: projectRecord.fields["Optional - Override Hours Spent"],
+  } as Project;
 }

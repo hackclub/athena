@@ -1,14 +1,18 @@
 import Airtable from "airtable";
-import uploadUrlToCdn from "./cdn";
+//import uploadUrlToCdn from "./cdn";
 import { AirtableProjectRecord } from "@/types";
 
 export class AirtableManager {
   public base: Airtable.Base;
   public tableName: string;
+  private apiKey: string;
+  private baseId: string;
 
   constructor(tableName: string, apiKey: string, baseId: string) {
     this.base = new Airtable({ apiKey: apiKey }).base(baseId!);
     this.tableName = tableName;
+    this.apiKey = apiKey;
+    this.baseId = baseId;
   }
 
   async getLatestRecord() {
@@ -22,14 +26,22 @@ export class AirtableManager {
     return records[0];
   }
 
-  async getAllRecords(orderByThisField: string) {
-    const records = await this.base(this.tableName)
-      .select({
-        sort: [{ field: orderByThisField, direction: "asc" }],
-      })
-      .all();
 
-    return records;
+  async getAllRecords(orderByThisField: string, filterByThisField: string, offset: string, maxRecords: number, pageSize: number) {
+    let url = `https://api.airtable.com/v0/${this.baseId}/${encodeURIComponent(this.tableName)}?sort[0][field]=${encodeURIComponent(orderByThisField)}&sort[0][direction]=asc&maxRecords=${maxRecords}&pageSize=${pageSize}&filterByFormula=${encodeURIComponent(filterByThisField)}`;
+
+    if (offset) url += `&offset=${offset}`;
+
+    const response = await fetch(url, { headers: { Authorization: `Bearer ${this.apiKey}` } });
+    const data = await response.json();
+
+
+    if (!response.ok || data.error) {
+      console.error("[Airtable] getAllRecords failed:", response.status, data.error ?? data);
+      return { records: [], offset: undefined };
+    }
+    const records = Array.isArray(data.records) ? data.records : [];
+    return { records, offset: data.offset };
   }
 }
 
@@ -61,9 +73,10 @@ export class AirtableEventsManager extends AirtableManager {
   }
 
   getAllEvents() {
-    return this.getAllRecords("Start Date");
+    return this.getAllRecords("Start Date", "{Status_Formula} = 'Complete'", "", 100, 100);
   }
 }
+
 
 export class AirtableProjectsManager extends AirtableManager {
   constructor() {
@@ -74,12 +87,38 @@ export class AirtableProjectsManager extends AirtableManager {
     );
   }
 
-  async getAllProjects(): Promise<AirtableProjectRecord[]> {
-    const data = await this.getAllRecords("created_at");
+  async getAllProjects(
+    offsetString: string,
+    maxRecords: number,
+    pageSize: number
+  ): Promise<{records: AirtableProjectRecord[],offset?: string}> {
+    const {records,offset} = await this.getAllRecords("created_at", "{status} = 'approved'", offsetString, maxRecords, pageSize)
+    
+    return {records: records as unknown as AirtableProjectRecord[],offset: offset as string | undefined};
+  }
+
+  async getProjectsByGithubUsername(githubUsername: string) {
+    const records = await this.base(this.tableName)
+      .select({
+        filterByFormula: `{GitHub Username} = "${githubUsername}"`,
+        maxRecords: 100,
+        view: "Grid View",
+      })
+      .all();
+    return records as unknown as AirtableProjectRecord[];
+  }
+
+  async getProjectById(projectId: string) {
+    const record = await this.base(this.tableName).find(projectId);
+    return record as unknown as AirtableProjectRecord;
+  }
+
+  /*
+  async getAllProjects(offset: number, maxRecords: number): Promise<AirtableProjectRecord[]> {
+    const data = await this.getProjects(offset, maxRecords, 20);
     const approvedData = data.filter(
       (record) => record.fields["status"] === "approved"
     );
-
     await Promise.all(
       approvedData.map(async (record: any) => {
         const projectRecord = record as unknown as AirtableProjectRecord;
@@ -114,10 +153,8 @@ export class AirtableProjectsManager extends AirtableManager {
       (record) => record as unknown as AirtableProjectRecord
     );
   }
+*/
 
-  async getProjectById(projectId: string) {
-    return await this.base(this.tableName).find(projectId);
-  }
 }
 
 export class AirtableProfilesManager extends AirtableManager {

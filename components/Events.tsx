@@ -6,27 +6,30 @@ import { hackClubLogo, hackClubGitHub, defaultAthenaPhoto } from "@/constants";
 
 export default function Events({ data }: { data: EventWithColors[] }) {
   const [showAllEvents, setShowAllEvents] = useState(false);
+  const mostRecent = data.length > 0 ? data[data.length - 1] : null;
 
   return (
     <div className="mt-4">
       <div className="text-3xl font-bold">Recent Events</div>
       <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
-        <PastEvent
-          accentColor={data[data.length - 1].tagColor || "black"}
-          bgColor={data[data.length - 1].logoPreviewBackgroundColor || "white"}
-          tintColor={data[data.length - 1].tagColor || "black"}
-          className="col-span-2 row-span-2"
-          name={data[data.length - 1].name}
-          location={data[data.length - 1].location || ""}
-          date={data[data.length - 1].startDate || ""}
-          logo={data[data.length - 1].logo || hackClubLogo}
-          githubLink={data[data.length - 1].githubLink || hackClubGitHub}
-          website={data[data.length - 1].website || hackClubGitHub}
-          description={data[data.length - 1].description || ""}
-          photos={data[data.length - 1].photos || [defaultAthenaPhoto]}
-          photocreds={data[data.length - 1].photocreds || ""}
-          mostRecent
-        />
+        {mostRecent && (
+          <PastEvent
+            accentColor={mostRecent.tagColor || "black"}
+            bgColor={mostRecent.logoPreviewBackgroundColor || "white"}
+            tintColor={mostRecent.tagColor || "black"}
+            className="col-span-2 row-span-2"
+            name={mostRecent.name}
+            location={mostRecent.location || ""}
+            date={mostRecent.startDate || ""}
+            logo={mostRecent.logo || hackClubLogo}
+            githubLink={mostRecent.githubLink || hackClubGitHub}
+            website={mostRecent.website || hackClubGitHub}
+            description={mostRecent.description || ""}
+            photos={mostRecent.photos || [defaultAthenaPhoto]}
+            photocreds={mostRecent.photocreds || ""}
+            mostRecent
+          />
+        )}
 
         {data
           .slice()

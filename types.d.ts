@@ -20,7 +20,7 @@ interface AirtableEventRecord {
   id: string;
   fields: {
     Name: string;
-    Status: "Complete" | "Active" | "Upcoming";
+    Status_Formula: "Complete" | "Active" | "Upcoming";
     Description?: string; // Optional
     Location?: string; // Optional
     ["Start Date"]?: string;
