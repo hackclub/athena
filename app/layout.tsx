@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Background from "@/components/Background";
 import PlausibleProvider from "next-plausible";
+import Loader from '@/components/Loader';
 
 export const metadata: Metadata = {
   title: "Athena - Hack Club",
@@ -40,6 +41,10 @@ export default function RootLayout({
         className="antialiased"
         suppressHydrationWarning
       >
+        <Loader />
+        {process.env.NODE_ENV === "development" && (
+          <script src="https://unpkg.com/react-scan/dist/auto.global.js" crossOrigin="anonymous" />
+        )}
         <PlausibleProvider domain="athena.hackclub.com">
           <Background>
             {children}
