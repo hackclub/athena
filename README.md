@@ -45,6 +45,7 @@ yarn dev
 | Mar 2025 | Nairobi, Kenya | [Jua ☀️](https://github.com/v1peridae/jua) |
 | Apr 2025 | Atlanta, GA | [Cascade 🌊](https://github.com/hackclub/cascade) |
 | May 2025 | Toronto, Canada | [Underground 🚇](https://underground.hackclub.com/) |
+| Nov 2025 | New York City, NY | [Parthenon 🔱](https://parthenon.hackclub.com/) |
 
 ## In this repo:
 
