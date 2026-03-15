@@ -44,7 +44,7 @@ export default async function Home() {
             <div className="absolute inset-0 opacity-30 md:opacity-40 bg-[url('/svg/background2.svg')] pointer-events-none"></div>
             <div className="relative z-0 *:ml-auto h-full flex flex-col">
               <div className="text-lg md:text-xl font-bold text-white mb-3 text-right">The Athena Award:</div>
-              <Image alt="Parthenon Event" src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlinedlogoaltcropped.svg" className="max-h-[15vh] w-auto" width={1121} height={390} />
+              <Image alt="Parthenon Event" src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ea8e84acae378a03d5b5e788a780a853aae4d21_outlinedlogoaltcropped.svg" className="max-h-[15vh] w-auto" width={1121} height={390} unoptimized />
               <div className="text-white md:w-8/12 text-right line-clamp-4 flex-1 grow">In 2025, over 1000 Hack Clubbers started their journey to earn the Athena Award certifcation - in collaboration with MIT, Girls Who Code, and GitHub - by spending 30 hours coding on 3 technical projects.</div>
               <Link href="/award" className="w-full text-right text-white italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-white">Verify an Athena Award certification</Link>
             </div>

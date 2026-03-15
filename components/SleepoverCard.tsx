@@ -29,11 +29,6 @@ const responsive = {
 
 const carouselImages = [
   {
-    image:
-      "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/643baf61ae5b56c1fb50a3af60600108cf52f3af_image.png",
-    caption: "Hackers at Horizon, a Day of Service event in NYC.",
-  },
-  {
     image: "/images/jpeg.png",
     caption:
       "Programmers working hard at Athena's JPEG game jam in Ottawa, Canada.",
@@ -55,7 +50,7 @@ const carouselImages = [
 export default function SleepoverCard() {
   return (
     <>
-      <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-6 md:p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D9DAF8] from-0% via-[#D9DAF8]/80 via-60% to-[#D9DAF8]/0 overflow-hidden transition">
+      <div className="col-span-full md:col-span-full w-full h-max relative rounded-b-lg p-6 md:p-12 lg:px-32 lg:pt-32 lg:pb-0 bg-gradient-to-b from-[#D9DAF8] from-0% via-[#D9DAF8]/80 via-60% to-[#D9DAF8]/0 overflow-hidden transition max-w-[2200px] mx-auto">
         {/* Bunny tile background */}
         <div 
           className="absolute inset-0 bg-[url('/images/bunny-tile.png')] bg-repeat bg-[length:100px] md:bg-[length:200px] opacity-80 pointer-events-none z-0"
@@ -99,21 +94,50 @@ export default function SleepoverCard() {
               </div>
             </Link>
             </div>
-            <span className="text-lg md:text-2xl font-semibold text-[#6C6EA0] my-4 text-center md:text-left">
-              Happening now. You&apos;re invited to join a community of
+            <div className="flex justify-center items-center w-full mb-4 mt-12">
+              <Image
+                src="/images/stasis.png"
+                alt="Stasis"
+                width={2400}
+                height={2400}
+                className="object-contain drop-shadow-2xl rounded-2xl h-auto w-[122%] max-w-none translate-x-12 md:translate-x-20"
+                priority
+              />
+            </div>
+            <span className="text-lg md:text-2xl font-semibold text-[#6C6EA0] my-4 text-center md:text-left whitespace-nowrap mt-16">
+              You&apos;re invited to join a community of
               creators, built by girls, for girls. In collaboration with:
             </span>
           </div>
 
-          <iframe
-            className="w-full rounded-lg border-2 border-white mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
-            src="https://www.youtube.com/embed/FIyDH5dm5eo"
-            title="This is the Athena Award"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
+          <div className="relative flex flex-col">
+            <iframe
+              className="w-full rounded-lg border-2 border-white mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
+              src="https://www.youtube.com/embed/FIyDH5dm5eo"
+              title="This is the Athena Award"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+            <div className="mt-8 lg:mt-0 text-center lg:text-left lg:absolute lg:left-0 lg:right-0 lg:top-[48rem] lg:translate-x-[13rem]">
+              <p className="text-[#443c38] text-2xl md:text-4xl font-semibold leading-tight">
+                Interested in building
+                <br />
+                hardware projects?
+                <br />
+                Get up to $300 to build it.
+              </p>
+              <Link
+                href="https://stasis.hackclub.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-5 px-10 py-4 rounded-xl bg-gradient-to-b from-[#6a4636] to-[#d85a2a] text-[#f6ece0] text-xl md:text-2xl font-semibold shadow-[0px_6px_14px_rgba(0,0,0,0.28)] hover:brightness-110 transition"
+              >
+                Join Stasis
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <div>
