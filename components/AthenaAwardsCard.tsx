@@ -150,6 +150,7 @@ export default function AthenaAwardsCard() {
               alt="Athena Award"
               width={1000}
               height={1000}
+              unoptimized
               priority
             />
             <div className="text-white text-2xl md:w-2/3 py-4">
