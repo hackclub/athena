@@ -269,6 +269,21 @@ export const events: (Event | WIPEvent)[] = [
     photocreds: "",
   },
   {
+    name: "Underground",
+    location: "Toronto, CA",
+    date: "May 2025",
+    logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4fdeb49d3268fa29cd09fc1a871abbc49d867f4f_underground_logo.png",
+    githubLink: "https://github.com/carrotsoups/underground",
+    description: "At Underground, girls and gender minorities teens from all over the Greater-Toronto area were invited to build a websites, design printed circuit boards, and grow  a community of empowerment at Cohere AI.",
+    photos: [
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f0f94f80d15c5be8b856780c1a171c56f622abd2_img_8108.jpg",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/af7b45db4a88bf0f90811b7285e4b082248147ca_img_8133.jpg",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f72fe20cad7dabf47f09ada4c48289fda5fb0ff2_img_9443.heic",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2c97125880559444bc31cfa069e135a21a235893_img_8126.jpg"
+    ],
+    photocreds: "Muskan",
+  },
+  {
     upcoming: true,
     location: "Orlando, FL",
     date: "Feb 2025",
