@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "airtable": "^0.12.2",
-    "axios": "^1.7.9",
+    "axios": "^1.15.0",
     "colorthief": "^2.6.0",
     "emotion": "^11.0.0",
     "eslint": "^9.39.2",
