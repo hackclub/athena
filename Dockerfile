@@ -18,7 +18,8 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
-RUN addgroup --system --gid 1001 nodejs \
+RUN apk add --no-cache curl nodejs \
+  && addgroup --system --gid 1001 nodejs \
   && adduser --system --uid 1001 nextjs
 
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
@@ -29,4 +30,7 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD ["bun", "run", "server.js"]
+HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=5 \
+  CMD curl -fsS http://localhost:3000/ || exit 1
+
+CMD ["node", "server.js"]
