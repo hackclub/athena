@@ -4,6 +4,7 @@ import Background from "@/components/Background";
 import PlausibleProvider from "next-plausible";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://athena.hackclub.com"),
   title: "Athena - Hack Club",
   description: "Athena is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.",
   icons: "https://assets.hackclub.com/icon-rounded.svg",

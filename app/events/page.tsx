@@ -6,7 +6,7 @@ import Events from "@/components/Events";
 // import useImagePreloader from "../hooks/useImagePreloader";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from "next/link";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import CalendarEvent from "@/components/calendar/CalendarEvent";
 import { CALENDAR_EVENTS } from "@/calendar";
  
