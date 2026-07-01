@@ -50,7 +50,7 @@ const carouselImages = [
 export default function SunbeamCard() {
   return (
     <>
-      <div className="col-span-full md:col-span-full w-full h-max relative p-6 md:p-12 lg:px-16 lg:pt-32 lg:pb-64 bg-gradient-to-b from-[#D9DAF8] from-0% via-[#D9DAF8]/80 via-60% to-[#D9DAF8]/0 overflow-hidden transition max-w-[2200px] mx-auto">
+      <div className="col-span-full md:col-span-full w-full h-max relative p-6 md:p-12 lg:px-16 lg:pt-32 lg:pb-64 bg-gradient-to-b from-[#D9DAF8] from-0% via-[#D9DAF8]/80 via-60% to-[#D9DAF8]/0 overflow-hidden transition max-w-[2200px] mx-auto" style={{fontFamily: "'Outfit', sans-serif"}}>
         
         {/* background */}
         <div className="absolute inset-0 pointer-events-none z-0">
@@ -64,7 +64,7 @@ export default function SunbeamCard() {
             <img
               src="images/sunbeamlogo.png"
               alt="Sunbeam"
-              style={{width: "32vw", height: "auto", marginBottom: "2vw", marginLeft: "1vw"}}
+              style={{width: "32vw", height: "auto", marginLeft: "1vw"}}
             />
 
             <div
@@ -88,7 +88,7 @@ export default function SunbeamCard() {
                   bottom: "12.2%"
                 }}
               >
-                <p style={{fontSize: "2vw", fontWeight: 500}}>
+                <p style={{fontSize: "2vw", fontWeight: 300, color: "#2E599C"}}>
                   20+ beginner friendly <br /> social coding events for <br /> girls
                   around the world <br /> 29th August | sign up to run your own :)
                 </p>
@@ -99,7 +99,7 @@ export default function SunbeamCard() {
           <div className="relative" style={{width: "50vw", height: "auto", display: "flex", flexDirection: "column", justifyContent: "flex-end"}}>
             <iframe
               style={{marginBottom: "2vw"}}
-              className="w-full rounded-lg border-2 border-white mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
+              className="w-full rounded-lg border-2 border-[#2E599C] mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
               src="https://www.youtube.com/embed/FIyDH5dm5eo"
               title="This is the Athena Award"
               frameBorder="0"
@@ -109,7 +109,7 @@ export default function SunbeamCard() {
             ></iframe>
             <a href="google.com" style={{position: "relative", width: "25vw", display: "block", alignSelf: "center"}}>
               <img src="/images/surfboard.png" alt="" style={{width: "25vw", height: "auto", display: "block"}} />
-              <div style={{position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", color: "#2E599C"}}>
+              <div style={{position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", color: "#0E387A", fontWeight: 600, fontSize: "1.9vw", marginLeft: "0.2vw"}}>
                 <span>run your own Sunbeam</span>
               </div>
             </a>
@@ -118,7 +118,7 @@ export default function SunbeamCard() {
       </div>
 
       {/* below the fold - we good here*/}
-      <div className="-mt-48 relative z-10">
+      <div className="-mt-48 relative z-10" style={{fontFamily: "'Outfit', sans-serif"}}>
         <div className="py-6">
           <div className="p-12 pt-[6vw] lg:pt-[10vw] lg:p-32 flex flex-col gap-4">
             <div className="flex flex-row flex-wrap gap-6 *:h-[35px] *:md:h-[65px] *:image-cover">
