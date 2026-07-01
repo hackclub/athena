@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import AthenaAwardsCard from "@/components/AthenaAwardsCard";
 import Image from "next/image";
 import Link from "next/link";
-import SleepoverCard from "@/components/SleepoverCard";
+import SunbeamCard from "@/components/SunbeamCard";
 import Footer from "@/components/Footer";
  
 export const dynamic = 'force-dynamic';
@@ -16,7 +16,7 @@ export default async function Home() {
       <Link href="https://hackclub.com" className="block absolute z-40 top-0 left-[5vw]">
         <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[10vh] lg:h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
       </Link>
-      <SleepoverCard/>
+      <SunbeamCard/>
 
       <div className="w-full text-left px-6 lg:px-32 mb-16">
   
