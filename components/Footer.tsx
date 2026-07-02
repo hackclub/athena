@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#D9DAF8] text-[#6C6EA0] py-12 px-6 relative z-10">
+    <footer className="bg-[#0E387A] text-[#a8c4e8] py-12 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h2 className="text-[#6C6EA0] font-bold text-lg mb-4">Hack Club</h2>
+            <h2 className="text-white font-bold text-lg mb-4">Hack Club</h2>
             <div className="flex flex-col gap-2">
               <a href="https://hackclub.com/philosophy" className="hover:text-white transition">Philosophy</a>
               <a href="https://hackclub.com/team" className="hover:text-white transition">Our Team</a>
@@ -15,7 +15,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="text-[#6C6EA0] font-bold text-lg mb-4">Resources</h2>
+            <h2 className="text-white font-bold text-lg mb-4">Resources</h2>
             <div className="flex flex-col gap-2">
               <a href="https://events.hackclub.com" className="hover:text-white transition">Events</a>
               <a href="https://guides.hackclub.com" className="hover:text-white transition">Guides</a>
@@ -51,12 +51,12 @@ export default function Footer() {
             <p className="text-sm">
               <a href="tel:1-855-625-4225" className="hover:text-white transition">1-855-625-HACK</a>
               <br />
-              <span className="text-[#D9DAF8]/70">(call toll-free)</span>
+              <span className="text-white/50">(call toll-free)</span>
             </p>
           </div>
         </div>
 
-        <p className="text-sm text-[#D9DAF8]/70 mt-8">
+        <p className="text-sm text-white/50 mt-8">
           © {new Date().getFullYear()} Hack Club. 501(c)(3) nonprofit (EIN: 81-2908499)
         </p>
       </div>
