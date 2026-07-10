@@ -113,7 +113,7 @@ export default function SleepoverCard() {
           <div className="relative flex flex-col">
             <iframe
               className="w-full rounded-lg border-2 border-white mt-4 md:mt-0 lg:mt-8 animate-wiggle hover:animate-none h-[200px] md:h-[300px] lg:h-[415px]"
-              src="https://www.youtube.com/embed/FIyDH5dm5eo"
+              src="https://youtu.be/Ufmk9QW-XAs?si=Jovrunv-30Jqnls8"
               title="This is the Athena Award"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

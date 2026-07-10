@@ -2,7 +2,6 @@ import Card from "@/components/Card";
 import AthenaAwardsCard from "@/components/AthenaAwardsCard";
 import Image from "next/image";
 import Link from "next/link";
-import SunbeamCard from "@/components/SunbeamCard";
 import Footer from "@/components/Footer";
  
 export const dynamic = 'force-dynamic';
@@ -16,15 +15,10 @@ export default async function Home() {
       <Link href="https://hackclub.com" className="block absolute z-40 top-0 left-[5vw]">
         <Image src="https://assets.hackclub.com/flag-orpheus-top.svg" height={158} width={250} alt="" className="h-[10vh] lg:h-[15vh] -translate-y-3 w-auto hover:rotate-[5deg] transition" />
       </Link>
-      <SunbeamCard/>
+      <div className="w-full text-left px-6 lg:px-32 mb-16 pt-24 md:pt-32">
 
-      <div className="w-full text-left px-6 lg:px-32 mb-16">
-  
-        <hr className = "py-10"/>
-
-        <div className="text-2xl md:text-4xl font-bold">Curious what else we do?</div>
-        <div className="text-6xl md:text-9xl font-bold">Athena</div>
-        <div className="text-xl md:text-3xl font-bold mt-2">is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
+        <div className="text-4xl md:text-5xl font-bold">Welcome to Hack Club's Athena</div>
+        <div className="text-xl md:text-3xl mt-2">Athena is a group of programs at Hack Club to empower girls and nonbinary teenagers to code.</div>
         <div className="text-base md:text-lg">From hosting in-person hackathons to virtual workshops, Hack Club is a place to become more technical and immerse yourself in coding.</div>
 
          <div className='w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 my-8'>
