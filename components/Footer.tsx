@@ -1,36 +1,50 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0E387A] text-[#a8c4e8] py-12 px-6 relative z-10">
+    <footer
+      className="text-athena-cream/80 py-12 px-6 relative z-10 font-funnel"
+      style={{
+        background:
+          "linear-gradient(114deg, #DF383B 0.15%, #D7274D 50%, #A91E38 105.5%)",
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h2 className="text-white font-bold text-lg mb-4">Hack Club</h2>
+            <h2 className="text-white font-quattrocento font-bold text-lg mb-4">Hack Club</h2>
             <div className="flex flex-col gap-2">
               <a href="https://hackclub.com/philosophy" className="hover:text-white transition">Philosophy</a>
-              <a href="https://hackclub.com/team" className="hover:text-white transition">Our Team</a>
+              <a href="https://hackclub.com/team" className="hover:text-white transition">Our Team &amp; Board</a>
               <a href="https://hackclub.com/jobs" className="hover:text-white transition">Jobs</a>
-              <a href="https://hackclub.com/brand" className="hover:text-white transition">Brand Guide</a>
+              <a href="https://hackclub.com/brand" className="hover:text-white transition">Branding</a>
+              <a href="https://hackclub.com/press" className="hover:text-white transition">Press Inquiries</a>
               <a href="https://hackclub.com/philanthropy" className="hover:text-white transition">Donate</a>
+              <a href="https://hackclub.com/imprint" className="hover:text-white transition">Imprint</a>
             </div>
           </div>
 
           <div>
-            <h2 className="text-white font-bold text-lg mb-4">Resources</h2>
+            <h2 className="text-white font-quattrocento font-bold text-lg mb-4">Resources</h2>
             <div className="flex flex-col gap-2">
-              <a href="https://events.hackclub.com" className="hover:text-white transition">Events</a>
-              <a href="https://guides.hackclub.com" className="hover:text-white transition">Guides</a>
+              <a href="/programs" className="hover:text-white transition">Programs</a>
+              <a href="https://events.hackclub.com" className="hover:text-white transition">Community Events</a>
+              <a href="https://hackathons.hackclub.com" className="hover:text-white transition">Hackathons</a>
               <a href="https://toolbox.hackclub.com" className="hover:text-white transition">Toolbox</a>
-              <a href="https://hackclub.com/map" className="hover:text-white transition">Clubs Map</a>
+              <a href="https://hackclub.com/map" className="hover:text-white transition">Clubs</a>
+              <a href="https://hcb.hackclub.com" className="hover:text-white transition">HCB</a>
               <a href="https://hackclub.com/conduct" className="hover:text-white transition">Code of Conduct</a>
+              <a href="https://hackclub.com/safeguarding" className="hover:text-white transition">Safeguarding Policy</a>
+              <a href="https://hackclub.com/privacy" className="hover:text-white transition">Privacy &amp; Terms</a>
             </div>
           </div>
 
           <div className="col-span-2 md:col-span-2">
             <img
-              src="https://assets.hackclub.com/flag-standalone.svg"
-              alt="Hack Club"
-              className="h-12 mb-4"
+              src="/images/c2-graphic.png"
+              alt="Athena"
+              className="h-24 w-auto mb-4 object-contain object-left"
             />
+            <p className="font-quattrocento text-white font-bold mb-1">Hack Club&rsquo;s</p>
+            <p className="font-quattrocento text-[#F8A5B8] font-bold mb-4">by girls, for girls</p>
             <div className="flex gap-4 mb-4">
               <a href="https://hackclub.com/slack" className="hover:text-white transition">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>

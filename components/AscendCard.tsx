@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AscendCard() {
   return (
-    <div className="w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 my-8">
+    <div className="w-full h-fit grid lg:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
       <div className="col-span-full md:col-span-full w-full h-full relative rounded-lg pb-8 p-9 bg-gradient-to-l from-[#150122] via-[#150122] to-[#2651A6] overflow-hidden transition">
         <div className="relative z-0">
           <div className="text-lg md:text-xl font-bold text-white mb-3">Our 2024 summit:</div>
