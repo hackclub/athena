@@ -1,27 +1,28 @@
-import Background from "@/components/Background";
 import NavBar from "@/components/home/NavBar";
 import Footer from "@/components/Footer";
 import AthenaAwardMiniCard from "@/components/AthenaAwardMiniCard";
 import ParthenonCard from "@/components/ParthenonCard";
 import AscendCard from "@/components/AscendCard";
+import SleepoverMiniCard from "@/components/SleepoverMiniCard";
+import SunbeamMiniCard from "@/components/SunbeamMiniCard";
 
 export const dynamic = "force-dynamic";
 
 const gridTileStyle = {
   backgroundImage: "url('/images/diagonal-stripes.png')",
   backgroundRepeat: "repeat",
-  backgroundSize: "220px 146px",
+  backgroundSize: "440px 292px",
 };
 
 const gridTileStyleRotated = {
   backgroundImage: "url('/images/diagonal-stripes-rotated.png')",
   backgroundRepeat: "repeat",
-  backgroundSize: "146px 220px",
+  backgroundSize: "292px 440px",
 };
 
 export default function ProgramsPage() {
   return (
-    <Background>
+    <>
       <NavBar />
 
       <div className="relative">
@@ -47,9 +48,20 @@ export default function ProgramsPage() {
             className="font-quattrocento font-bold text-athena-red3 mt-24"
             style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
           >
+            Happening now:
+          </h2>
+          <div className="mt-4 grid grid-cols-1 gap-4">
+            <SunbeamMiniCard />
+          </div>
+
+          <h2
+            className="font-quattrocento font-bold text-athena-red3 mt-24"
+            style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
+          >
             Past events:
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4">
+            <SleepoverMiniCard />
             <ParthenonCard />
             <AthenaAwardMiniCard />
             <AscendCard />
@@ -58,6 +70,6 @@ export default function ProgramsPage() {
       </div>
 
       <Footer />
-    </Background>
+    </>
   );
 }

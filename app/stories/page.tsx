@@ -1,49 +1,55 @@
-import Background from "@/components/Background";
-import Card from "@/components/Card";
-import Stories from "@/components/Stories";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from "next/link";
+import NavBar from "@/components/home/NavBar";
+import Footer from "@/components/Footer";
 
-export const revalidate = 30;
+export const dynamic = "force-dynamic";
 
-export default async function EventPage() { 
+const gridTileStyle = {
+  backgroundImage: "url('/images/diagonal-stripes.png')",
+  backgroundRepeat: "repeat",
+  backgroundSize: "440px 292px",
+};
+
+const gridTileStyleRotated = {
+  backgroundImage: "url('/images/diagonal-stripes-rotated.png')",
+  backgroundRepeat: "repeat",
+  backgroundSize: "292px 440px",
+};
+
+export default function StoriesPage() {
   return (
-    <Background>
-      <div className="px-6 lg:px-32 py-16">
-        <Link 
-          href="/" 
-          className="text-2xl font-bold flex gap-2 transition-all items-center hover:gap-4 cursor-pointer"
-        >
-          <FaArrowLeftLong /> Athena
-        </Link>
+    <>
+      <NavBar />
 
-        <div className="text-5xl font-bold">Stories</div>
-
-        <div className="mt-4">
-                <Card cardType="bordered" className="!border-red">
-                <span className="block text-2xl font-bold">Stories bring people together.</span>
-                This page spotlights some of the most creative and inspiring projects built by Athena members! 
-                <br />
-                Want to explore <span className="italic">all</span> the amazing projects submitted for the Athena Award? Check out the full{" "}
-                <Link 
-                    href="/projects"
-                    target="_blank"
-                    className="text-red-500 underline hover:text-red-600"
-                >
-                    Athena Award Gallery
-                </Link>
-                !
-                </Card>
-
-
+      <div className="relative">
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fff2e1] via-[#ffdcda] via-[64%] to-white" />
+          <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
+          <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
 
-        <div className="mt-4 flex flex-col items-center">
-          <div className="w-full flex gap-6 pb-4 overflow-x-scroll lg:overflow-x-visible">
-            <Stories />
-          </div>
+        <div className="px-6 lg:px-32 py-24 md:py-32 pb-40 md:pb-56">
+          <h1
+            className="text-center font-quattrocento font-bold text-athena-red3"
+            style={{ fontSize: "clamp(32px, 4.6vw, 56px)" }}
+          >
+            Stories
+          </h1>
+          <p className="font-quattrocento text-lg mt-6 text-center max-w-2xl mx-auto">
+            Coming soon.
+          </p>
+
+          <Link
+            href="/"
+            className="w-fit mx-auto mt-16 md:mt-20 font-quattrocento font-bold text-athena-red3 flex gap-2 transition-all items-center hover:gap-4 cursor-pointer"
+          >
+            <FaArrowLeftLong /> Athena
+          </Link>
         </div>
       </div>
-    </Background>
+
+      <Footer />
+    </>
   );
 }

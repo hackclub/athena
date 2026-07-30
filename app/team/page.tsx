@@ -1,148 +1,78 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Link from "next/link";
-import Background from "@/components/Background";
-import Card from "@/components/Card";
+import NavBar from "@/components/home/NavBar";
+import Footer from "@/components/Footer";
 import Team from "@/components/Team";
 
+export const dynamic = "force-dynamic";
+
+const gridTileStyle = {
+  backgroundImage: "url('/images/diagonal-stripes.png')",
+  backgroundRepeat: "repeat",
+  backgroundSize: "440px 292px",
+};
+
+const gridTileStyleRotated = {
+  backgroundImage: "url('/images/diagonal-stripes-rotated.png')",
+  backgroundRepeat: "repeat",
+  backgroundSize: "292px 440px",
+};
+
 export default function TeamPage() {
-  const teamMembers = [
-    {
-      name: "Christina Asquith",
-      role: "Cofounder of Hack Club",
-      slack: "@Christina Asquith",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/e7bb8058afd3c34904a386bc34878043fe7c0fbf_christinacdn.png",
-    },
-    {
-      name: "Annabel",
-      role: "Gap Year Engineer @ HQ",
-      slack: "@phthallo",
-      pronouns: "they/them",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://cloud-6fxxs7j9y-hack-club-bot.vercel.app/11733036812219.jpg",
-    },
-    {
-      name: "Phoebe",
-      role: "Communications & Partnership Lead @ HQ",
-      slack: "@phoebe",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/450f7a98ac7042e46c732452f98006d9f6afffcc_phobecdn.png",
-    },
-    {
-      name: "Reem K.",
-      role: "Athena Gap Year @ HQ",
-      slack: "@reem",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c630a53b4da175e0dfc077710a87e11c90a10651_aed248e0-7fef-4005-8c5d-63e988d0a615.jpeg",
-    },
-    {
-      name: "Abby Fischler",
-      role: "Days of Service Co-Founder and Philathropy Lead",
-      slack: "@Abby Fischler",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/170a80a42983a73b04e8a519daa39aeaad0d6abe_dscf1050_edit__1_.jpg",
-    },
-    {
-      name: "Phaedra Sanon",
-      role: "Athena Team Engineer",
-      slack: "@phaedra",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/34f8b20ef44088f89469a70da85aceebce1c62f7_phaedracdn.png",
-    },
-
-    {
-      name: "Nadeen",
-      role: "Athena Intern",
-      slack: "@neptvnisme",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/afb88308e7239a5456c900d581bce746f61b2c45_t0266frgm-u07ak3ce2mq-9fb9ad6f2d73-512.webp",
-    },
-    {
-      name: "Kyra Ezikeuzor",
-      role: "Athena Intern",
-      slack: "@Kyra",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6860ea1874a2d892a8927e41c7254dacaf6628df_kyracdn.png",
-    },
-    {
-      name: "Celeste R.",
-      role: "Athena Intern",
-      slack: "@thegrammarpolice",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/a65e8b718b03e743307ad40cf984a6ffab0d7bea_celestecdn.png",
-    },
-    {
-      name: "Meghana M.",
-      role: "Athena Intern",
-      slack: "@Meghana",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/317e94430eabfc9bb8f6e063198d0b98e30176ad_meghanacdn.jpeg",
-    },
-
-    {
-      name: "Elianah S.",
-      role: "Athena Intern",
-      slack: "@elia",
-      pronouns: "she/her",
-      image: "https://ca.slack-edge.com/T0266FRGM-U06HPP9GZ3R-2d0a8fa44d4d-512",
-    },
-
-    {
-      name: "Louisa M.",
-      role: "Athena Intern",
-      slack: "@lou",
-      pronouns: "they/them",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/0c0306bad2c52f721b120474ade9de27f4857cd7_lou.png",
-    },
-
-    {
-      name: "Estella G.",
-      role: "Athena Intern",
-      slack: "@magic frog",
-      pronouns: "she/her",
-      image:
-        "https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/e27855d383340c741fc7d7186eeff0d567aeac0e_screenshot_2025-06-12_at_10.24.54___am.png",
-    },
-  ];
+  const teamMembers: {
+    name: string;
+    role: string;
+    slack: string;
+    pronouns: string;
+    image: string;
+  }[] = Array.from({ length: 8 }, () => ({
+    name: "",
+    role: "",
+    slack: "",
+    pronouns: "",
+    image: "",
+  }));
 
   return (
-    <Background>
-      <div className="px-6 lg:px-32 py-16">
-        <Link
-          href="/"
-          className="text-2xl font-bold flex gap-2 transition-all items-center hover:gap-4 cursor-pointer"
-        >
-          <FaArrowLeftLong /> Athena
-        </Link>
-        <h1 className="text-5xl font-bold mt-4">Our Team</h1>
-        <div className="mt-4">
-          <Card cardType="bordered" className="!border-red">
-            <span className="block text-2xl font-bold">
-              Meet the team behind Athena.
-            </span>
-            <p className="text-lg mt-2">
-              We’re a group building the spaces we once needed; where anyone can
-              code, connect, and feel seen. Got questions? Ideas? Just wanna
-              chat? DM us on Slack using the handles below!
-            </p>
-          </Card>
+    <>
+      <NavBar />
+
+      <div className="relative">
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fff2e1] via-[#ffdcda] via-[64%] to-white" />
+          <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
+          <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
-        <div className="mt-4 flex flex-col items-center">
-          <div className="mt-4 w-full flex gap-6 pb-4 overflow-x-scroll lg:overflow-x-visible">
-            <Team members={teamMembers} />
+
+        <div className="px-6 lg:px-32 py-24 md:py-32 pb-40 md:pb-56">
+          <h1
+            className="text-center font-quattrocento font-bold text-athena-red3"
+            style={{ fontSize: "clamp(32px, 4.6vw, 56px)" }}
+          >
+            Meet the team behind Athena.
+          </h1>
+          <p className="font-quattrocento text-lg mt-6 text-center max-w-2xl mx-auto">
+            We&rsquo;re a group building the spaces we once needed; where anyone
+            can code, connect, and feel seen. Got questions? Ideas? Just wanna
+            chat? DM us on Slack using the handles below!
+          </p>
+
+          <div className="mt-12 flex flex-col items-center">
+            <div className="mt-4 w-full flex gap-6 pb-4 overflow-x-scroll lg:overflow-x-visible">
+              <Team members={teamMembers} />
+            </div>
           </div>
+
+          <Link
+            href="/"
+            className="w-fit mx-auto mt-16 md:mt-20 font-quattrocento font-bold text-athena-red3 flex gap-2 transition-all items-center hover:gap-4 cursor-pointer"
+          >
+            <FaArrowLeftLong /> Athena
+          </Link>
         </div>
       </div>
-    </Background>
+
+      <Footer />
+    </>
   );
 }

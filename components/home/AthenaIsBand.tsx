@@ -16,17 +16,14 @@ export default function AthenaIsBand() {
           className="font-quattrocento font-bold text-white"
           style={{ fontSize: "clamp(26px, 4.2vw, 52px)" }}
         >
-          Hack Club&rsquo;s Athena is:
+         What is Hack Club&rsquo;s Athena?
         </h2>
 
         <div
           className="mt-3 font-quattrocento leading-snug text-white"
           style={{ fontSize: "clamp(15px, 2.2vw, 28px)" }}
         >
-          <p>a community of girls learning &amp; building technical skills together</p>
-          <p>
-            Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
-            interdum, ac aliquet odio mattis.
+          <p>Athena is Hack Club&rsquo;s girls-only community of makers, creatives, and visionaries. We code, draw, and build ambitious projects together. No matter what your interests may be, you’ll find a place in this community.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 const links = [
   { label: "Programs", href: "/programs" },
   { label: "Stories", href: "/stories" },
-  { label: "Brand", href: "https://hackclub.com/brand", external: true },
+  { label: "Brand", href: "/brand" },
   { label: "Team", href: "/team" },
 ];
 

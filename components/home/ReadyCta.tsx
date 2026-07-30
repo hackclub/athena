@@ -3,8 +3,8 @@ import EmailSignupForm from "./EmailSignupForm";
 
 export default function ReadyCta() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-athena-cream to-white px-6 pb-10 pt-20 text-center md:px-12 md:pt-28">
-      <div className="mx-auto flex max-w-2xl flex-col items-center gap-6">
+    <section className="relative z-20 overflow-visible bg-gradient-to-b from-white to-athena-cream px-6 pb-32 pt-6 text-center md:px-12 md:pb-44 md:pt-24">
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-4">
         <h2 className="bg-gradient-to-r from-athena-red4 to-athena-red3 bg-clip-text font-quattrocento text-3xl font-bold text-transparent md:text-5xl">
           Ready?
         </h2>
@@ -17,11 +17,19 @@ export default function ReadyCta() {
       </div>
 
       <Image
-        src="/images/bunny-illustration.png"
+        src="/images/flower-and-grass.png"
         alt=""
-        width={1920}
-        height={1200}
-        className="pointer-events-none relative mx-auto mt-4 h-auto w-full max-w-md md:max-w-lg"
+        width={250}
+        height={220}
+        className="pointer-events-none absolute bottom-0 left-6 h-auto w-full max-w-[90px] translate-y-2 md:left-12 md:max-w-[130px]"
+      />
+
+      <Image
+        src="/images/depressedbunny.png"
+        alt=""
+        width={980}
+        height={824}
+        className="pointer-events-none absolute bottom-0 right-6 h-auto w-full max-w-[240px] translate-y-1/4 md:right-12 md:max-w-[340px]"
       />
     </section>
   );

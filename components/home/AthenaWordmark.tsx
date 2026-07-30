@@ -1,4 +1,13 @@
-export default function AthenaWordmark({ className = "" }: { className?: string }) {
+export default function AthenaWordmark({
+  className = "",
+  variant = "dark",
+}: {
+  className?: string;
+  variant?: "dark" | "light";
+}) {
+  const primaryTextClass = variant === "light" ? "text-athena-cream2" : "text-athena-red3";
+  const secondaryTextClass = variant === "light" ? "text-athena-cream2" : "text-athena-red4";
+
   return (
     <div className={`relative w-full ${className}`} style={{ aspectRatio: "655 / 460" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -8,7 +17,7 @@ export default function AthenaWordmark({ className = "" }: { className?: string 
         className="absolute left-0 top-0 h-auto w-full object-contain"
       />
       <p
-        className="absolute text-left leading-tight font-quattrocento font-bold text-athena-red3"
+        className={`absolute text-left leading-tight font-quattrocento font-bold ${primaryTextClass}`}
         style={{
           left: "86%",
           top: "34%",
@@ -22,7 +31,7 @@ export default function AthenaWordmark({ className = "" }: { className?: string 
         Club&rsquo;s
       </p>
       <p
-        className="absolute whitespace-nowrap text-center font-quattrocento font-bold text-athena-red4"
+        className={`absolute whitespace-nowrap text-center font-quattrocento font-bold ${secondaryTextClass}`}
         style={{
           left: "81%",
           top: "90%",

@@ -145,6 +145,7 @@
   body {
     @apply bg-background text-foreground;
     color: #1f2d3d;
+    background-color: #FFF6EA;
   }
 
   tr:nth-child(even) {  
@@ -155,5 +156,23 @@
   }   
   th, td {
     @apply p-2
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }

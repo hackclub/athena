@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import type { ReactNode } from "react";
-import Marquee from "react-marquee-slider";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { SHOWCASE_PROJECTS, type ShowcaseProject } from "@/data/showcaseProjects";
 
 const POLAROID_CROPS = [
   "0% 0%",
@@ -13,20 +13,62 @@ const POLAROID_CROPS = [
   "100% 100%",
 ];
 
-// react-marquee-slider centers each duplicated row when its content is
-// narrower than the container, which shows up as a blank gap mid-scroll on
-// wide screens. Repeating the crops keeps the row full on any monitor size.
+// A generous item count just gives more visual variety before the loop repeats.
 const POLAROID_ITEMS = Array.from({ length: 24 }, (_, i) => i);
 
-const PROJECT_POSTCARDS = [
-  "/images/polaroid-sketch-sheet.png",
-  "/images/postcard-photo-placeholder.png",
-  "/images/postcard-photo-placeholder.png",
-  "/images/polaroid-sketch-sheet.png",
-];
+// Plain CSS-animation marquee: the content is rendered twice back to back and
+// translated by exactly -50%, so the loop is seamless by construction. Used
+// instead of react-marquee-slider, which forwards a non-standard `paused`
+// prop straight to the DOM and trips Next's dev error overlay.
+// Duration is derived from the actual rendered width and a target px/second
+// velocity (rather than a flat guess), so the speed stays correct regardless
+// of item count or breakpoint.
+function InfiniteRow({
+  children,
+  direction,
+  velocity = 30,
+}: {
+  children: ReactNode;
+  direction: "rtl" | "ltr";
+  velocity?: number;
+}) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [duration, setDuration] = useState<number | null>(null);
 
-// Same fix as POLAROID_ITEMS: keep the marquee row full on any monitor size.
-const POSTCARD_ITEMS = Array.from({ length: 16 }, (_, i) => i);
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const measure = () => {
+      const oneSetWidth = el.scrollWidth / 2;
+      setDuration(oneSetWidth / velocity);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [velocity]);
+
+  return (
+    <div className="overflow-hidden pb-2">
+      <div
+        ref={trackRef}
+        className="flex w-max"
+        style={
+          duration
+            ? {
+                animation: `${direction === "rtl" ? "marquee-rtl" : "marquee-ltr"} ${duration}s linear infinite`,
+              }
+            : undefined
+        }
+      >
+        <div className="flex">{children}</div>
+        <div className="flex" aria-hidden="true">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Polaroid({ index }: { index: number }) {
   return (
@@ -46,22 +88,34 @@ function Polaroid({ index }: { index: number }) {
   );
 }
 
-function ProjectPostcard({ index }: { index: number }) {
-  const image = PROJECT_POSTCARDS[index % PROJECT_POSTCARDS.length];
+function ProjectPostcard({ project }: { project: ShowcaseProject }) {
   return (
-    <div className="mx-3 flex w-[300px] shrink-0 gap-4 border border-athena-maroon bg-white p-4 shadow-[0px_4px_0px_0px_rgba(82,36,44,0.5)] sm:mx-5 sm:w-[380px]">
+    <a
+      href={project.playableLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mx-3 flex w-[300px] shrink-0 gap-4 border border-athena-maroon bg-white p-4 shadow-[0px_4px_0px_0px_rgba(82,36,44,0.5)] transition hover:-rotate-1 sm:mx-5 sm:w-[380px]"
+    >
       <div className="aspect-[340/290] w-[52%] shrink-0 border border-athena-maroon">
-        <img src={image} alt="" className="h-full w-full object-cover" />
+        <img
+          src={project.screenshot}
+          alt={project.projectName}
+          className="h-full w-full object-cover"
+        />
       </div>
       <div className="flex flex-1 flex-col items-center justify-center gap-2 py-2 text-center">
-        <p className="font-quattrocento text-lg text-athena-maroon sm:text-xl">Project Name</p>
+        <p className="font-quattrocento text-lg text-athena-maroon sm:text-xl">
+          {project.projectName}
+        </p>
         <p className="font-quattrocento text-[11px] leading-snug text-athena-maroon sm:text-xs">
-          short description short description short description short description
+          {project.program} · {project.age} years old · {project.country}
         </p>
         <div className="h-px w-20 bg-athena-maroon" />
-        <p className="font-quattrocento text-sm text-athena-maroon sm:text-base">by person name</p>
+        <p className="font-quattrocento text-sm text-athena-maroon sm:text-base">
+          by {project.name}
+        </p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -87,11 +141,43 @@ function PillButton({
 
 export default function GinghamSection() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-40 md:pt-28 md:pb-56">
-      <img
-        src="/images/benefits-bg-gingham.png"
-        alt=""
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top"
+    <section className="relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
+      {/* scallop.png is a capsule with rounded end caps, not a seamless tile, so
+          w-full stretching showed those rounded ends at the screen edges instead
+          of the wave pattern. scallop-tile.png is a single repeat unit (one
+          276x384 wave period, cropped valley-to-valley) that repeats edge-to-edge
+          with no visible seam. Bands sit fully inside the section (no overflow
+          into neighboring sections) so there's always pink behind them; the tile
+          pattern layers on top and is inset by half a band's height, letting the
+          outer half of each scallop's bumps peek out around it. */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0"
+        style={{
+          height: "clamp(60px, 12.2vw, 140px)",
+          backgroundImage: "url('/images/scallop-tile.png')",
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "8.8vw auto",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0"
+        style={{
+          height: "clamp(60px, 12.2vw, 140px)",
+          backgroundImage: "url('/images/scallop-tile.png')",
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "8.8vw auto",
+          transform: "scaleY(-1)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0"
+        style={{
+          top: "clamp(30px, 6.1vw, 70px)",
+          bottom: "clamp(30px, 6.1vw, 70px)",
+          backgroundImage: "url('/images/pink-tiles-repeat.png')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "167px 246px",
+        }}
       />
 
       <div className="relative mx-auto max-w-6xl px-6 md:px-12">
@@ -104,18 +190,11 @@ export default function GinghamSection() {
       </div>
 
       <div className="relative my-6 w-full">
-        <Marquee
-          velocity={5}
-          direction="rtl"
-          scatterRandomly={false}
-          resetAfterTries={0}
-          onInit={() => {}}
-          onFinish={() => {}}
-        >
+        <InfiniteRow direction="rtl">
           {POLAROID_ITEMS.map((i) => (
             <Polaroid key={i} index={i} />
           ))}
-        </Marquee>
+        </InfiniteRow>
         <Image
           src="/images/girl-illustration.png"
           alt=""
@@ -139,18 +218,11 @@ export default function GinghamSection() {
       </div>
 
       <div className="relative my-6 w-full">
-        <Marquee
-          velocity={5}
-          direction="ltr"
-          scatterRandomly={false}
-          resetAfterTries={0}
-          onInit={() => {}}
-          onFinish={() => {}}
-        >
-          {POSTCARD_ITEMS.map((i) => (
-            <ProjectPostcard key={i} index={i} />
+        <InfiniteRow direction="ltr">
+          {SHOWCASE_PROJECTS.map((project) => (
+            <ProjectPostcard key={project.projectName} project={project} />
           ))}
-        </Marquee>
+        </InfiniteRow>
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col px-6 md:px-12">
