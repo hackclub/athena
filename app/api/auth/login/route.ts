@@ -9,8 +9,10 @@ export async function GET(request: NextRequest) {
   authorizeUrl.searchParams.set("client_id", process.env.AUTH_CLIENT_ID!);
   authorizeUrl.searchParams.set("redirect_uri", getAuthRedirectUri(request));
   authorizeUrl.searchParams.set("response_type", "code");
-  authorizeUrl.searchParams.set("scope", "openid profile");
+  authorizeUrl.searchParams.set("scope", "openid profile email birthdate");
   authorizeUrl.searchParams.set("state", state);
+
+  console.log("[auth/login] redirecting to:", authorizeUrl.toString());
 
   const response = NextResponse.redirect(authorizeUrl);
   response.cookies.set("hc_auth_state", state, {

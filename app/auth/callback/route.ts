@@ -1,16 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 import { hackClubAuthEndpoints, getAuthRedirectUri } from "@/lib/hackclub-auth";
+import { AirtableSignupsManager } from "@/lib/airtable";
 
 export async function GET(request: NextRequest) {
+  console.log("[auth/callback] incoming query params:", Object.fromEntries(request.nextUrl.searchParams));
+
   const code = request.nextUrl.searchParams.get("code");
   const state = request.nextUrl.searchParams.get("state");
   const storedState = request.cookies.get("hc_auth_state")?.value;
+  const oauthError = request.nextUrl.searchParams.get("error");
 
   const response = NextResponse.redirect(new URL("/auth/complete", request.url));
   response.cookies.delete("hc_auth_state");
 
+  if (oauthError) {
+    console.error(
+      "[auth/callback] Hack Club auth returned an error:",
+      oauthError,
+      request.nextUrl.searchParams.get("error_description")
+    );
+    return response;
+  }
+
   if (!code || !state || state !== storedState) {
-    console.error("Hack Club auth callback: missing or mismatched state");
+    console.error("[auth/callback] missing or mismatched state", { code, state, storedState });
     return response;
   }
 
@@ -26,24 +39,55 @@ export async function GET(request: NextRequest) {
     }),
   });
 
+  const tokenBody = await tokenRes.text();
+  console.log("[auth/callback] token endpoint response:", tokenRes.status, tokenBody);
+
   if (!tokenRes.ok) {
-    console.error("Hack Club auth token exchange failed:", await tokenRes.text());
+    console.error("[auth/callback] Hack Club auth token exchange failed:", tokenBody);
     return response;
   }
 
-  const { access_token } = await tokenRes.json();
+  const { access_token, scope: grantedScope } = JSON.parse(tokenBody);
+  console.log("[auth/callback] granted scope:", grantedScope);
 
   const userInfoRes = await fetch(hackClubAuthEndpoints.userinfo, {
     headers: { Authorization: `Bearer ${access_token}` },
   });
 
+  const userInfoBody = await userInfoRes.text();
+  console.log("[auth/callback] userinfo endpoint response:", userInfoRes.status, userInfoBody);
+
   if (!userInfoRes.ok) {
-    console.error("Hack Club auth userinfo fetch failed:", await userInfoRes.text());
+    console.error("[auth/callback] Hack Club auth userinfo fetch failed:", userInfoBody);
     return response;
   }
 
-  const userInfo = await userInfoRes.json();
-  console.log(userInfo.given_name);
-  console.log(response)
+  const userInfo = JSON.parse(userInfoBody);
+
+  if (userInfo.email) {
+    const fields = {
+      first_name: userInfo.given_name,
+      last_name: userInfo.family_name,
+      birthdate: userInfo.birthdate,
+      hca_identity: userInfo.sub,
+    };
+    console.log("[auth/callback] upserting Airtable signup:", userInfo.email, fields);
+
+    try {
+      const result = await new AirtableSignupsManager().upsertSignupByEmail(userInfo.email, fields);
+      console.log("[auth/callback] Airtable upsert result:", JSON.stringify(result));
+    } catch (error: any) {
+      console.error(
+        "[auth/callback] Failed to save Airtable signup record:",
+        error?.message,
+        error?.error,
+        error?.statusCode,
+        JSON.stringify(error)
+      );
+    }
+  } else {
+    console.error("[auth/callback] Hack Club auth userinfo response had no email claim:", userInfoBody);
+  }
+
   return response;
 }

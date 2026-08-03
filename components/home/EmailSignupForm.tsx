@@ -10,8 +10,19 @@ export default function EmailSignupForm({
 }) {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    try {
+      await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch (error) {
+      console.error("Failed to save signup email:", error);
+    }
+
     window.location.href = "/api/auth/login";
   };
 
