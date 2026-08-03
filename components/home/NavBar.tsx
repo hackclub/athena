@@ -30,8 +30,6 @@ export default function NavBar() {
           <Link
             key={link.label}
             href={link.href}
-            target={link.external ? "_blank" : undefined}
-            rel={link.external ? "noopener noreferrer" : undefined}
             className="font-quattrocento font-bold text-white transition hover:text-athena-cream"
             style={{ fontSize: "clamp(16px, 2.4vw, 36px)" }}
           >
