@@ -21,10 +21,11 @@ export default function AthenaAwardMiniCard() {
             In 2025, over 1000 Hack Clubbers started their journey to earn the Athena Award certifcation - in collaboration with MIT, Girls Who Code, and GitHub - by spending 30 hours coding on 3 technical projects.
           </div>
           <Link
-            href="/award"
+            href="https://award.athena.hackclub.com"
+            target="_blank"
             className="w-full text-right text-white italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-white"
           >
-            Verify an Athena Award certification
+            Learn more about the Athena Award
           </Link>
         </div>
         <Image
