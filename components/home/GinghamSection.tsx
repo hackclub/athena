@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { SHOWCASE_PROJECTS, type ShowcaseProject } from "@/data/showcaseProjects";
+import type { MemberStory } from "@/types";
 
 const POLAROID_CROPS = [
   "0% 0%",
@@ -12,9 +14,6 @@ const POLAROID_CROPS = [
   "60% 100%",
   "100% 100%",
 ];
-
-// A generous item count just gives more visual variety before the loop repeats.
-const POLAROID_ITEMS = Array.from({ length: 24 }, (_, i) => i);
 
 // Plain CSS-animation marquee: the content is rendered twice back to back and
 // translated by exactly -50%, so the loop is seamless by construction. Used
@@ -49,7 +48,7 @@ function InfiniteRow({
   }, [velocity]);
 
   return (
-    <div className="overflow-hidden pb-2">
+    <div className="overflow-hidden pt-6 pb-3">
       <div
         ref={trackRef}
         className="flex w-max"
@@ -70,19 +69,27 @@ function InfiniteRow({
   );
 }
 
-function Polaroid({ index }: { index: number }) {
+function Polaroid({ story, index }: { story: MemberStory; index: number }) {
   return (
-    <div className="mx-8 flex w-[180px] shrink-0 flex-col items-center gap-3 border border-athena-maroon bg-white p-3 pb-5 shadow-[0px_4px_0px_0px_rgba(82,36,44,0.5)] sm:mx-12 sm:w-[220px]">
+    <div className="mx-8 flex w-[180px] shrink-0 flex-col items-center gap-2 border border-athena-maroon bg-white p-2.5 pb-3 shadow-[0px_4px_0px_0px_rgba(82,36,44,0.5)] transition-transform duration-300 ease-out hover:-translate-y-2 hover:rotate-2 hover:scale-105 sm:mx-12 sm:w-[220px]">
       <div
-        className="aspect-square w-full border border-athena-maroon"
-        style={{
-          backgroundImage: "url(/images/polaroid-sketch-sheet.png)",
-          backgroundSize: "600% 200%",
-          backgroundPosition: POLAROID_CROPS[index % POLAROID_CROPS.length],
-        }}
+        className="aspect-[6/5] w-full border border-athena-maroon"
+        style={
+          story.image
+            ? {
+                backgroundImage: `url(${story.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }
+            : {
+                backgroundImage: "url(/images/polaroid-sketch-sheet.png)",
+                backgroundSize: "600% 200%",
+                backgroundPosition: POLAROID_CROPS[index % POLAROID_CROPS.length],
+              }
+        }
       />
       <p className="text-center font-quattrocento text-base text-athena-maroon sm:text-lg">
-        Blah, 16 from City, ST
+        {story.name}, {story.age} from {story.city}
       </p>
     </div>
   );
@@ -123,23 +130,37 @@ function PillButton({
   children,
   variant = "solid",
   className = "",
+  href,
 }: {
   children: ReactNode;
   variant?: "solid" | "gradient";
   className?: string;
+  href?: string;
 }) {
-  return (
-    <button
-      className={`rounded-full border-[6px] border-athena-cream2 px-8 py-3 font-quattrocento text-lg text-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] ring-[6px] ring-athena-accent transition hover:brightness-105 md:text-2xl ${
-        variant === "gradient" ? "bg-gradient-to-r from-athena-red4 to-athena-red2" : "bg-athena-red2/80"
-      } ${className}`}
-    >
-      {children}
-    </button>
-  );
+  const pillClassName = `rounded-full border-[6px] border-athena-cream2 px-8 py-3 font-quattrocento text-lg text-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] ring-[6px] ring-athena-accent transition hover:brightness-105 md:text-2xl ${
+    variant === "gradient" ? "bg-gradient-to-r from-athena-red4 to-athena-red2" : "bg-athena-red2/80"
+  } ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={`inline-block text-center ${pillClassName}`}>
+        {children}
+      </Link>
+    );
+  }
+
+  return <button className={pillClassName}>{children}</button>;
 }
 
-export default function GinghamSection() {
+export default function GinghamSection({ stories }: { stories: MemberStory[] }) {
+  const polaroidItems =
+    stories.length > 0
+      ? Array.from(
+          { length: Math.max(24, stories.length) },
+          (_, i) => stories[i % stories.length]
+        )
+      : [];
+
   return (
     <section className="relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
       {/* scallop.png is a capsule with rounded end caps, not a seamless tile, so
@@ -170,7 +191,7 @@ export default function GinghamSection() {
         }}
       />
       <div
-        className="pointer-events-none absolute inset-x-0"
+        className="pointer-events-none absolute inset-x-0 md:border-y-2 md:border-athena-red2/20"
         style={{
           top: "clamp(30px, 6.1vw, 70px)",
           bottom: "clamp(30px, 6.1vw, 70px)",
@@ -180,7 +201,7 @@ export default function GinghamSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 md:px-12">
+      <div className="relative mx-auto max-w-6xl pl-6 pr-2 text-right md:pl-12 md:pr-3">
         <h2
           className="font-quattrocento font-bold text-athena-red3"
           style={{ fontSize: "clamp(26px, 3.6vw, 46px)" }}
@@ -191,8 +212,8 @@ export default function GinghamSection() {
 
       <div className="relative my-6 w-full">
         <InfiniteRow direction="rtl">
-          {POLAROID_ITEMS.map((i) => (
-            <Polaroid key={i} index={i} />
+          {polaroidItems.map((story, i) => (
+            <Polaroid key={i} story={story} index={i} />
           ))}
         </InfiniteRow>
         <Image
@@ -205,15 +226,15 @@ export default function GinghamSection() {
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 md:px-12">
-        <PillButton variant="gradient" className="self-start font-bold">
+        <PillButton variant="gradient" className="-ml-2 self-start font-bold md:-ml-4">
           read their stories here
         </PillButton>
 
         <h2
-          className="mt-6 font-quattrocento font-bold text-athena-red3 md:mt-10"
+          className="-ml-2 mt-6 font-quattrocento font-bold text-athena-red3 md:-ml-8 md:mt-10 lg:-ml-12"
           style={{ fontSize: "clamp(26px, 3.6vw, 46px)" }}
         >
-          And learn to make awesome projects
+          And learn to make awesome projects:
         </h2>
       </div>
 
@@ -226,7 +247,9 @@ export default function GinghamSection() {
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col px-6 md:px-12">
-        <PillButton variant="gradient" className="self-end font-bold">check out the gallery</PillButton>
+        <PillButton variant="gradient" className="self-end font-bold" href="/gallery">
+          check out the gallery
+        </PillButton>
       </div>
     </section>
   );

@@ -116,7 +116,7 @@ export default function Hero() {
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-20">
-          <AthenaWordmark className="max-w-[340px] md:max-w-[440px] lg:max-w-[520px]" />
+          <AthenaWordmark className="max-w-[300px] md:max-w-[380px] lg:max-w-[440px] lg:-mt-4" />
 
           <div
             className="flex w-full max-w-[470px] flex-col items-center justify-center gap-3 rounded-lg border-2 border-athena-red2 bg-white p-5 text-center shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"

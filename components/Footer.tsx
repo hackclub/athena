@@ -39,11 +39,10 @@ export default function Footer() {
 
           <div className="col-span-2 md:col-span-2">
             <img
-              src="/images/c2-graphic.png"
+              src="/images/new-athena-logo.png"
               alt="Athena"
               className="h-24 w-auto mb-4 object-contain object-left"
             />
-            <p className="font-quattrocento text-white font-bold mb-1">Hack Club&rsquo;s</p>
             <p className="font-quattrocento text-[#F8A5B8] font-bold mb-4">by girls, for girls</p>
             <div className="flex gap-4 mb-4">
               <a href="https://hackclub.com/slack" className="hover:text-white transition">

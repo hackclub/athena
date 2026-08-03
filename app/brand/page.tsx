@@ -37,23 +37,13 @@ function SectionHeading({ id, children }: { id: string; children: ReactNode }) {
   );
 }
 
-function LogoTile({ dark, withText }: { dark: boolean; withText: boolean }) {
+function LogoTile({ src, dark }: { src: string; dark: boolean }) {
   return (
     <div
-      className={`flex h-full min-w-0 flex-col items-center justify-center gap-1 overflow-hidden rounded-xl p-3 ${dark ? "bg-athena-accent" : ""}`}
+      className={`flex h-full min-w-0 items-center justify-center overflow-hidden rounded-xl p-3 ${dark ? "bg-athena-accent" : ""}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/c2-graphic.png" alt="Athena" className="h-16 w-auto object-contain" />
-      {withText && (
-        <div className="text-center leading-tight">
-          <p className={`font-quattrocento font-bold text-sm ${dark ? "text-white" : "text-athena-red3"}`}>
-            Hack Club&rsquo;s
-          </p>
-          <p className={`font-quattrocento font-bold text-xs ${dark ? "text-white" : "text-athena-red4"}`}>
-            by girls, for girls
-          </p>
-        </div>
-      )}
+      <img src={src} alt="Athena" className="h-28 w-auto object-contain md:h-36" />
     </div>
   );
 }
@@ -100,7 +90,7 @@ export default function BrandPage() {
         <div className="pointer-events-none absolute inset-0" style={stripeOverlayStyle} />
 
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
-          <AthenaWordmark variant="light" className="max-w-[220px] md:max-w-[280px]" />
+          <AthenaWordmark variant="light" showTagline={false} className="max-w-[320px] md:max-w-[420px]" />
 
           <div className="text-center md:text-right">
             <h1
@@ -152,24 +142,24 @@ export default function BrandPage() {
               </p>
 
               <div className={`${cardStyle} grid grid-cols-1 overflow-hidden sm:grid-cols-3`}>
-                <div className="flex h-48 min-w-0 items-center justify-center p-4">
-                  <LogoTile dark={false} withText />
+                <div className="flex h-64 min-w-0 items-center justify-center p-4 md:h-80">
+                  <LogoTile src="/images/new-athena-logo.png" dark={false} />
                 </div>
-                <div className="flex h-48 min-w-0 items-center justify-center p-4">
-                  <LogoTile dark={false} withText={false} />
+                <div className="flex h-64 min-w-0 items-center justify-center p-4 md:h-80">
+                  <LogoTile src="/images/new-athena-logo.png" dark />
                 </div>
-                <div className="flex h-48 min-w-0 items-center justify-center p-4">
-                  <LogoTile dark withText />
+                <div className="flex h-64 min-w-0 items-center justify-center p-4 md:h-80">
+                  <LogoTile src="/images/athena-logo-variation.png" dark={false} />
                 </div>
 
                 <div className="bg-athena-cream px-4 py-4 text-center">
                   <p className="font-quattrocento text-[#D42F4C]" style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}>Main logo</p>
                 </div>
                 <div className="bg-athena-cream px-4 py-4 text-center">
-                  <p className="font-quattrocento text-[#D42F4C]" style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}>Main logo w/o tagline</p>
+                  <p className="font-quattrocento text-[#D42F4C]" style={{ fontSize: "clamp(13px, 1vw, 16px)" }}>Main logo adjusted for dark backgrounds</p>
                 </div>
                 <div className="bg-athena-cream px-4 py-4 text-center">
-                  <p className="font-quattrocento text-[#D42F4C]" style={{ fontSize: "clamp(13px, 1vw, 16px)" }}>Main logo adjusted for dark backgrounds</p>
+                  <p className="font-quattrocento text-[#D42F4C]" style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}>Logo variation</p>
                 </div>
               </div>
             </div>

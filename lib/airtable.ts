@@ -120,6 +120,42 @@ export class AirtableProjectsManager extends AirtableManager {
   }
 }
 
+export class AirtableTeamManager extends AirtableManager {
+  constructor() {
+    super(
+      "team",
+      process.env.AIRTABLE_TEAM_API_KEY!,
+      process.env.AIRTABLE_TEAM_BASE_ID!
+    );
+  }
+
+  async getTeamPageMembers() {
+    // Mirrors the curated "Team page" view's manual ordering.
+    return this.base(this.tableName)
+      .select({ view: "viw6VBXuF2cnwqI36" })
+      .all();
+  }
+
+  async getAllTeamMembers() {
+    return this.base(this.tableName).select().all();
+  }
+}
+
+export class AirtableStoriesManager extends AirtableManager {
+  constructor() {
+    // Same base as AirtableTeamManager ("Athena Website 2026"), different table.
+    super(
+      "stories",
+      process.env.AIRTABLE_TEAM_API_KEY!,
+      process.env.AIRTABLE_TEAM_BASE_ID!
+    );
+  }
+
+  async getAllStories() {
+    return this.base(this.tableName).select().all();
+  }
+}
+
 export class AirtableProfilesManager extends AirtableManager {
   constructor() {
     super(

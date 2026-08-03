@@ -1,50 +1,10 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
-
-function EventBadge({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-quattrocento text-xs font-bold uppercase tracking-wide md:text-sm ${className}`}
-    >
-      {children}
-    </span>
-  );
-}
-
-function SnowglobeIcon() {
-  return (
-    <svg
-      viewBox="0 0 100 100"
-      className="h-16 w-16 shrink-0 md:h-20 md:w-20"
-      fill="none"
-      stroke="#2E599C"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <ellipse cx="50" cy="40" rx="31" ry="31" />
-      <path d="M22 78h56l4 11H18z" />
-      <path d="M15 78h70" />
-      <circle cx="38" cy="32" r="2" fill="#2E599C" stroke="none" />
-      <circle cx="58" cy="46" r="2" fill="#2E599C" stroke="none" />
-      <circle cx="64" cy="27" r="2" fill="#2E599C" stroke="none" />
-      <circle cx="44" cy="52" r="2" fill="#2E599C" stroke="none" />
-    </svg>
-  );
-}
 
 function SunbeamCard() {
   return (
     <a
       href="https://sunbeam.hackclub.com/"
-      className="group relative flex-1 -rotate-1 overflow-hidden rounded-lg border border-athena-maroon shadow-[0px_8px_6px_0px_rgba(127,23,43,0.25),0px_2px_0px_0px_#7f172b] transition hover:-translate-y-1"
+      className="group relative flex-1 -rotate-1 overflow-hidden rounded-lg border border-black/10 shadow-lg transition hover:-translate-y-1"
     >
       <div className="relative aspect-[70/39] w-full overflow-hidden">
         {/* sky */}
@@ -118,27 +78,25 @@ function SunbeamCard() {
 
 function SnowglobeCard() {
   return (
-    <div className="relative aspect-[70/39] w-full flex-1 rotate-1 overflow-hidden rounded-lg border-2 border-dashed border-[#2E599C]/50 bg-gradient-to-b from-[#DCEBFA] to-[#EAF4FC] p-6 md:p-8">
-      <div className="relative flex h-full flex-col items-center justify-center gap-3 text-center">
-        <EventBadge className="border-[#2E599C]/30 bg-white/60 text-[#2E599C]">
-          ❄️ coming soon
-        </EventBadge>
-
-        <SnowglobeIcon />
-
-        <p className="font-quattrocento text-2xl font-bold text-[#2E599C] md:text-3xl">
-          Snowglobe
-        </p>
-      </div>
+    <div className="relative aspect-[70/39] w-full flex-1 rotate-1 overflow-hidden rounded-lg border border-black/10 shadow-lg transition hover:-translate-y-1">
+      <Image
+        src="/images/snowglobe-small-card.png"
+        alt="Hack Club's Snowglobe - coming soon"
+        fill
+        className="object-cover"
+      />
     </div>
   );
 }
 
 export default function InvitedSection() {
   return (
-    <section className="bg-athena-cream2 px-6 py-20 md:px-12 md:py-28">
+    <section className="bg-athena-cream2 px-6 pt-10 pb-20 md:px-12 md:pt-14 md:pb-28">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="bg-gradient-to-r from-athena-red4 to-athena-red3 bg-clip-text font-quattrocento text-3xl font-bold text-transparent md:text-5xl">
+        <h2
+          className="whitespace-nowrap bg-gradient-to-r from-athena-red4 to-athena-red3 bg-clip-text font-quattrocento font-bold text-transparent"
+          style={{ fontSize: "clamp(19px, 5.3vw, 58px)" }}
+        >
           Happening now - you&rsquo;re invited!
         </h2>
 

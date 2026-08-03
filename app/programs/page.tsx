@@ -39,13 +39,13 @@ export default function ProgramsPage() {
           >
             Programs
           </h1>
-          <p className="font-quattrocento text-lg mt-4 text-center">
+          <p className="font-quattrocento text-lg mt-4 text-center text-athena-maroon">
             From overnight hackathons to our flagship award, here&rsquo;s
             how to get involved with Athena today.
           </p>
 
           <h2
-            className="font-quattrocento font-bold text-athena-red3 mt-24"
+            className="font-quattrocento font-bold text-athena-accent underline decoration-2 underline-offset-4 mt-24"
             style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
           >
             Happening now:
@@ -55,7 +55,7 @@ export default function ProgramsPage() {
           </div>
 
           <h2
-            className="font-quattrocento font-bold text-athena-red3 mt-24"
+            className="font-quattrocento font-bold text-athena-accent underline decoration-2 underline-offset-4 mt-24"
             style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
           >
             Past events:
