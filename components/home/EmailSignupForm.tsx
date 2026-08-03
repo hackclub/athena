@@ -12,8 +12,7 @@ export default function EmailSignupForm({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // TODO: wire up to a real mailing-list signup once one exists
-    console.log("Athena signup (stub):", email);
+    window.location.href = "/api/auth/login";
   };
 
   return (
