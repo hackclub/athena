@@ -11,7 +11,9 @@ export class AirtableManager {
   public tableName: string;
 
   constructor(tableName: string, apiKey: string, baseId: string) {
-    this.base = new Airtable({ apiKey: apiKey }).base(baseId!);
+    // Default airtable client timeout is 300s, which is far longer than the
+    // 5s window Orchard's liveness probe (which hits "/") allows per attempt.
+    this.base = new Airtable({ apiKey: apiKey, requestTimeout: 8000 }).base(baseId!);
     this.tableName = tableName;
   }
 
