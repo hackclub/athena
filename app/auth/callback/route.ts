@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { hackClubAuthEndpoints, getAuthRedirectUri } from "@/lib/hackclub-auth";
+import { getAppBaseUrl, getAuthRedirectUri, hackClubAuthEndpoints } from "@/lib/hackclub-auth";
 import { AirtableSignupsManager } from "@/lib/airtable";
 
 export async function GET(request: NextRequest) {
@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   const storedState = request.cookies.get("hc_auth_state")?.value;
   const oauthError = request.nextUrl.searchParams.get("error");
 
-  const response = NextResponse.redirect(new URL("/auth/complete", request.url));
+  const response = NextResponse.redirect(new URL("/auth/complete", getAppBaseUrl(request)));
   response.cookies.delete("hc_auth_state");
 
   if (oauthError) {

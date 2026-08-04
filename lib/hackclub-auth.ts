@@ -8,8 +8,12 @@ export const hackClubAuthEndpoints = {
   userinfo: `${AUTH_ISSUER}/oauth/userinfo`,
 };
 
-// Derived from the incoming request so it's http://localhost:3000/auth/callback
-// locally and the real domain in production, with no separate env var to keep in sync.
+// APP_URL lets prod override the origin the server sees (e.g. behind a proxy that
+// doesn't forward the public Host header). Falls back to the request origin for local dev.
+export function getAppBaseUrl(request: NextRequest) {
+  return process.env.APP_URL || request.nextUrl.origin;
+}
+
 export function getAuthRedirectUri(request: NextRequest) {
-  return `${request.nextUrl.origin}/auth/callback`;
+  return `${getAppBaseUrl(request)}/auth/callback`;
 }
