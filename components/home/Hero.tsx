@@ -119,12 +119,16 @@ export default function Hero() {
           <AthenaWordmark className="max-w-[300px] md:max-w-[380px] lg:max-w-[440px] lg:-mt-4" />
 
           <div
-            className="flex w-full max-w-[470px] flex-col items-center justify-center gap-3 rounded-lg border-2 border-athena-red2 bg-white p-5 text-center shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"
+            className="w-full max-w-[470px] overflow-hidden rounded-lg border-2 border-athena-red2 bg-white shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"
             style={{ aspectRatio: "612 / 374" }}
           >
-            <span className="font-quattrocento text-athena-maroon2" style={{ fontSize: "clamp(20px, 3.4vw, 50px)" }}>
-              video
-            </span>
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/Ymd2P14ePPA"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
 
