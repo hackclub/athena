@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import Marquee from "react-marquee-slider";
 import { FaCalendarDay, FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,6 +23,34 @@ type EventInfo = {
   mostRecent?: boolean;
   status?: string;
 };
+
+function PhotoStrip({ photos }: { photos: string[] }) {
+  if (photos.length === 0) return null;
+
+  const frames = [0, 1].map((copy) =>
+    photos.map((photo, id) => (
+      <Image
+        key={`${copy}-${id}`}
+        src={photo}
+        alt=""
+        width={720}
+        height={480}
+        className="mx-3 h-[15vh] w-auto rounded-md md:h-[30vh]"
+      />
+    ))
+  );
+
+  return (
+    <div className="overflow-hidden">
+      <div className="flex w-max animate-[marquee-rtl_20s_linear_infinite]">
+        <div className="flex">{frames[0]}</div>
+        <div className="flex" aria-hidden="true">
+          {frames[1]}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function PastEvent({
   accentColor,
@@ -118,49 +145,9 @@ export default function PastEvent({
                 </div>
                 <div className="md:w-1/2 lg:w-3/5 p-4 flex items-center">
                   <div className="rounded-md overflow-hidden mt-6 h-fit">
-                    <Marquee
-                      velocity={10}
-                      direction={"rtl"}
-                      scatterRandomly={false}
-                      resetAfterTries={0}
-                      onInit={() => {}}
-                      onFinish={() => {}}
-                    >
-                      {(photos.slice(0, photos.length / 2) as string[]).map(
-                        (photo: string, id: number) => (
-                          <Image
-                            key={id}
-                            src={photo}
-                            alt=""
-                            width={720}
-                            height={480}
-                            className="h-[15vh] md:h-[30vh] w-auto mx-3 rounded-md"
-                          />
-                        )
-                      )}
-                    </Marquee>
+                    <PhotoStrip photos={photos.slice(0, photos.length / 2) as string[]} />
                     <div className="my-3"></div>
-                    <Marquee
-                      velocity={10}
-                      direction={"rtl"}
-                      scatterRandomly={false}
-                      resetAfterTries={0}
-                      onInit={() => {}}
-                      onFinish={() => {}}
-                    >
-                      {(photos.slice(photos.length / 2) as string[]).map(
-                        (photo: string, id: number) => (
-                          <Image
-                            key={id}
-                            src={photo}
-                            alt=""
-                            width={720}
-                            height={480}
-                            className="h-[15vh] md:h-[30vh] w-auto mx-3 rounded-md"
-                          />
-                        )
-                      )}
-                    </Marquee>
+                    <PhotoStrip photos={photos.slice(photos.length / 2) as string[]} />
                   </div>
                 </div>
               </div>

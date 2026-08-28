@@ -4,15 +4,14 @@ import PastCalendarSection from "@/components/calendar/PastCalendarSection";
 import UpcomingCalendarSection from "@/components/calendar/UpcomingCalendarSection";
 import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useState, useEffect } from "react";
+import { useMemo, useSyncExternalStore } from "react";
 import Loading from "../loading";
 
+const emptySubscribe = () => () => {};
+
 export default function Calendar() {
-  const [currentDate, setCurrentDate] = useState<Date | null>(null);
-  
-  useEffect(() => {
-    setCurrentDate(new Date());
-  }, []);
+  const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const currentDate = useMemo(() => (isClient ? new Date() : null), [isClient]);
 
   if (!currentDate) {
     return <Loading/>

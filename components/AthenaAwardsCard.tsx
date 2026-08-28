@@ -4,27 +4,7 @@ import Link from "next/link";
 import { Tooltip } from "react-tooltip";
 import { useState, FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
+import PhotoCarousel from "./PhotoCarousel";
 
 const carouselImages = [
   {
@@ -219,14 +199,10 @@ export default function AthenaAwardsCard() {
               <img alt="NCWIT AIC" src="/images/ncwit.png" />
             </div>
 
-<Carousel responsive={responsive} swipeable={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet"]} itemClass = "border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2">
-                { carouselImages.map((item: { image: string, caption: string }, index: number) => (
-                  <div key = {index} className = "flex flex-col gap-4 items-center justify-center">
-                    <img src = {item.image} className = "w-full aspect-square object-cover"/>
-                    <i className = "p-2 text-center">{item.caption}</i>
-                  </div>
-                ))}
-              </Carousel>
+              <PhotoCarousel
+                items={carouselImages}
+                itemClassName="border-2 border-b-4 border-r-4 border-[#D35648] border-b-[#DDA14A] border-r-[#DDA14A] items-center rounded-lg text-sm object-cover m-2"
+              />
           </div>
         </div>
       </div>

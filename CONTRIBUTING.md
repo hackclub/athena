@@ -94,9 +94,9 @@ To add new event types or disciplines:
 
 ## Testing Your Changes
 
-1. Run `npm run build` to check for TypeScript errors
-2. Run `npm run lint` to check code style
-3. Test locally with `npm run dev`
+1. Run `bun run build` to check for TypeScript errors
+2. Run `bun run lint` to check code style
+3. Test locally with `bun run dev`
 4. Verify events appear correctly on the calendar
 
 ## Example Event
