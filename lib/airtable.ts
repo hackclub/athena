@@ -94,6 +94,69 @@ export class AirtableStoriesManager extends AirtableManager {
   }
 }
 
+// Per-project fields are Airtable lookups over the user's approved projects, so
+// they arrive as parallel arrays. "First Name" is also a lookup (one element).
+export type AthenaAwardProfile = {
+  "First Name"?: string[];
+  "Last Name Initial"?: string;
+  total_time_approved_projects?: number;
+  total_approved_projects?: number;
+  "Project Name"?: string[];
+  "Code URL"?: string[];
+  "Playable URL"?: string[];
+  Description?: string[];
+  created_at?: string[];
+  approved_duration?: number[];
+  screenshot_cdn_url?: string[];
+  "Project Name Unified"?: string[];
+  "Code URL Unified"?: string[];
+  "Playable URL Unified"?: string[];
+  created_at_unified?: string[];
+  approved_duration_unified?: number[];
+  screenshot_cdn_url_unified?: string[];
+};
+
+export class AirtableUsersManager extends AirtableManager {
+  constructor() {
+    super(
+      "Registered Users",
+      process.env.AIRTABLE_PROJECTS_API_KEY!,
+      process.env.AIRTABLE_PROJECTS_BASE_ID!
+    );
+  }
+
+  async getQualifiedUserByCertId(certId: string): Promise<AthenaAwardProfile | null> {
+    const records = await this.base(this.tableName)
+      .select({
+        filterByFormula: `{cert_id} = "${escapeFormulaValue(certId)}"`,
+        maxRecords: 1,
+        view: "Qualifications",
+        fields: [
+          "First Name",
+          "Last Name Initial",
+          "total_time_approved_projects",
+          "total_approved_projects",
+          "Project Name",
+          "Code URL",
+          "Playable URL",
+          "Description",
+          "created_at",
+          "approved_duration",
+          "screenshot_cdn_url",
+          "Project Name Unified",
+          "Code URL Unified",
+          "Playable URL Unified",
+          "created_at_unified",
+          "approved_duration_unified",
+          "screenshot_cdn_url_unified",
+        ],
+      })
+      .all();
+
+    return (records[0]?.fields as AthenaAwardProfile | undefined) ?? null;
+  }
+}
+
 export class AirtableSignupsManager extends AirtableManager {
   constructor() {
     super(
