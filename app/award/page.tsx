@@ -32,6 +32,16 @@ type AwardProject = {
 
 type ScreenshotKind = "image" | "video" | "unknown";
 
+// Link fields come from student submissions; only http(s) may become an href.
+// Some entries are bare "github.com/..." or have stray whitespace, so tidy
+// those rather than hide the link.
+function toHttpUrl(url?: string): string | undefined {
+  const trimmed = (url ?? "").trim();
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (/^[\w.-]+\.[a-z]{2,}(\/|$)/i.test(trimmed)) return `https://${trimmed}`;
+  return undefined;
+}
+
 // CDN URLs carry no extension, so the media type only comes from the server.
 // Cached per URL so each one is checked at most once a day.
 async function screenshotKind(url: string): Promise<ScreenshotKind> {
@@ -64,8 +74,8 @@ function zipProjects(
     const description = descriptions[i] ?? "";
     return {
       name: names[i],
-      codeUrl: codeUrls[i],
-      playableUrl: playableUrls[i],
+      codeUrl: toHttpUrl(codeUrls[i]),
+      playableUrl: toHttpUrl(playableUrls[i]),
       createdAt: createdAt[i],
       approvedDuration: approvedDuration[i],
       description:
@@ -103,12 +113,22 @@ function ProjectCard({ project }: { project: AwardProject }) {
         <h3 className="font-quattrocento font-bold text-xl">{project.name}</h3>
         <div className="flex flex-col md:flex-row w-full justify-between text-sm">
           {project.codeUrl && (
-            <a target="_blank" href={project.codeUrl} className="underline">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.codeUrl}
+              className="underline"
+            >
               Code
             </a>
           )}
           {project.playableUrl && (
-            <a target="_blank" href={project.playableUrl} className="underline">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.playableUrl}
+              className="underline"
+            >
               Demo
             </a>
           )}
@@ -218,6 +238,7 @@ export default async function AwardPage({
                   The{" "}
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://award.athena.hackclub.com"
                     className="font-bold underline"
                   >
