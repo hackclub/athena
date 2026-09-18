@@ -7,16 +7,11 @@ import StickyColumn from "./StickyColumn";
 
 export const dynamic = "force-dynamic";
 
-const gridTileStyle = {
-  backgroundImage: "url('/images/diagonal-stripes.png')",
-  backgroundRepeat: "repeat",
-  backgroundSize: "440px 292px",
-};
-
-const gridTileStyleRotated = {
-  backgroundImage: "url('/images/diagonal-stripes-rotated.png')",
-  backgroundRepeat: "repeat",
-  backgroundSize: "292px 440px",
+// Same cream grid as the homepage hero.
+const heroGridStyle = {
+  backgroundColor: "#FFF6E5",
+  backgroundImage:
+    "repeating-linear-gradient(to right, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px), repeating-linear-gradient(to bottom, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px)",
 };
 
 type AwardProject = {
@@ -208,13 +203,7 @@ export default async function AwardPage({
     <>
       <NavBar />
 
-      <div className="relative">
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fff2e1] via-[#ffdcda] via-[64%] to-white" />
-          <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
-          <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
-        </div>
-
+      <div className="relative" style={heroGridStyle}>
         <div className="px-6 lg:px-32 py-16">
           <h1
             className="text-center font-quattrocento font-bold text-athena-red3"
