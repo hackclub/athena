@@ -5,6 +5,7 @@ import ParthenonCard from "@/components/ParthenonCard";
 import AscendCard from "@/components/AscendCard";
 import SleepoverMiniCard from "@/components/SleepoverMiniCard";
 import SunbeamMiniCard from "@/components/SunbeamMiniCard";
+import SnowglobeCard from "@/components/SnowglobeCard";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +28,7 @@ export default function ProgramsPage() {
 
       <div className="relative">
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fff2e1] via-[#ffdcda] via-[64%] to-white" />
+          <div className="absolute inset-0 bg-linear-to-b from-[#fff2e1] via-[#ffdcda] via-[64%] to-white" />
           <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
           <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
@@ -51,7 +52,7 @@ export default function ProgramsPage() {
             Happening now:
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4">
-            <SunbeamMiniCard />
+            <SnowglobeCard />
           </div>
 
           <h2
@@ -61,6 +62,7 @@ export default function ProgramsPage() {
             Past events:
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4">
+            <SunbeamMiniCard />
             <SleepoverMiniCard />
             <ParthenonCard />
             <AthenaAwardMiniCard />

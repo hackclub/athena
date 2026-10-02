@@ -46,6 +46,8 @@ bun dev
 | Apr 2025 | Atlanta, GA | [Cascade 🌊](https://github.com/hackclub/cascade) |
 | May 2025 | Toronto, Canada | [Underground 🚇](https://underground.hackclub.com/) |
 | Nov 2025 | New York City, NY | [Parthenon 🔱](https://parthenon.hackclub.com/) |
+| Apr 2026 | Chicago, IL | [Sleepover 🍿](https://sleepover.hackclub.com/) |
+| Aug 2026 | Worldwide | [Sunbeam ☀️](https://sunbeam.hackclub.com/) |
 
 ## In this repo:
 
