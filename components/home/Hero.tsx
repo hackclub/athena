@@ -142,14 +142,14 @@ export default function Hero() {
 
           <EmailSignupForm buttonLabel="join the community" className="justify-center" />
           <a
-            href="https://sunbeam.hackclub.com/"
+            href="https://snowglobe.hackclub.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 font-quattrocento font-bold text-athena-red3 transition hover:text-athena-maroon"
             style={{ fontSize: "clamp(14px, 1.6vw, 24px)" }}
           >
-            <img src="/images/sunbeam-favicon.svg" alt="" className="h-[1.4em] w-[1.4em] shrink-0" />
-            <span>sign up for Sunbeam, happening now</span>
+            <img src="https://snowglobe.hackclub.com/favicon.ico" alt="" className="h-[1.4em] w-[1.4em] shrink-0" />
+            <span>sign up for Snowglobe, happening now</span>
             <ArrowIcon className="h-[0.8em] w-[0.8em] shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
