@@ -216,13 +216,6 @@ export default function GinghamSection({ stories }: { stories: MemberStory[] }) 
             <Polaroid key={i} story={story} index={i} />
           ))}
         </InfiniteRow>
-        <Image
-          src="/images/girl-illustration.png"
-          alt=""
-          width={1149}
-          height={877}
-          className="pointer-events-none absolute -bottom-[140px] right-16 hidden h-auto w-[240px] md:block lg:-bottom-[220px] lg:right-24 lg:w-[280px] xl:right-32 xl:w-[320px]"
-        />
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 md:px-12">
@@ -244,6 +237,14 @@ export default function GinghamSection({ stories }: { stories: MemberStory[] }) 
             <ProjectPostcard key={project.projectName} project={project} />
           ))}
         </InfiniteRow>
+        {/* sits on the top edge of the project postcards */}
+        <Image
+          src="/images/girl-illustration.png"
+          alt=""
+          width={1149}
+          height={877}
+          className="pointer-events-none absolute bottom-full right-16 z-10 hidden h-auto w-[240px] translate-y-3 md:block lg:right-24 lg:w-[280px] xl:right-32 xl:w-[320px]"
+        />
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col px-6 md:px-12">

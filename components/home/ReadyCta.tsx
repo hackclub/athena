@@ -12,7 +12,7 @@ export default function ReadyCta() {
         <EmailSignupForm buttonLabel="join!" className="justify-center" />
 
         <p className="font-quattrocento text-athena-maroon text-2xl">
-          join 1600+ girls like you in the Athena community
+          Join 10,000+ girls like you in the Athena community
         </p>
       </div>
 

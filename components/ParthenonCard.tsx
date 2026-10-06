@@ -21,6 +21,8 @@ export default function ParthenonCard() {
           </div>
           <Link
             href="https://parthenon.hackclub.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full text-right text-white italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-white"
           >
             Learn more about Parthenon

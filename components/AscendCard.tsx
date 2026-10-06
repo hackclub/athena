@@ -20,6 +20,8 @@ export default function AscendCard() {
           </div>
           <Link 
             href="https://ascend.hackclub.com" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-white"
           >
             Learn more about Ascend

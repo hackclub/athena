@@ -3,6 +3,7 @@ import SleepoverMiniCard from "@/components/SleepoverMiniCard";
 import ParthenonCard from "@/components/ParthenonCard";
 import AthenaAwardMiniCard from "@/components/AthenaAwardMiniCard";
 import AscendCard from "@/components/AscendCard";
+import SunbeamMiniCard from "@/components/SunbeamMiniCard";
 
 const bigGridStyle = {
   backgroundImage:
@@ -38,6 +39,7 @@ export default function PastPrograms() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 -mt-6 md:-mt-8">
+          <SunbeamMiniCard />
           <SleepoverMiniCard />
           <ParthenonCard />
           <AthenaAwardMiniCard />

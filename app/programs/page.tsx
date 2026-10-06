@@ -5,6 +5,7 @@ import ParthenonCard from "@/components/ParthenonCard";
 import AscendCard from "@/components/AscendCard";
 import SleepoverMiniCard from "@/components/SleepoverMiniCard";
 import SunbeamMiniCard from "@/components/SunbeamMiniCard";
+import { SnowglobeCard } from "@/components/home/InvitedSection";
 
 export const dynamic = "force-dynamic";
 
@@ -51,7 +52,7 @@ export default function ProgramsPage() {
             Happening now:
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4">
-            <SunbeamMiniCard />
+            <SnowglobeCard compact />
           </div>
 
           <h2
@@ -61,6 +62,7 @@ export default function ProgramsPage() {
             Past events:
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4">
+            <SunbeamMiniCard />
             <SleepoverMiniCard />
             <ParthenonCard />
             <AthenaAwardMiniCard />

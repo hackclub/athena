@@ -21,6 +21,8 @@ export default function SleepoverMiniCard() {
           </div>
           <Link
             href="https://sleepover.hackclub.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#6988E0] italic underline inline-block mt-3 text-lg underline-offset-4 decoration-transparent transition-all hover:decoration-[#6988E0]"
           >
             Learn more about Sleepover here
