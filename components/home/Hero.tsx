@@ -106,7 +106,7 @@ function RotatingRole() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden px-6 pb-20 pt-16 md:px-12 md:pb-28 md:pt-24"
+      className="relative overflow-hidden px-6 pb-6 pt-16 md:px-12 md:pb-8 md:pt-24"
       style={{
         backgroundColor: "#FFF6E5",
         backgroundImage:
@@ -164,25 +164,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-
-      {/* the red "Pick your first step" band rises into the hero as a
-          soft double wave instead of a hard edge */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 w-full md:h-20"
-        viewBox="0 0 1440 80"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0 34 C 180 4, 360 4, 540 30 S 900 62, 1080 34 S 1350 6, 1440 22 V80 H0 Z"
-          fill="#D7274D"
-          opacity="0.25"
-        />
-        <path
-          d="M0 52 C 200 22, 420 24, 620 48 S 1000 76, 1220 50 S 1400 34, 1440 40 V80 H0 Z"
-          fill="#D7274D"
-        />
-      </svg>
     </section>
   );
 }

@@ -55,7 +55,15 @@ export default function PolaroidClothesline() {
   const n = PHOTOS.length;
 
   return (
-    <div className="relative w-full overflow-hidden pt-4 pb-12 [--rope-h:48px] [--clip-h:20px] sm:[--rope-h:64px] sm:[--clip-h:24px] md:pt-6 md:pb-16 md:[--rope-h:80px] md:[--clip-h:28px]">
+    <div
+      className="relative w-full overflow-hidden pt-4 pb-12 [--rope-h:48px] [--clip-h:20px] sm:[--rope-h:64px] sm:[--clip-h:24px] md:pt-6 md:pb-16 md:[--rope-h:80px] md:[--clip-h:28px]"
+      // same grid paper as the hero, so it carries on behind the polaroids
+      style={{
+        backgroundColor: "#FFF6E5",
+        backgroundImage:
+          "repeating-linear-gradient(to right, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px), repeating-linear-gradient(to bottom, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px)",
+      }}
+    >
       <svg
         className="pointer-events-none absolute inset-x-0 top-0 w-full"
         style={{ height: "var(--rope-h)" }}

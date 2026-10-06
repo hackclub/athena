@@ -15,8 +15,8 @@ export default async function Home() {
     <div className="relative">
       <NavBar />
       <Hero />
-      <AthenaIsBand />
       <PolaroidClothesline />
+      <AthenaIsBand />
       <BenefitsGrid />
       <GinghamSection />
       <ReadyCta />
