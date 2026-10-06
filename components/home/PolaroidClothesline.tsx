@@ -56,7 +56,7 @@ export default function PolaroidClothesline() {
 
   return (
     <div
-      className="relative w-full overflow-hidden pt-4 pb-12 [--rope-h:48px] [--clip-h:20px] sm:[--rope-h:64px] sm:[--clip-h:24px] md:pt-6 md:pb-16 md:[--rope-h:80px] md:[--clip-h:28px]"
+      className="relative w-full overflow-hidden pt-4 pb-20 [--rope-h:48px] [--clip-h:20px] sm:[--rope-h:64px] sm:[--clip-h:24px] md:pt-6 md:pb-28 md:[--rope-h:80px] md:[--clip-h:28px]"
       // same grid paper as the hero, so it carries on behind the polaroids
       style={{
         backgroundColor: "#FFF6E5",
@@ -103,6 +103,25 @@ export default function PolaroidClothesline() {
           );
         })}
       </div>
+      {/* the red "Pick your first step" band rises into this section as a
+          soft double wave; drawn here (red on transparent) so the grid paper
+          shows through behind the curves */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 w-full md:h-20"
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 34 C 180 4, 360 4, 540 30 S 900 62, 1080 34 S 1350 6, 1440 22 V80 H0 Z"
+          fill="#D7274D"
+          opacity="0.25"
+        />
+        <path
+          d="M0 52 C 200 22, 420 24, 620 48 S 1000 76, 1220 50 S 1400 34, 1440 40 V80 H0 Z"
+          fill="#D7274D"
+        />
+      </svg>
     </div>
   );
 }

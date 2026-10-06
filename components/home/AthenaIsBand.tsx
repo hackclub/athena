@@ -16,8 +16,8 @@ type Step = {
 
 const STEPS: Step[] = [
   {
-    title: "Start building",
-    body: "New to coding? Make your first website and we’ll pay for a refresher!",
+    title: "Make your first website",
+    body: "New to coding? Follow this guide to make your first website and we’ll pay for a refresher!",
     image: { src: "/images/refresher-card.jpg", alt: "Refresher: a glass of boba milk tea", position: "center top" },
     paper: "251,228,234",
     titleColor: "#BF1938",
@@ -62,25 +62,7 @@ const NOTE_LOOKS = [
 
 export default function AthenaIsBand() {
   return (
-    <section className="relative overflow-hidden bg-athena-red2 px-6 pt-20 pb-24 text-center md:px-12 md:pt-28 md:pb-32">
-      {/* the band rises out of the cream page above as a soft double wave
-          instead of a hard edge */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-12 w-full md:h-20"
-        viewBox="0 0 1440 80"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0 46 C 180 76, 360 76, 540 50 S 900 18, 1080 46 S 1350 74, 1440 58 V0 H0 Z"
-          fill="#FFF6E5"
-          opacity="0.35"
-        />
-        <path
-          d="M0 28 C 200 58, 420 56, 620 32 S 1000 4, 1220 30 S 1400 46, 1440 40 V0 H0 Z"
-          fill="#FFF6E5"
-        />
-      </svg>
+    <section className="relative overflow-hidden bg-athena-red2 px-6 pt-10 pb-24 text-center md:px-12 md:pt-14 md:pb-32">
       {/* mirrors the wave at the top of this band so the cream page rises
           back up into the red before "By joining Athena, you..." */}
       <svg

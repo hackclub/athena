@@ -1,5 +1,3 @@
-import { FaArrowLeftLong } from "react-icons/fa6";
-import Link from "next/link";
 import NavBar from "@/components/home/NavBar";
 import Footer from "@/components/Footer";
 import Team from "@/components/Team";
@@ -39,13 +37,8 @@ export default async function TeamPage() {
             className="text-center font-quattrocento font-bold text-athena-red3"
             style={{ fontSize: "clamp(32px, 4.6vw, 56px)" }}
           >
-            Meet the team behind Athena.
+            Athena Team
           </h1>
-          <p className="font-quattrocento text-lg mt-2 text-center max-w-2xl mx-auto text-athena-maroon">
-            We&rsquo;re a group building the spaces we once needed; where anyone
-            can code, connect, and feel seen. Got questions? Ideas? Just wanna
-            chat? DM us on Slack using the handles below!
-          </p>
 
           <div className="mt-12 flex flex-col items-center">
             <div className="mt-4 w-full flex gap-6 pb-4 overflow-x-scroll lg:overflow-x-visible">
@@ -66,13 +59,6 @@ export default async function TeamPage() {
               </div>
             </div>
           )}
-
-          <Link
-            href="/"
-            className="w-fit mx-auto mt-16 md:mt-20 font-quattrocento font-bold text-athena-red3 flex gap-2 transition-all items-center hover:gap-4 cursor-pointer"
-          >
-            <FaArrowLeftLong /> Athena
-          </Link>
         </div>
       </div>
 

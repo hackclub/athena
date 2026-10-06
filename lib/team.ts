@@ -5,7 +5,7 @@ function toTeamMember(record: AirtableTeamRecord): TeamMember {
   return {
     name: record.fields.name!.trim(),
     role: record.fields.role || "",
-    slack: record.fields.slack_link || "",
+    email: record.fields.email?.trim() || "",
     image: record.fields.cdn_image || "",
   };
 }

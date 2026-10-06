@@ -4,7 +4,7 @@ import { PHASE_DEVELOPMENT_SERVER } from "next/dist/shared/lib/constants";
 export interface TeamMember {
   name: string;
   role: string;
-  slack: string;
+  email: string;
   image: string;
 }
 
@@ -16,6 +16,7 @@ interface AirtableTeamRecord {
     role?: string;
     slack?: string;
     slack_link?: string;
+    email?: string;
     status?: "active" | "acknowledgements";
   };
 }
