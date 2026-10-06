@@ -60,6 +60,11 @@ const NOTE_LOOKS = [
   { rotate: "md:-rotate-1", tape: "-rotate-2 bg-athena-accent" },
 ];
 
+// A faint repeating pattern of light-pink sparkles and dots over the red
+// band: one sparse 240px tile (a single sparkle and three dots), tiled edge
+// to edge.
+const SPARKLE_PATTERN = "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22240%22%20height%3D%22240%22%20viewBox%3D%220%200%20240%20240%22%3E%3Cg%20fill%3D%22%23FFC9D4%22%3E%3Cpath%20d%3D%22M60%2044%20C61%2052%2064%2055%2072%2056%20C64%2057%2061%2060%2060%2068%20C59%2060%2056%2057%2048%2056%20C56%2055%2059%2052%2060%2044%20Z%22/%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22176%22%20r%3D%222.5%22/%3E%3Ccircle%20cx%3D%22176%22%20cy%3D%2260%22%20r%3D%221.8%22/%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%22184%22%20r%3D%221.8%22/%3E%3C/g%3E%3C/svg%3E\")";
+
 export default function AthenaIsBand() {
   return (
     <section className="relative overflow-hidden bg-athena-red2 px-6 pt-10 pb-24 text-center md:px-12 md:pt-14 md:pb-32">
@@ -81,6 +86,11 @@ export default function AthenaIsBand() {
           fill="#FFF6EA"
         />
       </svg>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-25"
+        style={{ backgroundImage: SPARKLE_PATTERN, backgroundSize: "240px 240px" }}
+      />
       <div className="relative mx-auto max-w-7xl">
         <h2
           className="font-quattrocento font-bold text-white"
