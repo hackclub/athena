@@ -13,7 +13,7 @@ const ROLES = [
   "Activist",
   "Advocate",
   "Lawyer",
-  "Baker",
+  "Environmentalist",
 ];
 
 // Duplicate the first item at the end so the reel can loop seamlessly.
