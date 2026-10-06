@@ -2,7 +2,6 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import EmailSignupForm from "./EmailSignupForm";
-import AthenaWordmark from "./AthenaWordmark";
 
 const ROLES = [
   "Engineer",
@@ -114,42 +113,53 @@ export default function Hero() {
           "repeating-linear-gradient(to right, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px), repeating-linear-gradient(to bottom, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px)",
       }}
     >
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-20">
-          <AthenaWordmark className="max-w-[300px] md:max-w-[380px] lg:max-w-[440px] lg:-mt-4" />
-
-          <div
-            className="w-full max-w-[470px] overflow-hidden rounded-lg border-2 border-athena-red2 bg-white shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"
-            style={{ aspectRatio: "612 / 374" }}
-          >
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube.com/embed/Ymd2P14ePPA"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center gap-5 text-center">
+      {/* text on the left, video on the right */}
+      <div className="relative mb-12 flex flex-col gap-10 md:pr-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:pr-12 xl:pr-20">
+        <div className="min-w-0 md:pl-8 lg:flex-1 lg:pl-12 xl:pl-20">
           <h1
-            className="font-quattrocento leading-tight text-athena-red3"
+            className="mb-8 max-w-5xl text-left font-quattrocento font-bold leading-tight text-athena-red3"
+            style={{ fontSize: "clamp(28px, 4.4vw, 56px)", textWrap: "balance" }}
+          >
+            The largest <span className="whitespace-nowrap">all-girls</span> community for technical teens aged 13-18
+          </h1>
+          <h2
+            className="text-left font-quattrocento leading-tight text-athena-red3"
             style={{ fontSize: "clamp(24px, 3.6vw, 44px)" }}
           >
-            Become a <RotatingRole /> with technical skills.
-          </h1>
+            <span className="block">Become a</span>
+            <span className="block" style={{ fontSize: "clamp(44px, 5vw, 80px)" }}>
+              <RotatingRole />
+            </span>
+            <span className="block">with technical skills.</span>
+          </h2>
+        </div>
 
-          <EmailSignupForm buttonLabel="join the community" className="justify-center" />
+        <div
+          className="w-full overflow-hidden rounded-lg border-2 border-athena-red2 bg-white shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)] lg:w-[45%] lg:max-w-[600px] lg:shrink-0"
+          style={{ aspectRatio: "612 / 374" }}
+        >
+          <iframe
+            className="h-full w-full"
+            src="https://www.youtube.com/embed/Ymd2P14ePPA"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </div>
+
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
+        <div className="flex flex-col items-center gap-5 text-center">
+          <EmailSignupForm buttonLabel="join the newsletter" className="justify-center" />
           <a
-            href="https://sunbeam.hackclub.com/"
+            href="https://snowglobe.hackclub.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 font-quattrocento font-bold text-athena-red3 transition hover:text-athena-maroon"
             style={{ fontSize: "clamp(14px, 1.6vw, 24px)" }}
           >
-            <img src="/images/sunbeam-favicon.svg" alt="" className="h-[1.4em] w-[1.4em] shrink-0" />
-            <span>sign up for Sunbeam, happening now</span>
+            <span aria-hidden="true" className="shrink-0">❄️</span>
+            <span>Sign up for Snowglobe, happening now</span>
             <ArrowIcon className="h-[0.8em] w-[0.8em] shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

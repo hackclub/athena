@@ -219,10 +219,6 @@ export default function GinghamSection({ stories }: { stories: MemberStory[] }) 
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 md:px-12">
-        <PillButton variant="gradient" className="-ml-2 self-start font-bold md:-ml-4">
-          read their stories here
-        </PillButton>
-
         <h2
           className="-ml-2 mt-6 font-quattrocento font-bold text-athena-red3 md:-ml-8 md:mt-10 lg:-ml-12"
           style={{ fontSize: "clamp(26px, 3.6vw, 46px)" }}
