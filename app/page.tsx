@@ -6,14 +6,11 @@ import PolaroidClothesline from "@/components/home/PolaroidClothesline";
 import BenefitsGrid from "@/components/home/BenefitsGrid";
 import GinghamSection from "@/components/home/GinghamSection";
 import ReadyCta from "@/components/home/ReadyCta";
-import { getMemberStories } from "@/lib/memberStories";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  const stories = await getMemberStories();
-
   return (
     <div className="relative">
       <NavBar />
@@ -21,7 +18,7 @@ export default async function Home() {
       <AthenaIsBand />
       <PolaroidClothesline />
       <BenefitsGrid />
-      <GinghamSection stories={stories} />
+      <GinghamSection />
       <ReadyCta />
       <Footer />
     </div>

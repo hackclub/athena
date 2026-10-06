@@ -150,7 +150,7 @@ export default function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
         <div className="flex flex-col items-center gap-5 text-center">
-          <EmailSignupForm buttonLabel="join the newsletter" className="justify-center" />
+          <EmailSignupForm buttonLabel="join the newsletter" placeholder="you@hackclub.com" className="justify-center" />
           <a
             href="https://snowglobe.hackclub.com/"
             target="_blank"
@@ -165,7 +165,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* the red "We're excited to have you" band rises into the hero as a
+      {/* the red "Pick your first step" band rises into the hero as a
           soft double wave instead of a hard edge */}
       <svg
         aria-hidden="true"

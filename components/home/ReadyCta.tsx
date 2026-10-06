@@ -9,7 +9,7 @@ export default function ReadyCta() {
           Sign up for our newsletter
         </h2>
 
-        <EmailSignupForm buttonLabel="join!" className="justify-center" />
+        <EmailSignupForm buttonLabel="join!" placeholder="you@hackclub.com" className="justify-center" />
 
         <p className="font-quattrocento text-athena-maroon text-2xl">
           Join 10,000+ girls like you in the Athena community

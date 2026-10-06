@@ -100,7 +100,7 @@ export default function AthenaIsBand() {
           className="font-quattrocento font-bold text-white"
           style={{ fontSize: "clamp(26px, 4.2vw, 52px)" }}
         >
-          We&rsquo;re excited to have you
+          Pick your first step
         </h2>
 
         <div className="mt-12 grid gap-12 text-left md:grid-cols-3 md:gap-6 lg:gap-10">

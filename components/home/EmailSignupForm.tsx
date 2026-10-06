@@ -4,9 +4,11 @@ import { FormEvent, useState } from "react";
 export default function EmailSignupForm({
   buttonLabel,
   className = "",
+  placeholder = "your@email.com",
 }: {
   buttonLabel: string;
   className?: string;
+  placeholder?: string;
 }) {
   const [email, setEmail] = useState("");
 
@@ -36,7 +38,7 @@ export default function EmailSignupForm({
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
+        placeholder={placeholder}
         className="w-full flex-1 rounded-full border border-athena-accent/75 bg-white px-6 py-3 font-quattrocento text-athena-accent/70 shadow-[0px_4px_0px_0px_rgba(215,39,77,0.25)] placeholder:text-athena-accent/50 focus:outline-none"
       />
       <button
