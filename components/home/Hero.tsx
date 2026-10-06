@@ -159,11 +159,30 @@ export default function Hero() {
             style={{ fontSize: "clamp(14px, 1.6vw, 24px)" }}
           >
             <span aria-hidden="true" className="shrink-0">❄️</span>
-            <span>Sign up for Snowglobe, happening now</span>
+            <span>Join us at the largest all-girls hackathon on Nov 20-22 at Notion HQ in SF</span>
             <ArrowIcon className="h-[0.8em] w-[0.8em] shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
       </div>
+
+      {/* the red "We're excited to have you" band rises into the hero as a
+          soft double wave instead of a hard edge */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 w-full md:h-20"
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 34 C 180 4, 360 4, 540 30 S 900 62, 1080 34 S 1350 6, 1440 22 V80 H0 Z"
+          fill="#D7274D"
+          opacity="0.25"
+        />
+        <path
+          d="M0 52 C 200 22, 420 24, 620 48 S 1000 76, 1220 50 S 1400 34, 1440 40 V80 H0 Z"
+          fill="#D7274D"
+        />
+      </svg>
     </section>
   );
 }

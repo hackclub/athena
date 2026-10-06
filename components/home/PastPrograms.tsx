@@ -34,7 +34,7 @@ export default function PastPrograms() {
             className="ml-16 h-auto w-56 shrink-0 md:ml-32 md:w-80"
           />
           <h2 className="mr-4 bg-gradient-to-r from-athena-red4 to-athena-red3 bg-clip-text text-right font-quattrocento text-3xl font-bold text-transparent md:mr-8 md:text-5xl">
-            We&rsquo;ve done this before:
+            Past programs
           </h2>
         </div>
 

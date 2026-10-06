@@ -53,11 +53,11 @@ function BenefitCard({
 }) {
   return (
     <div
-      className="relative flex min-h-[260px] flex-col items-start gap-1 rounded-[17px] border-[3px] border-[#fca5a5] p-4 md:h-full"
+      className="relative flex min-h-[260px] flex-col items-start gap-1 rounded-[17px] border-[3px] border-athena-maroon p-4 md:h-full"
       style={{
         flexBasis: basis,
         flexGrow: 1,
-        backgroundImage: `linear-gradient(180deg, rgba(215,39,77,0.62) 0%, rgba(30,10,14,0.55) 100%), url(${image})`,
+        backgroundImage: `linear-gradient(180deg, rgba(52,10,20,0.92) 0%, rgba(64,18,30,0.8) 55%, rgba(14,4,7,0.85) 100%), url(${image})`,
         backgroundSize: "cover, cover",
         backgroundPosition: "center, center 75%",
         backgroundRepeat: "no-repeat, no-repeat",
@@ -87,7 +87,7 @@ export default function BenefitsGrid() {
     >
       <div className="mx-auto max-w-[1440px]">
         <h2
-          className="text-center font-quattrocento font-bold text-athena-red2"
+          className="text-left font-quattrocento font-bold text-athena-red2"
           style={{ fontSize: "clamp(26px, 3.6vw, 46px)" }}
         >
           By joining Athena, you...
