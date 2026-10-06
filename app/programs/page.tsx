@@ -1,11 +1,7 @@
+import Image from "next/image";
 import NavBar from "@/components/home/NavBar";
 import Footer from "@/components/Footer";
-import AthenaAwardMiniCard from "@/components/AthenaAwardMiniCard";
-import ParthenonCard from "@/components/ParthenonCard";
-import AscendCard from "@/components/AscendCard";
-import SleepoverMiniCard from "@/components/SleepoverMiniCard";
-import SunbeamMiniCard from "@/components/SunbeamMiniCard";
-import { SnowglobeCard } from "@/components/home/InvitedSection";
+import PastPrograms from "@/components/home/PastPrograms";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +17,9 @@ const gridTileStyleRotated = {
   backgroundSize: "292px 440px",
 };
 
+const SNOWGLOBE_ALT =
+  "Hack Club's Snowglobe: build projects, get prizes, and come to the largest all-girls high school hackathon in the world. San Francisco, all girls 13-18.";
+
 export default function ProgramsPage() {
   return (
     <>
@@ -33,42 +32,34 @@ export default function ProgramsPage() {
           <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
 
-        <div className="px-6 lg:px-32 py-16">
+        <div className="mx-auto max-w-7xl px-6 pb-4 pt-16 md:px-12">
           <h1
             className="text-center font-quattrocento font-bold text-athena-red3"
             style={{ fontSize: "clamp(32px, 4.6vw, 56px)" }}
           >
             Programs
           </h1>
-          <p className="font-quattrocento text-lg mt-4 text-center text-athena-maroon">
-            From overnight hackathons to our flagship award, here&rsquo;s
-            how to get involved with Athena today.
-          </p>
 
           <h2
-            className="font-quattrocento font-bold text-athena-accent underline decoration-2 underline-offset-4 mt-24"
+            className="font-quattrocento font-bold text-athena-accent underline decoration-2 underline-offset-4 mt-20"
             style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
           >
             Happening now:
           </h2>
-          <div className="mt-4 grid grid-cols-1 gap-4">
-            <SnowglobeCard compact />
-          </div>
-
-          <h2
-            className="font-quattrocento font-bold text-athena-accent underline decoration-2 underline-offset-4 mt-24"
-            style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
+          {/* wide banner on md+, the taller card image on small screens where
+              the banner's text gets too small */}
+          <a
+            href="https://snowglobe.hackclub.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative mt-4 block aspect-[2136/1000] w-full overflow-hidden rounded-lg transition hover:-translate-y-1 md:aspect-[2400/724]"
           >
-            Past events:
-          </h2>
-          <div className="mt-4 grid grid-cols-1 gap-4">
-            <SunbeamMiniCard />
-            <SleepoverMiniCard />
-            <ParthenonCard />
-            <AthenaAwardMiniCard />
-            <AscendCard />
-          </div>
+            <Image src="/images/snowglobe-card.png" alt={SNOWGLOBE_ALT} fill className="object-cover md:hidden" />
+            <Image src="/images/snowglobe-banner.png" alt={SNOWGLOBE_ALT} fill className="hidden object-cover md:block" />
+          </a>
         </div>
+
+        <PastPrograms />
       </div>
 
       <Footer />

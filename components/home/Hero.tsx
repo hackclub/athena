@@ -118,7 +118,7 @@ export default function Hero() {
         <div className="min-w-0 md:pl-8 lg:flex-1 lg:pl-12 xl:pl-20">
           <h1
             className="mb-8 max-w-5xl text-left font-quattrocento font-bold leading-tight text-athena-red3"
-            style={{ fontSize: "clamp(28px, 4.4vw, 56px)", textWrap: "balance" }}
+            style={{ fontSize: "clamp(24px, 3.4vw, 44px)", textWrap: "balance" }}
           >
             The largest <span className="whitespace-nowrap">all-girls</span> community for technical teens aged 13-18
           </h1>
@@ -159,7 +159,7 @@ export default function Hero() {
             style={{ fontSize: "clamp(14px, 1.6vw, 24px)" }}
           >
             <span aria-hidden="true" className="shrink-0">❄️</span>
-            <span>Join us at the largest all-girls hackathon on Nov 20-22 at Notion HQ in SF</span>
+            <span>Join us at Snowglobe, the largest all-girls hackathon on Nov 20-22 at Notion HQ</span>
             <ArrowIcon className="h-[0.8em] w-[0.8em] shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

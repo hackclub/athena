@@ -20,7 +20,6 @@ type Step = {
   fadeFrom?: number;
   titleColor: string;
   bodyColor: string;
-  tag?: string;
   cta: { label: string; href: string };
 };
 
@@ -48,7 +47,6 @@ const STEPS: Step[] = [
     fadeFrom: 44,
     titleColor: "#C8361F",
     bodyColor: "#1B2A5E",
-    tag: "Nov 20–22",
     cta: { label: "Sign up", href: "https://snowglobe.hackclub.com/" },
   },
   {
@@ -161,11 +159,6 @@ export default function AthenaIsBand() {
                       background: `linear-gradient(to bottom, rgba(${step.fade},0) 0%, rgba(${step.fade},0) ${step.fadeFrom ?? 36}%, rgba(${step.fade},0.85) ${(step.fadeFrom ?? 36) + 18}%, rgb(${step.fade}) ${(step.fadeFrom ?? 36) + 30}%)`,
                     }}
                   />
-                  {step.tag && (
-                    <span className="absolute right-0 top-5 z-10 rounded-l-md bg-athena-red2 px-3 py-1 font-quattrocento text-sm font-bold text-athena-cream shadow-sm">
-                      {step.tag}
-                    </span>
-                  )}
 
                   <div className="relative z-10 p-6">
                     <h3

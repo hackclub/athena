@@ -6,7 +6,7 @@ export default function ReadyCta() {
     <section className="relative z-20 overflow-visible bg-gradient-to-b from-white to-athena-cream px-6 pb-32 pt-6 text-center md:px-12 md:pb-44 md:pt-24">
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-4">
         <h2 className="bg-gradient-to-r from-athena-red4 to-athena-red3 bg-clip-text font-quattrocento text-3xl font-bold text-transparent md:text-5xl">
-          Ready?
+          Sign up for our newsletter
         </h2>
 
         <EmailSignupForm buttonLabel="join!" className="justify-center" />

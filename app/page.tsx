@@ -5,7 +5,6 @@ import AthenaIsBand from "@/components/home/AthenaIsBand";
 import PolaroidClothesline from "@/components/home/PolaroidClothesline";
 import BenefitsGrid from "@/components/home/BenefitsGrid";
 import GinghamSection from "@/components/home/GinghamSection";
-import PastPrograms from "@/components/home/PastPrograms";
 import ReadyCta from "@/components/home/ReadyCta";
 import { getMemberStories } from "@/lib/memberStories";
 
@@ -23,7 +22,6 @@ export default async function Home() {
       <PolaroidClothesline />
       <BenefitsGrid />
       <GinghamSection stories={stories} />
-      <PastPrograms />
       <ReadyCta />
       <Footer />
     </div>
