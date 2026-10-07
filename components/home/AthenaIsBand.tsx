@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { athena } from "@/lib/athenaColors";
 
 type Step = {
   title: string;
@@ -20,13 +21,13 @@ const STEPS: Step[] = [
     body: "New to coding? Follow this guide to make your first website and we’ll pay for a refresher!",
     image: { src: "/images/refresher-card.jpg", alt: "Refresher: a glass of boba milk tea", position: "center top" },
     paper: "251,228,234",
-    titleColor: "#BF1938",
-    bodyColor: "#52242C",
+    titleColor: athena.red3,
+    bodyColor: athena.maroon2,
     cta: { label: "Join Refresher", href: "https://refresher.hackclub.com/" },
   },
   {
     title: "Join Snowglobe",
-    body: "Join us at the largest all-girls hackathon on November 20-22 at Notion HQ in SF.",
+    body: "Join the largest all-girls hackathon, Nov 20–22 at Notion HQ in SF. Earn a partner-recognized certificate and meet women engineers.",
     image: {
       src: "/images/snowglobe-poster.jpg",
       alt: "Hack Club's Snowglobe, Nov 20-22, San Francisco: a penguin waving inside a snow globe with the Golden Gate Bridge",
@@ -46,8 +47,8 @@ const STEPS: Step[] = [
       position: "center top",
     },
     paper: "255,246,234",
-    titleColor: "#BF1938",
-    bodyColor: "#52242C",
+    titleColor: athena.red3,
+    bodyColor: athena.maroon2,
     cta: { label: "Join Slack", href: "https://hackclub.enterprise.slack.com/archives/C06T17NQB0B" },
   },
 ];
@@ -78,12 +79,12 @@ export default function AthenaIsBand() {
       >
         <path
           d="M0 20 C 240 60, 480 64, 720 40 S 1200 8, 1440 30 V80 H0 Z"
-          fill="#FFF6EA"
+          fill={athena.cream2}
           opacity="0.35"
         />
         <path
           d="M0 40 C 260 70, 500 72, 760 52 S 1220 28, 1440 48 V80 H0 Z"
-          fill="#FFF6EA"
+          fill={athena.cream2}
         />
       </svg>
       <div

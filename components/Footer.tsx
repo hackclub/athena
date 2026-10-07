@@ -35,7 +35,7 @@ export default function Footer() {
 
           <div className="col-span-2 md:col-span-2">
             <img
-              src="/images/new-athena-logo.png"
+              src="/images/athena-logo-heading-red.png"
               alt="Athena"
               className="h-24 w-auto mb-4 object-contain object-left"
             />

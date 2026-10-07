@@ -43,7 +43,7 @@ export default function EmailSignupForm({
       />
       <button
         type="submit"
-        className="shrink-0 rounded-full border border-athena-maroon2 bg-athena-red2 px-8 py-3 font-quattrocento font-bold text-athena-cream shadow-[0px_4px_0px_0px_#52242C] transition hover:brightness-105"
+        className="shrink-0 rounded-full border border-athena-maroon2 bg-athena-red2 px-8 py-3 font-quattrocento text-lg font-bold tracking-wide text-athena-cream md:text-xl shadow-[0px_4px_0px_0px_#52242C] transition hover:brightness-105"
       >
         {buttonLabel}
       </button>

@@ -1,17 +1,18 @@
 import Image from "next/image";
+import { athena, graphPaper } from "@/lib/athenaColors";
 
-type Partner = { name: string; logo: string; href?: string };
+type Partner = { name: string; logo: string };
 
 // Add each partner here once their logo is in /public/images/partners/.
 // Dashed placeholder slots fill the rest of the row until then.
 const PARTNERS: Partner[] = [
-  { name: "Girls Who Code", logo: "/images/partners/girls-who-code.png", href: "https://girlswhocode.com/" },
-  { name: "Jane Street", logo: "/images/partners/jane-street.png", href: "https://www.janestreet.com/" },
-  { name: "MIT", logo: "/images/partners/mit.png", href: "https://www.mit.edu/" },
-  { name: "Congressional App Challenge", logo: "/images/partners/congressional-app-challenge.png", href: "https://www.congressionalappchallenge.us/" },
-  { name: "AMD", logo: "/images/partners/amd.png", href: "https://www.amd.com/" },
-  { name: "SpaceX", logo: "/images/partners/spacex.png", href: "https://www.spacex.com/" },
-  { name: "GitHub", logo: "/images/partners/github.png", href: "https://github.com/" },
+  { name: "Girls Who Code", logo: "/images/partners/girls-who-code.png" },
+  { name: "Jane Street", logo: "/images/partners/jane-street.png" },
+  { name: "MIT", logo: "/images/partners/mit.png" },
+  { name: "Congressional App Challenge", logo: "/images/partners/congressional-app-challenge.png" },
+  { name: "AMD", logo: "/images/partners/amd.png" },
+  { name: "SpaceX", logo: "/images/partners/spacex.png" },
+  { name: "GitHub", logo: "/images/partners/github.png" },
 ];
 const SLOT_COUNT = 7;
 
@@ -19,8 +20,7 @@ const SLOT_COUNT = 7;
 // grid (which blends from yellow to pink just above). The background blends
 // from that section's cream into the newsletter section's pink cream, and the
 // grid fades out towards the bottom.
-const PINK_GRID =
-  "linear-gradient(rgba(215,39,77,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(215,39,77,0.12) 1px, transparent 1px)";
+const PINK_GRID = graphPaper(athena.red2, 0.12);
 const GRID_FADE = "linear-gradient(to bottom, black 65%, transparent)";
 
 // Small logo tiles all on one line (rows of 3 on phones, last row centred), each tilted slightly, like stickers pressed on by hand.
@@ -37,20 +37,12 @@ function LogoTile({ partner, tilt }: { partner?: Partner; tilt: string }) {
     );
   }
 
-  const tile = (
+  return (
     <div
       className={`relative flex aspect-[3/2] items-center justify-center rounded-lg border-2 border-athena-maroon2 bg-white p-3 shadow-[0px_4px_0px_0px_rgba(82,36,44,0.55)] transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-0 ${tilt}`}
     >
       <Image src={partner.logo} alt={partner.name} fill sizes="200px" className="object-contain p-4" />
     </div>
-  );
-
-  return partner.href ? (
-    <a href={partner.href} target="_blank" rel="noopener noreferrer">
-      {tile}
-    </a>
-  ) : (
-    tile
   );
 }
 
@@ -67,7 +59,7 @@ export default function PartnersBand() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, #FFF6EA, #FFECEB)" }}
+          style={{ background: `linear-gradient(to bottom, ${athena.cream2}, ${athena.cream})` }}
         />
         <div
           className="absolute inset-0"

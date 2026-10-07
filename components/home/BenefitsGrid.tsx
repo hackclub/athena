@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { athena, graphPaper } from "@/lib/athenaColors";
 
 const row1 = [
   {
@@ -107,7 +108,7 @@ export default function BenefitsGrid() {
   return (
     <section
       className="relative overflow-hidden px-4 pt-8 pb-18 md:px-8 md:pt-12 md:pb-28"
-      style={{ backgroundColor: "#FFF6EA" }}
+      style={{ backgroundColor: athena.cream2 }}
     >
       {/* faint yellow graph-paper grid, faded in at the top so it melts out of
           the red band's cream wave. Anchored to the bottom edge so it lines
@@ -116,8 +117,7 @@ export default function BenefitsGrid() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(242,183,5,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(242,183,5,0.18) 1px, transparent 1px)",
+          backgroundImage: graphPaper(athena.gold, 0.18),
           backgroundSize: "28px 28px",
           backgroundPosition: "center bottom",
           maskImage: "linear-gradient(to bottom, transparent, black 10%)",

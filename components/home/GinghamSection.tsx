@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { SHOWCASE_PROJECTS } from "@/data/showcaseProjects";
 import ProjectPostcard from "@/components/ProjectPostcard";
+import { athena, graphPaper } from "@/lib/athenaColors";
 
 // Plain CSS-animation marquee: the content is rendered twice back to back and
 // translated by exactly -50%, so the loop is seamless by construction. Used
@@ -103,9 +104,8 @@ export default function GinghamSection() {
         className="pointer-events-none absolute inset-x-0 top-0"
         style={{
           height: "clamp(60px, 12.2vw, 140px)",
-          backgroundColor: "#FFF6EA",
-          backgroundImage:
-            "linear-gradient(rgba(242,183,5,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(242,183,5,0.18) 1px, transparent 1px)",
+          backgroundColor: athena.cream2,
+          backgroundImage: graphPaper(athena.gold, 0.18),
           backgroundSize: "28px 28px",
           backgroundPosition: "center top",
         }}
@@ -114,7 +114,7 @@ export default function GinghamSection() {
           of the Parthenon section below, with no white strip between */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 bg-[#FFF6EA]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 bg-athena-cream2"
         style={{ height: "clamp(30px, 6.1vw, 70px)" }}
       />
       <div
