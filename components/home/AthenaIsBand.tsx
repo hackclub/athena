@@ -28,8 +28,8 @@ const STEPS: Step[] = [
     title: "Join Snowglobe",
     body: "Join us at the largest all-girls hackathon on November 20-22 at Notion HQ in SF.",
     image: {
-      src: "/images/snowglobe-art.jpg",
-      alt: "Hack Club's Snowglobe: build projects, get prizes, and come to the largest all-girls high school hackathon in the world. Nov 20-22, San Francisco.",
+      src: "/images/snowglobe-poster.jpg",
+      alt: "Hack Club's Snowglobe, Nov 20-22, San Francisco: a penguin waving inside a snow globe with the Golden Gate Bridge",
       position: "left top",
     },
     paper: "244,249,253",
@@ -67,7 +67,7 @@ const SPARKLE_PATTERN = "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//w
 
 export default function AthenaIsBand() {
   return (
-    <section className="relative overflow-hidden bg-athena-red2 px-6 pt-10 pb-24 text-center md:px-12 md:pt-14 md:pb-32">
+    <section className="relative overflow-hidden bg-athena-red3 px-6 pt-10 pb-24 text-center md:px-12 md:pt-14 md:pb-32">
       {/* mirrors the wave at the top of this band so the cream page rises
           back up into the red before "By joining Athena, you..." */}
       <svg

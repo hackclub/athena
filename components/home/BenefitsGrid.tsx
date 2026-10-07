@@ -42,12 +42,10 @@ const BENEFITS = [...row1, ...row2];
 // minus a small gap, so the photos are as big as the room allows.
 const MARGIN_WIDTH = "calc((100% - 56rem) / 2 - 2.25rem)";
 
-// Photos scattered in the side margins on wide screens. Each one gets its own
-// spot, size and tilt (positions are % of the margin column) so they look
-// tossed down by hand rather than lined up.
+// Photos scattered in the side margins on wide screens. 
 const LEFT_SPOTS = [
   { top: "0%", left: "4%", width: "80%", rotate: "-7deg" },
-  { top: "35%", left: "-4%", width: "70%", rotate: "4deg" },
+  { top: "35%", left: "2%", width: "70%", rotate: "4deg" },
   { top: "66%", left: "10%", width: "76%", rotate: "-3deg" },
 ];
 const RIGHT_SPOTS = [
@@ -108,13 +106,28 @@ export default function BenefitsGrid() {
 
   return (
     <section
-      className="relative overflow-hidden px-4 py-8 md:px-8 md:py-12"
+      className="relative overflow-hidden px-4 pt-8 pb-18 md:px-8 md:pt-12 md:pb-28"
       style={{ backgroundColor: "#FFF6EA" }}
     >
+      {/* faint yellow graph-paper grid, faded in at the top so it melts out of
+          the red band's cream wave. Anchored to the bottom edge so it lines
+          up with the same grid carried on behind the pink scallops below. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(242,183,5,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(242,183,5,0.18) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          backgroundPosition: "center bottom",
+          maskImage: "linear-gradient(to bottom, transparent, black 10%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%)",
+        }}
+      />
       {/* photos scattered down the left and right margins (wide screens only,
           where there is room beside the cards) */}
       <div
-        className="absolute bottom-24 left-3 top-20 hidden max-w-[320px] xl:block"
+        className="absolute bottom-24 left-8 top-20 hidden max-w-[320px] xl:block"
         style={{ width: MARGIN_WIDTH }}
       >
         {left.map((b, i) => (

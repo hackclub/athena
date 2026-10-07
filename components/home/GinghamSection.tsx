@@ -87,7 +87,7 @@ function PillButton({
 
 export default function GinghamSection() {
   return (
-    <section className="relative mt-10 overflow-hidden pt-20 pb-24 md:mt-16 md:pt-28 md:pb-32">
+    <section className="relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
       {/* scallop.png is a capsule with rounded end caps, not a seamless tile, so
           w-full stretching showed those rounded ends at the screen edges instead
           of the wave pattern. scallop-tile.png is a single repeat unit (one
@@ -96,11 +96,25 @@ export default function GinghamSection() {
           into neighboring sections) so there's always pink behind them; the tile
           pattern layers on top and is inset by half a band's height, letting the
           outer half of each scallop's bumps peek out around it. */}
-      {/* white behind the bottom scallops so they sit straight on the white
-          top of the newsletter section, with no cream strip between */}
+      {/* the "By joining Athena" section's yellow grid carries on behind the
+          top scallops, so the gaps between the bumps aren't plain cream */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 bg-white"
+        className="pointer-events-none absolute inset-x-0 top-0"
+        style={{
+          height: "clamp(60px, 12.2vw, 140px)",
+          backgroundColor: "#FFF6EA",
+          backgroundImage:
+            "linear-gradient(rgba(242,183,5,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(242,183,5,0.18) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          backgroundPosition: "center top",
+        }}
+      />
+      {/* cream behind the bottom scallops so they sit straight on the cream
+          of the Parthenon section below, with no white strip between */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 bg-[#FFF6EA]"
         style={{ height: "clamp(30px, 6.1vw, 70px)" }}
       />
       <div

@@ -1,11 +1,7 @@
 export default function Footer() {
   return (
     <footer
-      className="text-athena-cream/80 py-12 px-6 relative z-10 font-funnel"
-      style={{
-        background:
-          "linear-gradient(114deg, #DF383B 0.15%, #D7274D 50%, #A91E38 105.5%)",
-      }}
+      className="bg-athena-red3 text-athena-cream/80 py-12 px-6 relative z-10 font-funnel"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

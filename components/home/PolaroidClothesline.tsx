@@ -114,12 +114,12 @@ export default function PolaroidClothesline() {
       >
         <path
           d="M0 34 C 180 4, 360 4, 540 30 S 900 62, 1080 34 S 1350 6, 1440 22 V80 H0 Z"
-          fill="#D7274D"
+          fill="#BF1938"
           opacity="0.25"
         />
         <path
           d="M0 52 C 200 22, 420 24, 620 48 S 1000 76, 1220 50 S 1400 34, 1440 40 V80 H0 Z"
-          fill="#D7274D"
+          fill="#BF1938"
         />
       </svg>
     </div>

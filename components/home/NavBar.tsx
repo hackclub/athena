@@ -9,7 +9,7 @@ const links = [
 
 export default function NavBar() {
   return (
-    <nav className="bg-athena-red relative z-30 flex items-center justify-between gap-4 px-6 py-4 md:px-12">
+    <nav className="bg-athena-red3 relative z-30 flex items-center justify-between gap-4 px-6 py-4 md:px-12">
       <Link
         href="/"
         className="shrink-0 transition hover:scale-105 hover:opacity-80"
