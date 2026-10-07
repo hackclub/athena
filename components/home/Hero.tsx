@@ -115,8 +115,8 @@ export default function Hero() {
       }}
     >
       {/* logo and rotating role on the left, video and tagline on the right */}
-      <div className="relative mb-12 flex flex-col gap-10 md:pr-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:pr-12 xl:pr-20">
-        <div className="min-w-0 md:pl-8 lg:flex-1 lg:pl-12 xl:pl-20">
+      <div className="relative mx-auto mb-12 flex max-w-7xl flex-col gap-10 md:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+        <div className="min-w-0 lg:flex-1">
           <Image
             src="/images/athena-logo-heading-red.png"
             alt="Athena"
@@ -130,7 +130,7 @@ export default function Hero() {
             style={{ fontSize: "clamp(24px, 3.6vw, 44px)" }}
           >
             <span className="block">Become a</span>
-            <span className="block" style={{ fontSize: "clamp(44px, 5vw, 80px)" }}>
+            <span className="block" style={{ fontSize: "clamp(44px, 5vw, 72px)" }}>
               <RotatingRole />
             </span>
             <span className="block">with technical skills.</span>
@@ -138,7 +138,7 @@ export default function Hero() {
         </div>
 
         {/* video with the tagline underneath */}
-        <div className="flex w-full flex-col gap-6 lg:w-[45%] lg:max-w-[600px] lg:shrink-0">
+        <div className="flex w-full flex-col gap-6 lg:w-[42%] lg:max-w-[520px] lg:shrink-0">
           <div
             className="w-full overflow-hidden rounded-lg border-2 border-athena-red2 bg-white shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"
             style={{ aspectRatio: "612 / 374" }}
