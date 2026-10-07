@@ -1,4 +1,5 @@
 import NavBar from "@/components/home/NavBar";
+import BackHomeLink from "@/components/BackHomeLink";
 import Footer from "@/components/Footer";
 import ProjectPostcard from "@/components/ProjectPostcard";
 import { SHOWCASE_PROJECTS } from "@/data/showcaseProjects";
@@ -28,6 +29,8 @@ export default function GalleryPage() {
           <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
           <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
+
+        <BackHomeLink />
 
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:px-12 md:pb-32">
           <h1

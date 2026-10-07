@@ -78,21 +78,40 @@ function MarginPhoto({ src, spot }: { src: string; spot: Spot }) {
   );
 }
 
-function BenefitCard({ title, body, red }: { title: string; body: string; red: boolean }) {
+// Each card's colours on phones (one column) and on md+ (two columns), as
+// literal classes so Tailwind's scanner picks them all up.
+const CARD_BG = { red: "bg-athena-red2", light: "bg-athena-cream" };
+const CARD_BG_MD = { red: "md:bg-athena-red2", light: "md:bg-athena-cream" };
+const TITLE = { red: "text-athena-cream2", light: "text-athena-red3" };
+const TITLE_MD = { red: "md:text-athena-cream2", light: "md:text-athena-red3" };
+const BODY = { red: "text-white", light: "text-athena-maroon2" };
+const BODY_MD = { red: "md:text-white", light: "md:text-athena-maroon2" };
+
+type Tone = "red" | "light";
+
+function BenefitCard({
+  title,
+  body,
+  tone,
+  toneMd,
+}: {
+  title: string;
+  body: string;
+  tone: Tone;
+  toneMd: Tone;
+}) {
   return (
     <div
-      className={`flex flex-col gap-2 rounded-xl border-2 border-athena-maroon2 p-6 shadow-[0px_6px_0px_0px_rgba(82,36,44,0.55)] ${
-        red ? "bg-athena-red2" : "bg-athena-cream"
-      }`}
+      className={`flex flex-col gap-2 rounded-xl border-2 border-athena-maroon2 p-6 shadow-[0px_6px_0px_0px_rgba(82,36,44,0.55)] ${CARD_BG[tone]} ${CARD_BG_MD[toneMd]}`}
     >
       <h3
-        className={`font-quattrocento font-bold leading-tight ${red ? "text-athena-cream2" : "text-athena-red3"}`}
+        className={`font-quattrocento font-bold leading-tight ${TITLE[tone]} ${TITLE_MD[toneMd]}`}
         style={{ fontSize: "clamp(20px, 1.8vw, 28px)" }}
       >
         {title}
       </h3>
       <p
-        className={`font-funnel leading-snug ${red ? "text-white" : "text-athena-maroon2"}`}
+        className={`font-funnel leading-snug ${BODY[tone]} ${BODY_MD[toneMd]}`}
         style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}
       >
         {body}
@@ -151,14 +170,16 @@ export default function BenefitsGrid() {
           By joining Athena, you...
         </h2>
 
-        {/* pink and red boxes alternate like a checkerboard */}
+        {/* pink and red boxes: a checkerboard in two columns, and simply
+            alternating light, red, light, red... in the single phone column */}
         <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
           {BENEFITS.map((card, i) => (
             <BenefitCard
               key={card.title}
               title={card.title}
               body={card.body}
-              red={Math.floor(i / 2) % 2 === 0 ? i % 2 === 0 : i % 2 === 1}
+              tone={i % 2 === 0 ? "light" : "red"}
+              toneMd={(Math.floor(i / 2) % 2 === 0 ? i % 2 === 0 : i % 2 === 1) ? "red" : "light"}
             />
           ))}
         </div>

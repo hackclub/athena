@@ -1,4 +1,5 @@
 import NavBar from "@/components/home/NavBar";
+import BackHomeLink from "@/components/BackHomeLink";
 import Footer from "@/components/Footer";
 import Team from "@/components/Team";
 import { getTeamData } from "@/lib/team";
@@ -31,6 +32,8 @@ export default async function TeamPage() {
           <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
           <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
+
+        <BackHomeLink />
 
         <div className="px-6 lg:px-32 pt-12 md:pt-16 pb-40 md:pb-56">
           <h1

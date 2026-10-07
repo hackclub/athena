@@ -1,5 +1,6 @@
 import Image from "next/image";
 import NavBar from "@/components/home/NavBar";
+import BackHomeLink from "@/components/BackHomeLink";
 import Footer from "@/components/Footer";
 import PastPrograms from "@/components/home/PastPrograms";
 
@@ -31,6 +32,8 @@ export default function ProgramsPage() {
           <div className="absolute inset-0 opacity-40" style={gridTileStyle} />
           <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
+
+        <BackHomeLink />
 
         <div className="mx-auto max-w-7xl px-6 pb-4 pt-16 md:px-12">
           <h1
