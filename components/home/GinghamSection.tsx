@@ -157,7 +157,23 @@ export default function GinghamSection() {
         </h2>
       </div>
 
-      <div className="relative my-6 w-full">
+      {/* phones: the first three projects (in the Airtable table's order) as
+          small straight cards (little screenshot + name + author), all the
+          same width, stacked, with the same 16px margin as the heading on
+          both sides;
+          no scrolling; the gallery button below has the rest. Key sizes are
+          inline styles so they apply even before a stylesheet refresh. */}
+      <div
+        className="relative my-6 flex flex-col gap-3 md:hidden"
+        style={{ marginInline: 16 }}
+      >
+        {SHOWCASE_PROJECTS.slice(0, 3).map((project) => (
+          <ProjectPostcard key={project.projectName} project={project} compact style={{ width: "100%" }} />
+        ))}
+      </div>
+
+      {/* md+: every project in a slowly scrolling row */}
+      <div className="relative my-6 hidden w-full md:block">
         <InfiniteRow direction="ltr">
           {SHOWCASE_PROJECTS.map((project) => (
             <ProjectPostcard

@@ -100,7 +100,9 @@ export default function AthenaIsBand() {
           Pick your first step
         </h2>
 
-        <div className="mt-12 grid gap-12 text-left md:grid-cols-3 md:gap-6 lg:gap-10">
+        {/* phones: a narrower centred stack so the cards read as notes, not
+            full-width blocks; md+: three across */}
+        <div className="mx-auto mt-10 grid max-w-[300px] gap-10 text-left md:mt-12 md:max-w-none md:grid-cols-3 md:gap-6 lg:gap-10">
           {STEPS.map((step, i) => {
             const look = NOTE_LOOKS[i % NOTE_LOOKS.length];
             return (
@@ -111,7 +113,7 @@ export default function AthenaIsBand() {
                 {/* washi tape holding the card to the board */}
                 <span
                   aria-hidden="true"
-                  className={`absolute -top-4 left-1/2 z-20 h-8 w-28 -translate-x-1/2 opacity-90 shadow-sm ${look.tape}`}
+                  className={`absolute -top-3.5 left-1/2 z-20 h-7 w-24 -translate-x-1/2 md:-top-4 md:h-8 md:w-28 opacity-90 shadow-sm ${look.tape}`}
                   style={{
                     backgroundImage:
                       "repeating-linear-gradient(90deg, rgba(255,255,255,0.35) 0 6px, transparent 6px 12px)",
@@ -129,21 +131,21 @@ export default function AthenaIsBand() {
                       src={step.image.src}
                       alt={step.image.alt}
                       fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
+                      sizes="(min-width: 768px) 33vw, 300px"
                       className="object-cover"
                       style={step.image.position ? { objectPosition: step.image.position } : undefined}
                     />
                   </div>
 
-                  <div className="flex flex-1 flex-col items-start p-6">
+                  <div className="flex flex-1 flex-col items-start p-4 md:p-6">
                     <h3
                       className="whitespace-pre-line font-quattrocento font-bold leading-tight"
-                      style={{ fontSize: "clamp(22px, 2vw, 28px)", color: step.titleColor }}
+                      style={{ fontSize: "clamp(20px, 2vw, 28px)", color: step.titleColor }}
                     >
                       {step.title}
                     </h3>
                     <p
-                      className="mt-2 flex-1 font-quattrocento leading-snug md:text-lg"
+                      className="mt-2 flex-1 font-quattrocento text-[15px] leading-snug md:text-lg"
                       style={{ color: step.bodyColor }}
                     >
                       {step.body}
@@ -152,7 +154,7 @@ export default function AthenaIsBand() {
                       href={step.cta.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-block rounded-full bg-athena-red2 px-6 py-2 font-quattrocento font-bold text-athena-cream transition hover:bg-athena-red3"
+                      className="mt-4 inline-block rounded-full bg-athena-red2 px-5 py-1.5 font-quattrocento text-sm font-bold text-athena-cream md:mt-5 md:px-6 md:py-2 md:text-base transition hover:bg-athena-red3"
                     >
                       {step.cta.label}
                     </a>
