@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { athena } from "./lib/athenaColors";
 
 export default {
   theme: {
@@ -19,18 +20,7 @@ export default {
   		colors: {
   			red: '#ec3750',
   			orange: '#ff8c37',
-  			athena: {
-  				red: '#D42E4B',
-  				red2: '#D7274D',
-  				red3: '#BF1938',
-  				red4: '#DF383B',
-  				maroon: '#7F172B',
-  				maroon2: '#52242C',
-  				cream: '#FFECEB',
-  				cream2: '#FFF6EA',
-  				cream3: '#FFFCF9',
-  				accent: '#A91E38',
-  			},
+  			athena,
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

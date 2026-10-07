@@ -5,27 +5,24 @@ import AthenaIsBand from "@/components/home/AthenaIsBand";
 import PolaroidClothesline from "@/components/home/PolaroidClothesline";
 import BenefitsGrid from "@/components/home/BenefitsGrid";
 import GinghamSection from "@/components/home/GinghamSection";
-import InvitedSection from "@/components/home/InvitedSection";
-import PastPrograms from "@/components/home/PastPrograms";
+import HackathonVideo from "@/components/home/HackathonVideo";
+import PartnersBand from "@/components/home/PartnersBand";
 import ReadyCta from "@/components/home/ReadyCta";
-import { getMemberStories } from "@/lib/memberStories";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  const stories = await getMemberStories();
-
   return (
     <div className="relative">
       <NavBar />
       <Hero />
-      <AthenaIsBand />
       <PolaroidClothesline />
-      <InvitedSection />
+      <AthenaIsBand />
       <BenefitsGrid />
-      <GinghamSection stories={stories} />
-      <PastPrograms />
+      <GinghamSection />
+      <HackathonVideo />
+      <PartnersBand />
       <ReadyCta />
       <Footer />
     </div>

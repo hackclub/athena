@@ -1,5 +1,7 @@
 import NavBar from "@/components/home/NavBar";
 import Footer from "@/components/Footer";
+import ProjectPostcard from "@/components/ProjectPostcard";
+import { SHOWCASE_PROJECTS } from "@/data/showcaseProjects";
 
 export const dynamic = "force-dynamic";
 
@@ -27,19 +29,25 @@ export default function GalleryPage() {
           <div className="absolute inset-0 opacity-40" style={gridTileStyleRotated} />
         </div>
 
-        <div className="flex flex-col items-center justify-center px-6 py-32 text-center md:py-48">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:px-12 md:pb-32">
           <h1
-            className="font-quattrocento font-bold text-athena-red3"
+            className="text-center font-quattrocento font-bold text-athena-red3"
             style={{ fontSize: "clamp(32px, 4.6vw, 56px)" }}
           >
             Gallery
           </h1>
-          <p
-            className="mt-4 font-quattrocento text-athena-maroon2"
-            style={{ fontSize: "clamp(16px, 1.6vw, 24px)" }}
+          <h2
+            className="mt-10 font-quattrocento font-bold text-athena-accent"
+            style={{ fontSize: "clamp(22px, 2.6vw, 34px)" }}
           >
-            Coming soon.
-          </p>
+            Teens like you are making awesome projects:
+          </h2>
+
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {SHOWCASE_PROJECTS.map((project) => (
+              <ProjectPostcard key={project.projectName} project={project} className="w-full" />
+            ))}
+          </div>
         </div>
       </div>
 

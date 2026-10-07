@@ -2,17 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { label: "Home", href: "/"},
+  { label: "Home", href: "/" },
   { label: "Programs", href: "/programs" },
-  { label: "Stories", href: "/stories" },
-  { label: "Brand", href: "/brand" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Team", href: "/team" },
 ];
 
 export default function NavBar() {
   return (
-    <nav className="bg-athena-red relative z-30 flex items-center justify-between gap-4 px-6 py-4 md:px-12">
-      <Link
+    <nav className="bg-athena-red3 relative z-30 flex items-center justify-between gap-4 px-6 py-4 md:px-12">
+      <a
         href="https://hackclub.com"
         target="_blank"
         rel="noopener noreferrer"
@@ -25,7 +24,7 @@ export default function NavBar() {
           height={48}
           className="h-8 w-auto md:h-10"
         />
-      </Link>
+      </a>
       <div className="flex flex-wrap items-center justify-end gap-x-6 gap-y-1 md:gap-x-10">
         {links.map((link) => (
           <Link

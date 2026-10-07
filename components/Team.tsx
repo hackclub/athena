@@ -1,6 +1,11 @@
 import Image from "next/image";
-import { FaSlack } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
 import { TeamMember } from "@/types";
+
+// Opens a new Gmail message to this person in a new tab.
+function gmailComposeUrl(email: string) {
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+}
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
@@ -11,7 +16,7 @@ function TeamCard({ member }: { member: TeamMember }) {
             src={member.image}
             alt={member.name}
             fill
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+            sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
             className="object-cover"
           />
         )}
@@ -27,15 +32,15 @@ function TeamCard({ member }: { member: TeamMember }) {
             {member.role}
           </p>
         )}
-        {member.slack && (
+        {member.email && (
           <a
-            href={member.slack}
+            href={gmailComposeUrl(member.email)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-athena-maroon/30 px-3 py-1 font-quattrocento text-xs text-athena-red2 transition hover:border-athena-red2 hover:text-athena-red3"
           >
-            <FaSlack />
-            Message on Slack
+            <FaEnvelope />
+            Email
           </a>
         )}
       </div>
@@ -68,15 +73,15 @@ function TeamRow({ member }: { member: TeamMember }) {
             {member.role}
           </p>
         )}
-        {member.slack && (
+        {member.email && (
           <a
-            href={member.slack}
+            href={gmailComposeUrl(member.email)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-0.5 inline-flex w-fit items-center gap-1 rounded-full border border-athena-maroon/30 px-2 py-0.5 font-quattrocento text-[10px] text-athena-red2 transition hover:border-athena-red2 hover:text-athena-red3"
           >
-            <FaSlack />
-            Message on Slack
+            <FaEnvelope />
+            Email
           </a>
         )}
       </div>
@@ -102,7 +107,7 @@ export default function Team({
   }
 
   return (
-    <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 md:gap-8 lg:grid-cols-4">
+    <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
       {members.map((member, index) => (
         <TeamCard key={index} member={member} />
       ))}

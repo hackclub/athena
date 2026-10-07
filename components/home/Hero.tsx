@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import EmailSignupForm from "./EmailSignupForm";
-import AthenaWordmark from "./AthenaWordmark";
+import { athena, withAlpha } from "@/lib/athenaColors";
 
 const ROLES = [
   "Engineer",
@@ -107,19 +108,39 @@ function RotatingRole() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden px-6 pb-20 pt-16 md:px-12 md:pb-28 md:pt-24"
+      className="relative overflow-hidden px-6 pb-6 pt-16 md:px-12 md:pb-8 md:pt-24"
       style={{
-        backgroundColor: "#FFF6E5",
-        backgroundImage:
-          "repeating-linear-gradient(to right, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px), repeating-linear-gradient(to bottom, rgba(255,221,206,0.9) 0 1px, transparent 1px 44px)",
+        backgroundColor: athena.paper,
+        backgroundImage: `repeating-linear-gradient(to right, ${withAlpha(athena.paperline, 0.9)} 0 1px, transparent 1px 44px), repeating-linear-gradient(to bottom, ${withAlpha(athena.paperline, 0.9)} 0 1px, transparent 1px 44px)`,
       }}
     >
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-20">
-          <AthenaWordmark className="max-w-[300px] md:max-w-[380px] lg:max-w-[440px] lg:-mt-4" />
+      {/* logo and rotating role on the left, video and tagline on the right */}
+      <div className="relative mx-auto mb-12 flex max-w-7xl flex-col gap-10 md:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+        <div className="min-w-0 lg:flex-1">
+          <Image
+            src="/images/athena-logo-heading-red.png"
+            alt="Athena"
+            width={2013}
+            height={1371}
+            priority
+            className="mb-6 h-auto w-full max-w-[220px] md:max-w-[280px] lg:max-w-[320px]"
+          />
+          <h2
+            className="text-left font-quattrocento leading-tight text-athena-red3"
+            style={{ fontSize: "clamp(24px, 3.6vw, 44px)" }}
+          >
+            <span className="block">Become a</span>
+            <span className="block" style={{ fontSize: "clamp(44px, 5vw, 72px)" }}>
+              <RotatingRole />
+            </span>
+            <span className="block">with technical skills.</span>
+          </h2>
+        </div>
 
+        {/* video with the tagline underneath */}
+        <div className="flex w-full flex-col gap-6 lg:w-[42%] lg:max-w-[520px] lg:shrink-0">
           <div
-            className="w-full max-w-[470px] overflow-hidden rounded-lg border-2 border-athena-red2 bg-white shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"
+            className="w-full overflow-hidden rounded-lg border-2 border-athena-red2 bg-white shadow-[0px_6px_0px_0px_rgba(127,23,43,0.15)]"
             style={{ aspectRatio: "612 / 374" }}
           >
             <iframe
@@ -130,26 +151,27 @@ export default function Hero() {
               allowFullScreen
             />
           </div>
-        </div>
-
-        <div className="flex flex-col items-center gap-5 text-center">
           <h1
-            className="font-quattrocento leading-tight text-athena-red3"
-            style={{ fontSize: "clamp(24px, 3.6vw, 44px)" }}
+            className="text-left font-quattrocento font-bold leading-tight text-athena-red3"
+            style={{ fontSize: "clamp(20px, 2vw, 30px)", textWrap: "balance" }}
           >
-            Become a <RotatingRole /> with technical skills.
+            The largest <span className="whitespace-nowrap">all-girls</span> community for technical teens aged 13-18
           </h1>
+        </div>
+      </div>
 
-          <EmailSignupForm buttonLabel="join the community" className="justify-center" />
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
+        <div className="flex flex-col items-center gap-5 text-center">
+          <EmailSignupForm buttonLabel="sign up" className="justify-center" />
           <a
-            href="https://sunbeam.hackclub.com/"
+            href="https://snowglobe.hackclub.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 font-quattrocento font-bold text-athena-red3 transition hover:text-athena-maroon"
             style={{ fontSize: "clamp(14px, 1.6vw, 24px)" }}
           >
-            <img src="/images/sunbeam-favicon.svg" alt="" className="h-[1.4em] w-[1.4em] shrink-0" />
-            <span>sign up for Sunbeam, happening now</span>
+            <span aria-hidden="true" className="shrink-0">❄️</span>
+            <span>Join us at the largest all-girls hackathon on Nov 20-22 at Notion HQ in SF</span>
             <ArrowIcon className="h-[0.8em] w-[0.8em] shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
