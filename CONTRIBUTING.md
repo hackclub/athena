@@ -95,9 +95,10 @@ To add new event types or disciplines:
 ## Testing Your Changes
 
 1. Run `bun run build` to check for TypeScript errors
-2. Run `bun run lint` to check code style
-3. Test locally with `bun run dev`
-4. Verify events appear correctly on the calendar
+2. Run `bun run lint` to check for lint issues
+3. Run `bun run format:check` to check formatting, or `bun run format` to apply it
+4. Test locally with `bun run dev`
+5. Verify events appear correctly on the calendar
 
 ## Example Event
 
